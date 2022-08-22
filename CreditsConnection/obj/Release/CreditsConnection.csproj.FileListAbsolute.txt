@@ -1,0 +1,6 @@
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsConnection\bin\Release\CreditosConnection.dll
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsConnection\bin\Release\CreditosConnection.pdb
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsConnection\obj\Release\CreditsConnection.csproj.AssemblyReference.cache
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsConnection\obj\Release\CreditsConnection.csproj.CoreCompileInputs.cache
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsConnection\obj\Release\CreditosConnection.dll
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsConnection\obj\Release\CreditosConnection.pdb
