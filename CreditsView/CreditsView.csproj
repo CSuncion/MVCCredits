@@ -108,11 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmReportSolicitante.cs">
+    <Compile Include="Reports\frmReportApplicant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\frmReportSolicitante.Designer.cs">
-      <DependentUpon>frmReportSolicitante.cs</DependentUpon>
+    <Compile Include="Reports\frmReportApplicant.Designer.cs">
+      <DependentUpon>frmReportApplicant.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmReports.cs">
       <SubType>Form</SubType>
@@ -131,8 +131,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmReportSolicitante.resx">
-      <DependentUpon>frmReportSolicitante.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\frmReportApplicant.resx">
+      <DependentUpon>frmReportApplicant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
