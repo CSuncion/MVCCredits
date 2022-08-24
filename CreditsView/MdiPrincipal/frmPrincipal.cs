@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using WinControles.ControlesWindows;
 using System.Runtime.InteropServices;
+using CreditosView.Reports;
 
 namespace CreditsView.MdiPrincipal
 {
@@ -26,7 +27,7 @@ namespace CreditsView.MdiPrincipal
         }
         private void btnReports_Click(object sender, EventArgs e)
         {
-            this.InstanciarReports();
+            this.ShowOptionsReport();
         }
         private void tsSalir_Click(object sender, EventArgs e)
         {
@@ -79,6 +80,10 @@ namespace CreditsView.MdiPrincipal
         private void pnlBarTit_DoubleClick(object sender, EventArgs e)
         {
             this.WindowsState();
+        }
+        private void btnReportApplicant_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportApplicant();
         }
         #endregion
 
@@ -177,6 +182,28 @@ namespace CreditsView.MdiPrincipal
             this.FormatoVentanaHijoPrincipal(win, this.btnReports, null, 0, 0);
             win.NewWindow();
         }
+        public void InstanciarReportApplicant()
+        {
+            frmReportApplicant win = new frmReportApplicant();
+            this.FormatoVentanaHijoPrincipal(win, this.btnReportApplicant, null, 0, 0);
+            win.NewWindow();
+        }
+
+        public void ShowOptionsReport()
+        {
+            if (this.btnReportApplicant.Visible)
+            {
+                this.btnReportApplicant.Visible = false;
+                this.btnCredits.Location = new Point(3, 190);
+                this.pnlCredits.Location = new Point(3, 190);
+            }
+            else
+            {
+                this.btnReportApplicant.Visible = true;
+                this.btnCredits.Location = new Point(3, 250);
+                this.pnlCredits.Location = new Point(3, 250);
+            }
+        }
 
         public void CerrarVentanaHijo(Form pWin, Button pBtn, ToolStripButton pAccDir)
         {
@@ -189,13 +216,8 @@ namespace CreditsView.MdiPrincipal
                 this.BackColor = Color.Gray;
             }
         }
-
-
-
-
-
-
         #endregion
+
 
     }
 }

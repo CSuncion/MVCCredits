@@ -81,6 +81,14 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet\DsCredits.cs">
+      <DependentUpon>DsCredits.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DsCredits.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsCredits.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Form1.cs">
+    <Compile Include="Reports\frmReportSolicitante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Reports\frmReportSolicitante.Designer.cs">
+      <DependentUpon>frmReportSolicitante.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmReports.cs">
       <SubType>Form</SubType>
@@ -123,13 +131,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\frmReportSolicitante.resx">
+      <DependentUpon>frmReportSolicitante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\rptSolicitante.rdlc" />
+    <None Include="DataSet\DsCredits.xsc">
+      <DependentUpon>DsCredits.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DsCredits.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCredits.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DsCredits.xss">
+      <DependentUpon>DsCredits.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,5 +202,6 @@
       <Name>CreditsUtil</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
