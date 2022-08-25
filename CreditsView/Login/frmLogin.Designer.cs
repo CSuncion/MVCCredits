@@ -63,7 +63,7 @@
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::CreditosView.Properties.Resources._72b75f9c_72bc_405b_876b_2cef01ddbd90_large;
+            this.pictureBox1.Image = global::CreditsView.Properties.Resources._72b75f9c_72bc_405b_876b_2cef01ddbd90_large;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Name = "pictureBox1";

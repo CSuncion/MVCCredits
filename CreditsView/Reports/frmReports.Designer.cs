@@ -99,13 +99,13 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.Image = global::CreditosView.Properties.Resources._16__Filter_;
+            this.toolStripLabel1.Image = global::CreditsView.Properties.Resources._16__Filter_;
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(16, 22);
             // 
             // tsBtnSalir
             // 
-            this.tsBtnSalir.Image = global::CreditosView.Properties.Resources.door_out;
+            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
             this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnSalir.Name = "tsBtnSalir";
             this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);

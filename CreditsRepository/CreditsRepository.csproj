@@ -7,8 +7,8 @@
     <ProjectGuid>{A2BA1ACE-B3D0-43F4-BADB-80FF74204ED0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CreditosRepository</RootNamespace>
-    <AssemblyName>CreditosRepository</AssemblyName>
+    <RootNamespace>CreditsRepository</RootNamespace>
+    <AssemblyName>CreditsRepository</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository\ICreditsAccessRepository.cs" />
+    <Compile Include="IRepository\ICreditsApplicantRepository.cs" />
     <Compile Include="IRepository\ICreditsOperationsRepository.cs" />
     <Compile Include="IRepository\ICreditsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CreditsAccessRepository.cs" />
+    <Compile Include="Repository\CreditsApplicantRepository.cs" />
     <Compile Include="Repository\CreditsOperationsRepository.cs" />
     <Compile Include="Repository\CreditsRepository.cs" />
   </ItemGroup>

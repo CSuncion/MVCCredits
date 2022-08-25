@@ -88,7 +88,7 @@
             // 
             // pnlLogo
             // 
-            this.pnlLogo.BackgroundImage = global::CreditosView.Properties.Resources.logo_1;
+            this.pnlLogo.BackgroundImage = global::CreditsView.Properties.Resources.logo_1;
             resources.ApplyResources(this.pnlLogo, "pnlLogo");
             this.pnlLogo.Name = "pnlLogo";
             // 
@@ -129,7 +129,7 @@
             this.btnRestaurar.FlatAppearance.BorderSize = 0;
             this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnRestaurar.Image = global::CreditosView.Properties.Resources.Icono_Restaurar;
+            this.btnRestaurar.Image = global::CreditsView.Properties.Resources.Icono_Restaurar;
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.UseVisualStyleBackColor = true;
             this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
@@ -141,7 +141,7 @@
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMinimizar.Image = global::CreditosView.Properties.Resources.Icono_Minimizar;
+            this.btnMinimizar.Image = global::CreditsView.Properties.Resources.Icono_Minimizar;
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -153,7 +153,7 @@
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMaximizar.Image = global::CreditosView.Properties.Resources.Icono_Maximizar;
+            this.btnMaximizar.Image = global::CreditsView.Properties.Resources.Icono_Maximizar;
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.UseVisualStyleBackColor = true;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
@@ -165,7 +165,7 @@
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrar.Image = global::CreditosView.Properties.Resources.ICON_CERRARF;
+            this.btnCerrar.Image = global::CreditsView.Properties.Resources.ICON_CERRARF;
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);

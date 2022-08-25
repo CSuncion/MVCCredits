@@ -1,4 +1,4 @@
-﻿namespace CreditosView.DataSet
+﻿namespace CreditsView.DataSet
 {
 
 

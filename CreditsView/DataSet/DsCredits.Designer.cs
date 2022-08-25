@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CreditosView.DataSet {
+namespace CreditsView.DataSet {
     
     
     /// <summary>
@@ -1589,7 +1589,7 @@ namespace CreditosView.DataSet {
         }
     }
 }
-namespace CreditosView.DataSet.DsCreditsTableAdapters {
+namespace CreditsView.DataSet.DsCreditsTableAdapters {
     
     
     /// <summary>
@@ -1738,32 +1738,6 @@ namespace CreditosView.DataSet.DsCreditsTableAdapters {
             tableMapping.ColumnMappings.Add("Paterno", "Paterno");
             tableMapping.ColumnMappings.Add("Materno", "Materno");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Tb_Solicitantes] ([Dni_Solic], [Codofin_Solic], [Carnet_Solic], [_Paterno], [_Materno], [_Nombres], [_Sexo], [_Situac], [_Und_dscto], [_Grado], [_Fnace], [_Domicilio], [_Dpto], [_Prov], [_Dist], [_Fijo], [_Movil], [_Mail], [_NroBen], [_IdBca], [_NumCta], [_CCI]) VALUES (@Dni_Solic, @Codofin_Solic, @Carnet_Solic, @Paterno, @Materno, @Nombres, @Sexo, @Situac, @Und_dscto, @Grado, @Fnace, @Domicilio, @Dpto, @Prov, @Dist, @Fijo, @Movil, @Mail, @NroBen, @IdBca, @NumCta, @CCI)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dni_Solic", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dni_Solic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codofin_Solic", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Codofin_Solic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Carnet_Solic", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Carnet_Solic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paterno", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paterno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Materno", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Materno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombres", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombres", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Situac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Situac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Und_dscto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Und_dscto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fnace", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fnace", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Domicilio", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domicilio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dpto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dpto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prov", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prov", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Dist", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Dist", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fijo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fijo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Movil", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Movil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NroBen", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NroBen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdBca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdBca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumCta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumCta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CCI", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CCI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1779,12 +1753,9 @@ namespace CreditosView.DataSet.DsCreditsTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        ts.Id_Solicitante, ts.Dni_Solic, ts.Codofin_Solic, ts.Carnet_Solic, ts._Paterno as [Paterno], ts._Materno as [Materno], ts._Nombres as [Nombres], ts._Sexo as [Sexo], ts._Situac as [Situac], ts._Und_dscto as [Und_dscto], ts._Grado as [Grado], CASE WHEN ISNULL(TG.[TPLAR], '') 
-                         = '' THEN TGC.[Des_GradCaja] ELSE TG.[TPLAR] END AS [GradoDesc], ts._Fnace as [Fnace], ts._Domicilio as [Domicilio], ts._Dpto as [Dpto], ts._Prov as [Prov], ts._Dist as [Dist], ts._Fijo as [Fijo], ts._Movil as [Movil], ts._Mail as [Mail], ts._NroBen as [NroBen], ts._IdBca as [IdBca], ts._NumCta as [NumCta], ts._CCI as [CCI]
-FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
-                         Tb_Grad AS tg ON ts._Grado = tg.TPCOD LEFT OUTER JOIN
-                         Tb_GradCajaMilpol AS tgc ON ts._Grado = tgc.Id_GradCaja";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandText = "dbo.isp_ListarSolicitantes";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1810,165 +1781,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsCredits.Tb_SolicitantesDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsCredits dataSet) {
-            return this.Adapter.Update(dataSet, "Tb_Solicitantes");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string Dni_Solic, 
-                    string Codofin_Solic, 
-                    string Carnet_Solic, 
-                    string Paterno, 
-                    string Materno, 
-                    string Nombres, 
-                    int Sexo, 
-                    int Situac, 
-                    int Und_dscto, 
-                    int Grado, 
-                    System.DateTime Fnace, 
-                    string Domicilio, 
-                    int Dpto, 
-                    int Prov, 
-                    int Dist, 
-                    string Fijo, 
-                    string Movil, 
-                    string Mail, 
-                    int NroBen, 
-                    string IdBca, 
-                    string NumCta, 
-                    string CCI) {
-            if ((Dni_Solic == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Dni_Solic));
-            }
-            if ((Codofin_Solic == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Codofin_Solic));
-            }
-            if ((Carnet_Solic == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Carnet_Solic));
-            }
-            if ((Paterno == null)) {
-                throw new global::System.ArgumentNullException("Paterno");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Paterno));
-            }
-            if ((Materno == null)) {
-                throw new global::System.ArgumentNullException("Materno");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Materno));
-            }
-            if ((Nombres == null)) {
-                throw new global::System.ArgumentNullException("Nombres");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Nombres));
-            }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Sexo));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Situac));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Und_dscto));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(Grado));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Fnace));
-            if ((Domicilio == null)) {
-                throw new global::System.ArgumentNullException("Domicilio");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Domicilio));
-            }
-            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(Dpto));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(Prov));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(Dist));
-            if ((Fijo == null)) {
-                throw new global::System.ArgumentNullException("Fijo");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Fijo));
-            }
-            if ((Movil == null)) {
-                throw new global::System.ArgumentNullException("Movil");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Movil));
-            }
-            if ((Mail == null)) {
-                throw new global::System.ArgumentNullException("Mail");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Mail));
-            }
-            this.Adapter.InsertCommand.Parameters[18].Value = ((int)(NroBen));
-            if ((IdBca == null)) {
-                throw new global::System.ArgumentNullException("IdBca");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(IdBca));
-            }
-            if ((NumCta == null)) {
-                throw new global::System.ArgumentNullException("NumCta");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(NumCta));
-            }
-            if ((CCI == null)) {
-                throw new global::System.ArgumentNullException("CCI");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(CCI));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
     }
     
     /// <summary>
@@ -1983,8 +1795,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
         
         private UpdateOrderOption _updateOrder;
         
-        private Tb_SolicitantesTableAdapter _tb_SolicitantesTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1997,20 +1807,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public Tb_SolicitantesTableAdapter Tb_SolicitantesTableAdapter {
-            get {
-                return this._tb_SolicitantesTableAdapter;
-            }
-            set {
-                this._tb_SolicitantesTableAdapter = value;
             }
         }
         
@@ -2033,10 +1829,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tb_SolicitantesTableAdapter != null) 
-                            && (this._tb_SolicitantesTableAdapter.Connection != null))) {
-                    return this._tb_SolicitantesTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -2050,9 +1842,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tb_SolicitantesTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -2064,15 +1853,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(DsCredits dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tb_SolicitantesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Tb_Solicitantes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_SolicitantesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -2083,14 +1863,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(DsCredits dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tb_SolicitantesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Tb_Solicitantes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_SolicitantesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -2101,14 +1873,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DsCredits dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tb_SolicitantesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Tb_Solicitantes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_SolicitantesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -2148,11 +1912,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tb_SolicitantesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tb_SolicitantesTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
-                        "sma cadena de conexión.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda" +
@@ -2185,15 +1944,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tb_SolicitantesTableAdapter != null)) {
-                    revertConnections.Add(this._tb_SolicitantesTableAdapter, this._tb_SolicitantesTableAdapter.Connection);
-                    this._tb_SolicitantesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tb_SolicitantesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tb_SolicitantesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tb_SolicitantesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_SolicitantesTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -2251,10 +2001,6 @@ FROM            Tb_Solicitantes AS ts LEFT OUTER JOIN
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._tb_SolicitantesTableAdapter != null)) {
-                    this._tb_SolicitantesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_SolicitantesTableAdapter]));
-                    this._tb_SolicitantesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

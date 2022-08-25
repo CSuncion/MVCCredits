@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2691E892-9633-4BF3-9953-E77BFFFCBDC9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CreditosView</RootNamespace>
-    <AssemblyName>CreditosView</AssemblyName>
+    <RootNamespace>CreditsView</RootNamespace>
+    <AssemblyName>CreditsView</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -137,7 +137,7 @@
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptSolicitante.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
     <None Include="DataSet\DsCredits.xsc">
       <DependentUpon>DsCredits.xsd</DependentUpon>
     </None>

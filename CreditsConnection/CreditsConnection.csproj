@@ -7,8 +7,8 @@
     <ProjectGuid>{09A8124C-AC22-4C87-9026-07C69B98CDAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CreditosConnection</RootNamespace>
-    <AssemblyName>CreditosConnection</AssemblyName>
+    <RootNamespace>CreditsConnection</RootNamespace>
+    <AssemblyName>CreditsConnection</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

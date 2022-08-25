@@ -7,8 +7,8 @@
     <ProjectGuid>{D4A04C84-74E9-4D9B-B3F5-D6C4AD03C0B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CreditosUtil</RootNamespace>
-    <AssemblyName>CreditosUtil</AssemblyName>
+    <RootNamespace>CreditsUtil</RootNamespace>
+    <AssemblyName>CreditsUtil</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Enum\CreditsEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\UtilConvertDataTable.cs" />
     <Compile Include="Util\UtilCredits.cs" />
     <Compile Include="Util\WinPrincipal.cs" />
     <Compile Include="Util\WinTheme.cs" />
