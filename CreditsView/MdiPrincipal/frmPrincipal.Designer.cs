@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlCredits = new System.Windows.Forms.Panel();
+            this.btnCredits = new System.Windows.Forms.Button();
+            this.btnReportApplicant = new System.Windows.Forms.Button();
+            this.pnlReports = new System.Windows.Forms.Panel();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -44,10 +48,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
-            this.btnReportApplicant = new System.Windows.Forms.Button();
-            this.btnCredits = new System.Windows.Forms.Button();
-            this.pnlReports = new System.Windows.Forms.Panel();
-            this.pnlCredits = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.ssStatusBar.SuspendLayout();
@@ -66,6 +66,40 @@
             this.pnlMenu.Controls.Add(this.pnlLogo);
             resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.Name = "pnlMenu";
+            // 
+            // pnlCredits
+            // 
+            this.pnlCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            resources.ApplyResources(this.pnlCredits, "pnlCredits");
+            this.pnlCredits.Name = "pnlCredits";
+            // 
+            // btnCredits
+            // 
+            this.btnCredits.FlatAppearance.BorderSize = 0;
+            this.btnCredits.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnCredits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnCredits, "btnCredits");
+            this.btnCredits.ForeColor = System.Drawing.Color.White;
+            this.btnCredits.Name = "btnCredits";
+            this.btnCredits.UseVisualStyleBackColor = true;
+            // 
+            // btnReportApplicant
+            // 
+            this.btnReportApplicant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(55)))));
+            this.btnReportApplicant.FlatAppearance.BorderSize = 0;
+            this.btnReportApplicant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnReportApplicant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnReportApplicant, "btnReportApplicant");
+            this.btnReportApplicant.ForeColor = System.Drawing.Color.White;
+            this.btnReportApplicant.Name = "btnReportApplicant";
+            this.btnReportApplicant.UseVisualStyleBackColor = false;
+            this.btnReportApplicant.Click += new System.EventHandler(this.btnReportApplicant_Click);
+            // 
+            // pnlReports
+            // 
+            this.pnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            resources.ApplyResources(this.pnlReports, "pnlReports");
+            this.pnlReports.Name = "pnlReports";
             // 
             // btnReports
             // 
@@ -180,40 +214,6 @@
             this.tmMostrarMenu.Interval = 15;
             this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
             // 
-            // btnReportApplicant
-            // 
-            this.btnReportApplicant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(55)))));
-            this.btnReportApplicant.FlatAppearance.BorderSize = 0;
-            this.btnReportApplicant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnReportApplicant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnReportApplicant, "btnReportApplicant");
-            this.btnReportApplicant.ForeColor = System.Drawing.Color.White;
-            this.btnReportApplicant.Name = "btnReportApplicant";
-            this.btnReportApplicant.UseVisualStyleBackColor = false;
-            this.btnReportApplicant.Click += new System.EventHandler(this.btnReportApplicant_Click);
-            // 
-            // btnCredits
-            // 
-            this.btnCredits.FlatAppearance.BorderSize = 0;
-            this.btnCredits.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnCredits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnCredits, "btnCredits");
-            this.btnCredits.ForeColor = System.Drawing.Color.White;
-            this.btnCredits.Name = "btnCredits";
-            this.btnCredits.UseVisualStyleBackColor = true;
-            // 
-            // pnlReports
-            // 
-            this.pnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            resources.ApplyResources(this.pnlReports, "pnlReports");
-            this.pnlReports.Name = "pnlReports";
-            // 
-            // pnlCredits
-            // 
-            this.pnlCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            resources.ApplyResources(this.pnlCredits, "pnlCredits");
-            this.pnlCredits.Name = "pnlCredits";
-            // 
             // frmPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -223,9 +223,11 @@
             this.Controls.Add(this.pnlBarTit);
             this.Controls.Add(this.ssStatusBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPrincipal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.Resize += new System.EventHandler(this.frmPrincipal_Resize);
             this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ssStatusBar.ResumeLayout(false);

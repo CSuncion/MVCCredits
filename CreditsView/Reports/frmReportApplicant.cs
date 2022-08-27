@@ -1,4 +1,4 @@
-﻿using CreditosUtil.Util;
+﻿using CreditsUtil.Util;
 using CreditsController.Controller;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinControles;
 
-namespace CreditosView.Reports
+namespace CreditsView.Reports
 {
     public partial class frmReportApplicant : Form
     {

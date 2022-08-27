@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Comun">
-      <HintPath>..\CreditsView\bin\Debug\Comun.dll</HintPath>
+      <HintPath>..\Dlls\Comun.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

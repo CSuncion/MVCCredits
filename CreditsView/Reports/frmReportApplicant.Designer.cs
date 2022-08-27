@@ -1,4 +1,4 @@
-﻿namespace CreditosView.Reports
+﻿namespace CreditsView.Reports
 {
     partial class frmReportApplicant
     {
