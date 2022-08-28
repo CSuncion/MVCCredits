@@ -63,6 +63,7 @@
             // tsTxtBusqueda
             // 
             this.tsTxtBusqueda.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsTxtBusqueda.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tsTxtBusqueda.Name = "tsTxtBusqueda";
             this.tsTxtBusqueda.Size = new System.Drawing.Size(220, 25);
             // 
@@ -91,7 +92,7 @@
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportApplicant";
-            this.Text = "Form1";
+            this.Text = "Reporte Solicitantes";
             this.Load += new System.EventHandler(this.frmReportApplicant_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();

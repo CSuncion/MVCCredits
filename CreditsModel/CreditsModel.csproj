@@ -54,6 +54,7 @@
     <Compile Include="ModelDto\CreditsApplicantDto.cs" />
     <Compile Include="ModelDto\CreditsDto.cs" />
     <Compile Include="ModelDto\CreditsAccessDto.cs" />
+    <Compile Include="ModelDto\CreditsMesesDto.cs" />
     <Compile Include="ModelDto\CreditsOperationsDto.cs" />
     <Compile Include="ModelDto\Universal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

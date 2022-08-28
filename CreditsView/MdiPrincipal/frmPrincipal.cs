@@ -98,6 +98,10 @@ namespace CreditsView.MdiPrincipal
         {
 
         }
+        private void btnCreditsGranted_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportGranted();
+        }
         #endregion
 
         #region Methods
@@ -208,20 +212,33 @@ namespace CreditsView.MdiPrincipal
             this.FormatoVentanaHijoPrincipal(win, this.btnReportApplicant, null, 0, 0);
             win.NewWindow();
         }
-
+        public void InstanciarReportGranted()
+        {
+            frmCreditosOtorgados win = new frmCreditosOtorgados();
+            this.FormatoVentanaHijoPrincipal(win, this.btnCreditsGranted, null, 0, 0);
+            win.NewWindow();
+        }
         public void ShowOptionsReport()
         {
             if (this.btnReportApplicant.Visible)
             {
                 this.btnReportApplicant.Visible = false;
-                this.btnCredits.Location = new Point(3, 190);
-                this.pnlCredits.Location = new Point(3, 190);
+                this.btnCreditType.Visible = false;
+                this.btnCreditsGranted.Visible = false;
+                this.btnPositiveBalance.Visible = false;
+                this.btnDecomicSheet.Visible = false;
+                this.btnCredits.Location = new Point(3, 170);
+                this.pnlCredits.Location = new Point(3, 170);
             }
             else
             {
                 this.btnReportApplicant.Visible = true;
-                this.btnCredits.Location = new Point(3, 250);
-                this.pnlCredits.Location = new Point(3, 250);
+                this.btnCreditType.Visible = true;
+                this.btnCreditsGranted.Visible = true;
+                this.btnPositiveBalance.Visible = true;
+                this.btnDecomicSheet.Visible = true;
+                this.btnCredits.Location = new Point(3, 360);
+                this.pnlCredits.Location = new Point(3, 360);
             }
         }
 

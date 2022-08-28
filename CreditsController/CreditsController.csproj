@@ -46,8 +46,9 @@
   <ItemGroup>
     <Compile Include="Controller\CreditsAccessController.cs" />
     <Compile Include="Controller\CreditsApplicantController.cs" />
-    <Compile Include="Controller\CreditsController.cs" />
+    <Compile Include="Controller\CreditsGeneralController.cs" />
     <Compile Include="Controller\CreditsOperationsController.cs" />
+    <Compile Include="Controller\CreditsReportController.cs" />
     <Compile Include="Controller\PermissionsCreditsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -76,9 +76,8 @@ namespace CreditsView.Reports
             }
             catch (Exception e)
             {
-                Mensaje.OperacionSatisfactoria(e.Message, "error");
+                Mensaje.OperacionDenegada(e.Message, "error");
             }
-
         }
     }
 }

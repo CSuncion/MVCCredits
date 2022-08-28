@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CreditsRepository.IRepository
 {
-    public interface ICreditsRepository
+    public interface ICreditsReportRepository
     {
+        List<dynamic> ListarCreditosOtorgados(int anio);
     }
 }

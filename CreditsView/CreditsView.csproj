@@ -112,6 +112,18 @@
     <Compile Include="Reports\frmReportApplicant.Designer.cs">
       <DependentUpon>frmReportApplicant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmCreditosOtorgados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmCreditosOtorgados.Designer.cs">
+      <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmReportCreditosOtorgados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportCreditosOtorgados.Designer.cs">
+      <DependentUpon>frmReportCreditosOtorgados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,10 +144,17 @@
     <EmbeddedResource Include="Reports\frmReportApplicant.resx">
       <DependentUpon>frmReportApplicant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmCreditosOtorgados.resx">
+      <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportCreditosOtorgados.resx">
+      <DependentUpon>frmReportCreditosOtorgados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />
     <None Include="DataSet\DsCredits.xsc">
       <DependentUpon>DsCredits.xsd</DependentUpon>
     </None>
