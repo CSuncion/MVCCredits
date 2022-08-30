@@ -195,7 +195,7 @@ namespace CreditsView.MdiPrincipal
         {
             pBtn.Enabled = false;
             if (pAccDir != null) { pAccDir.Enabled = false; }
-            this.tbcContainer.Visible = true;
+            this.tbcContainer.Visible = true;       
             //this.BackColor = System.Drawing.SystemColors.Control;
             this.BackColor = Color.White;
             TabCtrl.InsertarVentanaConTabPage(this.tbcContainer, pWin, PAncVen, pAltVen);

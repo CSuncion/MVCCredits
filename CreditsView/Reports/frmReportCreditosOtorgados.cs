@@ -65,5 +65,10 @@ namespace CreditsView.Reports
                 Mensaje.OperacionDenegada(e.Message, "error");
             }
         }
+
+        private void tsBtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

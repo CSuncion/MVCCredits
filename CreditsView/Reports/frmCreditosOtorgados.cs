@@ -11,6 +11,7 @@ using WinControles.ControlesWindows;
 using CreditsUtil.Util;
 using CreditsController.Controller;
 using WinControles;
+using CreditsView.MdiPrincipal;
 
 namespace CreditsView.Reports
 {
@@ -25,31 +26,26 @@ namespace CreditsView.Reports
         public void NewWindow()
         {
             this.Show();
-            this.ActualizarVentana();
-            //this.fillChart();
         }
-        public void ActualizarVentana()
-        {
-
-        }
-        public void CargarMes()
-        {
-            //Cmb.Cargar(this.cmbMes, objGeneralController.ListarMeses(), "Id_Mes", "Des_Mes");
-        }
-
         private void frmReportCreditosOtorgados_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            this.Cerrar();
         }
 
         private void tsBtnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnGenerarGrafica_Click(object sender, EventArgs e)
         {
             this.AccionGenerarGrafica();
+        }
+
+        public void Cerrar()
+        {
+            frmPrincipal wMen = (frmPrincipal)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.btnCreditsGranted, null);
         }
         public void AccionGenerarGrafica()
         {
@@ -60,6 +56,12 @@ namespace CreditsView.Reports
             if (!esNumerico)
             {
                 Mensaje.OperacionDenegada("Debe ser numerico", this.Text);
+                return;
+            }
+
+            if(this.txtAnio.Text.Length < 4)
+            {
+                Mensaje.OperacionDenegada("Debe ser un año valido", this.Text);
                 return;
             }
 

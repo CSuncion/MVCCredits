@@ -54,9 +54,11 @@
             this.tsBtnSalir.Name = "tsBtnSalir";
             this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
             this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // rvReportCreditosOtorgados
             // 
+            this.rvReportCreditosOtorgados.AutoSize = true;
             this.rvReportCreditosOtorgados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rvReportCreditosOtorgados.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportCreditoOtorgados.rdlc";
             this.rvReportCreditosOtorgados.Location = new System.Drawing.Point(0, 25);
