@@ -40,5 +40,29 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return creditoOtorgados;
         }
+        public List<dynamic> ListarTipoCreditos(int anio)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strAnio", anio)
+                };
+
+            List<dynamic> tipoCreditos = new List<dynamic>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarTipoCreditos");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                tipoCreditos.Add(new
+                {
+                    Productos = (string)xIdr[0],
+                    CreditosAprobados = (int)xIdr[1],
+                    MontosAprobados = (decimal)xIdr[2]
+                });
+            }
+            xObjCn.Disconnect();
+            return tipoCreditos;
+        }
     }
 }

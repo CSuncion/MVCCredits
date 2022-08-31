@@ -118,6 +118,12 @@
     <Compile Include="Reports\frmCreditosOtorgados.Designer.cs">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportTipoCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportTipoCreditos.Designer.cs">
+      <DependentUpon>frmReportTipoCreditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportCreditosOtorgados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="Reports\frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmTipoCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmTipoCreditos.designer.cs">
+      <DependentUpon>frmTipoCreditos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Login\frmLogin.resx">
@@ -147,14 +159,21 @@
     <EmbeddedResource Include="Reports\frmCreditosOtorgados.resx">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportTipoCreditos.resx">
+      <DependentUpon>frmReportTipoCreditos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportCreditosOtorgados.resx">
       <DependentUpon>frmReportCreditosOtorgados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmTipoCreditos.resx">
+      <DependentUpon>frmTipoCreditos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportTipoCreditos.rdlc" />
     <None Include="DataSet\DsCredits.xsc">
       <DependentUpon>DsCredits.xsd</DependentUpon>
     </None>

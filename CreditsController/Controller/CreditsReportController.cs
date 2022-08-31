@@ -19,5 +19,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarCreditosOtorgados(anio);
         }
+        public List<dynamic> ListarTipoCreditos(int anio)
+        {
+            return this._iCreditsReportRepository.ListarTipoCreditos(anio);
+        }
     }
 }

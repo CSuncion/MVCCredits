@@ -1,6 +1,6 @@
 ﻿namespace CreditsView.Reports
 {
-    partial class frmCreditosOtorgados
+    partial class frmTipoCreditos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreditosOtorgados));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoCreditos));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
-            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAnio = new System.Windows.Forms.TextBox();
             this.btnGenerarGrafica = new System.Windows.Forms.Button();
+            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,24 +51,14 @@
             this.tsPrincipal.Stretch = true;
             this.tsPrincipal.TabIndex = 2;
             // 
-            // tsBtnSalir
-            // 
-            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
-            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnSalir.Name = "tsBtnSalir";
-            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
-            this.tsBtnSalir.Text = "Salir";
-            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 35);
+            this.label3.Location = new System.Drawing.Point(109, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 13);
+            this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "CRÉDITOS OTORGADOS";
+            this.label3.Text = "TIPO CRÉDITOS";
             // 
             // panel1
             // 
@@ -108,7 +98,17 @@
             this.btnGenerarGrafica.UseVisualStyleBackColor = true;
             this.btnGenerarGrafica.Click += new System.EventHandler(this.btnGenerarGrafica_Click);
             // 
-            // frmCreditosOtorgados
+            // tsBtnSalir
+            // 
+            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
+            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnSalir.Name = "tsBtnSalir";
+            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
+            this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
+            // 
+            // frmTipoCreditos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,10 +122,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCreditosOtorgados";
+            this.Name = "frmTipoCreditos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Créditos Otorgados";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCreditosOtorgados_FormClosing);
+            this.Text = "Tipo Créditos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTipoCreditos_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);

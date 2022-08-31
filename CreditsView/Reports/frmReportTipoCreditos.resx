@@ -120,14 +120,4 @@
   <metadata name="tsPrincipal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnGenerarGrafica.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAMFJREFUWEft1TEKAjEUhOF0orU2Fta22lvbiTex9xB6Bi9g6yWsFbyDZ9AZNRDI
-        22QVnijMgw+yJNn9uw0apxnCqmIJbjODG5zhZLjCAdwmBvQeT/lsQAEK+K2AAYwqOtB23g7gAy+U8KVt
-        56OAHYwNE/hKwPa5zKYLClBADOC6X8EzbgHr17qEZ1wD+D+fNuCee8ARmoZ7ClCAAhTwvwF7mBsWkAZc
-        wDpH3EsDeNc6x29lAbxQEgOsvVQaUIJvhnAHxoDVQrWnVjAAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

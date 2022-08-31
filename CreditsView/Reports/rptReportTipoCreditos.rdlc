@@ -7,22 +7,18 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>397c0e93-af2b-43f3-a4c6-6e23493dff39</rd:DataSourceID>
+      <rd:DataSourceID>5e92a0d6-eac9-41cf-bdbe-6092ce0dea83</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsCreditosOtorgados">
+    <DataSet Name="dsTipoCreditos">
       <Query>
         <DataSourceName>DsCredits</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Id_Mes">
-          <DataField>Id_Mes</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Des_Mes">
-          <DataField>Des_Mes</DataField>
+        <Field Name="Productos">
+          <DataField>Productos</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CreditosAprobados">
@@ -37,10 +33,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DsCredits</rd:DataSetName>
         <rd:SchemaPath>D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\DataSet\DsCredits.xsd</rd:SchemaPath>
-        <rd:TableName>isp_ListarCreditosOtorgados</rd:TableName>
+        <rd:TableName>isp_ListarTipoCreditos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>isp_ListarCreditosOtorgadosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>isp_ListarTipoCreditosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -48,38 +44,38 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Chart Name="chrCreditosAprobados">
+          <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Des_Mes.Value</GroupExpression>
+                      <GroupExpression>=Fields!Productos.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Id_Mes.Value</Value>
+                      <Value>=Fields!Productos.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Des_Mes.Value</Label>
+                  <Label>=Fields!Productos.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="chrCreditosAprobados_SeriesGroup">
+                  <Group Name="Chart1_SeriesGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Des_Mes.Value</GroupExpression>
+                      <GroupExpression>=Fields!Productos.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Id_Mes.Value</Value>
+                      <Value>=Fields!Productos.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Des_Mes.Value</Label>
+                  <Label>=Fields!Productos.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
@@ -89,29 +85,26 @@
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
+                        <X>=Fields!Productos.Value</X>
                         <Y>=Sum(Fields!CreditosAprobados.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontSize>7pt</FontSize>
+                        </Style>
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style>
-                        <Border>
-                          <Color>Black</Color>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
+                      <ToolTip>=Sum(Fields!CreditosAprobados.Value)</ToolTip>
+                      <Style />
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Style>
-                    <ShadowColor>Gray</ShadowColor>
-                    <ShadowOffset>0.5pt</ShadowOffset>
-                  </Style>
+                  <Type>Shape</Type>
+                  <Style />
                   <ChartEmptyPoints>
                     <Style />
                     <ChartMarker>
@@ -139,7 +132,7 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
-                      <FontSize>7pt</FontSize>
+                      <FontSize>8pt</FontSize>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
@@ -184,7 +177,6 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
-                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -357,6 +349,9 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -369,7 +364,6 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
-                <Position>RightCenter</Position>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -394,12 +388,10 @@
                   <Color>#a6a6a6</Color>
                 </Style>
                 <Position>TopLeft</Position>
-                <DockOutsideChartArea>true</DockOutsideChartArea>
               </ChartTitle>
             </ChartTitles>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
-              <ChartBorderSkinType>Emboss</ChartBorderSkinType>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
                 <BackgroundGradientType>None</BackgroundGradientType>
@@ -415,51 +407,51 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>dsCreditosOtorgados</DataSetName>
-            <Top>0.55245cm</Top>
-            <Height>6.27cm</Height>
-            <Width>29.6598cm</Width>
+            <DataSetName>dsTipoCreditos</DataSetName>
+            <Top>0.31433cm</Top>
+            <Height>8.99521cm</Height>
+            <Width>13.92938cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
               <BackgroundColor>White</BackgroundColor>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Chart Name="chrMontosAprobados">
+          <Chart Name="Chart2">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup2">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Des_Mes.Value</GroupExpression>
+                      <GroupExpression>=Fields!Productos.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Id_Mes.Value</Value>
+                      <Value>=Fields!Productos.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Des_Mes.Value</Label>
+                  <Label>=Fields!Productos.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="chrMontosAprobados_SeriesGroup">
+                  <Group Name="Chart1_SeriesGroup2">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Des_Mes.Value</GroupExpression>
+                      <GroupExpression>=Fields!Productos.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Id_Mes.Value</Value>
+                      <Value>=Fields!Productos.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Des_Mes.Value</Label>
+                  <Label>=Fields!Productos.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
@@ -469,27 +461,31 @@
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
+                        <X>=Fields!Productos.Value</X>
                         <Y>=Sum(Fields!MontosAprobados.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
+                          <FontSize>7pt</FontSize>
                           <Format>'S/'#,0.00;('S/'#,0.00)</Format>
                           <rd:FormatSymbolCulture>quz-PE</rd:FormatSymbolCulture>
                         </Style>
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <ToolTip>=Sum(Fields!MontosAprobados.Value)</ToolTip>
+                      <Style>
+                        <BackgroundGradientType>None</BackgroundGradientType>
+                        <BackgroundHatchType>None</BackgroundHatchType>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Style>
-                    <ShadowColor>Gray</ShadowColor>
-                    <ShadowOffset>0.5pt</ShadowOffset>
-                  </Style>
+                  <Type>Shape</Type>
+                  <Style />
                   <ChartEmptyPoints>
                     <Style />
                     <ChartMarker>
@@ -517,7 +513,7 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
-                      <FontSize>7pt</FontSize>
+                      <FontSize>8pt</FontSize>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
@@ -562,7 +558,6 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
-                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -735,10 +730,12 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <BackgroundHatchType>None</BackgroundHatchType>
                 </Style>
               </ChartArea>
             </ChartAreas>
@@ -748,7 +745,6 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
-                <Position>RightCenter</Position>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -777,7 +773,6 @@
             </ChartTitles>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
-              <ChartBorderSkinType>Emboss</ChartBorderSkinType>
               <Style>
                 <BackgroundColor>Gray</BackgroundColor>
                 <BackgroundGradientType>None</BackgroundGradientType>
@@ -793,26 +788,26 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>dsCreditosOtorgados</DataSetName>
-            <Top>6.89301cm</Top>
-            <Height>6.27cm</Height>
-            <Width>29.6598cm</Width>
+            <DataSetName>dsTipoCreditos</DataSetName>
+            <Top>0.31433cm</Top>
+            <Left>14.10576cm</Left>
+            <Height>8.99521cm</Height>
+            <Width>13.99299cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
               <BackgroundColor>White</BackgroundColor>
               <BackgroundGradientType>None</BackgroundGradientType>
-              <BackgroundHatchType>None</BackgroundHatchType>
             </Style>
           </Chart>
         </ReportItems>
-        <Height>5.3735in</Height>
+        <Height>3.69642in</Height>
         <Style />
       </Body>
-      <Width>11.67709in</Width>
+      <Width>11.0625in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -826,7 +821,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CRÉDITOS OTORGADOS</Value>
+                      <Value>TIPO CRÉDITOS</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -839,8 +834,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.79057cm</Top>
-              <Left>11.05641cm</Left>
+              <Top>0.90386cm</Top>
+              <Left>10.70916cm</Left>
               <Height>0.73229cm</Height>
               <Width>6.83917cm</Width>
               <Style>
@@ -860,8 +855,8 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>
@@ -877,7 +872,6 @@
       <NumberOfRows>2</NumberOfRows>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>a7908584-559e-49a2-97e8-fffa702b7752</rd:ReportID>
+  <rd:ReportID>75bd157d-2ceb-4475-ac0a-766896188be1</rd:ReportID>
 </Report>

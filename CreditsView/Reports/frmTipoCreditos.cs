@@ -15,11 +15,11 @@ using CreditsView.MdiPrincipal;
 
 namespace CreditsView.Reports
 {
-    public partial class frmCreditosOtorgados : Form
+    public partial class frmTipoCreditos : Form
     {
         UtilFechas objUtilFechas = new UtilFechas();
         CreditsGeneralController objGeneralController = new CreditsGeneralController();
-        public frmCreditosOtorgados()
+        public frmTipoCreditos()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace CreditsView.Reports
         {
             this.Show();
         }
-        private void frmCreditosOtorgados_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmTipoCreditos_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Cerrar();
         }
@@ -45,7 +45,7 @@ namespace CreditsView.Reports
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnCreditsGranted, null);
+            wMen.CerrarVentanaHijo(this, wMen.btnCreditType, null);
         }
         public void AccionGenerarGrafica()
         {
@@ -65,8 +65,8 @@ namespace CreditsView.Reports
                 return;
             }
 
-            frmReportCreditosOtorgados win = new frmReportCreditosOtorgados();
-            win.wCreOto = this;
+            frmReportTipoCreditos win = new frmReportTipoCreditos();
+            win.wTipCred = this;
             TabCtrl.InsertarVentana(this, win);
             win.MostrarGrafico();
 

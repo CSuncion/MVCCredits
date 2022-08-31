@@ -102,6 +102,10 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarReportGranted();
         }
+        private void btnCreditType_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportTypeCredit();
+        }
         #endregion
 
         #region Methods
@@ -216,6 +220,12 @@ namespace CreditsView.MdiPrincipal
         {
             frmCreditosOtorgados win = new frmCreditosOtorgados();
             this.FormatoVentanaHijoPrincipal(win, this.btnCreditsGranted, null, 0, 0);
+            win.NewWindow();
+        }
+        public void InstanciarReportTypeCredit()
+        {
+            frmTipoCreditos win = new frmTipoCreditos();
+            this.FormatoVentanaHijoPrincipal(win, this.btnCreditType, null, 0, 0);
             win.NewWindow();
         }
         public void ShowOptionsReport()
