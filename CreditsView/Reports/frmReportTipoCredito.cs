@@ -12,17 +12,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinControles;
+using WinControles.ControlesWindows;
 
 namespace CreditsView.Reports
 {
-    public partial class frmReportTipoCreditos : Form
+    public partial class frmReportTipoCredito : Form
     {
-        public frmTipoCreditos wTipCred;
+        public frmTipoCredito wTipCred;
         CreditsReportController objReportController = new CreditsReportController();
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
-        public string nombreReporte = "CreditsView.Reports.rptReportTipoCreditos.rdlc";
+        public string nombreReporte = "CreditsView.Reports.rptReportTipoCredito.rdlc";
         public string formaReporte = "Normal";
-        public frmReportTipoCreditos()
+        public frmReportTipoCredito()
         {
             InitializeComponent();
         }
@@ -33,12 +34,14 @@ namespace CreditsView.Reports
             try
             {
                 ReportDataSource rds = new ReportDataSource();
-                rds.Name = "dsTipoCreditos";
-                rds.Value = objReportController.ListarTipoCreditos(Convert.ToInt32(this.wTipCred.txtAnio.Text));
+                rds.Name = "dsTipoCredito";
+                rds.Value = objReportController.ListarTipoCreditoPorAnio(Convert.ToInt32(this.wTipCred.txtAnio.Text),
+                    Convert.ToInt32(Cmb.ObtenerValor(this.wTipCred.cmbCentroCosto)));
 
-                ReportParameter[] rp = new ReportParameter[1];
-                rp[0] = new ReportParameter("txtReportAnio", this.wTipCred.txtAnio.Text); 
-            
+                ReportParameter[] rp = new ReportParameter[2];
+                rp[0] = new ReportParameter("txtReportAnio", this.wTipCred.txtAnio.Text);
+                rp[1] = new ReportParameter("txtReportTipoCredito", Cmb.ObtenerTexto(this.wTipCred.cmbCentroCosto));
+
 
                 this.rvReportTipoCreditos.Reset();
                 this.rvReportTipoCreditos.LocalReport.ReportEmbeddedResource = nombreReporte;
@@ -70,7 +73,7 @@ namespace CreditsView.Reports
             this.Close();
         }
 
-        private void frmReportTipoCreditos_Load(object sender, EventArgs e)
+        private void frmReportTiposCreditos_Load(object sender, EventArgs e)
         {
             this.rvReportTipoCreditos.RefreshReport();
         }

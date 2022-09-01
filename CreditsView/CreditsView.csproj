@@ -118,11 +118,17 @@
     <Compile Include="Reports\frmCreditosOtorgados.Designer.cs">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmReportTipoCreditos.cs">
+    <Compile Include="Reports\frmReportTipoCredito.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\frmReportTipoCreditos.Designer.cs">
-      <DependentUpon>frmReportTipoCreditos.cs</DependentUpon>
+    <Compile Include="Reports\frmReportTipoCredito.Designer.cs">
+      <DependentUpon>frmReportTipoCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmReportTiposCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportTiposCreditos.Designer.cs">
+      <DependentUpon>frmReportTiposCreditos.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmReportCreditosOtorgados.cs">
       <SubType>Form</SubType>
@@ -136,11 +142,17 @@
     <Compile Include="Reports\frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmTipoCreditos.cs">
+    <Compile Include="Reports\frmTipoCredito.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\frmTipoCreditos.designer.cs">
-      <DependentUpon>frmTipoCreditos.cs</DependentUpon>
+    <Compile Include="Reports\frmTipoCredito.designer.cs">
+      <DependentUpon>frmTipoCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmTiposCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmTiposCreditos.designer.cs">
+      <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Login\frmLogin.resx">
@@ -159,8 +171,11 @@
     <EmbeddedResource Include="Reports\frmCreditosOtorgados.resx">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmReportTipoCreditos.resx">
-      <DependentUpon>frmReportTipoCreditos.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\frmReportTipoCredito.resx">
+      <DependentUpon>frmReportTipoCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportTiposCreditos.resx">
+      <DependentUpon>frmReportTiposCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportCreditosOtorgados.resx">
       <DependentUpon>frmReportCreditosOtorgados.cs</DependentUpon>
@@ -168,12 +183,16 @@
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmTipoCreditos.resx">
-      <DependentUpon>frmTipoCreditos.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\frmTipoCredito.resx">
+      <DependentUpon>frmTipoCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmTiposCreditos.resx">
+      <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />
-    <EmbeddedResource Include="Reports\rptReportTipoCreditos.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportTipoCredito.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportTiposCreditos.rdlc" />
     <None Include="DataSet\DsCredits.xsc">
       <DependentUpon>DsCredits.xsd</DependentUpon>
     </None>

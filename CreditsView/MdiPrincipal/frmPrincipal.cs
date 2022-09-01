@@ -104,6 +104,14 @@ namespace CreditsView.MdiPrincipal
         }
         private void btnCreditType_Click(object sender, EventArgs e)
         {
+            this.InstanciarReportTypesCredits();
+        }
+        private void btnTipoCreditoAnual_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportTypeCredit();
+        }
+        private void btnTipoCreditoAnual_Click_1(object sender, EventArgs e)
+        {
             this.InstanciarReportTypeCredit();
         }
         #endregion
@@ -222,33 +230,32 @@ namespace CreditsView.MdiPrincipal
             this.FormatoVentanaHijoPrincipal(win, this.btnCreditsGranted, null, 0, 0);
             win.NewWindow();
         }
-        public void InstanciarReportTypeCredit()
+        public void InstanciarReportTypesCredits()
         {
-            frmTipoCreditos win = new frmTipoCreditos();
+            frmTiposCreditos win = new frmTiposCreditos();
             this.FormatoVentanaHijoPrincipal(win, this.btnCreditType, null, 0, 0);
             win.NewWindow();
         }
+        public void InstanciarReportTypeCredit()
+        {
+            frmTipoCredito win = new frmTipoCredito();
+            this.FormatoVentanaHijoPrincipal(win, this.btnTipoCreditoAnual, null, 0, 0);
+            win.NewWindow();
+        }
+
         public void ShowOptionsReport()
         {
-            if (this.btnReportApplicant.Visible)
+            if (this.pnlBtnReports.Visible)
             {
-                this.btnReportApplicant.Visible = false;
-                this.btnCreditType.Visible = false;
-                this.btnCreditsGranted.Visible = false;
-                this.btnPositiveBalance.Visible = false;
-                this.btnDecomicSheet.Visible = false;
+                this.pnlBtnReports.Visible = false;
                 this.btnCredits.Location = new Point(3, 170);
                 this.pnlCredits.Location = new Point(3, 170);
             }
             else
             {
-                this.btnReportApplicant.Visible = true;
-                this.btnCreditType.Visible = true;
-                this.btnCreditsGranted.Visible = true;
-                this.btnPositiveBalance.Visible = true;
-                this.btnDecomicSheet.Visible = true;
-                this.btnCredits.Location = new Point(3, 360);
-                this.pnlCredits.Location = new Point(3, 360);
+                this.pnlBtnReports.Visible = true;
+                this.btnCredits.Location = new Point(3, 400);
+                this.pnlCredits.Location = new Point(3, 400);
             }
         }
 

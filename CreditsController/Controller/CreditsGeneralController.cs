@@ -20,5 +20,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsGeneralRepository.ListarMeses();
         }
+        public List<CreditsCentroCostosDto> ListarCentroCostos(string codCosto)
+        {
+            return this._iCreditsGeneralRepository.ListarCentroCostos(codCosto);
+        }
     }
 }

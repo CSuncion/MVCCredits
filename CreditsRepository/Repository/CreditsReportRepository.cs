@@ -64,5 +64,31 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return tipoCreditos;
         }
+        public List<dynamic> ListarTipoCreditoPorAnio(int anio, int codCentroCosto)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strAnio", anio),
+                new SqlParameter("@strCodCentroCosto", codCentroCosto),
+                };
+
+            List<dynamic> tipoCreditos = new List<dynamic>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarTipoCreditoPorAnio");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                tipoCreditos.Add(new
+                {
+                    Id_Mes = (int)xIdr[0],
+                    Des_Mes = (string)xIdr[1],
+                    CreditosAprobados = (int)xIdr[2],
+                    MontosAprobados = (decimal)xIdr[3]
+                });
+            }
+            xObjCn.Disconnect();
+            return tipoCreditos;
+        }
     }
 }

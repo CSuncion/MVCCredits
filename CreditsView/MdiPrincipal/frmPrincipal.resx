@@ -117,18 +117,160 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pnlCredits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 171</value>
+  </data>
+  <data name="pnlCredits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>5, 35</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pnlCredits.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;pnlCredits.Name" xml:space="preserve">
+    <value>pnlCredits</value>
+  </data>
+  <data name="&gt;&gt;pnlCredits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlCredits.Parent" xml:space="preserve">
+    <value>pnlMenu</value>
+  </data>
+  <data name="&gt;&gt;pnlCredits.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCredits.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCredits.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnCredits.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAPvvAAD77wELeaLCAAACgklE
+        QVRYR+3WWahNYRTA8W0mQ4okM5GhRPGgJBlKUkRRorygzKLkBUmIEMpYIg9kjExFKaV4oCSzUJ68KQ+e
+        /f/3nu+07z4fd9vHxsNd9auzv9vZZ91vrW/tnbTE/xJt0L5krRGNxbiEO7hdEu99CqNREx+xB6uwpiQr
+        cRUn0QpNwgSGNH4sNUzEnbAcTeIbzuNEiY7jESxHTQJfcRQ7saskO3APN1GTwN8qwVjMRa4e6Iw5WIts
+        QxVlk4dG975L0A/JFyzHdHR1gdiAl7iFGxluY/aYFfEYd5F8x0NcxjAXCJtmIwZiBmamjEEHWEsHmANG
+        YZi1Ta3F+Hc5Ez4j+YRR8MuhPibgdtlA7xCyfgp3wQS8yThMxRRMQEcMTq1luT4UhmW3/NEeMIHVOIK9
+        MLl2mA+3zR/qget4g9d4AHdwM97iVYTrnjYjdwLuQojZMIFOcLd6wkZSL7jFXVJrfTNc6wbjjyYQbt6/
+        IvvDQaEE8pQgtt0xv1UCm3A33iNPE+YRbUKPgkfCG/pfGmEHesMvTksZiZppViCqCdxHeFBchJ3ss8GJ
+        VTScCfNwFr4HLMUhnINDzxJWExgAx6LjcRlsrGOoJ4FZeI5t2Ion2A8nrJ/d3UFoSCAWoQROPl8i5LPB
+        IXOwcr0JHj1/wOsDcHIaNu/2xo8NR9OGDeVdBPvI4ddsAuOxrmIi+mBF5XoBusMbeu3WmpBxGPtgr9hb
+        w+EDzvD71zACv0ygnhJMxjOcwWm8wBVYWkuzEM2WoJ4EDHfPF5EtmIT1cKZ4kixLtQljYcP42K3nRdUX
+        0cBtT3/2vr4If0A0POsexbJe1b3vBXhUfxpukyO4LM6KlvjXkSQ/AJqTAO7sFJ8JAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnCredits.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCredits.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 171</value>
+  </data>
+  <data name="btnCredits.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 35</value>
+  </data>
+  <data name="btnCredits.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btnCredits.Text" xml:space="preserve">
+    <value>  Créditos</value>
+  </data>
+  <data name="btnCredits.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnCredits.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnCredits.Name" xml:space="preserve">
+    <value>btnCredits</value>
+  </data>
+  <data name="&gt;&gt;btnCredits.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCredits.Parent" xml:space="preserve">
+    <value>pnlMenu</value>
+  </data>
+  <data name="&gt;&gt;btnCredits.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnTipoCreditoAnual.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnTipoCreditoAnual.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnTipoCreditoAnual.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAATrzAAE68wEXCzLMAAAAB3RJ
+        TUUH5gIUBi4t4yfofAAAAsVJREFUWEft17erFUEUgPGHEbEwVWbM2vgfqBjBXjGgiKgYUAQLMRWmVgXB
+        gIoWFgqKFrbmgJ2dijYGUBtTYc7fh3tgmLv73t7H1UI88IO9s7O7Z3fOzO5t+x9NxgDMxiqsLizAWHTB
+        H42puIFP+Jn4jidYhx74IzEOd5FeOPceS9GS6I/F2I8DuAQv4t2eRgzBSuzGS7j/IQ7hIDbCoWk6BuEc
+        viG9Q73ABKTRDWeQ99U9zERTsQtxgjd4jFfF7w9Yj2GFoZiC+3C/w2A9PEfcwE1YvLXCjnfggQ8wDT6R
+        uXiNSOIpvFCanPZiCHz0J4u2j3Dm1ArvyhN74FEbivAxb8BbxMVS3q3DZrIR1kjst2ZqRZqAhZSGSczC
+        PkShhRWwcNNIE3C7VrSXQLPxbyUwERZY/ugPYwvyx2+0NIE9iJPlvmAO8liO6ON2rahKYB6clu5LOR2v
+        YjzycPm+gmvFdq2oSqArBmI47BP8Xfb4I/qg3+/NelGVQDPRE5OwGb5H5PZkuK/dqErAu5yPNbCg5NzP
+        H+0IuICVLVi2HcNoVEZVAlvxA/lJHeO+MLz4ReR9lB5rTYxEaVQlsA1lCXgyx7g7jhRt8gV0Pvl9FvaN
+        38dR+vHS2SFwfH1zetxteB7X/7ig3w0WcSRhX+ukIaoS6Cg2wWO+YokNhElGAqewDOl3w3Y0RGcTsK/H
+        PMMYG4g0gTLOjoZoZQIzkH4r5EoT8AvnEezgY/MVXCfSIVhkA2FhTkfUjTXj92QksBMN0RsxlfzQ9PPM
+        AorCyzmuTj8LKorQGWBbHoNxGfapLEJjId4hMu3IBTgVXYCi7RY8j4uOfJdcR+w/gcr/EO5YC7/3yr6M
+        cybQC6PgiynafUtaE/pctMnkok4qw79ZdjLzskcfHIJ0aXWFc5GpWoq983aX4lZEvIx2wNkhC862Dl9G
+        fzna2n4B3+9I9ErvUmkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnTipoCreditoAnual.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnTipoCreditoAnual.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTipoCreditoAnual.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 187</value>
+  </data>
+  <data name="btnTipoCreditoAnual.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 35</value>
+  </data>
+  <data name="btnTipoCreditoAnual.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="btnTipoCreditoAnual.Text" xml:space="preserve">
+    <value>  Tipo Crédito Por Año</value>
+  </data>
+  <data name="btnTipoCreditoAnual.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnTipoCreditoAnual.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnTipoCreditoAnual.Name" xml:space="preserve">
+    <value>btnTipoCreditoAnual</value>
+  </data>
+  <data name="&gt;&gt;btnTipoCreditoAnual.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTipoCreditoAnual.Parent" xml:space="preserve">
+    <value>pnlBtnReports</value>
+  </data>
+  <data name="&gt;&gt;btnTipoCreditoAnual.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnDecomicSheet.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDecomicSheet.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="btnDecomicSheet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAYAAADqgqNBAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAU65AAFOuQH4gYj9AAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAU6zAAFOswGj9UMRAAAAB3RJ
         TUUH5gQVBiozSriC3gAAA/hJREFUWEe1l9urVVUUh09qll0ULKQ0tSxFSvESWvSQiZcIQQUfgrRCKCq1
         UsrCvCF5SxAV72mGRSpkpl1MBU3SxAxDCSJB863/wHe/b+09t3PNPc8++xz1B9/Za6199hxjjjnmGHO1
         oAnwO/wHV+Ay/A/Xomdt0eg3G6E7ZKXhBdAfHoW+MB1OwuDqs7bwN69A/BvHGwaH4VXISu8eq1zW9AIc
@@ -156,14 +298,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnDecomicSheet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 321</value>
+    <value>0, 150</value>
   </data>
   <data name="btnDecomicSheet.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 35</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnDecomicSheet.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>28</value>
   </data>
   <data name="btnDecomicSheet.Text" xml:space="preserve">
     <value>  Planilla Decomicro</value>
@@ -174,9 +315,6 @@
   <data name="btnDecomicSheet.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <data name="btnDecomicSheet.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btnDecomicSheet.Name" xml:space="preserve">
     <value>btnDecomicSheet</value>
   </data>
@@ -184,10 +322,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnDecomicSheet.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
+    <value>pnlBtnReports</value>
   </data>
   <data name="&gt;&gt;btnDecomicSheet.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnPositiveBalance.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -198,7 +336,7 @@
   <data name="btnPositiveBalance.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAU64AAFOuAEqxmoZAAAAB3RJ
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAU6yAAFOsgFxsqH1AAAAB3RJ
         TUUH5gQVBioyPb+ySAAAA/xJREFUWEe9l1eoVUcUhq+9l9hbLKAkGg0EA2KvqG+al6DY0khEY6IBIRYU
         fBAVFQt27CUakajEmGhEjBVBEQRfrPggiL6I4LPft++Z45x99zk5Vy73h+/uObPXzKyZWbNm3wo0Dq7C
         I3hYSzjWFZgAyeCLoAf0TGFdqfo0abtiaLsQrkHiUS8LqEHuqSw3iqgLqj7E9TENIUuhbSzHdOzkz4cw
@@ -226,13 +364,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnPositiveBalance.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 283</value>
+    <value>0, 112</value>
   </data>
   <data name="btnPositiveBalance.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 35</value>
   </data>
   <data name="btnPositiveBalance.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>27</value>
   </data>
   <data name="btnPositiveBalance.Text" xml:space="preserve">
     <value>  Saldo a Favor</value>
@@ -243,9 +381,6 @@
   <data name="btnPositiveBalance.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <data name="btnPositiveBalance.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btnPositiveBalance.Name" xml:space="preserve">
     <value>btnPositiveBalance</value>
   </data>
@@ -253,10 +388,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnPositiveBalance.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
+    <value>pnlBtnReports</value>
   </data>
   <data name="&gt;&gt;btnPositiveBalance.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnCreditType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -294,13 +429,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnCreditType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 246</value>
+    <value>0, 75</value>
   </data>
   <data name="btnCreditType.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 35</value>
   </data>
   <data name="btnCreditType.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>26</value>
   </data>
   <data name="btnCreditType.Text" xml:space="preserve">
     <value>  Tipo Crédito</value>
@@ -311,9 +446,6 @@
   <data name="btnCreditType.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <data name="btnCreditType.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btnCreditType.Name" xml:space="preserve">
     <value>btnCreditType</value>
   </data>
@@ -321,10 +453,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCreditType.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
+    <value>pnlBtnReports</value>
   </data>
   <data name="&gt;&gt;btnCreditType.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCreditsGranted.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -335,7 +467,7 @@
   <data name="btnCreditsGranted.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA6+AAAOvgHqQrHAAAAC30lE
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA68AAAOvAGVvHJJAAAC30lE
         QVRYR73X12sUURSA8bWLDWJHjSUotmDviEaiiIjtRSyJGrGhomLvXWOJig1siERf9MknH3wR/zO/D2Zg
         GGbcaeyBH0l2d+6euXPuuTe1lOiHwRVzzEzRF0dwD9cTXMPVFL6XdI1jOaZj143+uIV5aMKoCP9eiteB
         l4E3eAvfS7pmPhzTseuGH/JudqEL+yM64d18xVH0Bo7hO3zPz0SvOYCtuIJcCXyDA6/Fuoj16ME2rA74
@@ -358,13 +490,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnCreditsGranted.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 208</value>
+    <value>0, 37</value>
   </data>
   <data name="btnCreditsGranted.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 35</value>
   </data>
   <data name="btnCreditsGranted.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>25</value>
   </data>
   <data name="btnCreditsGranted.Text" xml:space="preserve">
     <value>  Créditos Otorgados</value>
@@ -375,9 +507,6 @@
   <data name="btnCreditsGranted.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <data name="btnCreditsGranted.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btnCreditsGranted.Name" xml:space="preserve">
     <value>btnCreditsGranted</value>
   </data>
@@ -385,90 +514,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnCreditsGranted.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
+    <value>pnlBtnReports</value>
   </data>
   <data name="&gt;&gt;btnCreditsGranted.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pnlCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 170</value>
-  </data>
-  <data name="pnlCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>5, 35</value>
-  </data>
-  <data name="pnlCredits.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pnlCredits.Name" xml:space="preserve">
-    <value>pnlCredits</value>
-  </data>
-  <data name="&gt;&gt;pnlCredits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlCredits.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
-  </data>
-  <data name="&gt;&gt;pnlCredits.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="btnCredits.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnCredits.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
-  </data>
-  <data name="btnCredits.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAPvzAAD78wGZGj1/AAACgklE
-        QVRYR+3WWahNYRTA8W0mQ4okM5GhRPGgJBlKUkRRorygzKLkBUmIEMpYIg9kjExFKaV4oCSzUJ68KQ+e
-        /f/3nu+07z4fd9vHxsNd9auzv9vZZ91vrW/tnbTE/xJt0L5krRGNxbiEO7hdEu99CqNREx+xB6uwpiQr
-        cRUn0QpNwgSGNH4sNUzEnbAcTeIbzuNEiY7jESxHTQJfcRQ7saskO3APN1GTwN8qwVjMRa4e6Iw5WIts
-        QxVlk4dG975L0A/JFyzHdHR1gdiAl7iFGxluY/aYFfEYd5F8x0NcxjAXCJtmIwZiBmamjEEHWEsHmANG
-        YZi1Ta3F+Hc5Ez4j+YRR8MuhPibgdtlA7xCyfgp3wQS8yThMxRRMQEcMTq1luT4UhmW3/NEeMIHVOIK9
-        MLl2mA+3zR/qget4g9d4AHdwM97iVYTrnjYjdwLuQojZMIFOcLd6wkZSL7jFXVJrfTNc6wbjjyYQbt6/
-        IvvDQaEE8pQgtt0xv1UCm3A33iNPE+YRbUKPgkfCG/pfGmEHesMvTksZiZppViCqCdxHeFBchJ3ss8GJ
-        VTScCfNwFr4HLMUhnINDzxJWExgAx6LjcRlsrGOoJ4FZeI5t2Ion2A8nrJ/d3UFoSCAWoQROPl8i5LPB
-        IXOwcr0JHj1/wOsDcHIaNu/2xo8NR9OGDeVdBPvI4ddsAuOxrmIi+mBF5XoBusMbeu3WmpBxGPtgr9hb
-        w+EDzvD71zACv0ygnhJMxjOcwWm8wBVYWkuzEM2WoJ4EDHfPF5EtmIT1cKZ4kixLtQljYcP42K3nRdUX
-        0cBtT3/2vr4If0A0POsexbJe1b3vBXhUfxpukyO4LM6KlvjXkSQ/AJqTAO7sFJ8JAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnCredits.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnCredits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnCredits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 170</value>
-  </data>
-  <data name="btnCredits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 35</value>
-  </data>
-  <data name="btnCredits.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="btnCredits.Text" xml:space="preserve">
-    <value>  Créditos</value>
-  </data>
-  <data name="btnCredits.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnCredits.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btnCredits.Name" xml:space="preserve">
-    <value>btnCredits</value>
-  </data>
-  <data name="&gt;&gt;btnCredits.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCredits.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
-  </data>
-  <data name="&gt;&gt;btnCredits.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="btnReportApplicant.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -503,13 +552,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnReportApplicant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 171</value>
+    <value>0, 0</value>
   </data>
   <data name="btnReportApplicant.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 35</value>
   </data>
   <data name="btnReportApplicant.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>24</value>
   </data>
   <data name="btnReportApplicant.Text" xml:space="preserve">
     <value>  Solicitantes</value>
@@ -520,9 +569,6 @@
   <data name="btnReportApplicant.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
   </data>
-  <data name="btnReportApplicant.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btnReportApplicant.Name" xml:space="preserve">
     <value>btnReportApplicant</value>
   </data>
@@ -530,10 +576,34 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnReportApplicant.Parent" xml:space="preserve">
-    <value>pnlMenu</value>
+    <value>pnlBtnReports</value>
   </data>
   <data name="&gt;&gt;btnReportApplicant.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
+  </data>
+  <data name="pnlBtnReports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 171</value>
+  </data>
+  <data name="pnlBtnReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 222</value>
+  </data>
+  <data name="pnlBtnReports.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="pnlBtnReports.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlBtnReports.Name" xml:space="preserve">
+    <value>pnlBtnReports</value>
+  </data>
+  <data name="&gt;&gt;pnlBtnReports.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlBtnReports.Parent" xml:space="preserve">
+    <value>pnlMenu</value>
+  </data>
+  <data name="&gt;&gt;pnlBtnReports.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="pnlReports.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 130</value>
@@ -554,7 +624,7 @@
     <value>pnlMenu</value>
   </data>
   <data name="&gt;&gt;pnlReports.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="btnReports.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -609,7 +679,7 @@
     <value>pnlMenu</value>
   </data>
   <data name="&gt;&gt;btnReports.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="btnMenu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -658,7 +728,7 @@
     <value>pnlMenu</value>
   </data>
   <data name="&gt;&gt;btnMenu.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="pnlLogo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -682,7 +752,7 @@
     <value>pnlMenu</value>
   </data>
   <data name="&gt;&gt;pnlLogo.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="pnlMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>

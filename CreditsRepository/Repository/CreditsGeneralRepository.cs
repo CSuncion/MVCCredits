@@ -14,8 +14,6 @@ namespace CreditsRepository.Repository
     public class CreditsGeneralRepository : ICreditsGeneralRepository
     {
         private CreditsCn xObjCn = new CreditsCn();
-        private CreditsMesesDto xObjMeses = new CreditsMesesDto();
-        private List<CreditsMesesDto> xListaMeses = new List<CreditsMesesDto>();
         public List<CreditsMesesDto> ListarMeses()
         {
             List<CreditsMesesDto> meses = new List<CreditsMesesDto>();
@@ -33,6 +31,32 @@ namespace CreditsRepository.Repository
             }
             xObjCn.Disconnect();
             return meses;
+        }
+        public List<CreditsCentroCostosDto> ListarCentroCostos(string codCosto)
+        {
+            List<CreditsCentroCostosDto> centrocosto = new List<CreditsCentroCostosDto>();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strCodCosto", codCosto)
+                };
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarCentroCosto");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                centrocosto.Add(new CreditsCentroCostosDto()
+                {
+                    Id_Costos = (int)xIdr[0],
+                    Cod_Costo = (string)xIdr[1],
+                    CodigoCosto = (string)xIdr[2],
+                    Name_Costo = (string)xIdr[3],
+                    CtaCont = (string)xIdr[4],
+                    PlanCta = (string)xIdr[5],
+                });
+            }
+            xObjCn.Disconnect();
+            return centrocosto;
         }
     }
 }

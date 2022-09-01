@@ -1,6 +1,6 @@
 ﻿namespace CreditsView.Reports
 {
-    partial class frmReportTipoCreditos
+    partial class frmReportTiposCreditos
     {
         /// <summary>
         /// Required designer variable.
@@ -60,14 +60,14 @@
             // 
             this.rvReportTipoCreditos.AutoSize = true;
             this.rvReportTipoCreditos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvReportTipoCreditos.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportCreditoOtorgados.rdlc";
+            this.rvReportTipoCreditos.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportTiposCreditos.rdlc";
             this.rvReportTipoCreditos.Location = new System.Drawing.Point(0, 25);
             this.rvReportTipoCreditos.Name = "rvReportTipoCreditos";
             this.rvReportTipoCreditos.ServerReport.BearerToken = null;
             this.rvReportTipoCreditos.Size = new System.Drawing.Size(800, 425);
             this.rvReportTipoCreditos.TabIndex = 4;
             // 
-            // frmReportTipoCreditos
+            // frmReportTiposCreditos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,9 +77,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmReportTipoCreditos";
+            this.Name = "frmReportTiposCreditos";
             this.Text = "frmReportTipoCreditos";
-            this.Load += new System.EventHandler(this.frmReportTipoCreditos_Load);
+            this.Load += new System.EventHandler(this.frmReportTiposCreditos_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);

@@ -10,5 +10,6 @@ namespace CreditsRepository.IRepository
     public interface ICreditsGeneralRepository
     {
         List<CreditsMesesDto> ListarMeses();
+        List<CreditsCentroCostosDto> ListarCentroCostos(string codCosto);
     }
 }
