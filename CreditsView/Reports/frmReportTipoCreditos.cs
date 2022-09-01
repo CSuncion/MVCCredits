@@ -36,8 +36,13 @@ namespace CreditsView.Reports
                 rds.Name = "dsTipoCreditos";
                 rds.Value = objReportController.ListarTipoCreditos(Convert.ToInt32(this.wTipCred.txtAnio.Text));
 
+                ReportParameter[] rp = new ReportParameter[1];
+                rp[0] = new ReportParameter("txtReportAnio", this.wTipCred.txtAnio.Text); 
+            
+
                 this.rvReportTipoCreditos.Reset();
                 this.rvReportTipoCreditos.LocalReport.ReportEmbeddedResource = nombreReporte;
+                this.rvReportTipoCreditos.LocalReport.SetParameters(rp);
                 this.rvReportTipoCreditos.LocalReport.EnableExternalImages = true;
                 this.rvReportTipoCreditos.LocalReport.DataSources.Clear();
                 this.rvReportTipoCreditos.LocalReport.DataSources.Add(rds);

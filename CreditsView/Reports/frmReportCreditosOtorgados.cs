@@ -42,8 +42,12 @@ namespace CreditsView.Reports
                 rds.Name = "dsCreditosOtorgados";
                 rds.Value = objReportController.ListarCreditosOtorgados(Convert.ToInt32(this.wCreOto.txtAnio.Text));
 
+                ReportParameter[] rp = new ReportParameter[1];
+                rp[0] = new ReportParameter("txtReportAnio", this.wCreOto.txtAnio.Text);
+
                 this.rvReportCreditosOtorgados.Reset();
                 this.rvReportCreditosOtorgados.LocalReport.ReportEmbeddedResource = nombreReporte;
+                this.rvReportCreditosOtorgados.LocalReport.SetParameters(rp);
                 this.rvReportCreditosOtorgados.LocalReport.EnableExternalImages = true;
                 this.rvReportCreditosOtorgados.LocalReport.DataSources.Clear();
                 this.rvReportCreditosOtorgados.LocalReport.DataSources.Add(rds);
