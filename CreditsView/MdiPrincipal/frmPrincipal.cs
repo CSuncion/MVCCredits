@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using WinControles.ControlesWindows;
 using System.Runtime.InteropServices;
+using CreditsView.Credits;
 
 namespace CreditsView.MdiPrincipal
 {
@@ -110,10 +111,19 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarReportTypeCredit();
         }
-        private void btnTipoCreditoAnual_Click_1(object sender, EventArgs e)
+
+
+        private void btnCredits_Click(object sender, EventArgs e)
         {
-            this.InstanciarReportTypeCredit();
+            this.ShowOptionsCredits();
         }
+
+        private void btnRefiAmp_Click(object sender, EventArgs e)
+        {
+            this.InstanciarRefinanciadoAmpliado();
+        }
+
+
         #endregion
 
         #region Methods
@@ -207,7 +217,7 @@ namespace CreditsView.MdiPrincipal
         {
             pBtn.Enabled = false;
             if (pAccDir != null) { pAccDir.Enabled = false; }
-            this.tbcContainer.Visible = true;       
+            this.tbcContainer.Visible = true;
             //this.BackColor = System.Drawing.SystemColors.Control;
             this.BackColor = Color.White;
             TabCtrl.InsertarVentanaConTabPage(this.tbcContainer, pWin, PAncVen, pAltVen);
@@ -243,6 +253,13 @@ namespace CreditsView.MdiPrincipal
             win.NewWindow();
         }
 
+        public void InstanciarRefinanciadoAmpliado()
+        {
+            frmRefinanciadoAmpliado win = new frmRefinanciadoAmpliado();
+            this.FormatoVentanaHijoPrincipal(win, this.btnRefiAmp, null, 0, 0);
+            win.NewWindow();
+        }
+
         public void ShowOptionsReport()
         {
             if (this.pnlBtnReports.Visible)
@@ -250,12 +267,32 @@ namespace CreditsView.MdiPrincipal
                 this.pnlBtnReports.Visible = false;
                 this.btnCredits.Location = new Point(3, 170);
                 this.pnlCredits.Location = new Point(3, 170);
+                this.pnlBtnCredits.Location = new Point(13, 208);
             }
             else
             {
                 this.pnlBtnReports.Visible = true;
                 this.btnCredits.Location = new Point(3, 400);
                 this.pnlCredits.Location = new Point(3, 400);
+                this.pnlBtnCredits.Location = new Point(13, 438);
+            }
+        }
+
+
+
+        public void ShowOptionsCredits()
+        {
+            if (this.pnlBtnCredits.Visible)
+            {
+                this.pnlBtnCredits.Visible = false;
+                //this.btnCredits.Location = new Point(3, 170);
+                //this.pnlCredits.Location = new Point(3, 170);
+            }
+            else
+            {
+                this.pnlBtnCredits.Visible = true;
+                //this.btnCredits.Location = new Point(3, 400);
+                //this.pnlCredits.Location = new Point(3, 400);
             }
         }
 
