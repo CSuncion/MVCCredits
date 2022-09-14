@@ -23,10 +23,13 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarTipoCreditos(anio);
         }
-
         public List<dynamic> ListarTipoCreditoPorAnio(int anio, int codCentroCosto)
         {
             return this._iCreditsReportRepository.ListarTipoCreditoPorAnio(anio, codCentroCosto);
+        }
+        public List<dynamic> ListarSaldoFavorSolicitantes(string desde, string hasta)
+        {
+            return this._iCreditsReportRepository.ListarSaldoFavorSolicitantes(desde, hasta);
         }
     }
 }

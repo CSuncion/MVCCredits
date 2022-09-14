@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoCredito));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
+            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCentroCosto = new System.Windows.Forms.ComboBox();
             this.btnGenerarGrafica = new System.Windows.Forms.Button();
-            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,17 @@
             this.tsPrincipal.Size = new System.Drawing.Size(387, 25);
             this.tsPrincipal.Stretch = true;
             this.tsPrincipal.TabIndex = 2;
+            this.tsPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsPrincipal_ItemClicked);
+            // 
+            // tsBtnSalir
+            // 
+            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
+            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnSalir.Name = "tsBtnSalir";
+            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
+            this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // label3
             // 
@@ -61,6 +72,7 @@
             this.label3.Size = new System.Drawing.Size(181, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "CRÉDITO OTORGADOS POR TIPO";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
@@ -69,6 +81,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 10);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -116,16 +129,6 @@
             this.btnGenerarGrafica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarGrafica.UseVisualStyleBackColor = true;
             this.btnGenerarGrafica.Click += new System.EventHandler(this.btnGenerarGrafica_Click);
-            // 
-            // tsBtnSalir
-            // 
-            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
-            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnSalir.Name = "tsBtnSalir";
-            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
-            this.tsBtnSalir.Text = "Salir";
-            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // frmTipoCredito
             // 

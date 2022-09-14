@@ -136,6 +136,12 @@
     <Compile Include="Reports\frmCreditosOtorgados.Designer.cs">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportSaldoFavorSolicitante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportSaldoFavorSolicitante.Designer.cs">
+      <DependentUpon>frmReportSaldoFavorSolicitante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportTipoCredito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="Reports\frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmSaldoFavorSolicitante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmSaldoFavorSolicitante.Designer.cs">
+      <DependentUpon>frmSaldoFavorSolicitante.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmTipoCredito.cs">
       <SubType>Form</SubType>
@@ -198,6 +210,9 @@
     <EmbeddedResource Include="Reports\frmCreditosOtorgados.resx">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportSaldoFavorSolicitante.resx">
+      <DependentUpon>frmReportSaldoFavorSolicitante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportTipoCredito.resx">
       <DependentUpon>frmReportTipoCredito.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +225,9 @@
     <EmbeddedResource Include="Reports\frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmSaldoFavorSolicitante.resx">
+      <DependentUpon>frmSaldoFavorSolicitante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmTipoCredito.resx">
       <DependentUpon>frmTipoCredito.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +236,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportSaldoFavorSolicitante.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTipoCredito.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTiposCreditos.rdlc" />
     <None Include="DataSet\DsCredits.xsc">

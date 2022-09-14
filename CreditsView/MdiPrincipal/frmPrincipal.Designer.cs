@@ -157,6 +157,7 @@
             this.btnPositiveBalance.ForeColor = System.Drawing.Color.White;
             this.btnPositiveBalance.Name = "btnPositiveBalance";
             this.btnPositiveBalance.UseVisualStyleBackColor = false;
+            this.btnPositiveBalance.Click += new System.EventHandler(this.btnPositiveBalance_Click);
             // 
             // btnCreditType
             // 

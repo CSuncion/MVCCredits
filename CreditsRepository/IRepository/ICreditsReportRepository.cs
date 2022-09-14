@@ -11,5 +11,6 @@ namespace CreditsRepository.IRepository
         List<dynamic> ListarCreditosOtorgados(int anio);
         List<dynamic> ListarTipoCreditos(int anio);
         List<dynamic> ListarTipoCreditoPorAnio(int anio, int codCentroCosto);
+        List<dynamic> ListarSaldoFavorSolicitantes(string desde, string hasta);
     }
 }

@@ -90,5 +90,48 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return tipoCreditos;
         }
+
+        public List<dynamic> ListarSaldoFavorSolicitantes(string desde, string hasta)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strFechaIni", desde),
+                new SqlParameter("@strFechaFin", hasta),
+                };
+
+            List<dynamic> saldoFavor = new List<dynamic>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_SaldoFavorSolicitantes");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                saldoFavor.Add(new
+                {
+                    Id_Operacion = (decimal)xIdr[0],
+                    Dni_Solicitante = (string)xIdr[1],
+                    Ser = (string)xIdr[2],
+                    Numero = (string)xIdr[3],
+                    Apellidos_Nombres = (string)xIdr[4],
+                    Fijo = (string)xIdr[5],
+                    Movil = (string)xIdr[6],
+                    Mail = (string)xIdr[7],
+                    Domicilio = (string)xIdr[8],
+                    Fecha = (DateTime)xIdr[9],
+                    NameProducto = (string)xIdr[10],
+                    Corta_TpOperac = (string)xIdr[11],
+                    Des_TpOperac = (string)xIdr[12],
+                    Aprobado = (decimal)xIdr[13],
+                    Plazo = (int)xIdr[14],
+                    NumCta = (string)xIdr[15],
+                    CCI = (string)xIdr[16],
+                    CREDITO = (decimal)xIdr[17],
+                    PAGOS = (decimal)xIdr[18],
+                    SALDO = (decimal)xIdr[19],
+                });
+            }
+            xObjCn.Disconnect();
+            return saldoFavor;
+        }
     }
 }

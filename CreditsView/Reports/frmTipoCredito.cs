@@ -76,5 +76,20 @@ namespace CreditsView.Reports
         {
             Cmb.Cargar(this.cmbCentroCosto, this.objGeneralController.ListarCentroCostos("60"), "Id_Costos", "Name_Costo");
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

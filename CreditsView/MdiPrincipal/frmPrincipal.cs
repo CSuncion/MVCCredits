@@ -123,7 +123,10 @@ namespace CreditsView.MdiPrincipal
             this.InstanciarRefinanciadoAmpliado();
         }
 
-
+        private void btnPositiveBalance_Click(object sender, EventArgs e)
+        {
+            this.InstanciarSaldoFavor();
+        }
         #endregion
 
         #region Methods
@@ -260,6 +263,13 @@ namespace CreditsView.MdiPrincipal
             win.NewWindow();
         }
 
+        public void InstanciarSaldoFavor()
+        {
+            frmSaldoFavorSolicitante win = new frmSaldoFavorSolicitante();
+            this.FormatoVentanaHijoPrincipal(win, this.btnPositiveBalance, null, 0, 0);
+            win.NewWindow();
+        }
+
         public void ShowOptionsReport()
         {
             if (this.pnlBtnReports.Visible)
@@ -278,9 +288,7 @@ namespace CreditsView.MdiPrincipal
             }
         }
 
-
-
-        public void ShowOptionsCredits()
+       public void ShowOptionsCredits()
         {
             if (this.pnlBtnCredits.Visible)
             {
