@@ -131,6 +131,11 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarGeneradoDesembolsado();
         }
+
+        private void btnEnProceso_Click(object sender, EventArgs e)
+        {
+            this.InstanciarCreditoEnProceso();
+        }
         #endregion
 
         #region Methods
@@ -281,6 +286,13 @@ namespace CreditsView.MdiPrincipal
             win.NewWindow();
         }
 
+        public void InstanciarCreditoEnProceso()
+        {
+            frmCreditoEnProceso win = new frmCreditoEnProceso();
+            this.FormatoVentanaHijoPrincipal(win, this.btnEnProceso, null, 0, 0);
+            win.NewWindow();
+        }
+
         public void ShowOptionsReport()
         {
             if (this.pnlBtnReports.Visible)
@@ -298,6 +310,8 @@ namespace CreditsView.MdiPrincipal
                 this.pnlBtnCredits.Location = new Point(13, 542);
             }
         }
+
+
 
         public void ShowOptionsCredits()
         {

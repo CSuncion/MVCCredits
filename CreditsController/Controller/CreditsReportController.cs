@@ -35,9 +35,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarTipoCreditoGeneradoDesembolsado(desde, hasta);
         }
-        public List<dynamic> ListarTipoCreditoEnProceso(string desde, string hasta)
+        public List<dynamic> ListarCreditoEnProceso(string desde, string hasta)
         {
-            return this._iCreditsReportRepository.ListarTipoCreditoEnProceso(desde, hasta);
+            return this._iCreditsReportRepository.ListarCreditoEnProceso(desde, hasta);
         }
     }
 }

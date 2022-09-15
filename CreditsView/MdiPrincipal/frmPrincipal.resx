@@ -128,7 +128,7 @@
   <data name="btnRefiAmp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAARRJREFUWEftlk0KwjAQRrvzBupOcO3NvIn3dafoPGEghMlkklTrIg8+KO38fNDO
+        wQAADsEBuJFr7QAAARRJREFUWEftlk0KwjAQRrvzBupOcO3NvIn3dafoPGEghMlkklTrIg8+KO38fNDO
         NMvk39iJLo7OohrEWLkqehQh4OXoITqISuxFxFi5KnoUSQ3cRKdMR1ENYvI8ajUZIOEpuopGoQa11ETI
         AK41ccREWoOaTQZgxESe22UAekxYOd0GoMVEKTZkgBlmjKyvPWLCi2F8qV3dJd6cew28Z4pXOwwN7qJ0
         o3HNPa/5qljr1F2xk7XZ9BV8/SPkl1qCBiNj6NX+oIvImtdIAy8mtIg2X8WWgZbmipXTZaCnuZLnNhsY
@@ -434,17 +434,17 @@
   </data>
   <data name="btnNoAdeudo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAImSURBVFhH7ZY7SwQxFIUXn402gqCIWFj5aqwsbEVEEEsL
-        C0sL9RfYW+gvEAsbsfZRCnbaCooKooWFpS9EFJ/nCwnMZjI7O+uwjXvgg+Rmcm42c5PZQk1/UKPostCu
-        qprEijiy0CZWFfFrSfgt7i20iVVlJ9hyfjWJFyy0iTGWm+pFj+j3GBOnwl8AMcb85/HAK7M6xbY487gU
-        L8J/BcQY85/HA6/MGhV34lmcC984DeYwFw+8MmtWfIh9MSj8rU2DOczFA6/MWhc/YtH0KhNz8cArs04E
-        k0dMrzIxFw+8MqldfIlH0UDAU6uYFFeWKdErmkVUzMUDLzzL1oRg5YemV6w+sSWo+DcLi9gRLMIXHnjh
-        WbZWBZOWTa9YzvBWRKs+aQF48DyeZalFUL2vYpqAJ7YUQyo7WvWhV4DwwAtPvFM1JC4stH3tCS4eFuF4
-        F8SHha80v5jGxZM4EG0EPJGEZCSNLoJFEfeFB1544p0q987WTC+u6LY7eB3M4fWEhBfjoZqKaVfw8Izp
-        xRUtPAcFyZzQqUF4MY53SfE9fxCfooNAQC4pR88dQ44kR5MjGhJeeOJd8j/DgGClN6YXltt2Lh93EXEp
-        cTmVEp54kyNRS4KHNkwvX+GJNzmCqhObgmqeJ5Cz8MSbHOSKqVscC/5gzIlolecBnniTg1wxUUAUF+f7
-        2rbzBE+8aQeLlauU+9yfmDdJ3wxzjzMQ2r48Sfpm1PQvVSj8AsjI2WeZMtNBAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAiZJREFUWEftljtLBDEUhRefjTaCoIhYWPlqrCxsRUQQSwsLSwv1F9hb6C8QCxux
+        9lEKdtoKigqihYWlL0QUn+cLCcxmMjs767CNe+CD5GZybjZzk9lCTX9Qo+iy0K6qmsSKOLLQJlYV8WtJ
+        +C3uLbSJVWUn2HJ+NYkXLLSJMZab6kWP6PcYE6fCXwAxxvzn8cArszrFtjjzuBQvwn8FxBjzn8cDr8wa
+        FXfiWZwL3zgN5jAXD7wya1Z8iH0xKPytTYM5zMUDr8xaFz9i0fQqE3PxwCuzTgSTR0yvMjEXD7wyqV18
+        iUfRQMBTq5gUV5Yp0SuaRVTMxQMvPMvWhGDlh6ZXrD6xJaj4NwuL2BEswhceeOFZtlYFk5ZNr1jO8FZE
+        qz5pAXjwPJ5lqUVQva9imoAnthRDKjta9aFXgPDAC0+8UzUkLiy0fe0JLh4W4XgXxIeFrzS/mMbFkzgQ
+        bQQ8kYRkJI0ugkUR94UHXnjinSr3ztZML67otjt4Hczh9YSEF+OhmoppV/DwjOnFFS08BwXJnNCpQXgx
+        jndJ8T1/EJ+ig0BALilHzx1DjiRHkyMaEl544l3yP8OAYKU3pheW23YuH3cRcSlxOZUSnniTI1FLgoc2
+        TC9f4Yk3OYKqE5uCap4nkLPwxJsc5IqpWxwL/mDMiWiV5wGeeJODXDFRQBQX5/vatvMET7xpB4uVq5T7
+        3J+YN0nfDHOPMxDavjxJ+mbU9C9VKPwCyMjZZ5ky00EAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnNoAdeudo.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -1284,9 +1284,6 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

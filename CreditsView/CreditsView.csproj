@@ -148,6 +148,12 @@
     <Compile Include="Reports\frmReportTipoCredito.Designer.cs">
       <DependentUpon>frmReportTipoCredito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportCreditoEnProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportCreditoEnProceso.Designer.cs">
+      <DependentUpon>frmReportCreditoEnProceso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportTipoCreditoGeneradoDesembolsado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,12 @@
     </Compile>
     <Compile Include="Reports\frmTipoCredito.designer.cs">
       <DependentUpon>frmTipoCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmCreditoEnProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmCreditoEnProceso.Designer.cs">
+      <DependentUpon>frmCreditoEnProceso.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmTipoCreditoGeneradosDesembolsados.cs">
       <SubType>Form</SubType>
@@ -228,6 +240,9 @@
     <EmbeddedResource Include="Reports\frmReportTipoCredito.resx">
       <DependentUpon>frmReportTipoCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportCreditoEnProceso.resx">
+      <DependentUpon>frmReportCreditoEnProceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportTipoCreditoGeneradoDesembolsado.resx">
       <DependentUpon>frmReportTipoCreditoGeneradoDesembolsado.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +261,9 @@
     <EmbeddedResource Include="Reports\frmTipoCredito.resx">
       <DependentUpon>frmTipoCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmCreditoEnProceso.resx">
+      <DependentUpon>frmCreditoEnProceso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmTipoCreditoGeneradosDesembolsados.resx">
       <DependentUpon>frmTipoCreditoGeneradosDesembolsados.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +271,7 @@
       <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportCreditoEnProceso.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />
     <EmbeddedResource Include="Reports\rptReportSaldoFavorSolicitante.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTipoCredito.rdlc" />

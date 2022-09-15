@@ -180,7 +180,7 @@ namespace CreditsRepository.Repository
             return generadoDesembolsado;
         }
 
-        public List<dynamic> ListarTipoCreditoEnProceso(string desde, string hasta)
+        public List<dynamic> ListarCreditoEnProceso(string desde, string hasta)
         {
             List<SqlParameter> lParameter = new List<SqlParameter>()
                 {
