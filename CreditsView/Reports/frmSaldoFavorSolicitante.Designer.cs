@@ -46,7 +46,7 @@
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 10);
+            this.panel1.Size = new System.Drawing.Size(342, 10);
             this.panel1.TabIndex = 13;
             // 
             // label3

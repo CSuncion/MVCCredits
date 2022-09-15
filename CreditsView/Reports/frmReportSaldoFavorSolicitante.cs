@@ -72,6 +72,9 @@ namespace CreditsView.Reports
             }
         }
 
+        private void frmReportSaldoFavorSolicitante_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

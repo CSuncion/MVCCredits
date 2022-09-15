@@ -31,5 +31,13 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarSaldoFavorSolicitantes(desde, hasta);
         }
+        public List<dynamic> ListarTipoCreditoGeneradoDesembolsado(string desde, string hasta)
+        {
+            return this._iCreditsReportRepository.ListarTipoCreditoGeneradoDesembolsado(desde, hasta);
+        }
+        public List<dynamic> ListarTipoCreditoEnProceso(string desde, string hasta)
+        {
+            return this._iCreditsReportRepository.ListarTipoCreditoEnProceso(desde, hasta);
+        }
     }
 }

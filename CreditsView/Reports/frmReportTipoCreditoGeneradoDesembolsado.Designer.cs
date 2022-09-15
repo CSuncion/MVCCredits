@@ -1,6 +1,6 @@
 ﻿namespace CreditsView.Reports
 {
-    partial class frmReportSaldoFavorSolicitante
+    partial class frmReportTipoCreditoGeneradoDesembolsado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rvReportSaldoFavorSolicitante = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvReportTipoCreditosGeneradoDesembolsado = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rvReportSaldoFavorSolicitante
+            // rvReportTipoCreditosGeneradoDesembolsado
             // 
-            this.rvReportSaldoFavorSolicitante.AutoSize = true;
-            this.rvReportSaldoFavorSolicitante.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvReportSaldoFavorSolicitante.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportSaldoFavorSolicitante.rdlc";
-            this.rvReportSaldoFavorSolicitante.Location = new System.Drawing.Point(0, 25);
-            this.rvReportSaldoFavorSolicitante.Name = "rvReportSaldoFavorSolicitante";
-            this.rvReportSaldoFavorSolicitante.ServerReport.BearerToken = null;
-            this.rvReportSaldoFavorSolicitante.Size = new System.Drawing.Size(800, 425);
-            this.rvReportSaldoFavorSolicitante.TabIndex = 6;
+            this.rvReportTipoCreditosGeneradoDesembolsado.AutoSize = true;
+            this.rvReportTipoCreditosGeneradoDesembolsado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvReportTipoCreditosGeneradoDesembolsado.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportTipoCreditoGeneradoDesembolsado.rdlc";
+            this.rvReportTipoCreditosGeneradoDesembolsado.Location = new System.Drawing.Point(0, 25);
+            this.rvReportTipoCreditosGeneradoDesembolsado.Name = "rvReportTipoCreditosGeneradoDesembolsado";
+            this.rvReportTipoCreditosGeneradoDesembolsado.ServerReport.BearerToken = null;
+            this.rvReportTipoCreditosGeneradoDesembolsado.Size = new System.Drawing.Size(800, 425);
+            this.rvReportTipoCreditosGeneradoDesembolsado.TabIndex = 6;
             // 
             // tsPrincipal
             // 
@@ -67,18 +67,18 @@
             this.tsBtnSalir.Text = "Salir";
             this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
-            // frmReportSaldoFavorSolicitante
+            // frmReportTipoCreditoGeneradoDesembolsado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.rvReportSaldoFavorSolicitante);
+            this.Controls.Add(this.rvReportTipoCreditosGeneradoDesembolsado);
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmReportSaldoFavorSolicitante";
-            this.Text = "frmReportSaldoFavorSolicitante";
-            this.Load += new System.EventHandler(this.frmReportSaldoFavorSolicitante_Load);
+            this.Name = "frmReportTipoCreditoGeneradoDesembolsado";
+            this.Text = "frmReportTipoCreditoGeneradoDesembolsado";
+            this.Load += new System.EventHandler(this.frmReportTipoCreditoGeneradoDesembolsado_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -88,7 +88,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvReportSaldoFavorSolicitante;
+        private Microsoft.Reporting.WinForms.ReportViewer rvReportTipoCreditosGeneradoDesembolsado;
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsBtnSalir;
     }

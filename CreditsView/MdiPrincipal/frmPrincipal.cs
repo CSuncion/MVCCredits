@@ -127,6 +127,10 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarSaldoFavor();
         }
+        private void btnGenDes_Click(object sender, EventArgs e)
+        {
+            this.InstanciarGeneradoDesembolsado();
+        }
         #endregion
 
         #region Methods
@@ -270,6 +274,13 @@ namespace CreditsView.MdiPrincipal
             win.NewWindow();
         }
 
+        public void InstanciarGeneradoDesembolsado()
+        {
+            frmTipoCreditoGeneradosDesembolsados win = new frmTipoCreditoGeneradosDesembolsados();
+            this.FormatoVentanaHijoPrincipal(win, this.btnGenDes, null, 0, 0);
+            win.NewWindow();
+        }
+
         public void ShowOptionsReport()
         {
             if (this.pnlBtnReports.Visible)
@@ -282,13 +293,13 @@ namespace CreditsView.MdiPrincipal
             else
             {
                 this.pnlBtnReports.Visible = true;
-                this.btnCredits.Location = new Point(3, 400);
-                this.pnlCredits.Location = new Point(3, 400);
-                this.pnlBtnCredits.Location = new Point(13, 438);
+                this.btnCredits.Location = new Point(3, 508);
+                this.pnlCredits.Location = new Point(3, 508);
+                this.pnlBtnCredits.Location = new Point(13, 542);
             }
         }
 
-       public void ShowOptionsCredits()
+        public void ShowOptionsCredits()
         {
             if (this.pnlBtnCredits.Visible)
             {

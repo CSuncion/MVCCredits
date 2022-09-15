@@ -32,36 +32,39 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlBtnCredits = new System.Windows.Forms.Panel();
-            this.btnRefiAmp = new System.Windows.Forms.Button();
             this.pnlCredits = new System.Windows.Forms.Panel();
-            this.btnCredits = new System.Windows.Forms.Button();
             this.pnlBtnReports = new System.Windows.Forms.Panel();
+            this.pnlReports = new System.Windows.Forms.Panel();
+            this.ssStatusBar = new System.Windows.Forms.StatusStrip();
+            this.tssStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tbcContainer = new System.Windows.Forms.TabControl();
+            this.pnlBarTit = new System.Windows.Forms.Panel();
+            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.btnCredits = new System.Windows.Forms.Button();
+            this.btnGenDes = new System.Windows.Forms.Button();
+            this.btnRefiAmp = new System.Windows.Forms.Button();
             this.btnTipoCreditoAnual = new System.Windows.Forms.Button();
             this.btnDecomicSheet = new System.Windows.Forms.Button();
             this.btnPositiveBalance = new System.Windows.Forms.Button();
             this.btnCreditType = new System.Windows.Forms.Button();
             this.btnCreditsGranted = new System.Windows.Forms.Button();
             this.btnReportApplicant = new System.Windows.Forms.Button();
-            this.pnlReports = new System.Windows.Forms.Panel();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.pnlLogo = new System.Windows.Forms.Panel();
-            this.ssStatusBar = new System.Windows.Forms.StatusStrip();
-            this.tssStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tbcContainer = new System.Windows.Forms.TabControl();
-            this.pnlBarTit = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
-            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.btnEnProceso = new System.Windows.Forms.Button();
+            this.btnNoAdeudo = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlBtnCredits.SuspendLayout();
             this.pnlBtnReports.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.ssStatusBar.SuspendLayout();
             this.pnlBarTit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -70,11 +73,11 @@
             this.pnlMenu.Controls.Add(this.pnlBtnCredits);
             this.pnlMenu.Controls.Add(this.pnlCredits);
             this.pnlMenu.Controls.Add(this.btnCredits);
-            this.pnlMenu.Controls.Add(this.pnlBtnReports);
             this.pnlMenu.Controls.Add(this.pnlReports);
             this.pnlMenu.Controls.Add(this.btnReports);
             this.pnlMenu.Controls.Add(this.btnMenu);
             this.pnlMenu.Controls.Add(this.pnlLogo);
+            this.pnlMenu.Controls.Add(this.pnlBtnReports);
             resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.Name = "pnlMenu";
             // 
@@ -84,23 +87,71 @@
             resources.ApplyResources(this.pnlBtnCredits, "pnlBtnCredits");
             this.pnlBtnCredits.Name = "pnlBtnCredits";
             // 
-            // btnRefiAmp
-            // 
-            this.btnRefiAmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
-            this.btnRefiAmp.FlatAppearance.BorderSize = 0;
-            this.btnRefiAmp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnRefiAmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnRefiAmp, "btnRefiAmp");
-            this.btnRefiAmp.ForeColor = System.Drawing.Color.White;
-            this.btnRefiAmp.Name = "btnRefiAmp";
-            this.btnRefiAmp.UseVisualStyleBackColor = false;
-            this.btnRefiAmp.Click += new System.EventHandler(this.btnRefiAmp_Click);
-            // 
             // pnlCredits
             // 
             this.pnlCredits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
             resources.ApplyResources(this.pnlCredits, "pnlCredits");
             this.pnlCredits.Name = "pnlCredits";
+            // 
+            // pnlBtnReports
+            // 
+            this.pnlBtnReports.Controls.Add(this.btnNoAdeudo);
+            this.pnlBtnReports.Controls.Add(this.btnEnProceso);
+            this.pnlBtnReports.Controls.Add(this.btnGenDes);
+            this.pnlBtnReports.Controls.Add(this.btnTipoCreditoAnual);
+            this.pnlBtnReports.Controls.Add(this.btnDecomicSheet);
+            this.pnlBtnReports.Controls.Add(this.btnPositiveBalance);
+            this.pnlBtnReports.Controls.Add(this.btnCreditType);
+            this.pnlBtnReports.Controls.Add(this.btnCreditsGranted);
+            this.pnlBtnReports.Controls.Add(this.btnReportApplicant);
+            resources.ApplyResources(this.pnlBtnReports, "pnlBtnReports");
+            this.pnlBtnReports.Name = "pnlBtnReports";
+            // 
+            // pnlReports
+            // 
+            this.pnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            resources.ApplyResources(this.pnlReports, "pnlReports");
+            this.pnlReports.Name = "pnlReports";
+            // 
+            // ssStatusBar
+            // 
+            this.ssStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssStatusBar});
+            resources.ApplyResources(this.ssStatusBar, "ssStatusBar");
+            this.ssStatusBar.Name = "ssStatusBar";
+            // 
+            // tssStatusBar
+            // 
+            this.tssStatusBar.Name = "tssStatusBar";
+            resources.ApplyResources(this.tssStatusBar, "tssStatusBar");
+            // 
+            // tbcContainer
+            // 
+            resources.ApplyResources(this.tbcContainer, "tbcContainer");
+            this.tbcContainer.Name = "tbcContainer";
+            this.tbcContainer.SelectedIndex = 0;
+            // 
+            // pnlBarTit
+            // 
+            this.pnlBarTit.BackColor = System.Drawing.Color.Goldenrod;
+            this.pnlBarTit.Controls.Add(this.btnRestaurar);
+            this.pnlBarTit.Controls.Add(this.btnMinimizar);
+            this.pnlBarTit.Controls.Add(this.btnMaximizar);
+            this.pnlBarTit.Controls.Add(this.btnCerrar);
+            resources.ApplyResources(this.pnlBarTit, "pnlBarTit");
+            this.pnlBarTit.Name = "pnlBarTit";
+            this.pnlBarTit.DoubleClick += new System.EventHandler(this.pnlBarTit_DoubleClick);
+            this.pnlBarTit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarTit_MouseMove);
+            // 
+            // tmOcultarMenu
+            // 
+            this.tmOcultarMenu.Interval = 15;
+            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
+            // 
+            // tmMostrarMenu
+            // 
+            this.tmMostrarMenu.Interval = 15;
+            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
             // 
             // btnCredits
             // 
@@ -113,16 +164,29 @@
             this.btnCredits.UseVisualStyleBackColor = true;
             this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
             // 
-            // pnlBtnReports
+            // btnGenDes
             // 
-            this.pnlBtnReports.Controls.Add(this.btnTipoCreditoAnual);
-            this.pnlBtnReports.Controls.Add(this.btnDecomicSheet);
-            this.pnlBtnReports.Controls.Add(this.btnPositiveBalance);
-            this.pnlBtnReports.Controls.Add(this.btnCreditType);
-            this.pnlBtnReports.Controls.Add(this.btnCreditsGranted);
-            this.pnlBtnReports.Controls.Add(this.btnReportApplicant);
-            resources.ApplyResources(this.pnlBtnReports, "pnlBtnReports");
-            this.pnlBtnReports.Name = "pnlBtnReports";
+            this.btnGenDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.btnGenDes.FlatAppearance.BorderSize = 0;
+            this.btnGenDes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnGenDes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnGenDes, "btnGenDes");
+            this.btnGenDes.ForeColor = System.Drawing.Color.White;
+            this.btnGenDes.Name = "btnGenDes";
+            this.btnGenDes.UseVisualStyleBackColor = false;
+            this.btnGenDes.Click += new System.EventHandler(this.btnGenDes_Click);
+            // 
+            // btnRefiAmp
+            // 
+            this.btnRefiAmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.btnRefiAmp.FlatAppearance.BorderSize = 0;
+            this.btnRefiAmp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnRefiAmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnRefiAmp, "btnRefiAmp");
+            this.btnRefiAmp.ForeColor = System.Drawing.Color.White;
+            this.btnRefiAmp.Name = "btnRefiAmp";
+            this.btnRefiAmp.UseVisualStyleBackColor = false;
+            this.btnRefiAmp.Click += new System.EventHandler(this.btnRefiAmp_Click);
             // 
             // btnTipoCreditoAnual
             // 
@@ -195,12 +259,6 @@
             this.btnReportApplicant.UseVisualStyleBackColor = false;
             this.btnReportApplicant.Click += new System.EventHandler(this.btnReportApplicant_Click);
             // 
-            // pnlReports
-            // 
-            this.pnlReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            resources.ApplyResources(this.pnlReports, "pnlReports");
-            this.pnlReports.Name = "pnlReports";
-            // 
             // btnReports
             // 
             this.btnReports.FlatAppearance.BorderSize = 0;
@@ -225,36 +283,6 @@
             this.pnlLogo.BackgroundImage = global::CreditsView.Properties.Resources.logo_1;
             resources.ApplyResources(this.pnlLogo, "pnlLogo");
             this.pnlLogo.Name = "pnlLogo";
-            // 
-            // ssStatusBar
-            // 
-            this.ssStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tssStatusBar});
-            resources.ApplyResources(this.ssStatusBar, "ssStatusBar");
-            this.ssStatusBar.Name = "ssStatusBar";
-            // 
-            // tssStatusBar
-            // 
-            this.tssStatusBar.Name = "tssStatusBar";
-            resources.ApplyResources(this.tssStatusBar, "tssStatusBar");
-            // 
-            // tbcContainer
-            // 
-            resources.ApplyResources(this.tbcContainer, "tbcContainer");
-            this.tbcContainer.Name = "tbcContainer";
-            this.tbcContainer.SelectedIndex = 0;
-            // 
-            // pnlBarTit
-            // 
-            this.pnlBarTit.BackColor = System.Drawing.Color.Goldenrod;
-            this.pnlBarTit.Controls.Add(this.btnRestaurar);
-            this.pnlBarTit.Controls.Add(this.btnMinimizar);
-            this.pnlBarTit.Controls.Add(this.btnMaximizar);
-            this.pnlBarTit.Controls.Add(this.btnCerrar);
-            resources.ApplyResources(this.pnlBarTit, "pnlBarTit");
-            this.pnlBarTit.Name = "pnlBarTit";
-            this.pnlBarTit.DoubleClick += new System.EventHandler(this.pnlBarTit_DoubleClick);
-            this.pnlBarTit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarTit_MouseMove);
             // 
             // btnRestaurar
             // 
@@ -304,15 +332,27 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // tmOcultarMenu
+            // btnEnProceso
             // 
-            this.tmOcultarMenu.Interval = 15;
-            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
+            this.btnEnProceso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.btnEnProceso.FlatAppearance.BorderSize = 0;
+            this.btnEnProceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnEnProceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnEnProceso, "btnEnProceso");
+            this.btnEnProceso.ForeColor = System.Drawing.Color.White;
+            this.btnEnProceso.Name = "btnEnProceso";
+            this.btnEnProceso.UseVisualStyleBackColor = false;
             // 
-            // tmMostrarMenu
+            // btnNoAdeudo
             // 
-            this.tmMostrarMenu.Interval = 15;
-            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
+            this.btnNoAdeudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.btnNoAdeudo.FlatAppearance.BorderSize = 0;
+            this.btnNoAdeudo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnNoAdeudo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnNoAdeudo, "btnNoAdeudo");
+            this.btnNoAdeudo.ForeColor = System.Drawing.Color.White;
+            this.btnNoAdeudo.Name = "btnNoAdeudo";
+            this.btnNoAdeudo.UseVisualStyleBackColor = false;
             // 
             // frmPrincipal
             // 
@@ -331,10 +371,10 @@
             this.pnlMenu.ResumeLayout(false);
             this.pnlBtnCredits.ResumeLayout(false);
             this.pnlBtnReports.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ssStatusBar.ResumeLayout(false);
             this.ssStatusBar.PerformLayout();
             this.pnlBarTit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +407,8 @@
         internal System.Windows.Forms.Button btnReportApplicant;
         private System.Windows.Forms.Panel pnlBtnCredits;
         internal System.Windows.Forms.Button btnRefiAmp;
+        internal System.Windows.Forms.Button btnGenDes;
+        internal System.Windows.Forms.Button btnEnProceso;
+        internal System.Windows.Forms.Button btnNoAdeudo;
     }
 }
