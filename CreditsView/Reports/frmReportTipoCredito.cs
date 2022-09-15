@@ -1,4 +1,5 @@
 ﻿using CreditsController.Controller;
+using CreditsModel.ModelDto;
 using CreditsUtil.Util;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -38,9 +39,10 @@ namespace CreditsView.Reports
                 rds.Value = objReportController.ListarTipoCreditoPorAnio(Convert.ToInt32(this.wTipCred.txtAnio.Text),
                     Convert.ToInt32(Cmb.ObtenerValor(this.wTipCred.cmbCentroCosto)));
 
-                ReportParameter[] rp = new ReportParameter[2];
+                ReportParameter[] rp = new ReportParameter[3];
                 rp[0] = new ReportParameter("txtReportAnio", this.wTipCred.txtAnio.Text);
                 rp[1] = new ReportParameter("txtReportTipoCredito", Cmb.ObtenerTexto(this.wTipCred.cmbCentroCosto));
+                rp[2] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
 
 
                 this.rvReportTipoCreditos.Reset();

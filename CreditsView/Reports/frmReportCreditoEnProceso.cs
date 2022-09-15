@@ -1,4 +1,5 @@
 ﻿using CreditsController.Controller;
+using CreditsModel.ModelDto;
 using CreditsUtil.Util;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -43,9 +44,10 @@ namespace CreditsView.Reports
                 rds.Name = "dsCreditoEnProceso";
                 rds.Value = objReportController.ListarCreditoEnProceso(desde, hasta);
 
-                ReportParameter[] rp = new ReportParameter[2];
+                ReportParameter[] rp = new ReportParameter[3];
                 rp[0] = new ReportParameter("fecDesde", this.wCredEnPrc.dtpFecDesde.Text);
                 rp[1] = new ReportParameter("fecHasta", this.wCredEnPrc.dtpFecHasta.Text);
+                rp[2] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
 
 
                 this.rvReportTipoCreditosGeneradoDesembolsado.Reset();
