@@ -52,7 +52,7 @@ namespace CreditsRepository.Repository
             xObjEnc.Corta_TpOperac = iDr[CreditsOperationsDto.xCortaTpOperac].ToString();
             xObjEnc.F1 = iDr[CreditsOperationsDto.xF1].ToString();
             xObjEnc.IdProveedor = Convert.ToInt32(iDr[CreditsOperationsDto.xIdProveedor]);
-            xObjEnc.DesProveedor = iDr[CreditsOperationsDto.xDesProveedor].ToString();
+            xObjEnc.Des_Proveedor = iDr[CreditsOperationsDto.xDesProveedor].ToString();
             xObjEnc.RUC = iDr[CreditsOperationsDto.xRuc].ToString();
             xObjEnc.Representante = iDr[CreditsOperationsDto.xRepresentante].ToString();
             xObjEnc.DNI = iDr[CreditsOperationsDto.xDni].ToString();
@@ -78,6 +78,7 @@ namespace CreditsRepository.Repository
             xObjEnc.Voucher = Convert.ToDateTime(iDr[CreditsOperationsDto.xVoucher]);
             xObjEnc.FeDesembolso = Convert.ToDateTime(iDr[CreditsOperationsDto.xFeDesembolso]);
             xObjEnc.IdCriterio = Convert.ToInt32(iDr[CreditsOperationsDto.xIdCriterio]);
+            xObjEnc.Estado = iDr[CreditsOperationsDto.xEstado].ToString();
             return xObjEnc;
         }
 

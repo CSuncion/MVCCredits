@@ -53,7 +53,7 @@ namespace CreditsModel.ModelDto
         public const string xMovil = "Movil";
         public const string xMail = "Mail";
         public const string xCondicion = "Condicion";
-        public const string xIdUnidDscto = "IdUnidDscto"; 
+        public const string xIdUnidDscto = "IdUnidDscto";
         public const string xDesUnidDscto = "DesUnidDscto";
         public const string xDesCortaUDscto = "DesCortaUDscto";
         public const string xCredito = "CREDITO";
@@ -67,6 +67,7 @@ namespace CreditsModel.ModelDto
         public const string xVoucher = "Voucher";
         public const string xFeDesembolso = "FeDesembolso";
         public const string xIdCriterio = "IdCriterio";
+        public const string xEstado = "Estado";
 
         private Additional _Additionals = new Additional();
         public int IdOperacion { get; set; }
@@ -101,7 +102,7 @@ namespace CreditsModel.ModelDto
         public string Corta_TpOperac { get; set; }
         public string F1 { get; set; }
         public int IdProveedor { get; set; }
-        public string DesProveedor { get; set; }
+        public string Des_Proveedor { get; set; }
         public string RUC { get; set; }
         public string Representante { get; set; }
         public string DNI { get; set; }
@@ -127,6 +128,7 @@ namespace CreditsModel.ModelDto
         public DateTime Voucher { get; set; }
         public DateTime FeDesembolso { get; set; }
         public int IdCriterio { get; set; }
+        public string Estado { get; set; }
         public Additional Additionals
         {
             get { return this._Additionals; }
