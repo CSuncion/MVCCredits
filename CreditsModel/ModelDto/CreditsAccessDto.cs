@@ -39,19 +39,19 @@ namespace CreditsModel.ModelDto
         public const string CargAcc = "Cargo_Acceso";
 
         public int Id_Acceso { get; set; }
-        public string Name_Acceso { get; set; }
-        public string Dni_Acceso { get; set; }
-        public string Pass_Acceso { get; set; }
-        public string Paterno_Acceso { get; set; }
-        public string Materno_Acceso { get; set; }
-        public string Names_Acceso { get; set; }
-        public string Mail_Acceso { get; set; }
-        public string Domicilio_Acceso { get; set; }
+        public string Name_Acceso { get; set; } = string.Empty;
+        public string Dni_Acceso { get; set; } = string.Empty;
+        public string Pass_Acceso { get; set; } = string.Empty;
+        public string Paterno_Acceso { get; set; } = string.Empty;
+        public string Materno_Acceso { get; set; } = string.Empty;
+        public string Names_Acceso { get; set; } = string.Empty;
+        public string Mail_Acceso { get; set; } = string.Empty;
+        public string Domicilio_Acceso { get; set; } = string.Empty;
         public Nullable<int> Dpto_Acceso { get; set; }
         public Nullable<int> Prov_Acceso { get; set; }
         public Nullable<int> Dist_Acceso { get; set; }
-        public string Fijo_Acceso { get; set; }
-        public string Movil_Acceso { get; set; }
+        public string Fijo_Acceso { get; set; } = string.Empty;
+        public string Movil_Acceso { get; set; } = string.Empty;
         public Nullable<int> Level_Acceso { get; set; }
         public Nullable<int> Sit_Acceso { get; set; }
         public Nullable<System.DateTime> Fecha_Acceso { get; set; }
@@ -60,11 +60,11 @@ namespace CreditsModel.ModelDto
         public Nullable<int> Ofc2 { get; set; }
         public Nullable<int> Ofc3 { get; set; }
         public Nullable<int> Ofc4 { get; set; }
-        public string Cip_Acceso { get; set; }
-        public string Codofin_Acceso { get; set; }
+        public string Cip_Acceso { get; set; } = string.Empty;
+        public string Codofin_Acceso { get; set; } = string.Empty;
         public Nullable<decimal> Grado_Acceso { get; set; }
         public Nullable<int> Pnp { get; set; }
-        public string Cargo_Acceso { get; set; }
+        public string Cargo_Acceso { get; set; } = string.Empty;
 
         public Additional Additionals
         {

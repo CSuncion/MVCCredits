@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rvReportTipoCreditosGeneradoDesembolsado = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvReportCreditoEnProceso = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rvReportTipoCreditosGeneradoDesembolsado
+            // rvReportCreditoEnProceso
             // 
-            this.rvReportTipoCreditosGeneradoDesembolsado.AutoSize = true;
-            this.rvReportTipoCreditosGeneradoDesembolsado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvReportTipoCreditosGeneradoDesembolsado.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportCreditoEnProceso.rdlc";
-            this.rvReportTipoCreditosGeneradoDesembolsado.Location = new System.Drawing.Point(0, 25);
-            this.rvReportTipoCreditosGeneradoDesembolsado.Name = "rvReportTipoCreditosGeneradoDesembolsado";
-            this.rvReportTipoCreditosGeneradoDesembolsado.ServerReport.BearerToken = null;
-            this.rvReportTipoCreditosGeneradoDesembolsado.Size = new System.Drawing.Size(800, 425);
-            this.rvReportTipoCreditosGeneradoDesembolsado.TabIndex = 6;
+            this.rvReportCreditoEnProceso.AutoSize = true;
+            this.rvReportCreditoEnProceso.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvReportCreditoEnProceso.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportCreditoEnProceso.rdlc";
+            this.rvReportCreditoEnProceso.Location = new System.Drawing.Point(0, 25);
+            this.rvReportCreditoEnProceso.Name = "rvReportCreditoEnProceso";
+            this.rvReportCreditoEnProceso.ServerReport.BearerToken = null;
+            this.rvReportCreditoEnProceso.Size = new System.Drawing.Size(800, 425);
+            this.rvReportCreditoEnProceso.TabIndex = 6;
             // 
             // tsPrincipal
             // 
@@ -73,7 +73,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.rvReportTipoCreditosGeneradoDesembolsado);
+            this.Controls.Add(this.rvReportCreditoEnProceso);
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportCreditoEnProceso";
@@ -88,7 +88,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvReportTipoCreditosGeneradoDesembolsado;
+        private Microsoft.Reporting.WinForms.ReportViewer rvReportCreditoEnProceso;
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsBtnSalir;
     }

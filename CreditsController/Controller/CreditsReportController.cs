@@ -39,5 +39,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarCreditoEnProceso(desde, hasta);
         }
+        public List<dynamic> ListarCreditoMorosos(string desde, string hasta)
+        {
+            return this._iCreditsReportRepository.ListarCreditoMorosos(desde, hasta);
+        }
     }
 }

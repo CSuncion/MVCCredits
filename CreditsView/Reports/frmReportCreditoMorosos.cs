@@ -16,14 +16,14 @@ using WinControles;
 
 namespace CreditsView.Reports
 {
-    public partial class frmReportCreditoEnProceso : Form
+    public partial class frmReportCreditoMorosos : Form
     {
-        public frmCreditoEnProceso wCredEnPrc;
+        public frmCreditoMorosos wCredMoro;
         CreditsReportController objReportController = new CreditsReportController();
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
-        public string nombreReporte = "CreditsView.Reports.rptReportCreditoEnProceso.rdlc";
+        public string nombreReporte = "CreditsView.Reports.rptReportCreditoMorosos.rdlc";
         public string formaReporte = "Horizontal";
-        public frmReportCreditoEnProceso()
+        public frmReportCreditoMorosos()
         {
             InitializeComponent();
         }
@@ -38,24 +38,24 @@ namespace CreditsView.Reports
             this.Dock = DockStyle.Fill;
             try
             {
-                string desde = this.wCredEnPrc.dtpFecDesde.Value.ToString("yyyyMMdd");
-                string hasta = this.wCredEnPrc.dtpFecHasta.Value.ToString("yyyyMMdd");
+                string desde = this.wCredMoro.dtpFecDesde.Value.ToString("yyyyMMdd");
+                string hasta = this.wCredMoro.dtpFecHasta.Value.ToString("yyyyMMdd");
                 ReportDataSource rds = new ReportDataSource();
-                rds.Name = "dsCreditoEnProceso";
-                rds.Value = objReportController.ListarCreditoEnProceso(desde, hasta);
+                rds.Name = "dsCreditosMorosos";
+                rds.Value = objReportController.ListarCreditoMorosos(desde, hasta);
 
                 ReportParameter[] rp = new ReportParameter[3];
-                rp[0] = new ReportParameter("fecDesde", this.wCredEnPrc.dtpFecDesde.Text);
-                rp[1] = new ReportParameter("fecHasta", this.wCredEnPrc.dtpFecHasta.Text);
+                rp[0] = new ReportParameter("fecDesde", this.wCredMoro.dtpFecDesde.Text);
+                rp[1] = new ReportParameter("fecHasta", this.wCredMoro.dtpFecHasta.Text);
                 rp[2] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
 
 
-                this.rvReportCreditoEnProceso.Reset();
-                this.rvReportCreditoEnProceso.LocalReport.ReportEmbeddedResource = nombreReporte;
-                this.rvReportCreditoEnProceso.LocalReport.SetParameters(rp);
-                this.rvReportCreditoEnProceso.LocalReport.EnableExternalImages = true;
-                this.rvReportCreditoEnProceso.LocalReport.DataSources.Clear();
-                this.rvReportCreditoEnProceso.LocalReport.DataSources.Add(rds);
+                this.rvReportCreditoMorosos.Reset();
+                this.rvReportCreditoMorosos.LocalReport.ReportEmbeddedResource = nombreReporte;
+                this.rvReportCreditoMorosos.LocalReport.SetParameters(rp);
+                this.rvReportCreditoMorosos.LocalReport.EnableExternalImages = true;
+                this.rvReportCreditoMorosos.LocalReport.DataSources.Clear();
+                this.rvReportCreditoMorosos.LocalReport.DataSources.Add(rds);
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);
@@ -64,9 +64,9 @@ namespace CreditsView.Reports
                 {
                     newPageSettings.Landscape = true;
                 }
-                this.rvReportCreditoEnProceso.SetPageSettings(newPageSettings);
+                this.rvReportCreditoMorosos.SetPageSettings(newPageSettings);
 
-                this.rvReportCreditoEnProceso.RefreshReport();
+                this.rvReportCreditoMorosos.RefreshReport();
                 this.Show();
             }
             catch (Exception e)

@@ -117,7 +117,7 @@ namespace CreditsView.Login
                 this.txtCodUsr.Focus();
             }
             this.txtCodUsr.Text = iUsuEN.Dni_Acceso;
-            this.txtNameUsr.Text = iUsuEN.Names_Acceso;
+            this.txtNameUsr.Text = iUsuEN.Names_Acceso.Trim() + ' ' + iUsuEN.Paterno_Acceso.Trim() + ' ' + iUsuEN.Materno_Acceso.Trim();
             this.txtProfile.Text = iUsuEN.Cargo_Acceso;
             return iUsuEN.Additionals.EsVerdad;
         }

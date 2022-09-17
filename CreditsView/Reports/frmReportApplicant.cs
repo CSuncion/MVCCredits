@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinControles;
+using CreditsModel.ModelDto;
 
 namespace CreditsView.Reports
 {
@@ -37,7 +38,7 @@ namespace CreditsView.Reports
 
         private void tsBtnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void frmReportApplicant_Load(object sender, EventArgs e)
@@ -57,9 +58,13 @@ namespace CreditsView.Reports
                 rds.Name = "DataSet1";
                 rds.Value = dt;
 
+                ReportParameter[] rp = new ReportParameter[1];
+                rp[0] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
+
                 this.rvwReportApplicant.Reset();
                 this.rvwReportApplicant.LocalReport.ReportEmbeddedResource = nombreReporte;
                 this.rvwReportApplicant.LocalReport.EnableExternalImages = true;
+                this.rvwReportApplicant.LocalReport.SetParameters(rp);
                 this.rvwReportApplicant.LocalReport.DataSources.Clear();
                 this.rvwReportApplicant.LocalReport.DataSources.Add(rds);
 

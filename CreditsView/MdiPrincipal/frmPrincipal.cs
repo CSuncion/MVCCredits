@@ -136,6 +136,16 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarCreditoEnProceso();
         }
+
+        private void btnReportMorosos_Click(object sender, EventArgs e)
+        {
+            this.InstanciarCreditoMorosos();
+        }
+
+        private void btnNoAdeudo_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region Methods
@@ -293,6 +303,13 @@ namespace CreditsView.MdiPrincipal
             win.NewWindow();
         }
 
+        public void InstanciarCreditoMorosos()
+        {
+            frmCreditoMorosos win = new frmCreditoMorosos();
+            this.FormatoVentanaHijoPrincipal(win, this.btnReportMorosos, null, 0, 0);
+            win.NewWindow();
+        }
+
         public void ShowOptionsReport()
         {
             if (this.pnlBtnReports.Visible)
@@ -305,13 +322,11 @@ namespace CreditsView.MdiPrincipal
             else
             {
                 this.pnlBtnReports.Visible = true;
-                this.btnCredits.Location = new Point(3, 508);
-                this.pnlCredits.Location = new Point(3, 508);
-                this.pnlBtnCredits.Location = new Point(13, 542);
+                this.btnCredits.Location = new Point(3, 478);
+                this.pnlCredits.Location = new Point(3, 478);
+                this.pnlBtnCredits.Location = new Point(13, 517);
             }
         }
-
-
 
         public void ShowOptionsCredits()
         {

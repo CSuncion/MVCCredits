@@ -1,6 +1,6 @@
 ﻿namespace CreditsView.Reports
 {
-    partial class frmReportApplicant
+    partial class frmReportCreditoMorosos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rvwReportApplicant = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvReportCreditoMorosos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rvwReportApplicant
+            // rvReportCreditoMorosos
             // 
-            this.rvwReportApplicant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvwReportApplicant.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportApplicant.rdlc";
-            this.rvwReportApplicant.Location = new System.Drawing.Point(0, 25);
-            this.rvwReportApplicant.Name = "rvwReportApplicant";
-            this.rvwReportApplicant.ServerReport.BearerToken = null;
-            this.rvwReportApplicant.Size = new System.Drawing.Size(800, 425);
-            this.rvwReportApplicant.TabIndex = 0;
+            this.rvReportCreditoMorosos.AutoSize = true;
+            this.rvReportCreditoMorosos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvReportCreditoMorosos.LocalReport.ReportEmbeddedResource = "CreditsView.Reports.rptReportCreditoMorosos.rdlc";
+            this.rvReportCreditoMorosos.Location = new System.Drawing.Point(0, 25);
+            this.rvReportCreditoMorosos.Name = "rvReportCreditoMorosos";
+            this.rvReportCreditoMorosos.ServerReport.BearerToken = null;
+            this.rvReportCreditoMorosos.Size = new System.Drawing.Size(800, 425);
+            this.rvReportCreditoMorosos.TabIndex = 6;
             // 
             // tsPrincipal
             // 
@@ -54,7 +55,7 @@
             this.tsPrincipal.Name = "tsPrincipal";
             this.tsPrincipal.Size = new System.Drawing.Size(800, 25);
             this.tsPrincipal.Stretch = true;
-            this.tsPrincipal.TabIndex = 1;
+            this.tsPrincipal.TabIndex = 5;
             // 
             // tsBtnSalir
             // 
@@ -66,17 +67,18 @@
             this.tsBtnSalir.Text = "Salir";
             this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
-            // frmReportApplicant
+            // frmReportCreditoMorosos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rvwReportApplicant);
+            this.ControlBox = false;
+            this.Controls.Add(this.rvReportCreditoMorosos);
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmReportApplicant";
-            this.Text = "Reporte Solicitantes";
-            this.Load += new System.EventHandler(this.frmReportApplicant_Load);
+            this.Name = "frmReportCreditoMorosos";
+            this.Text = "frmReportTipoCreditoGeneradoDesembolsado";
+            this.Load += new System.EventHandler(this.frmReportTipoCreditoGeneradoDesembolsado_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -86,7 +88,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvwReportApplicant;
+        private Microsoft.Reporting.WinForms.ReportViewer rvReportCreditoMorosos;
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsBtnSalir;
     }
