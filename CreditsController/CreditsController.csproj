@@ -49,6 +49,7 @@
     <Compile Include="Controller\CreditsGeneralController.cs" />
     <Compile Include="Controller\CreditsOperationsController.cs" />
     <Compile Include="Controller\CreditsReportController.cs" />
+    <Compile Include="Controller\CreditsSolicitanteController.cs" />
     <Compile Include="Controller\PermissionsCreditsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

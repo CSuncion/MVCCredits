@@ -27,8 +27,10 @@ namespace CreditsView.Credits
         string eNombreColumnaDgvCredOper = CreditsOperationsDto.DniSolic;
         public List<CreditsOperationsDto> eListCredOpe = new List<CreditsOperationsDto>();
         CreditsOperationsController oCrOpCtrll = new CreditsOperationsController();
+        CreditsSolicitanteController oSolCtrll = new CreditsSolicitanteController();
         Dgv.Franja eFranjaDgvCredOpe = Dgv.Franja.PorIndice;
         public string eClaveDgvCredOpe = string.Empty;
+        CreditsSolicitantesDto eSol = new CreditsSolicitantesDto();
         public frmEditRefinanciadoAmpliado()
         {
             InitializeComponent();
@@ -144,6 +146,7 @@ namespace CreditsView.Credits
 
         public void ActualizarVentana()
         {
+            this.ActualizarListaSolicitantesDeBaseDatos();
             this.ActualizarListaCreditosOperacionesDeBaseDatos();
             this.ActualizarDgvCredOpe();
             //this.AccionBuscar();
@@ -176,6 +179,28 @@ namespace CreditsView.Credits
         {
             this.txtDocId.Text = "Ingrese " + this.eNombreColumnaDgvCredOper;
             this.txtDocId.Focus();
+        }
+
+        public void ActualizarListaSolicitantesDeBaseDatos()
+        {
+            //validar si es acto ir a la bd
+            if (this.txtDocId.Text.Trim() != string.Empty && eVaBD == 0) { return; }
+
+            //ir a la bd
+            CreditsSolicitantesDto iSolEN = new CreditsSolicitantesDto();
+            iSolEN.Dni_Solic = this.txtDocId.Text.Trim();
+            iSolEN = oSolCtrll.ListarSolicitantesPorDni(iSolEN);
+            this.AsignarSolicitantes(iSolEN);
+        }
+        public void AsignarSolicitantes(CreditsSolicitantesDto iSolEN)
+        {
+            this.txtApeNom.Text = iSolEN.Paterno.Trim() + " " + iSolEN.Materno.Trim() + ", " + iSolEN.Nombres.Trim();
+            this.txtGrado.Text = iSolEN.DesGrado.Trim();
+            this.txtEMail.Text = iSolEN.Mail.Trim();
+            this.txtCelular.Text = iSolEN.Movil.Trim();
+            this.txtDepartamento.Text = iSolEN.DesDpto.Trim();
+            this.txtProvincia.Text = iSolEN.DesProv.Trim();
+            this.txtDistrito.Text = iSolEN.DesDist.Trim();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
