@@ -45,6 +45,13 @@ namespace CreditsView.MdiPrincipal
 
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
+            this.btnMaximizar.Visible = false;
+            this.btnRestaurar.Visible = true;
+            this.isSize = true;
+            lx = this.Location.X;
+            ly = this.Location.Y;
+            sw = this.Size.Width;
+            sh = this.Size.Height;
             this.MaximizedWindow();
 
         }
@@ -78,10 +85,16 @@ namespace CreditsView.MdiPrincipal
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (this.pnlMenu.Width == 285)
-                this.tmOcultarMenu.Enabled = true;
-            else if (this.pnlMenu.Width == 60)
-                this.tmMostrarMenu.Enabled = true;
+            //if (this.pnlMenu.Width == 285)
+            //{
+            //    this.btnMenu.Location = new Point(22, 6);
+            //    this.tmOcultarMenu.Enabled = true;
+            //}
+            //else if (this.pnlMenu.Width == 60)
+            //{
+            //    this.btnMenu.Location = new Point(247, 6);
+            //    this.tmMostrarMenu.Enabled = true;
+            //}
         }
         private void pnlBarTit_DoubleClick(object sender, EventArgs e)
         {
@@ -97,7 +110,8 @@ namespace CreditsView.MdiPrincipal
         }
         private void frmPrincipal_Resize(object sender, EventArgs e)
         {
-
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
         private void btnCreditsGranted_Click(object sender, EventArgs e)
         {
@@ -317,14 +331,14 @@ namespace CreditsView.MdiPrincipal
                 this.pnlBtnReports.Visible = false;
                 this.btnCredits.Location = new Point(3, 170);
                 this.pnlCredits.Location = new Point(3, 170);
-                this.pnlBtnCredits.Location = new Point(13, 208);
+                this.pnlBtnCredits.Location = new Point(0, 208);
             }
             else
             {
                 this.pnlBtnReports.Visible = true;
                 this.btnCredits.Location = new Point(3, 478);
                 this.pnlCredits.Location = new Point(3, 478);
-                this.pnlBtnCredits.Location = new Point(13, 517);
+                this.pnlBtnCredits.Location = new Point(0, 517);
             }
         }
 

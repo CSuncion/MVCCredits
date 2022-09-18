@@ -28,9 +28,11 @@ namespace CreditsView.Credits
         public List<CreditsOperationsDto> eListCredOpe = new List<CreditsOperationsDto>();
         CreditsOperationsController oCrOpCtrll = new CreditsOperationsController();
         CreditsSolicitanteController oSolCtrll = new CreditsSolicitanteController();
+        CreditsRefinanciadoAmpliadoController oRefAmpCtrll = new CreditsRefinanciadoAmpliadoController();
         Dgv.Franja eFranjaDgvCredOpe = Dgv.Franja.PorIndice;
         public string eClaveDgvCredOpe = string.Empty;
         CreditsSolicitantesDto eSol = new CreditsSolicitantesDto();
+        int Accion = 0;
         public frmEditRefinanciadoAmpliado()
         {
             InitializeComponent();
@@ -110,7 +112,7 @@ namespace CreditsView.Credits
             List<DataGridViewColumn> iLisCreOpe = new List<DataGridViewColumn>();
 
             //agregando las columnas
-            iLisCreOpe.Add(Dgv.NuevaColumnaCheckBox(CreditsOperationsDto.IdOper, "Ref./Amp.", 70));
+            iLisCreOpe.Add(Dgv.NuevaColumnaCheckBox(CreditsOperationsDto.VerFal, "Ref./Amp.", 70));
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xCortaTpOperac, "Tipo", 40));
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xSer, "Ser", 50));
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.Nro, "Número", 60));
@@ -124,9 +126,10 @@ namespace CreditsView.Credits
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xAnio, "Año", 40));
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xVoucher, "Voucher", 70));
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xFeDesembolso, "Desembolsa", 70));
-            iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xEstado, "Condición", 70));
-            iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.IdOper, "IdOperacion", 40, false));
+            iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xDesEstado, "Condición", 70));
+            iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.xDesSubEstado, "Sub-Condición", 100));
             iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.DniSolic, "Dni_Solicitante", 40, false));
+            iLisCreOpe.Add(Dgv.NuevaColumnaTextCadena(CreditsOperationsDto.IdOper, "Id_Operacion", 40, false));
 
             //devolver
             return iLisCreOpe;
@@ -170,10 +173,10 @@ namespace CreditsView.Credits
             //asignar parametros
             string iValorBusqueda = this.txtDocId.Text.Trim();
             string iCampoBusqueda = eNombreColumnaDgvCredOper;
-            List<CreditsOperationsDto> iListaSolicitudPedidoCabes = eListCredOpe;
+            List<CreditsOperationsDto> iListaOperationCabes = eListCredOpe;
 
             //ejecutar y retornar
-            return oCrOpCtrll.ListarDatosParaGrillaPrincipal(iValorBusqueda, iCampoBusqueda, iListaSolicitudPedidoCabes);
+            return oCrOpCtrll.ListarDatosParaGrillaPrincipal(iValorBusqueda, iCampoBusqueda, iListaOperationCabes);
         }
         public void AccionBuscar()
         {
@@ -203,9 +206,82 @@ namespace CreditsView.Credits
             this.txtDistrito.Text = iSolEN.DesDist.Trim();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        public void AsignarRefinanciadoAmpliado(int pFilaChequeada, int pColumnaChequeada)
         {
+            //solo debe actuar cuando la columna sea "0" y la fila diferente de "-1"
+            if ((pColumnaChequeada == 0 && pFilaChequeada != -1))
+            {
+                //IdOperacion = Dgv.ObtenerValorCelda(this.dgvRefAmp, CreditsOperationsDto.IdOper);
+            }
+        }
 
+        public int ValidarOperacionSeleccionado()
+        {
+            int sel = 0;
+            for (int i = 0; i < dgvRefAmp.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.VerFal].Value))
+                    sel += 1;
+            }
+            return sel;
+        }
+
+        public CreditsRefinanciadoAmpliadoDto ValidarExistenciaRefinanciadoAmpliadoPorOperacion()
+        {
+            CreditsRefinanciadoAmpliadoDto oRefAmp = new CreditsRefinanciadoAmpliadoDto();
+            for (int i = 0; i < dgvRefAmp.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.VerFal].Value))
+                {
+                    oRefAmp.IdOperacion = Convert.ToInt32(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.IdOper].Value);
+                    oRefAmp = oRefAmpCtrll.ListarRefinanciadoAmpliadoPorOperacion(oRefAmp);
+                }
+            }
+            return oRefAmp;
+        }
+
+        public int AsignarOperacion()
+        {
+            int idOperacion = 0;
+            for (int i = 0; i < dgvRefAmp.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.VerFal].Value))
+                {
+                    idOperacion = Convert.ToInt32(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.IdOper].Value);
+                }
+            }
+            return idOperacion;
+        }
+
+        public void GuardarRefinanciamientoAmpliacion(int IdOperacion)
+        {
+            CreditsRefinanciadoAmpliadoDto oRefAmp = new CreditsRefinanciadoAmpliadoDto();
+            oRefAmp.IdOperacion = IdOperacion;
+            oRefAmp.Estado = this.Accion;
+            oRefAmpCtrll.CrearRefinanciadoAmpliado(oRefAmp);
+        }
+
+        public void AdicionarRefinanciadoAmpliado()
+        {
+            if (this.ValidarOperacionSeleccionado() == 0 || this.ValidarOperacionSeleccionado() > 1)
+            {
+                Mensaje.OperacionDenegada("Solo debe seleccionar un crédito.", this.wRefAmp.eTitulo);
+                return;
+            }
+
+            CreditsRefinanciadoAmpliadoDto resultExis = this.ValidarExistenciaRefinanciadoAmpliadoPorOperacion();
+
+            if (resultExis.IdOperacion != 0)
+            {
+                Mensaje.OperacionDenegada("Ya existe un " + resultExis.DesEstado, this.wRefAmp.eTitulo);
+                return;
+            }
+
+            this.GuardarRefinanciamientoAmpliacion(this.AsignarOperacion());
+            if (this.Accion == 1)
+                Mensaje.OperacionSatisfactoria("El Refinanciamiento se adiciono correctamente", this.wRefAmp.eTitulo);
+            else
+                Mensaje.OperacionSatisfactoria("La Ampliacion se adiciono correctamente", this.wRefAmp.eTitulo);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -223,6 +299,28 @@ namespace CreditsView.Credits
         private void frmEditRefinanciadoAmpliado_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.wRefAmp.Enabled = true;
+        }
+
+        private void txtDocId_Validating(object sender, CancelEventArgs e)
+        {
+            this.ActualizarVentana();
+        }
+
+        private void btnRefinanciado_Click(object sender, EventArgs e)
+        {
+            this.Accion = 1;
+            this.AdicionarRefinanciadoAmpliado();
+        }
+
+        private void dgvRefAmp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //this.AsignarRefinanciadoAmpliado(e.RowIndex, e.ColumnIndex);
+        }
+
+        private void btnAmpliado_Click(object sender, EventArgs e)
+        {
+            this.Accion = 2;
+            this.AdicionarRefinanciadoAmpliado();
         }
     }
 }

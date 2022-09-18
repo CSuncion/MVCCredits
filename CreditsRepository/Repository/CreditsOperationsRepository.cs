@@ -20,7 +20,7 @@ namespace CreditsRepository.Repository
         private CreditsOperationsDto Objeto(IDataReader iDr)
         {
             CreditsOperationsDto xObjEnc = new CreditsOperationsDto();
-            xObjEnc.IdOperacion = Convert.ToInt32(iDr[CreditsOperationsDto.IdOper]);
+            xObjEnc.Id_Operacion = Convert.ToInt32(iDr[CreditsOperationsDto.IdOper]);
             xObjEnc.Tipo = Convert.ToInt32(iDr[CreditsOperationsDto.Tip]);
             xObjEnc.Ser = iDr[CreditsOperationsDto.xSer].ToString();
             xObjEnc.Numero = iDr[CreditsOperationsDto.Nro].ToString();
@@ -78,7 +78,9 @@ namespace CreditsRepository.Repository
             xObjEnc.Voucher = Convert.ToDateTime(iDr[CreditsOperationsDto.xVoucher]);
             xObjEnc.FeDesembolso = Convert.ToDateTime(iDr[CreditsOperationsDto.xFeDesembolso]);
             xObjEnc.IdCriterio = Convert.ToInt32(iDr[CreditsOperationsDto.xIdCriterio]);
-            xObjEnc.Estado = iDr[CreditsOperationsDto.xEstado].ToString();
+            xObjEnc.Estado = Convert.ToInt32(iDr[CreditsOperationsDto.xEstado]);
+            xObjEnc.DesEstado = iDr[CreditsOperationsDto.xDesEstado].ToString();
+            xObjEnc.DesSubEstado = iDr[CreditsOperationsDto.xDesSubEstado].ToString();
             return xObjEnc;
         }
 

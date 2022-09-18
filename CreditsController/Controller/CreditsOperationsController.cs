@@ -76,7 +76,7 @@ namespace CreditsController.Controller
                 case CreditsOperationsDto.xVoucher: return pObj.Voucher.ToString();
                 case CreditsOperationsDto.xFeDesembolso: return pObj.FeDesembolso.ToString();
                 case CreditsOperationsDto.xCondicion: return pObj.Condicion.ToString();
-                case CreditsOperationsDto.IdOper: return pObj.IdOperacion.ToString();
+                case CreditsOperationsDto.IdOper: return pObj.Id_Operacion.ToString();
                 case CreditsOperationsDto.DniSolic: return pObj.DniSolicitante.ToString();
             }
 

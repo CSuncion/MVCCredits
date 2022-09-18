@@ -68,7 +68,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(830, 20);
+            this.label1.Size = new System.Drawing.Size(985, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos Generales";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -96,22 +96,22 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(805, 108);
+            this.groupBox1.Size = new System.Drawing.Size(960, 108);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             // 
             // txtDistrito
             // 
-            this.txtDistrito.Location = new System.Drawing.Point(595, 71);
+            this.txtDistrito.Location = new System.Drawing.Point(668, 71);
             this.txtDistrito.MaxLength = 8;
             this.txtDistrito.Name = "txtDistrito";
-            this.txtDistrito.Size = new System.Drawing.Size(195, 20);
+            this.txtDistrito.Size = new System.Drawing.Size(238, 20);
             this.txtDistrito.TabIndex = 33;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(592, 55);
+            this.label8.Location = new System.Drawing.Point(665, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 32;
@@ -119,16 +119,16 @@
             // 
             // txtProvincia
             // 
-            this.txtProvincia.Location = new System.Drawing.Point(433, 71);
+            this.txtProvincia.Location = new System.Drawing.Point(424, 71);
             this.txtProvincia.MaxLength = 8;
             this.txtProvincia.Name = "txtProvincia";
-            this.txtProvincia.Size = new System.Drawing.Size(146, 20);
+            this.txtProvincia.Size = new System.Drawing.Size(238, 20);
             this.txtProvincia.TabIndex = 31;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(430, 55);
+            this.label9.Location = new System.Drawing.Point(424, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 13);
             this.label9.TabIndex = 30;
@@ -139,7 +139,7 @@
             this.txtDepartamento.Location = new System.Drawing.Point(180, 71);
             this.txtDepartamento.MaxLength = 8;
             this.txtDepartamento.Name = "txtDepartamento";
-            this.txtDepartamento.Size = new System.Drawing.Size(167, 20);
+            this.txtDepartamento.Size = new System.Drawing.Size(238, 20);
             this.txtDepartamento.TabIndex = 29;
             // 
             // label10
@@ -170,16 +170,16 @@
             // 
             // txtEMail
             // 
-            this.txtEMail.Location = new System.Drawing.Point(595, 32);
+            this.txtEMail.Location = new System.Drawing.Point(668, 32);
             this.txtEMail.MaxLength = 8;
             this.txtEMail.Name = "txtEMail";
-            this.txtEMail.Size = new System.Drawing.Size(195, 20);
+            this.txtEMail.Size = new System.Drawing.Size(238, 20);
             this.txtEMail.TabIndex = 25;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(592, 16);
+            this.label6.Location = new System.Drawing.Point(665, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 24;
@@ -187,16 +187,16 @@
             // 
             // txtGrado
             // 
-            this.txtGrado.Location = new System.Drawing.Point(433, 32);
+            this.txtGrado.Location = new System.Drawing.Point(424, 32);
             this.txtGrado.MaxLength = 8;
             this.txtGrado.Name = "txtGrado";
-            this.txtGrado.Size = new System.Drawing.Size(146, 20);
+            this.txtGrado.Size = new System.Drawing.Size(238, 20);
             this.txtGrado.TabIndex = 23;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(430, 16);
+            this.label5.Location = new System.Drawing.Point(424, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 22;
@@ -226,6 +226,7 @@
             this.txtDocId.Name = "txtDocId";
             this.txtDocId.Size = new System.Drawing.Size(140, 20);
             this.txtDocId.TabIndex = 19;
+            this.txtDocId.Validating += new System.ComponentModel.CancelEventHandler(this.txtDocId_Validating);
             // 
             // label2
             // 
@@ -245,14 +246,14 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(1, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(830, 20);
+            this.label3.Size = new System.Drawing.Size(985, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Datos Refinanciamiento o Ampliación";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(741, 428);
+            this.btnCancelar.Location = new System.Drawing.Point(887, 428);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(85, 23);
             this.btnCancelar.TabIndex = 21;
@@ -267,7 +268,7 @@
             this.groupBox2.Controls.Add(this.dgvRefAmp);
             this.groupBox2.Location = new System.Drawing.Point(12, 166);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(805, 256);
+            this.groupBox2.Size = new System.Drawing.Size(960, 256);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             // 
@@ -280,8 +281,9 @@
             this.dgvRefAmp.GridColor = System.Drawing.Color.Silver;
             this.dgvRefAmp.Location = new System.Drawing.Point(3, 16);
             this.dgvRefAmp.Name = "dgvRefAmp";
-            this.dgvRefAmp.Size = new System.Drawing.Size(799, 237);
+            this.dgvRefAmp.Size = new System.Drawing.Size(954, 237);
             this.dgvRefAmp.TabIndex = 0;
+            this.dgvRefAmp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRefAmp_CellContentClick);
             // 
             // btnBuscar
             // 
@@ -296,28 +298,30 @@
             // 
             // btnAmpliado
             // 
-            this.btnAmpliado.Location = new System.Drawing.Point(650, 428);
+            this.btnAmpliado.Location = new System.Drawing.Point(796, 428);
             this.btnAmpliado.Name = "btnAmpliado";
             this.btnAmpliado.Size = new System.Drawing.Size(85, 23);
             this.btnAmpliado.TabIndex = 23;
             this.btnAmpliado.Text = "Ampliado";
             this.btnAmpliado.UseVisualStyleBackColor = true;
+            this.btnAmpliado.Click += new System.EventHandler(this.btnAmpliado_Click);
             // 
             // btnRefinanciado
             // 
-            this.btnRefinanciado.Location = new System.Drawing.Point(559, 428);
+            this.btnRefinanciado.Location = new System.Drawing.Point(705, 428);
             this.btnRefinanciado.Name = "btnRefinanciado";
             this.btnRefinanciado.Size = new System.Drawing.Size(85, 23);
             this.btnRefinanciado.TabIndex = 24;
             this.btnRefinanciado.Text = "Refinanciado";
             this.btnRefinanciado.UseVisualStyleBackColor = true;
+            this.btnRefinanciado.Click += new System.EventHandler(this.btnRefinanciado_Click);
             // 
             // frmEditRefinanciadoAmpliado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(829, 490);
+            this.ClientSize = new System.Drawing.Size(984, 463);
             this.ControlBox = false;
             this.Controls.Add(this.btnRefinanciado);
             this.Controls.Add(this.btnAmpliado);
@@ -326,7 +330,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmEditRefinanciadoAmpliado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Refinanciado o Ampliación";

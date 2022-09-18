@@ -67,10 +67,13 @@ namespace CreditsModel.ModelDto
         public const string xVoucher = "Voucher";
         public const string xFeDesembolso = "FeDesembolso";
         public const string xIdCriterio = "IdCriterio";
+        public const string xDesEstado = "DesEstado";
         public const string xEstado = "Estado";
+        public const string xDesSubEstado = "DesSubEstado";
+        public const string VerFal = "VerdadFalso";
 
         private Additional _Additionals = new Additional();
-        public int IdOperacion { get; set; }
+        public int Id_Operacion { get; set; }
         public int Tipo { get; set; }
         public string Ser { get; set; }
         public string Numero { get; set; }
@@ -128,7 +131,10 @@ namespace CreditsModel.ModelDto
         public DateTime Voucher { get; set; }
         public DateTime FeDesembolso { get; set; }
         public int IdCriterio { get; set; }
-        public string Estado { get; set; }
+        public int Estado { get; set; }
+        public string DesEstado { get; set; }
+        public string DesSubEstado { get; set; }
+        public Boolean VerdadFalso { get; set; } = false;
         public Additional Additionals
         {
             get { return this._Additionals; }

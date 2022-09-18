@@ -1,4 +1,5 @@
 ﻿using CreditsModel.ModelDto;
+using CreditsView.MdiPrincipal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,20 @@ namespace CreditsView.Credits
             this.eFranjaDgvRefAmp = Dgv.Franja.PorValor;
             TabCtrl.InsertarVentana(this, win);
             win.VentanaAdicionar();
+        }
+        public void Cerrar()
+        {
+            frmPrincipal wMen = (frmPrincipal)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.btnRefiAmp, null);
+        }
+        private void tsbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmRefinanciadoAmpliado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Cerrar();
         }
     }
 }

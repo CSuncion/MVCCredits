@@ -239,6 +239,7 @@
             this.tsbSalir.Size = new System.Drawing.Size(36, 43);
             this.tsbSalir.Text = "Salir";
             this.tsbSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // DgvRefiAmp
             // 
@@ -264,6 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRefinanciadoAmpliado";
             this.Text = "Refinanciado o Ampliado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRefinanciadoAmpliado_FormClosing);
             this.sst1.ResumeLayout(false);
             this.sst1.PerformLayout();
             this.tsSecundario.ResumeLayout(false);
