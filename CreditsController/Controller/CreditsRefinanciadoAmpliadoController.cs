@@ -21,9 +21,14 @@ namespace CreditsController.Controller
             this._iCreditsRefinanciadoAmpliadoRepository.CrearRefinanciadoAmpliado(pObj);
         }
 
-        public CreditsRefinanciadoAmpliadoDto ListarRefinanciadoAmpliadoPorOperacion(CreditsRefinanciadoAmpliadoDto pObj)
+        public static CreditsRefinanciadoAmpliadoDto ListarRefinanciadoAmpliadoPorOperacion(CreditsRefinanciadoAmpliadoDto pObj)
         {
-            return this._iCreditsRefinanciadoAmpliadoRepository.ListarRefinanciadoAmpliadoPorOperacion(pObj);
+            ICreditsRefinanciadoAmpliadoRepository iDeclaracionesRefinanciadoAmpliadoRepository = new CreditsRefinanciadoAmpliadoRepository();
+            return iDeclaracionesRefinanciadoAmpliadoRepository.ListarRefinanciadoAmpliadoPorOperacion(pObj);
+        }
+        public void EliminarRefinanciadoAmpliado(CreditsRefinanciadoAmpliadoDto pObj)
+        {
+            this._iCreditsRefinanciadoAmpliadoRepository.EliminarRefinanciadoAmpliado(pObj);
         }
     }
 }

@@ -90,6 +90,20 @@ namespace CreditsView.Credits
             eMas.AccionPasarTextoPrincipal();
             this.txtDocId.Focus();
         }
+
+        public void VentanaModificar(CreditsOperationsDto pOpe)
+        {
+            this.MostrarRefinanciadoAmpliado(pOpe);
+            this.InicializaVentana();
+            eMas.AccionHabilitarControles(0);
+            eMas.AccionPasarTextoPrincipal();
+            this.txtDocId.ReadOnly = true;
+            this.btnBuscar.Visible = false;
+        }
+        public void MostrarRefinanciadoAmpliado(CreditsOperationsDto pOpe)
+        {
+            this.txtDocId.Text = pOpe.Dni_Solicitante;
+        }
         public void InicializaVentana()
         {
             //titulo ventana
@@ -142,9 +156,9 @@ namespace CreditsView.Credits
 
             //ir a la bd
             CreditsOperationsDto iCreOpeEN = new CreditsOperationsDto();
-            iCreOpeEN.DniSolicitante = this.txtDocId.Text.Trim();
+            iCreOpeEN.Dni_Solicitante = this.txtDocId.Text.Trim();
             iCreOpeEN.Additionals.CampoOrden = eNombreColumnaDgvCredOper;
-            this.eListCredOpe = oCrOpCtrll.TablaOperacDni(iCreOpeEN);
+            this.eListCredOpe = CreditsOperationsController.TablaOperacDni(iCreOpeEN);
         }
 
         public void ActualizarVentana()
@@ -234,7 +248,7 @@ namespace CreditsView.Credits
                 if (Convert.ToBoolean(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.VerFal].Value))
                 {
                     oRefAmp.IdOperacion = Convert.ToInt32(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.IdOper].Value);
-                    oRefAmp = oRefAmpCtrll.ListarRefinanciadoAmpliadoPorOperacion(oRefAmp);
+                    oRefAmp = CreditsRefinanciadoAmpliadoController.ListarRefinanciadoAmpliadoPorOperacion(oRefAmp);
                 }
             }
             return oRefAmp;
@@ -246,9 +260,7 @@ namespace CreditsView.Credits
             for (int i = 0; i < dgvRefAmp.Rows.Count; i++)
             {
                 if (Convert.ToBoolean(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.VerFal].Value))
-                {
                     idOperacion = Convert.ToInt32(dgvRefAmp.Rows[i].Cells[CreditsOperationsDto.IdOper].Value);
-                }
             }
             return idOperacion;
         }
@@ -282,6 +294,43 @@ namespace CreditsView.Credits
                 Mensaje.OperacionSatisfactoria("El Refinanciamiento se adiciono correctamente", this.wRefAmp.eTitulo);
             else
                 Mensaje.OperacionSatisfactoria("La Ampliacion se adiciono correctamente", this.wRefAmp.eTitulo);
+
+            this.wRefAmp.ActualizarVentana();
+            this.ActualizarVentana();
+        }
+
+        public void ModificarRefinanciadoAmpliado()
+        {
+            if (this.ValidarOperacionSeleccionado() == 0 || this.ValidarOperacionSeleccionado() > 1)
+            {
+                Mensaje.OperacionDenegada("Solo debe seleccionar un crédito.", this.wRefAmp.eTitulo);
+                return;
+            }
+
+            CreditsRefinanciadoAmpliadoDto resultExis = this.ValidarExistenciaRefinanciadoAmpliadoPorOperacion();
+
+            if (resultExis.IdOperacion != 0)
+            {
+                Mensaje.OperacionDenegada("Ya existe un " + resultExis.DesEstado, this.wRefAmp.eTitulo);
+                return;
+            }
+
+            this.GuardarRefinanciamientoAmpliacion(this.AsignarOperacion());
+            if (this.Accion == 1)
+                Mensaje.OperacionSatisfactoria("El Refinanciamiento se adiciono correctamente", this.wRefAmp.eTitulo);
+            else
+                Mensaje.OperacionSatisfactoria("La Ampliacion se adiciono correctamente", this.wRefAmp.eTitulo);
+        }
+
+        public void Aceptar()
+        {
+            switch (this.eOperacion)
+            {
+                case Universal.Opera.Adicionar: { this.AdicionarRefinanciadoAmpliado(); break; }
+                case Universal.Opera.Modificar: { this.ModificarRefinanciadoAmpliado(); break; }
+                //case Universal.Opera.Eliminar: { this.Eliminar(); break; }
+                default: break;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -303,13 +352,15 @@ namespace CreditsView.Credits
 
         private void txtDocId_Validating(object sender, CancelEventArgs e)
         {
+            if (this.dgvRefAmp.Rows.Count != 0) { eVaBD = 0; }
             this.ActualizarVentana();
+            eVaBD = 1;
         }
 
         private void btnRefinanciado_Click(object sender, EventArgs e)
         {
             this.Accion = 1;
-            this.AdicionarRefinanciadoAmpliado();
+            this.Aceptar();
         }
 
         private void dgvRefAmp_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -320,7 +371,7 @@ namespace CreditsView.Credits
         private void btnAmpliado_Click(object sender, EventArgs e)
         {
             this.Accion = 2;
-            this.AdicionarRefinanciadoAmpliado();
+            this.Aceptar();
         }
     }
 }

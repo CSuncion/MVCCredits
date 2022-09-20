@@ -11,5 +11,6 @@ namespace CreditsRepository.IRepository
     {
         void CrearRefinanciadoAmpliado(CreditsRefinanciadoAmpliadoDto pObj);
         CreditsRefinanciadoAmpliadoDto ListarRefinanciadoAmpliadoPorOperacion(CreditsRefinanciadoAmpliadoDto pObj);
+        void EliminarRefinanciadoAmpliado(CreditsRefinanciadoAmpliadoDto pObj);
     }
 }

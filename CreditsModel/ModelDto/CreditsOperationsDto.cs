@@ -75,15 +75,15 @@ namespace CreditsModel.ModelDto
         private Additional _Additionals = new Additional();
         public int Id_Operacion { get; set; }
         public int Tipo { get; set; }
-        public string Ser { get; set; }
-        public string Numero { get; set; }
+        public string Ser { get; set; } = string.Empty;
+        public string Numero { get; set; } = string.Empty;
         public int Producto { get; set; }
-        public string NameProducto { get; set; }
-        public string Num { get; set; }
+        public string NameProducto { get; set; } = string.Empty;
+        public string Num { get; set; } = string.Empty;
         public DateTime Fecha { get; set; }
         public int UnidDscto { get; set; }
-        public string DniSolicitante { get; set; }
-        public string Proveedor { get; set; }
+        public string Dni_Solicitante { get; set; } = string.Empty;
+        public string Proveedor { get; set; } = string.Empty;
         public int Moneda { get; set; }
         public decimal TpCambio { get; set; }
         public decimal Aprobado { get; set; }
@@ -92,7 +92,7 @@ namespace CreditsModel.ModelDto
         public decimal Seguro { get; set; }
         public decimal GastosAdm { get; set; }
         public decimal IGV { get; set; }
-        public string Obs { get; set; }
+        public string Obs { get; set; } = string.Empty;
         public int Provedor { get; set; }
         public int PeGracia { get; set; }
         public int Fg { get; set; }
@@ -101,25 +101,25 @@ namespace CreditsModel.ModelDto
         public int Cuota { get; set; }
         public int LoteId { get; set; }
         public int IdTpOperac { get; set; }
-        public string DesTpOperac { get; set; }
-        public string Corta_TpOperac { get; set; }
-        public string F1 { get; set; }
+        public string DesTpOperac { get; set; } = string.Empty;
+        public string Corta_TpOperac { get; set; } = string.Empty;
+        public string F1 { get; set; } = string.Empty;
         public int IdProveedor { get; set; }
-        public string Des_Proveedor { get; set; }
-        public string RUC { get; set; }
-        public string Representante { get; set; }
-        public string DNI { get; set; }
-        public string Direccion { get; set; }
+        public string Des_Proveedor { get; set; } = string.Empty;
+        public string RUC { get; set; } = string.Empty;
+        public string Representante { get; set; } = string.Empty;
+        public string DNI { get; set; } = string.Empty;
+        public string Direccion { get; set; } = string.Empty;
         public int Dpto { get; set; }
         public int Prov { get; set; }
         public int Dist { get; set; }
-        public string Fijo { get; set; }
-        public string Movil { get; set; }
-        public string Mail { get; set; }
+        public string Fijo { get; set; } = string.Empty;
+        public string Movil { get; set; } = string.Empty;
+        public string Mail { get; set; } = string.Empty;
         public int Condicion { get; set; }
         public int IdUnidDscto { get; set; }
-        public string DesUnidDscto { get; set; }
-        public string DesCortaUDscto { get; set; }
+        public string DesUnidDscto { get; set; } = string.Empty;
+        public string DesCortaUDscto { get; set; } = string.Empty;
         public int Credito { get; set; }
         public int Pagos { get; set; }
         public int IdOrden { get; set; }
@@ -132,8 +132,8 @@ namespace CreditsModel.ModelDto
         public DateTime FeDesembolso { get; set; }
         public int IdCriterio { get; set; }
         public int Estado { get; set; }
-        public string DesEstado { get; set; }
-        public string DesSubEstado { get; set; }
+        public string DesEstado { get; set; } = string.Empty;
+        public string DesSubEstado { get; set; } = string.Empty;
         public Boolean VerdadFalso { get; set; } = false;
         public Additional Additionals
         {

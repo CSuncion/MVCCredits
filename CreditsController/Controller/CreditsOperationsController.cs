@@ -16,9 +16,10 @@ namespace CreditsController.Controller
         {
             this._iCreditsOperationsRepository = new CreditsOperationsRepository();
         }
-        public List<CreditsOperationsDto> TablaOperacDni(CreditsOperationsDto pObj)
+        public static List<CreditsOperationsDto> TablaOperacDni(CreditsOperationsDto pObj)
         {
-            return this._iCreditsOperationsRepository.TablaOperacDni(pObj);
+            ICreditsOperationsRepository iDeclaracionesRegistroVentaRepository = new CreditsOperationsRepository();
+            return iDeclaracionesRegistroVentaRepository.TablaOperacDni(pObj);
         }
         public List<CreditsOperationsDto> ListarDatosParaGrillaPrincipal(string pValorBusqueda, string pCampoBusqueda, List<CreditsOperationsDto> pListaOperations)
         {
@@ -77,11 +78,18 @@ namespace CreditsController.Controller
                 case CreditsOperationsDto.xFeDesembolso: return pObj.FeDesembolso.ToString();
                 case CreditsOperationsDto.xCondicion: return pObj.Condicion.ToString();
                 case CreditsOperationsDto.IdOper: return pObj.Id_Operacion.ToString();
-                case CreditsOperationsDto.DniSolic: return pObj.DniSolicitante.ToString();
+                case CreditsOperationsDto.DniSolic: return pObj.Dni_Solicitante.ToString();
             }
 
             //retorna
             return iValor;
         }
+
+        public static List<CreditsOperationsDto> ListarRefinanciadoAmpliadoPorDni(CreditsOperationsDto pObj)
+        {
+            ICreditsOperationsRepository iDeclaracionesRegistroVentaRepository = new CreditsOperationsRepository();
+            return iDeclaracionesRegistroVentaRepository.ListarRefinanciadoAmpliadoPorDni(pObj);
+        }
+
     }
 }

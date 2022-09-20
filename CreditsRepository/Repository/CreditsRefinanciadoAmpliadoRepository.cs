@@ -73,6 +73,18 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
         }
 
+        public void EliminarRefinanciadoAmpliado(CreditsRefinanciadoAmpliadoDto pObj)
+        {
+            xObjCn.Connection();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@IdOperacion", pObj.IdOperacion),
+                };
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure("isp_EliminaRefinanciadoAmpliado");
+            xObjCn.ExecuteNotResult();
+            xObjCn.Disconnect();
+        }
 
         public CreditsRefinanciadoAmpliadoDto ListarRefinanciadoAmpliadoPorOperacion(CreditsRefinanciadoAmpliadoDto pObj)
         {

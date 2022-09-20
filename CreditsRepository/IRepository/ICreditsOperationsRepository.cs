@@ -10,5 +10,6 @@ namespace CreditsRepository.IRepository
     public interface ICreditsOperationsRepository
     {
         List<CreditsOperationsDto> TablaOperacDni(CreditsOperationsDto pObj);
+        List<CreditsOperationsDto> ListarRefinanciadoAmpliadoPorDni(CreditsOperationsDto pObj);
     }
 }

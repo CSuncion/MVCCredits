@@ -29,7 +29,7 @@ namespace CreditsRepository.Repository
             xObjEnc.Num = iDr[CreditsOperationsDto.Numro].ToString();
             xObjEnc.Fecha = Convert.ToDateTime(iDr[CreditsOperationsDto.Fec]);
             xObjEnc.UnidDscto = Convert.ToInt32(iDr[CreditsOperationsDto.UnDscto]);
-            xObjEnc.DniSolicitante = iDr[CreditsOperationsDto.DniSolic].ToString();
+            xObjEnc.Dni_Solicitante = iDr[CreditsOperationsDto.DniSolic].ToString();
             xObjEnc.Proveedor = iDr[CreditsOperationsDto.Prove].ToString();
             xObjEnc.Moneda = Convert.ToInt32(iDr[CreditsOperationsDto.Mon]);
             xObjEnc.TpCambio = Convert.ToDecimal(iDr[CreditsOperationsDto.TpCamb]);
@@ -83,18 +83,7 @@ namespace CreditsRepository.Repository
             xObjEnc.DesSubEstado = iDr[CreditsOperationsDto.xDesSubEstado].ToString();
             return xObjEnc;
         }
-
-        public List<CreditsOperationsDto> TablaOperacDni(CreditsOperationsDto pObj)
-        {
-            List<SqlParameter> lParameter = new List<SqlParameter>()
-                {
-                new SqlParameter("@strDniSolicitante", pObj.DniSolicitante)
-                };
-
-            return this.ListarObjetos("isp_TablaOperacDni", lParameter);
-        }
-
-        private CreditsOperationsDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
+              private CreditsOperationsDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
         {
             xObjCn.Connection();
             xObjCn.AssignParameters(lParameter);
@@ -121,6 +110,25 @@ namespace CreditsRepository.Repository
             }
             xObjCn.Disconnect();
             return xLista;
+        }
+
+        public List<CreditsOperationsDto> TablaOperacDni(CreditsOperationsDto pObj)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strDniSolicitante", pObj.Dni_Solicitante)
+                };
+
+            return this.ListarObjetos("isp_TablaOperacDni", lParameter);
+        }
+        public List<CreditsOperationsDto> ListarRefinanciadoAmpliadoPorDni(CreditsOperationsDto pObj)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strDniSolicitante", pObj.Dni_Solicitante)
+                };
+
+            return this.ListarObjetos("isp_ListarRefinanciadoAmpliadoPorDni", lParameter);
         }
     }
 }

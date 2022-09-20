@@ -43,10 +43,8 @@
             this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
-            this.tsbModificar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizar = new System.Windows.Forms.ToolStripButton();
-            this.tsbGenerar = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.DgvRefiAmp = new System.Windows.Forms.DataGridView();
             this.sst1.SuspendLayout();
@@ -100,6 +98,7 @@
             this.tsbPrimero.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPrimero.Name = "tsbPrimero";
             this.tsbPrimero.Size = new System.Drawing.Size(23, 22);
+            this.tsbPrimero.Click += new System.EventHandler(this.tsbPrimero_Click);
             // 
             // tsbAnterior
             // 
@@ -108,6 +107,7 @@
             this.tsbAnterior.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAnterior.Name = "tsbAnterior";
             this.tsbAnterior.Size = new System.Drawing.Size(23, 22);
+            this.tsbAnterior.Click += new System.EventHandler(this.tsbAnterior_Click);
             // 
             // tsbSiguiente
             // 
@@ -116,6 +116,7 @@
             this.tsbSiguiente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSiguiente.Name = "tsbSiguiente";
             this.tsbSiguiente.Size = new System.Drawing.Size(23, 22);
+            this.tsbSiguiente.Click += new System.EventHandler(this.tsbSiguiente_Click);
             // 
             // tsbUltimo
             // 
@@ -124,6 +125,7 @@
             this.tsbUltimo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUltimo.Name = "tsbUltimo";
             this.tsbUltimo.Size = new System.Drawing.Size(23, 22);
+            this.tsbUltimo.Click += new System.EventHandler(this.tsbUltimo_Click);
             // 
             // tsbActualizarTabla
             // 
@@ -133,6 +135,7 @@
             this.tsbActualizarTabla.Name = "tsbActualizarTabla";
             this.tsbActualizarTabla.Size = new System.Drawing.Size(23, 22);
             this.tsbActualizarTabla.Text = "Actualiza Grilla";
+            this.tsbActualizarTabla.Click += new System.EventHandler(this.tsbActualizarTabla_Click);
             // 
             // toolStripSeparator1
             // 
@@ -164,6 +167,7 @@
             this.tsbImprimir.Name = "tsbImprimir";
             this.tsbImprimir.Size = new System.Drawing.Size(23, 22);
             this.tsbImprimir.Text = "toolStripButton1";
+            this.tsbImprimir.Click += new System.EventHandler(this.tsbImprimir_Click);
             // 
             // tsPrincipal
             // 
@@ -172,10 +176,8 @@
             this.tsPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAdicionar,
-            this.tsbModificar,
             this.tsbEliminar,
             this.tsbVisualizar,
-            this.tsbGenerar,
             this.tsbSalir});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
@@ -195,15 +197,6 @@
             this.tsbAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbAdicionar.Click += new System.EventHandler(this.tsbAdicionar_Click);
             // 
-            // tsbModificar
-            // 
-            this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
-            this.tsbModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbModificar.Name = "tsbModificar";
-            this.tsbModificar.Size = new System.Drawing.Size(61, 43);
-            this.tsbModificar.Text = "Modificar";
-            this.tsbModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // tsbEliminar
             // 
             this.tsbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEliminar.Image")));
@@ -212,6 +205,7 @@
             this.tsbEliminar.Size = new System.Drawing.Size(57, 43);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // tsbVisualizar
             // 
@@ -221,15 +215,7 @@
             this.tsbVisualizar.Size = new System.Drawing.Size(66, 43);
             this.tsbVisualizar.Text = "Visualizar";
             this.tsbVisualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // tsbGenerar
-            // 
-            this.tsbGenerar.Image = ((System.Drawing.Image)(resources.GetObject("tsbGenerar.Image")));
-            this.tsbGenerar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbGenerar.Name = "tsbGenerar";
-            this.tsbGenerar.Size = new System.Drawing.Size(97, 43);
-            this.tsbGenerar.Text = "Generar Archivo";
-            this.tsbGenerar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbVisualizar.Click += new System.EventHandler(this.tsbVisualizar_Click);
             // 
             // tsbSalir
             // 
@@ -252,6 +238,7 @@
             this.DgvRefiAmp.Name = "DgvRefiAmp";
             this.DgvRefiAmp.Size = new System.Drawing.Size(1022, 480);
             this.DgvRefiAmp.TabIndex = 110;
+            this.DgvRefiAmp.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvRefiAmp_ColumnHeaderMouseClick);
             // 
             // frmRefinanciadoAmpliado
             // 
@@ -294,10 +281,8 @@
         private System.Windows.Forms.ToolStripButton tsbImprimir;
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsbAdicionar;
-        private System.Windows.Forms.ToolStripButton tsbModificar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.ToolStripButton tsbVisualizar;
-        private System.Windows.Forms.ToolStripButton tsbGenerar;
         private System.Windows.Forms.ToolStripButton tsbSalir;
         private System.Windows.Forms.DataGridView DgvRefiAmp;
     }

@@ -62,8 +62,8 @@ namespace CreditsView.Reports
             //ir a la bd
             CreditsOperationsDto iOperationsEN = new CreditsOperationsDto();
             iOperationsEN.Additionals.CampoOrden = eNombreColumnaDgvOperations;
-            iOperationsEN.DniSolicitante = tsTxtBusqueda.Text.Trim();
-            this.eLisOperations = this.creditsOperationsController.TablaOperacDni(iOperationsEN);
+            iOperationsEN.Dni_Solicitante = tsTxtBusqueda.Text.Trim();
+            this.eLisOperations = CreditsOperationsController.TablaOperacDni(iOperationsEN);
         }
         public void ActualizarDgvOperations()
         {
