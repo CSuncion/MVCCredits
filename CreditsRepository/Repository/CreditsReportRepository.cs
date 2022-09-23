@@ -1,4 +1,5 @@
 ﻿using CreditsConnection.Connection;
+using CreditsModel.ModelDto;
 using CreditsRepository.IRepository;
 using System;
 using System.Collections.Generic;
@@ -267,10 +268,50 @@ namespace CreditsRepository.Repository
                     DesDist = (string)xIdr[22],
                     CREDITO = (decimal)xIdr[23],
                     PAGOS = (decimal)xIdr[24],
+                    Ret_Fecha = (DateTime)xIdr[25],
+                    Cuota = (int)xIdr[26],
                 });
             }
             xObjCn.Disconnect();
             return creditoMorosos;
+        }
+        public List<dynamic> ListarOperacionesRefinanciamientoAmpliacion(CreditsOperationsDto oCreOpe)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strDniSolicitante", oCreOpe.Dni_Solicitante.Trim()),
+                new SqlParameter("@strIdOperacion", oCreOpe.Id_Operacion),
+                };
+
+            List<dynamic> creditoRefAmp = new List<dynamic>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarOperacionesRefinanciamientoAmpliacion");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                creditoRefAmp.Add(new
+                {
+                    Operacion = (string)xIdr[0],
+                    NameProducto = (string)xIdr[1],
+                    Fecha = (DateTime)xIdr[2],
+                    Aprobado = (decimal)xIdr[3],
+                    Importe = (decimal)xIdr[4],
+                    Amortizacion = (decimal)xIdr[5],
+                    Interes = (decimal)xIdr[6],
+                    Seguro = (decimal)xIdr[7],
+                    Gastos = (decimal)xIdr[8],
+                    Igv = (decimal)xIdr[9],
+                    Comision1 = (decimal)xIdr[10],
+                    Comision2 = (decimal)xIdr[11],
+                    Total = (decimal)xIdr[12],
+                    Ret_Fecha = (DateTime)xIdr[13],
+                    DesSubEstado = (string)xIdr[14],
+                    Operacion2 = (string)xIdr[15],
+                });
+            }
+            xObjCn.Disconnect();
+            return creditoRefAmp;
         }
     }
 }

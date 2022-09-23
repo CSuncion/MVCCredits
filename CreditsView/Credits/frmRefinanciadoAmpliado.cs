@@ -1,6 +1,7 @@
 ﻿using CreditsController.Controller;
 using CreditsModel.ModelDto;
 using CreditsView.MdiPrincipal;
+using CreditsView.Reports;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -174,6 +175,14 @@ namespace CreditsView.Credits
             return iOpeEN;
         }
 
+
+        public CreditsOperationsDto EsActoImprimirRefiAmpli()
+        {
+            CreditsOperationsDto iOpeEN = new CreditsOperationsDto();
+            this.AsignarRefinanciamientoAmpliado(iOpeEN);
+            return iOpeEN;
+        }
+
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
@@ -187,6 +196,18 @@ namespace CreditsView.Credits
             this.eEncabezadoColumnaDgvRefAmp = this.DgvRefiAmp.Columns[pColumna].HeaderText;
             this.ActualizarVentana();
         }
+
+        public void AccionImprimirRefinanciadoAmpliado()
+        {
+            CreditsOperationsDto iOpeEN = this.EsActoImprimirRefiAmpli();
+
+            frmReportRefinanciadoAmpliado win = new frmReportRefinanciadoAmpliado();
+            win.wRefAmp = this;
+            win.NuevaVentana(iOpeEN);
+
+        }
+
+
         private void tsbSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -234,7 +255,7 @@ namespace CreditsView.Credits
 
         private void tsbImprimir_Click(object sender, EventArgs e)
         {
-
+            this.AccionImprimirRefinanciadoAmpliado();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)

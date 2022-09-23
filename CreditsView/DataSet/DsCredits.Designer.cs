@@ -3845,6 +3845,10 @@ namespace CreditsView.DataSet {
             
             private global::System.Data.DataColumn columnPAGOS;
             
+            private global::System.Data.DataColumn columnRet_Fecha;
+            
+            private global::System.Data.DataColumn columnCuota;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public isp_CreditoMorososDataTable() {
@@ -4080,6 +4084,22 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Ret_FechaColumn {
+                get {
+                    return this.columnRet_Fecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CuotaColumn {
+                get {
+                    return this.columnCuota;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4139,7 +4159,9 @@ namespace CreditsView.DataSet {
                         int Dist, 
                         string DesDist, 
                         decimal CREDITO, 
-                        decimal PAGOS) {
+                        decimal PAGOS, 
+                        System.DateTime Ret_Fecha, 
+                        int Cuota) {
                 isp_CreditoMorososRow rowisp_CreditoMorososRow = ((isp_CreditoMorososRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4166,7 +4188,9 @@ namespace CreditsView.DataSet {
                         Dist,
                         DesDist,
                         CREDITO,
-                        PAGOS};
+                        PAGOS,
+                        Ret_Fecha,
+                        Cuota};
                 rowisp_CreditoMorososRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowisp_CreditoMorososRow);
                 return rowisp_CreditoMorososRow;
@@ -4214,6 +4238,8 @@ namespace CreditsView.DataSet {
                 this.columnDesDist = base.Columns["DesDist"];
                 this.columnCREDITO = base.Columns["CREDITO"];
                 this.columnPAGOS = base.Columns["PAGOS"];
+                this.columnRet_Fecha = base.Columns["Ret_Fecha"];
+                this.columnCuota = base.Columns["Cuota"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4269,6 +4295,10 @@ namespace CreditsView.DataSet {
                 base.Columns.Add(this.columnCREDITO);
                 this.columnPAGOS = new global::System.Data.DataColumn("PAGOS", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPAGOS);
+                this.columnRet_Fecha = new global::System.Data.DataColumn("Ret_Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRet_Fecha);
+                this.columnCuota = new global::System.Data.DataColumn("Cuota", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCuota);
                 this.columnId_Operacion.AutoIncrement = true;
                 this.columnId_Operacion.AutoIncrementSeed = -1;
                 this.columnId_Operacion.AutoIncrementStep = -1;
@@ -8133,6 +8163,38 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Ret_Fecha {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableisp_CreditoMorosos.Ret_FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ret_Fecha\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_CreditoMorosos.Ret_FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Cuota {
+                get {
+                    try {
+                        return ((int)(this[this.tableisp_CreditoMorosos.CuotaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cuota\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_CreditoMorosos.CuotaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDni_SolicitanteNull() {
                 return this.IsNull(this.tableisp_CreditoMorosos.Dni_SolicitanteColumn);
             }
@@ -8381,6 +8443,30 @@ namespace CreditsView.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPAGOSNull() {
                 this[this.tableisp_CreditoMorosos.PAGOSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRet_FechaNull() {
+                return this.IsNull(this.tableisp_CreditoMorosos.Ret_FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRet_FechaNull() {
+                this[this.tableisp_CreditoMorosos.Ret_FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCuotaNull() {
+                return this.IsNull(this.tableisp_CreditoMorosos.CuotaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCuotaNull() {
+                this[this.tableisp_CreditoMorosos.CuotaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10719,6 +10805,8 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
             tableMapping.ColumnMappings.Add("DesDist", "DesDist");
             tableMapping.ColumnMappings.Add("CREDITO", "CREDITO");
             tableMapping.ColumnMappings.Add("PAGOS", "PAGOS");
+            tableMapping.ColumnMappings.Add("Ret_Fecha", "Ret_Fecha");
+            tableMapping.ColumnMappings.Add("Cuota", "Cuota");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

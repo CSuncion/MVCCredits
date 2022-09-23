@@ -148,6 +148,12 @@
     <Compile Include="Reports\frmReportCreditoMorosos.Designer.cs">
       <DependentUpon>frmReportCreditoMorosos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportRefinanciadoAmpliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportRefinanciadoAmpliado.Designer.cs">
+      <DependentUpon>frmReportRefinanciadoAmpliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportSaldoFavorSolicitante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportCreditoMorosos.resx">
       <DependentUpon>frmReportCreditoMorosos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportRefinanciadoAmpliado.resx">
+      <DependentUpon>frmReportRefinanciadoAmpliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportSaldoFavorSolicitante.resx">
       <DependentUpon>frmReportSaldoFavorSolicitante.cs</DependentUpon>

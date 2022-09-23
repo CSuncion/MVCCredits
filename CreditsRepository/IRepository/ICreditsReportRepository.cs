@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CreditsModel.ModelDto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace CreditsRepository.IRepository
         List<dynamic> ListarTipoCreditoGeneradoDesembolsado(string desde, string hasta);
         List<dynamic> ListarCreditoEnProceso(string desde, string hasta);
         List<dynamic> ListarCreditoMorosos(string desde, string hasta);
+        List<dynamic> ListarOperacionesRefinanciamientoAmpliacion(CreditsOperationsDto oCreOpe);
     }
 }

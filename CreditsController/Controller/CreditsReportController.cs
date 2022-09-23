@@ -1,4 +1,5 @@
-﻿using CreditsRepository.IRepository;
+﻿using CreditsModel.ModelDto;
+using CreditsRepository.IRepository;
 using CreditsRepository.Repository;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,10 @@ namespace CreditsController.Controller
         public List<dynamic> ListarCreditoMorosos(string desde, string hasta)
         {
             return this._iCreditsReportRepository.ListarCreditoMorosos(desde, hasta);
+        }
+        public List<dynamic> ListarOperacionesRefinanciamientoAmpliacion(CreditsOperationsDto oCreOpe)
+        {
+            return this._iCreditsReportRepository.ListarOperacionesRefinanciamientoAmpliacion(oCreOpe);
         }
     }
 }

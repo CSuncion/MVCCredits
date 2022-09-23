@@ -166,7 +166,7 @@
             this.tsbImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImprimir.Name = "tsbImprimir";
             this.tsbImprimir.Size = new System.Drawing.Size(23, 22);
-            this.tsbImprimir.Text = "toolStripButton1";
+            this.tsbImprimir.Text = "Imprimir";
             this.tsbImprimir.Click += new System.EventHandler(this.tsbImprimir_Click);
             // 
             // tsPrincipal

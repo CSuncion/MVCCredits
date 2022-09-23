@@ -105,6 +105,7 @@ D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\o
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmReportApplicant.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmCreditosOtorgados.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmReportCreditoMorosos.resources
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmReportRefinanciadoAmpliado.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmReportSaldoFavorSolicitante.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmReportTipoCredito.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Reports.frmReportCreditoEnProceso.resources
