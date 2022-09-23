@@ -144,6 +144,7 @@ namespace CreditsView.Credits
         public void AsignarRefinanciamientoAmpliado(CreditsOperationsDto pOpe)
         {
             pOpe.Id_Operacion = Convert.ToInt32(Dgv.ObtenerValorCelda(this.DgvRefiAmp, CreditsOperationsDto.IdOper));
+            pOpe.Dni_Solicitante = Dgv.ObtenerValorCelda(this.DgvRefiAmp, CreditsOperationsDto.DniSolic);
         }
 
         public void EliminarRefinanciamientoAmpliacion(CreditsOperationsDto iOpeEN)
@@ -151,6 +152,26 @@ namespace CreditsView.Credits
             CreditsRefinanciadoAmpliadoDto iRefAmpEN = new CreditsRefinanciadoAmpliadoDto();
             iRefAmpEN.IdOperacion = iOpeEN.Id_Operacion;
             oRefAmp.EliminarRefinanciadoAmpliado(iRefAmpEN);
+        }
+
+        public void AccionVisualizar()
+        {
+            CreditsOperationsDto iOpeEN = this.EsActoVisualizarRefiAmpli();
+            //if (iRegComDto.Adicionales.EsVerdad == false) { return; }
+
+            frmEditRefinanciadoAmpliado win = new frmEditRefinanciadoAmpliado();
+            win.wRefAmp = this;
+            win.eOperacion = Universal.Opera.Modificar;
+            this.eFranjaDgvRefAmp = Dgv.Franja.PorValor;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaVisualizar(iOpeEN);
+        }
+
+        public CreditsOperationsDto EsActoVisualizarRefiAmpli()
+        {
+            CreditsOperationsDto iOpeEN = new CreditsOperationsDto();
+            this.AsignarRefinanciamientoAmpliado(iOpeEN);
+            return iOpeEN;
         }
 
         public void Cerrar()
@@ -223,7 +244,7 @@ namespace CreditsView.Credits
 
         private void tsbVisualizar_Click(object sender, EventArgs e)
         {
-
+            this.AccionVisualizar();
         }
     }
 }

@@ -292,6 +292,7 @@
     <EmbeddedResource Include="Reports\rptReportCreditoEnProceso.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoMorosos.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportRefinanciadoAmpliado.rdlc" />
     <EmbeddedResource Include="Reports\rptReportSaldoFavorSolicitante.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTipoCredito.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTipoCreditoGeneradoDesembolsado.rdlc" />

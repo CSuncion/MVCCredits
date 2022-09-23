@@ -91,7 +91,7 @@ namespace CreditsView.Credits
             this.txtDocId.Focus();
         }
 
-        public void VentanaModificar(CreditsOperationsDto pOpe)
+        public void VentanaVisualizar(CreditsOperationsDto pOpe)
         {
             this.MostrarRefinanciadoAmpliado(pOpe);
             this.InicializaVentana();
@@ -99,6 +99,8 @@ namespace CreditsView.Credits
             eMas.AccionPasarTextoPrincipal();
             this.txtDocId.ReadOnly = true;
             this.btnBuscar.Visible = false;
+            this.btnRefinanciado.Visible = false;
+            this.btnAmpliado.Visible = false;
         }
         public void MostrarRefinanciadoAmpliado(CreditsOperationsDto pOpe)
         {

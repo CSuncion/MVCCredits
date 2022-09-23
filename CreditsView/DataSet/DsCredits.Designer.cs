@@ -40,6 +40,8 @@ namespace CreditsView.DataSet {
         
         private isp_CreditoMorososDataTable tableisp_CreditoMorosos;
         
+        private isp_ListarOperacionesRefinanciamientoAmpliacionDataTable tableisp_ListarOperacionesRefinanciamientoAmpliacion;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -91,6 +93,9 @@ namespace CreditsView.DataSet {
                 }
                 if ((ds.Tables["isp_CreditoMorosos"] != null)) {
                     base.Tables.Add(new isp_CreditoMorososDataTable(ds.Tables["isp_CreditoMorosos"]));
+                }
+                if ((ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"] != null)) {
+                    base.Tables.Add(new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable(ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -192,6 +197,16 @@ namespace CreditsView.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public isp_ListarOperacionesRefinanciamientoAmpliacionDataTable isp_ListarOperacionesRefinanciamientoAmpliacion {
+            get {
+                return this.tableisp_ListarOperacionesRefinanciamientoAmpliacion;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -281,6 +296,9 @@ namespace CreditsView.DataSet {
                 if ((ds.Tables["isp_CreditoMorosos"] != null)) {
                     base.Tables.Add(new isp_CreditoMorososDataTable(ds.Tables["isp_CreditoMorosos"]));
                 }
+                if ((ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"] != null)) {
+                    base.Tables.Add(new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable(ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -362,6 +380,12 @@ namespace CreditsView.DataSet {
                     this.tableisp_CreditoMorosos.InitVars();
                 }
             }
+            this.tableisp_ListarOperacionesRefinanciamientoAmpliacion = ((isp_ListarOperacionesRefinanciamientoAmpliacionDataTable)(base.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"]));
+            if ((initTable == true)) {
+                if ((this.tableisp_ListarOperacionesRefinanciamientoAmpliacion != null)) {
+                    this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -388,6 +412,8 @@ namespace CreditsView.DataSet {
             base.Tables.Add(this.tableisp_TipoCreditoEnProceso);
             this.tableisp_CreditoMorosos = new isp_CreditoMorososDataTable();
             base.Tables.Add(this.tableisp_CreditoMorosos);
+            this.tableisp_ListarOperacionesRefinanciamientoAmpliacion = new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable();
+            base.Tables.Add(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,6 +461,12 @@ namespace CreditsView.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeisp_CreditoMorosos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeisp_ListarOperacionesRefinanciamientoAmpliacion() {
             return false;
         }
         
@@ -516,6 +548,9 @@ namespace CreditsView.DataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void isp_CreditoMorososRowChangeEventHandler(object sender, isp_CreditoMorososRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEventHandler(object sender, isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4390,6 +4425,495 @@ namespace CreditsView.DataSet {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class isp_ListarOperacionesRefinanciamientoAmpliacionDataTable : global::System.Data.TypedTableBase<isp_ListarOperacionesRefinanciamientoAmpliacionRow> {
+            
+            private global::System.Data.DataColumn columnOperacion;
+            
+            private global::System.Data.DataColumn columnNameProducto;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnAprobado;
+            
+            private global::System.Data.DataColumn columnImporte;
+            
+            private global::System.Data.DataColumn columnAmortizacion;
+            
+            private global::System.Data.DataColumn columnInteres;
+            
+            private global::System.Data.DataColumn columnSeguro;
+            
+            private global::System.Data.DataColumn columnGastos;
+            
+            private global::System.Data.DataColumn columnIgv;
+            
+            private global::System.Data.DataColumn columnComision1;
+            
+            private global::System.Data.DataColumn columnComision2;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
+            private global::System.Data.DataColumn columnRet_Fecha;
+            
+            private global::System.Data.DataColumn columnDesSubEstado;
+            
+            private global::System.Data.DataColumn columnOperacion2;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_ListarOperacionesRefinanciamientoAmpliacionDataTable() {
+                this.TableName = "isp_ListarOperacionesRefinanciamientoAmpliacion";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal isp_ListarOperacionesRefinanciamientoAmpliacionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected isp_ListarOperacionesRefinanciamientoAmpliacionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OperacionColumn {
+                get {
+                    return this.columnOperacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NameProductoColumn {
+                get {
+                    return this.columnNameProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaColumn {
+                get {
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AprobadoColumn {
+                get {
+                    return this.columnAprobado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ImporteColumn {
+                get {
+                    return this.columnImporte;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AmortizacionColumn {
+                get {
+                    return this.columnAmortizacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn InteresColumn {
+                get {
+                    return this.columnInteres;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeguroColumn {
+                get {
+                    return this.columnSeguro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GastosColumn {
+                get {
+                    return this.columnGastos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IgvColumn {
+                get {
+                    return this.columnIgv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Comision1Column {
+                get {
+                    return this.columnComision1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Comision2Column {
+                get {
+                    return this.columnComision2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Ret_FechaColumn {
+                get {
+                    return this.columnRet_Fecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DesSubEstadoColumn {
+                get {
+                    return this.columnDesSubEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Operacion2Column {
+                get {
+                    return this.columnOperacion2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_ListarOperacionesRefinanciamientoAmpliacionRow this[int index] {
+                get {
+                    return ((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEventHandler isp_ListarOperacionesRefinanciamientoAmpliacionRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEventHandler isp_ListarOperacionesRefinanciamientoAmpliacionRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEventHandler isp_ListarOperacionesRefinanciamientoAmpliacionRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEventHandler isp_ListarOperacionesRefinanciamientoAmpliacionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Addisp_ListarOperacionesRefinanciamientoAmpliacionRow(isp_ListarOperacionesRefinanciamientoAmpliacionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_ListarOperacionesRefinanciamientoAmpliacionRow Addisp_ListarOperacionesRefinanciamientoAmpliacionRow(
+                        string Operacion, 
+                        string NameProducto, 
+                        System.DateTime Fecha, 
+                        decimal Aprobado, 
+                        decimal Importe, 
+                        decimal Amortizacion, 
+                        decimal Interes, 
+                        decimal Seguro, 
+                        decimal Gastos, 
+                        decimal Igv, 
+                        decimal Comision1, 
+                        decimal Comision2, 
+                        decimal Total, 
+                        System.DateTime Ret_Fecha, 
+                        string DesSubEstado, 
+                        string Operacion2) {
+                isp_ListarOperacionesRefinanciamientoAmpliacionRow rowisp_ListarOperacionesRefinanciamientoAmpliacionRow = ((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Operacion,
+                        NameProducto,
+                        Fecha,
+                        Aprobado,
+                        Importe,
+                        Amortizacion,
+                        Interes,
+                        Seguro,
+                        Gastos,
+                        Igv,
+                        Comision1,
+                        Comision2,
+                        Total,
+                        Ret_Fecha,
+                        DesSubEstado,
+                        Operacion2};
+                rowisp_ListarOperacionesRefinanciamientoAmpliacionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowisp_ListarOperacionesRefinanciamientoAmpliacionRow);
+                return rowisp_ListarOperacionesRefinanciamientoAmpliacionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                isp_ListarOperacionesRefinanciamientoAmpliacionDataTable cln = ((isp_ListarOperacionesRefinanciamientoAmpliacionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnOperacion = base.Columns["Operacion"];
+                this.columnNameProducto = base.Columns["NameProducto"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnAprobado = base.Columns["Aprobado"];
+                this.columnImporte = base.Columns["Importe"];
+                this.columnAmortizacion = base.Columns["Amortizacion"];
+                this.columnInteres = base.Columns["Interes"];
+                this.columnSeguro = base.Columns["Seguro"];
+                this.columnGastos = base.Columns["Gastos"];
+                this.columnIgv = base.Columns["Igv"];
+                this.columnComision1 = base.Columns["Comision1"];
+                this.columnComision2 = base.Columns["Comision2"];
+                this.columnTotal = base.Columns["Total"];
+                this.columnRet_Fecha = base.Columns["Ret_Fecha"];
+                this.columnDesSubEstado = base.Columns["DesSubEstado"];
+                this.columnOperacion2 = base.Columns["Operacion2"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnOperacion = new global::System.Data.DataColumn("Operacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperacion);
+                this.columnNameProducto = new global::System.Data.DataColumn("NameProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNameProducto);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnAprobado = new global::System.Data.DataColumn("Aprobado", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAprobado);
+                this.columnImporte = new global::System.Data.DataColumn("Importe", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImporte);
+                this.columnAmortizacion = new global::System.Data.DataColumn("Amortizacion", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmortizacion);
+                this.columnInteres = new global::System.Data.DataColumn("Interes", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInteres);
+                this.columnSeguro = new global::System.Data.DataColumn("Seguro", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeguro);
+                this.columnGastos = new global::System.Data.DataColumn("Gastos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGastos);
+                this.columnIgv = new global::System.Data.DataColumn("Igv", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIgv);
+                this.columnComision1 = new global::System.Data.DataColumn("Comision1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnComision1);
+                this.columnComision2 = new global::System.Data.DataColumn("Comision2", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnComision2);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
+                this.columnRet_Fecha = new global::System.Data.DataColumn("Ret_Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRet_Fecha);
+                this.columnDesSubEstado = new global::System.Data.DataColumn("DesSubEstado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDesSubEstado);
+                this.columnOperacion2 = new global::System.Data.DataColumn("Operacion2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperacion2);
+                this.columnOperacion.ReadOnly = true;
+                this.columnOperacion.MaxLength = 21;
+                this.columnNameProducto.MaxLength = 100;
+                this.columnImporte.ReadOnly = true;
+                this.columnAmortizacion.ReadOnly = true;
+                this.columnInteres.ReadOnly = true;
+                this.columnSeguro.ReadOnly = true;
+                this.columnGastos.ReadOnly = true;
+                this.columnIgv.ReadOnly = true;
+                this.columnComision1.ReadOnly = true;
+                this.columnComision2.ReadOnly = true;
+                this.columnTotal.ReadOnly = true;
+                this.columnDesSubEstado.ReadOnly = true;
+                this.columnDesSubEstado.MaxLength = 12;
+                this.columnOperacion2.ReadOnly = true;
+                this.columnOperacion2.MaxLength = 21;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_ListarOperacionesRefinanciamientoAmpliacionRow Newisp_ListarOperacionesRefinanciamientoAmpliacionRow() {
+                return ((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new isp_ListarOperacionesRefinanciamientoAmpliacionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(isp_ListarOperacionesRefinanciamientoAmpliacionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.isp_ListarOperacionesRefinanciamientoAmpliacionRowChanged != null)) {
+                    this.isp_ListarOperacionesRefinanciamientoAmpliacionRowChanged(this, new isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent(((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.isp_ListarOperacionesRefinanciamientoAmpliacionRowChanging != null)) {
+                    this.isp_ListarOperacionesRefinanciamientoAmpliacionRowChanging(this, new isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent(((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.isp_ListarOperacionesRefinanciamientoAmpliacionRowDeleted != null)) {
+                    this.isp_ListarOperacionesRefinanciamientoAmpliacionRowDeleted(this, new isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent(((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.isp_ListarOperacionesRefinanciamientoAmpliacionRowDeleting != null)) {
+                    this.isp_ListarOperacionesRefinanciamientoAmpliacionRowDeleting(this, new isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent(((isp_ListarOperacionesRefinanciamientoAmpliacionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Removeisp_ListarOperacionesRefinanciamientoAmpliacionRow(isp_ListarOperacionesRefinanciamientoAmpliacionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DsCredits ds = new DsCredits();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "isp_ListarOperacionesRefinanciamientoAmpliacionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Tb_SolicitantesRow : global::System.Data.DataRow {
@@ -7861,6 +8385,485 @@ namespace CreditsView.DataSet {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class isp_ListarOperacionesRefinanciamientoAmpliacionRow : global::System.Data.DataRow {
+            
+            private isp_ListarOperacionesRefinanciamientoAmpliacionDataTable tableisp_ListarOperacionesRefinanciamientoAmpliacion;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal isp_ListarOperacionesRefinanciamientoAmpliacionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableisp_ListarOperacionesRefinanciamientoAmpliacion = ((isp_ListarOperacionesRefinanciamientoAmpliacionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Operacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.OperacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Operacion\' de la tabla \'isp_ListarOperacionesRefinanciami" +
+                                "entoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.OperacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NameProducto {
+                get {
+                    try {
+                        return ((string)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.NameProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NameProducto\' de la tabla \'isp_ListarOperacionesRefinanci" +
+                                "amientoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.NameProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Fecha {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha\' de la tabla \'isp_ListarOperacionesRefinanciamiento" +
+                                "Ampliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Aprobado {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AprobadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Aprobado\' de la tabla \'isp_ListarOperacionesRefinanciamie" +
+                                "ntoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AprobadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Importe {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.ImporteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Importe\' de la tabla \'isp_ListarOperacionesRefinanciamien" +
+                                "toAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.ImporteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Amortizacion {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AmortizacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Amortizacion\' de la tabla \'isp_ListarOperacionesRefinanci" +
+                                "amientoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AmortizacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Interes {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.InteresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Interes\' de la tabla \'isp_ListarOperacionesRefinanciamien" +
+                                "toAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.InteresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Seguro {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.SeguroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Seguro\' de la tabla \'isp_ListarOperacionesRefinanciamient" +
+                                "oAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.SeguroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Gastos {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.GastosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Gastos\' de la tabla \'isp_ListarOperacionesRefinanciamient" +
+                                "oAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.GastosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Igv {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.IgvColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Igv\' de la tabla \'isp_ListarOperacionesRefinanciamientoAm" +
+                                "pliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.IgvColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Comision1 {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Comision1\' de la tabla \'isp_ListarOperacionesRefinanciami" +
+                                "entoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Comision2 {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Comision2\' de la tabla \'isp_ListarOperacionesRefinanciami" +
+                                "entoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Total\' de la tabla \'isp_ListarOperacionesRefinanciamiento" +
+                                "Ampliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Ret_Fecha {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Ret_FechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ret_Fecha\' de la tabla \'isp_ListarOperacionesRefinanciami" +
+                                "entoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Ret_FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DesSubEstado {
+                get {
+                    try {
+                        return ((string)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.DesSubEstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DesSubEstado\' de la tabla \'isp_ListarOperacionesRefinanci" +
+                                "amientoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.DesSubEstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Operacion2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Operacion2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Operacion2\' de la tabla \'isp_ListarOperacionesRefinanciam" +
+                                "ientoAmpliacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Operacion2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsOperacionNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.OperacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetOperacionNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.OperacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNameProductoNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.NameProductoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNameProductoNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.NameProductoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFechaNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFechaNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAprobadoNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AprobadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAprobadoNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AprobadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsImporteNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.ImporteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetImporteNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.ImporteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAmortizacionNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AmortizacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAmortizacionNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.AmortizacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsInteresNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.InteresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetInteresNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.InteresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSeguroNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.SeguroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSeguroNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.SeguroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGastosNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.GastosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGastosNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.GastosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIgvNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.IgvColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIgvNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.IgvColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsComision1Null() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetComision1Null() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsComision2Null() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetComision2Null() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Comision2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRet_FechaNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Ret_FechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRet_FechaNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Ret_FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDesSubEstadoNull() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.DesSubEstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDesSubEstadoNull() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.DesSubEstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsOperacion2Null() {
+                return this.IsNull(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Operacion2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetOperacion2Null() {
+                this[this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.Operacion2Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -8118,6 +9121,40 @@ namespace CreditsView.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public isp_CreditoMorososRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent : global::System.EventArgs {
+            
+            private isp_ListarOperacionesRefinanciamientoAmpliacionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent(isp_ListarOperacionesRefinanciamientoAmpliacionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_ListarOperacionesRefinanciamientoAmpliacionRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -9749,6 +10786,215 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(strFechaFin));
             }
             DsCredits.isp_CreditoMorososDataTable dataTable = new DsCredits.isp_CreditoMorososDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class isp_ListarOperacionesRefinanciamientoAmpliacionTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public isp_ListarOperacionesRefinanciamientoAmpliacionTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "isp_ListarOperacionesRefinanciamientoAmpliacion";
+            tableMapping.ColumnMappings.Add("Operacion", "Operacion");
+            tableMapping.ColumnMappings.Add("NameProducto", "NameProducto");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("Aprobado", "Aprobado");
+            tableMapping.ColumnMappings.Add("Importe", "Importe");
+            tableMapping.ColumnMappings.Add("Amortizacion", "Amortizacion");
+            tableMapping.ColumnMappings.Add("Interes", "Interes");
+            tableMapping.ColumnMappings.Add("Seguro", "Seguro");
+            tableMapping.ColumnMappings.Add("Gastos", "Gastos");
+            tableMapping.ColumnMappings.Add("Igv", "Igv");
+            tableMapping.ColumnMappings.Add("Comision1", "Comision1");
+            tableMapping.ColumnMappings.Add("Comision2", "Comision2");
+            tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("Ret_Fecha", "Ret_Fecha");
+            tableMapping.ColumnMappings.Add("DesSubEstado", "DesSubEstado");
+            tableMapping.ColumnMappings.Add("Operacion2", "Operacion2");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CreditsView.Properties.Settings.Default.DbFbpolConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.isp_ListarOperacionesRefinanciamientoAmpliacion";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strDniSolicitante", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strIdOperacion", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DsCredits.isp_ListarOperacionesRefinanciamientoAmpliacionDataTable dataTable, string strDniSolicitante, string strIdOperacion) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((strDniSolicitante == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(strDniSolicitante));
+            }
+            if ((strIdOperacion == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(strIdOperacion));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DsCredits.isp_ListarOperacionesRefinanciamientoAmpliacionDataTable GetData(string strDniSolicitante, string strIdOperacion) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((strDniSolicitante == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(strDniSolicitante));
+            }
+            if ((strIdOperacion == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(strIdOperacion));
+            }
+            DsCredits.isp_ListarOperacionesRefinanciamientoAmpliacionDataTable dataTable = new DsCredits.isp_ListarOperacionesRefinanciamientoAmpliacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
