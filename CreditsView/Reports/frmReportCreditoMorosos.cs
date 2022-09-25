@@ -22,7 +22,7 @@ namespace CreditsView.Reports
         CreditsReportController objReportController = new CreditsReportController();
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
         public string nombreReporte = "CreditsView.Reports.rptReportCreditoMorosos.rdlc";
-        public string formaReporte = "Horizontal";
+        public string formaReporte = "Normal";
         public frmReportCreditoMorosos()
         {
             InitializeComponent();
@@ -38,16 +38,14 @@ namespace CreditsView.Reports
             this.Dock = DockStyle.Fill;
             try
             {
-                string desde = this.wCredMoro.dtpFecDesde.Value.ToString("yyyyMMdd");
                 string hasta = this.wCredMoro.dtpFecHasta.Value.ToString("yyyyMMdd");
                 ReportDataSource rds = new ReportDataSource();
                 rds.Name = "dsCreditosMorosos";
-                rds.Value = objReportController.ListarCreditoMorosos(desde, hasta);
+                rds.Value = objReportController.ListarCreditoMorosos(hasta);
 
-                ReportParameter[] rp = new ReportParameter[3];
-                rp[0] = new ReportParameter("fecDesde", this.wCredMoro.dtpFecDesde.Text);
-                rp[1] = new ReportParameter("fecHasta", this.wCredMoro.dtpFecHasta.Text);
-                rp[2] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
+                ReportParameter[] rp = new ReportParameter[2];
+                rp[0] = new ReportParameter("fecHasta", this.wCredMoro.dtpFecHasta.Text);
+                rp[1] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
 
 
                 this.rvReportCreditoMorosos.Reset();

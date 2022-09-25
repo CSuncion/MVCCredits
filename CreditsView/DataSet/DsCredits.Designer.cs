@@ -3825,22 +3825,6 @@ namespace CreditsView.DataSet {
             
             private global::System.Data.DataColumn columnPlazo;
             
-            private global::System.Data.DataColumn columnNumCta;
-            
-            private global::System.Data.DataColumn columnCCI;
-            
-            private global::System.Data.DataColumn columnDpto;
-            
-            private global::System.Data.DataColumn columnDesDpto;
-            
-            private global::System.Data.DataColumn columnProv;
-            
-            private global::System.Data.DataColumn columnDesProv;
-            
-            private global::System.Data.DataColumn columnDist;
-            
-            private global::System.Data.DataColumn columnDesDist;
-            
             private global::System.Data.DataColumn columnCREDITO;
             
             private global::System.Data.DataColumn columnPAGOS;
@@ -3848,6 +3832,8 @@ namespace CreditsView.DataSet {
             private global::System.Data.DataColumn columnRet_Fecha;
             
             private global::System.Data.DataColumn columnCuota;
+            
+            private global::System.Data.DataColumn columnPendiente;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -4004,70 +3990,6 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NumCtaColumn {
-                get {
-                    return this.columnNumCta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CCIColumn {
-                get {
-                    return this.columnCCI;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DptoColumn {
-                get {
-                    return this.columnDpto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DesDptoColumn {
-                get {
-                    return this.columnDesDpto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProvColumn {
-                get {
-                    return this.columnProv;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DesProvColumn {
-                get {
-                    return this.columnDesProv;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DistColumn {
-                get {
-                    return this.columnDist;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DesDistColumn {
-                get {
-                    return this.columnDesDist;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn CREDITOColumn {
                 get {
                     return this.columnCREDITO;
@@ -4095,6 +4017,14 @@ namespace CreditsView.DataSet {
             public global::System.Data.DataColumn CuotaColumn {
                 get {
                     return this.columnCuota;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PendienteColumn {
+                get {
+                    return this.columnPendiente;
                 }
             }
             
@@ -4150,18 +4080,11 @@ namespace CreditsView.DataSet {
                         string Des_TpOperac, 
                         decimal Aprobado, 
                         int Plazo, 
-                        string NumCta, 
-                        string CCI, 
-                        int Dpto, 
-                        string DesDpto, 
-                        int Prov, 
-                        string DesProv, 
-                        int Dist, 
-                        string DesDist, 
                         decimal CREDITO, 
                         decimal PAGOS, 
                         System.DateTime Ret_Fecha, 
-                        int Cuota) {
+                        int Cuota, 
+                        decimal Pendiente) {
                 isp_CreditoMorososRow rowisp_CreditoMorososRow = ((isp_CreditoMorososRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4179,18 +4102,11 @@ namespace CreditsView.DataSet {
                         Des_TpOperac,
                         Aprobado,
                         Plazo,
-                        NumCta,
-                        CCI,
-                        Dpto,
-                        DesDpto,
-                        Prov,
-                        DesProv,
-                        Dist,
-                        DesDist,
                         CREDITO,
                         PAGOS,
                         Ret_Fecha,
-                        Cuota};
+                        Cuota,
+                        Pendiente};
                 rowisp_CreditoMorososRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowisp_CreditoMorososRow);
                 return rowisp_CreditoMorososRow;
@@ -4228,18 +4144,11 @@ namespace CreditsView.DataSet {
                 this.columnDes_TpOperac = base.Columns["Des_TpOperac"];
                 this.columnAprobado = base.Columns["Aprobado"];
                 this.columnPlazo = base.Columns["Plazo"];
-                this.columnNumCta = base.Columns["NumCta"];
-                this.columnCCI = base.Columns["CCI"];
-                this.columnDpto = base.Columns["Dpto"];
-                this.columnDesDpto = base.Columns["DesDpto"];
-                this.columnProv = base.Columns["Prov"];
-                this.columnDesProv = base.Columns["DesProv"];
-                this.columnDist = base.Columns["Dist"];
-                this.columnDesDist = base.Columns["DesDist"];
                 this.columnCREDITO = base.Columns["CREDITO"];
                 this.columnPAGOS = base.Columns["PAGOS"];
                 this.columnRet_Fecha = base.Columns["Ret_Fecha"];
                 this.columnCuota = base.Columns["Cuota"];
+                this.columnPendiente = base.Columns["Pendiente"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4275,22 +4184,6 @@ namespace CreditsView.DataSet {
                 base.Columns.Add(this.columnAprobado);
                 this.columnPlazo = new global::System.Data.DataColumn("Plazo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlazo);
-                this.columnNumCta = new global::System.Data.DataColumn("NumCta", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumCta);
-                this.columnCCI = new global::System.Data.DataColumn("CCI", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCCI);
-                this.columnDpto = new global::System.Data.DataColumn("Dpto", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDpto);
-                this.columnDesDpto = new global::System.Data.DataColumn("DesDpto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDesDpto);
-                this.columnProv = new global::System.Data.DataColumn("Prov", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProv);
-                this.columnDesProv = new global::System.Data.DataColumn("DesProv", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDesProv);
-                this.columnDist = new global::System.Data.DataColumn("Dist", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDist);
-                this.columnDesDist = new global::System.Data.DataColumn("DesDist", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDesDist);
                 this.columnCREDITO = new global::System.Data.DataColumn("CREDITO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCREDITO);
                 this.columnPAGOS = new global::System.Data.DataColumn("PAGOS", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -4299,6 +4192,8 @@ namespace CreditsView.DataSet {
                 base.Columns.Add(this.columnRet_Fecha);
                 this.columnCuota = new global::System.Data.DataColumn("Cuota", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCuota);
+                this.columnPendiente = new global::System.Data.DataColumn("Pendiente", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPendiente);
                 this.columnId_Operacion.AutoIncrement = true;
                 this.columnId_Operacion.AutoIncrementSeed = -1;
                 this.columnId_Operacion.AutoIncrementStep = -1;
@@ -4318,16 +4213,9 @@ namespace CreditsView.DataSet {
                 this.columnNameProducto.MaxLength = 100;
                 this.columnCorta_TpOperac.MaxLength = 5;
                 this.columnDes_TpOperac.MaxLength = 30;
-                this.columnNumCta.MaxLength = 30;
-                this.columnCCI.MaxLength = 30;
-                this.columnDesDpto.AllowDBNull = false;
-                this.columnDesDpto.MaxLength = 50;
-                this.columnDesProv.AllowDBNull = false;
-                this.columnDesProv.MaxLength = 50;
-                this.columnDesDist.AllowDBNull = false;
-                this.columnDesDist.MaxLength = 50;
                 this.columnCREDITO.ReadOnly = true;
                 this.columnPAGOS.ReadOnly = true;
+                this.columnPendiente.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8018,119 +7906,6 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NumCta {
-                get {
-                    try {
-                        return ((string)(this[this.tableisp_CreditoMorosos.NumCtaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NumCta\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.NumCtaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CCI {
-                get {
-                    try {
-                        return ((string)(this[this.tableisp_CreditoMorosos.CCIColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CCI\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.CCIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Dpto {
-                get {
-                    try {
-                        return ((int)(this[this.tableisp_CreditoMorosos.DptoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dpto\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.DptoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DesDpto {
-                get {
-                    return ((string)(this[this.tableisp_CreditoMorosos.DesDptoColumn]));
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.DesDptoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Prov {
-                get {
-                    try {
-                        return ((int)(this[this.tableisp_CreditoMorosos.ProvColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Prov\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.ProvColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DesProv {
-                get {
-                    return ((string)(this[this.tableisp_CreditoMorosos.DesProvColumn]));
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.DesProvColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Dist {
-                get {
-                    try {
-                        return ((int)(this[this.tableisp_CreditoMorosos.DistColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dist\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.DistColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DesDist {
-                get {
-                    return ((string)(this[this.tableisp_CreditoMorosos.DesDistColumn]));
-                }
-                set {
-                    this[this.tableisp_CreditoMorosos.DesDistColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal CREDITO {
                 get {
                     try {
@@ -8190,6 +7965,22 @@ namespace CreditsView.DataSet {
                 }
                 set {
                     this[this.tableisp_CreditoMorosos.CuotaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Pendiente {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableisp_CreditoMorosos.PendienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Pendiente\' de la tabla \'isp_CreditoMorosos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_CreditoMorosos.PendienteColumn] = value;
                 }
             }
             
@@ -8363,66 +8154,6 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNumCtaNull() {
-                return this.IsNull(this.tableisp_CreditoMorosos.NumCtaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNumCtaNull() {
-                this[this.tableisp_CreditoMorosos.NumCtaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCCINull() {
-                return this.IsNull(this.tableisp_CreditoMorosos.CCIColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCCINull() {
-                this[this.tableisp_CreditoMorosos.CCIColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDptoNull() {
-                return this.IsNull(this.tableisp_CreditoMorosos.DptoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDptoNull() {
-                this[this.tableisp_CreditoMorosos.DptoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProvNull() {
-                return this.IsNull(this.tableisp_CreditoMorosos.ProvColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProvNull() {
-                this[this.tableisp_CreditoMorosos.ProvColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDistNull() {
-                return this.IsNull(this.tableisp_CreditoMorosos.DistColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDistNull() {
-                this[this.tableisp_CreditoMorosos.DistColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCREDITONull() {
                 return this.IsNull(this.tableisp_CreditoMorosos.CREDITOColumn);
             }
@@ -8467,6 +8198,18 @@ namespace CreditsView.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCuotaNull() {
                 this[this.tableisp_CreditoMorosos.CuotaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPendienteNull() {
+                return this.IsNull(this.tableisp_CreditoMorosos.PendienteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPendienteNull() {
+                this[this.tableisp_CreditoMorosos.PendienteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10795,18 +10538,11 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
             tableMapping.ColumnMappings.Add("Des_TpOperac", "Des_TpOperac");
             tableMapping.ColumnMappings.Add("Aprobado", "Aprobado");
             tableMapping.ColumnMappings.Add("Plazo", "Plazo");
-            tableMapping.ColumnMappings.Add("NumCta", "NumCta");
-            tableMapping.ColumnMappings.Add("CCI", "CCI");
-            tableMapping.ColumnMappings.Add("Dpto", "Dpto");
-            tableMapping.ColumnMappings.Add("DesDpto", "DesDpto");
-            tableMapping.ColumnMappings.Add("Prov", "Prov");
-            tableMapping.ColumnMappings.Add("DesProv", "DesProv");
-            tableMapping.ColumnMappings.Add("Dist", "Dist");
-            tableMapping.ColumnMappings.Add("DesDist", "DesDist");
             tableMapping.ColumnMappings.Add("CREDITO", "CREDITO");
             tableMapping.ColumnMappings.Add("PAGOS", "PAGOS");
             tableMapping.ColumnMappings.Add("Ret_Fecha", "Ret_Fecha");
             tableMapping.ColumnMappings.Add("Cuota", "Cuota");
+            tableMapping.ColumnMappings.Add("Pendiente", "Pendiente");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10826,7 +10562,6 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
             this._commandCollection[0].CommandText = "dbo.isp_CreditoMorosos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strFechaIni", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@strFechaFin", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -10834,19 +10569,13 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsCredits.isp_CreditoMorososDataTable dataTable, string strFechaIni, string strFechaFin) {
+        public virtual int Fill(DsCredits.isp_CreditoMorososDataTable dataTable, string strFechaFin) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((strFechaIni == null)) {
+            if ((strFechaFin == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(strFechaIni));
-            }
-            if ((strFechaFin == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(strFechaFin));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(strFechaFin));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10859,19 +10588,13 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsCredits.isp_CreditoMorososDataTable GetData(string strFechaIni, string strFechaFin) {
+        public virtual DsCredits.isp_CreditoMorososDataTable GetData(string strFechaFin) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((strFechaIni == null)) {
+            if ((strFechaFin == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(strFechaIni));
-            }
-            if ((strFechaFin == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(strFechaFin));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(strFechaFin));
             }
             DsCredits.isp_CreditoMorososDataTable dataTable = new DsCredits.isp_CreditoMorososDataTable();
             this.Adapter.Fill(dataTable);

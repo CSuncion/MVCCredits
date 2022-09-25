@@ -226,11 +226,10 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return creditoEnProceso;
         }
-        public List<dynamic> ListarCreditoMorosos(string desde, string hasta)
+        public List<dynamic> ListarCreditoMorosos(string hasta)
         {
             List<SqlParameter> lParameter = new List<SqlParameter>()
                 {
-                new SqlParameter("@strFechaIni", desde),
                 new SqlParameter("@strFechaFin", hasta),
                 };
 
@@ -258,18 +257,11 @@ namespace CreditsRepository.Repository
                     Des_TpOperac = (string)xIdr[12],
                     Aprobado = (decimal)xIdr[13],
                     Plazo = (int)xIdr[14],
-                    NumCta = (string)xIdr[15],
-                    CCI = (string)xIdr[16],
-                    Dpto = (int)xIdr[17],
-                    DesDpto = (string)xIdr[18],
-                    Prov = (int)xIdr[19],
-                    DesProv = (string)xIdr[20],
-                    Dist = (int)xIdr[21],
-                    DesDist = (string)xIdr[22],
-                    CREDITO = (decimal)xIdr[23],
-                    PAGOS = (decimal)xIdr[24],
-                    Ret_Fecha = (DateTime)xIdr[25],
-                    Cuota = (int)xIdr[26],
+                    CREDITO = (decimal)xIdr[15],
+                    PAGOS = (decimal)xIdr[16],
+                    Ret_Fecha = (DateTime)xIdr[17],
+                    Cuota = (int)xIdr[18],
+                    Pendiente = (decimal)xIdr[19],
                 });
             }
             xObjCn.Disconnect();

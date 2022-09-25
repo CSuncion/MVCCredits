@@ -15,7 +15,7 @@ namespace CreditsRepository.IRepository
         List<dynamic> ListarSaldoFavorSolicitantes(string desde, string hasta);
         List<dynamic> ListarTipoCreditoGeneradoDesembolsado(string desde, string hasta);
         List<dynamic> ListarCreditoEnProceso(string desde, string hasta);
-        List<dynamic> ListarCreditoMorosos(string desde, string hasta);
+        List<dynamic> ListarCreditoMorosos(string hasta);
         List<dynamic> ListarOperacionesRefinanciamientoAmpliacion(CreditsOperationsDto oCreOpe);
     }
 }

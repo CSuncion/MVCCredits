@@ -1,4 +1,5 @@
 ﻿using CreditsController.Controller;
+using CreditsModel.ModelDto;
 using CreditsUtil.Util;
 using Microsoft.Reporting.WinForms;
 using System;
@@ -21,7 +22,7 @@ namespace CreditsView.Reports
         CreditsReportController objReportController = new CreditsReportController();
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
         public string nombreReporte = "CreditsView.Reports.rptReportCreditoOtorgados.rdlc";
-        public string formaReporte = "Normal";
+        public string formaReporte = "Horizontal";
         public frmReportCreditosOtorgados()
         {
             InitializeComponent();
@@ -42,8 +43,9 @@ namespace CreditsView.Reports
                 rds.Name = "dsCreditosOtorgados";
                 rds.Value = objReportController.ListarCreditosOtorgados(Convert.ToInt32(this.wCreOto.txtAnio.Text));
 
-                ReportParameter[] rp = new ReportParameter[1];
+                ReportParameter[] rp = new ReportParameter[2];
                 rp[0] = new ReportParameter("txtReportAnio", this.wCreOto.txtAnio.Text);
+                rp[1] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
 
                 this.rvReportCreditosOtorgados.Reset();
                 this.rvReportCreditosOtorgados.LocalReport.ReportEmbeddedResource = nombreReporte;

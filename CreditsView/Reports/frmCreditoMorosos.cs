@@ -23,12 +23,6 @@ namespace CreditsView.Reports
         public void AccionGenerarInforme()
         {
 
-            if (Conversion.ADateTime(this.dtpFecDesde.Text) > Conversion.ADateTime(this.dtpFecHasta.Text))
-            {
-                Mensaje.OperacionDenegada("La fecha desde no puede ser mayor a la fecha hasta", this.Text);
-                return;
-            }
-
             frmReportCreditoMorosos win = new frmReportCreditoMorosos();
             win.wCredMoro = this;
             TabCtrl.InsertarVentana(this, win);

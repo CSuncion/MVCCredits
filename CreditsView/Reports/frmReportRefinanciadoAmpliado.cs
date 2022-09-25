@@ -22,7 +22,7 @@ namespace CreditsView.Reports
         CreditsSolicitanteController oSol = new CreditsSolicitanteController();
         CreditsReportController objReportController = new CreditsReportController();
         public string nombreReporte = "CreditsView.Reports.rptReportRefinanciadoAmpliado.rdlc";
-        public string formaReporte = "Normal";
+        public string formaReporte = "Horizontal";
         public frmReportRefinanciadoAmpliado()
         {
             InitializeComponent();

@@ -11,10 +11,10 @@
     <Shape ID="DesignTable:isp_ListarTipoCreditos" ZOrder="7" X="329" Y="209" Height="134" Width="272" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:isp_ListarTipoCreditoPorAnio" ZOrder="6" X="637" Y="47" Height="153" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:isp_SaldoFavorSolicitantes" ZOrder="5" X="641" Y="210" Height="305" Width="297" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:isp_TipoCreditoGeneradoDesembolsado" ZOrder="2" X="72" Y="368" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:isp_TipoCreditoGeneradoDesembolsado" ZOrder="3" X="72" Y="368" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:isp_TipoCreditoEnProceso" ZOrder="4" X="944" Y="48" Height="305" Width="295" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:isp_CreditoMorosos" ZOrder="3" X="377" Y="365" Height="305" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:isp_ListarOperacionesRefinanciamientoAmpliacion" ZOrder="1" X="943" Y="358" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:isp_CreditoMorosos" ZOrder="1" X="377" Y="365" Height="305" Width="259" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:isp_ListarOperacionesRefinanciamientoAmpliacion" ZOrder="2" X="943" Y="358" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
