@@ -203,6 +203,7 @@ namespace CreditsView.Credits
 
             frmReportRefinanciadoAmpliado win = new frmReportRefinanciadoAmpliado();
             win.wRefAmp = this;
+            TabCtrl.InsertarVentana(this, win);
             win.NuevaVentana(iOpeEN);
 
         }

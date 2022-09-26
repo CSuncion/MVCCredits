@@ -35,9 +35,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
+            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGenerarInforme = new System.Windows.Forms.Button();
-            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,11 +80,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 50);
+            this.label3.Location = new System.Drawing.Point(54, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 13);
+            this.label3.Size = new System.Drawing.Size(235, 13);
             this.label3.TabIndex = 429;
-            this.label3.Text = "TIPO CRÉDITO GENERADOS Y DESEMBOLSADOS";
+            this.label3.Text = "CRÉDITO GENERADOS Y DESEMBOLSADOS";
             // 
             // tsPrincipal
             // 
@@ -97,6 +97,16 @@
             this.tsPrincipal.Size = new System.Drawing.Size(343, 25);
             this.tsPrincipal.Stretch = true;
             this.tsPrincipal.TabIndex = 427;
+            // 
+            // tsBtnSalir
+            // 
+            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
+            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnSalir.Name = "tsBtnSalir";
+            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
+            this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // panel1
             // 
@@ -120,16 +130,6 @@
             this.btnGenerarInforme.UseVisualStyleBackColor = true;
             this.btnGenerarInforme.Click += new System.EventHandler(this.btnGenerarInforme_Click);
             // 
-            // tsBtnSalir
-            // 
-            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
-            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnSalir.Name = "tsBtnSalir";
-            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
-            this.tsBtnSalir.Text = "Salir";
-            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
-            // 
             // frmTipoCreditoGeneradosDesembolsados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,7 +146,7 @@
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTipoCreditoGeneradosDesembolsados";
-            this.Text = "Tipo Crédito Generados Desembolsados";
+            this.Text = "Crédito Generados Desembolsados";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTipoCreditoGeneradosDesembolsados_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();

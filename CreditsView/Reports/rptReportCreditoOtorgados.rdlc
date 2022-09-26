@@ -810,7 +810,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>dsCreditosOtorgados</DataSetName>
-            <Top>0.95278cm</Top>
+            <Top>0.17639cm</Top>
             <Left>14.10794cm</Left>
             <Height>6.27cm</Height>
             <Width>14.04084cm</Width>
@@ -853,7 +853,7 @@
                                 <TextRun>
                                   <Value>MES</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -889,7 +889,7 @@
                                 <TextRun>
                                   <Value>CRÉDITOS</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -925,7 +925,7 @@
                                 <TextRun>
                                   <Value>MONTOS</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -966,7 +966,7 @@
                                 <TextRun>
                                   <Value>=Fields!Des_Mes.Value</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6.5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -998,7 +998,7 @@
                                 <TextRun>
                                   <Value>=Fields!CreditosAprobados.Value</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6.5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1030,7 +1030,7 @@
                                 <TextRun>
                                   <Value>=Fields!MontosAprobados.Value</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>6.5pt</FontSize>
                                     <Format>'S/'#,0.00;('S/'#,0.00)</Format>
                                     <rd:FormatSymbolCulture>quz-PE</rd:FormatSymbolCulture>
                                   </Style>
@@ -1090,7 +1090,7 @@
         <Height>3.10267in</Height>
         <Style />
       </Body>
-      <Width>11.12814in</Width>
+      <Width>11.0822in</Width>
       <Page>
         <PageHeader>
           <Height>3.22792cm</Height>
@@ -1269,8 +1269,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>0.342cm</Top>
-              <Left>23.04963cm</Left>
+              <Top>0.33861cm</Top>
+              <Left>23.75057cm</Left>
               <Height>0.44465cm</Height>
               <Width>0.74446cm</Width>
               <ZIndex>4</ZIndex>
@@ -1301,9 +1301,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox44</rd:DefaultName>
-              <Top>0.3454cm</Top>
-              <Left>23.79408cm</Left>
-              <Height>0.44125cm</Height>
+              <Top>0.3386cm</Top>
+              <Left>24.5303cm</Left>
+              <Height>0.44465cm</Height>
               <Width>0.37292cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
@@ -1323,7 +1323,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!OverallTotalPages</Value>
+                      <Value>=Globals!TotalPages</Value>
                       <Style>
                         <FontSize>7pt</FontSize>
                       </Style>
@@ -1334,7 +1334,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.3386cm</Top>
-              <Left>24.7575cm</Left>
+              <Left>25.45844cm</Left>
               <Height>0.44805cm</Height>
               <Width>1.09771cm</Width>
               <ZIndex>6</ZIndex>
@@ -1366,7 +1366,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
               <Top>0.3386cm</Top>
-              <Left>24.20228cm</Left>
+              <Left>24.90322cm</Left>
               <Height>0.44805cm</Height>
               <Width>0.55522cm</Width>
               <ZIndex>7</ZIndex>
@@ -1387,7 +1387,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=DateTime.Now.ToShortDateString() + "" + DateTime.Now.ToLongTimeString()</Value>
+                      <Value>=DateTime.Now.ToShortDateString()</Value>
                       <Style>
                         <FontSize>7pt</FontSize>
                       </Style>
@@ -1397,11 +1397,43 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox45</rd:DefaultName>
-              <Top>0.82193cm</Top>
-              <Left>23.04963cm</Left>
+              <Top>0.85381cm</Top>
+              <Left>24.5303cm</Left>
               <Height>0.41479cm</Height>
-              <Width>4.11868cm</Width>
+              <Width>2.96603cm</Width>
               <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox16">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Proceso:</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox13</rd:DefaultName>
+              <Top>0.85381cm</Top>
+              <Left>23.35369cm</Left>
+              <Height>0.4229cm</Height>
+              <Width>1.14134cm</Width>
+              <ZIndex>9</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

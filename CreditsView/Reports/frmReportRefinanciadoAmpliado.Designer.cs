@@ -74,7 +74,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.rvRefinanciadoAmpliado);
             this.Controls.Add(this.tsPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportRefinanciadoAmpliado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Refinanciado o Ampliado";
