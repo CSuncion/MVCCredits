@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlBtnCredits = new System.Windows.Forms.Panel();
+            this.btnComparativoCreditos = new System.Windows.Forms.Button();
             this.btnReportApplicant = new System.Windows.Forms.Button();
             this.btnCreditType = new System.Windows.Forms.Button();
             this.btnTipoCreditoAnual = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             // 
             // pnlMenu
             // 
+            resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.BackColor = System.Drawing.Color.CadetBlue;
             this.pnlMenu.Controls.Add(this.pnlBtnCredits);
             this.pnlMenu.Controls.Add(this.pnlCredits);
@@ -76,16 +78,28 @@
             this.pnlMenu.Controls.Add(this.pnlBtnReports);
             this.pnlMenu.Controls.Add(this.btnReports);
             this.pnlMenu.Controls.Add(this.pnlLogo);
-            resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.Name = "pnlMenu";
             // 
             // pnlBtnCredits
             // 
+            this.pnlBtnCredits.Controls.Add(this.btnComparativoCreditos);
             this.pnlBtnCredits.Controls.Add(this.btnReportApplicant);
             this.pnlBtnCredits.Controls.Add(this.btnCreditType);
             this.pnlBtnCredits.Controls.Add(this.btnTipoCreditoAnual);
             resources.ApplyResources(this.pnlBtnCredits, "pnlBtnCredits");
             this.pnlBtnCredits.Name = "pnlBtnCredits";
+            // 
+            // btnComparativoCreditos
+            // 
+            this.btnComparativoCreditos.BackColor = System.Drawing.Color.LightBlue;
+            this.btnComparativoCreditos.FlatAppearance.BorderSize = 0;
+            this.btnComparativoCreditos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnComparativoCreditos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnComparativoCreditos, "btnComparativoCreditos");
+            this.btnComparativoCreditos.ForeColor = System.Drawing.Color.White;
+            this.btnComparativoCreditos.Name = "btnComparativoCreditos";
+            this.btnComparativoCreditos.UseVisualStyleBackColor = false;
+            this.btnComparativoCreditos.Click += new System.EventHandler(this.btnComparativoCreditos_Click);
             // 
             // btnReportApplicant
             // 
@@ -414,5 +428,6 @@
         internal System.Windows.Forms.Button btnEnProceso;
         internal System.Windows.Forms.Button btnNoAdeudo;
         internal System.Windows.Forms.Button btnReportMorosos;
+        internal System.Windows.Forms.Button btnComparativoCreditos;
     }
 }

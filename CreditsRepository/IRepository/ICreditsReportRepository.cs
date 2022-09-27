@@ -17,5 +17,6 @@ namespace CreditsRepository.IRepository
         List<dynamic> ListarCreditoEnProceso(string desde, string hasta);
         List<dynamic> ListarCreditoMorosos(string hasta);
         List<dynamic> ListarOperacionesRefinanciamientoAmpliacion(CreditsOperationsDto oCreOpe);
+        List<dynamic> ListarComparativoCreditoOtorgados();
     }
 }

@@ -160,6 +160,10 @@ namespace CreditsView.MdiPrincipal
         {
 
         }
+        private void btnComparativoCreditos_Click(object sender, EventArgs e)
+        {
+            this.InstanciarCreditoComparativo();
+        }
         #endregion
 
         #region Methods
@@ -322,6 +326,13 @@ namespace CreditsView.MdiPrincipal
             frmCreditoMorosos win = new frmCreditoMorosos();
             this.FormatoVentanaHijoPrincipal(win, this.btnReportMorosos, null, 0, 0);
             win.NewWindow();
+        }
+
+        public void InstanciarCreditoComparativo()
+        {
+            frmReportComparativoCreditosGenerados win = new frmReportComparativoCreditosGenerados();
+            this.FormatoVentanaHijoPrincipal(win, this.btnComparativoCreditos, null, 0, 0);
+            win.MostrarInforme();
         }
 
         public void ShowOptionsReport()

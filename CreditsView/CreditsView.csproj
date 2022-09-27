@@ -142,6 +142,12 @@
     <Compile Include="Reports\frmCreditosOtorgados.Designer.cs">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportComparativoCreditosGenerados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportComparativoCreditosGenerados.Designer.cs">
+      <DependentUpon>frmReportComparativoCreditosGenerados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportCreditoMorosos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     <EmbeddedResource Include="Reports\frmCreditosOtorgados.resx">
       <DependentUpon>frmCreditosOtorgados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportComparativoCreditosGenerados.resx">
+      <DependentUpon>frmReportComparativoCreditosGenerados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportCreditoMorosos.resx">
       <DependentUpon>frmReportCreditoMorosos.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +307,7 @@
       <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportComparativoCreditoOtorgados.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoEnProceso.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoMorosos.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />

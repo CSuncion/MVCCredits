@@ -92,7 +92,9 @@
                         <Y>=Sum(Fields!CreditosAprobados.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontSize>7pt</FontSize>
+                        </Style>
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
@@ -244,7 +246,7 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
@@ -288,6 +290,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -408,10 +411,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>dsTipoCredito</DataSetName>
-            <Top>0.50595cm</Top>
-            <Left>10.15873cm</Left>
+            <Top>0.17639cm</Top>
+            <Left>0.48471cm</Left>
             <Height>5cm</Height>
-            <Width>20.81615cm</Width>
+            <Width>12.85219cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -466,6 +469,7 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
+                          <FontSize>7pt</FontSize>
                           <Format>'S/'#,0.00;('S/'#,0.00)</Format>
                           <rd:FormatSymbolCulture>quz-PE</rd:FormatSymbolCulture>
                         </Style>
@@ -620,8 +624,10 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
+                      <Format>'S/'#,0.00;('S/'#,0.00)</Format>
                       <Color>#5c5c5c</Color>
+                      <rd:FormatSymbolCulture>quz-PE</rd:FormatSymbolCulture>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -664,6 +670,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -784,10 +791,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>dsTipoCredito</DataSetName>
-            <Top>6.2115cm</Top>
-            <Left>10.15873cm</Left>
+            <Top>0.17639cm</Top>
+            <Left>13.3369cm</Left>
             <Height>5cm</Height>
-            <Width>20.81615cm</Width>
+            <Width>12.85219cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -939,7 +946,7 @@
                                 <TextRun>
                                   <Value>=Fields!Des_Mes.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6.5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -958,7 +965,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -972,7 +978,7 @@
                                 <TextRun>
                                   <Value>=Fields!CreditosAprobados.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6.5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1004,7 +1010,7 @@
                                 <TextRun>
                                   <Value>=Fields!MontosAprobados.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6.5pt</FontSize>
                                     <Format>'S/'#,0.00;('S/'#,0.00)</Format>
                                     <rd:FormatSymbolCulture>quz-PE</rd:FormatSymbolCulture>
                                   </Style>
@@ -1049,8 +1055,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsTipoCredito</DataSetName>
-            <Top>1.50496cm</Top>
-            <Left>0.88858cm</Left>
+            <Top>5.35278cm</Top>
+            <Left>0.48471cm</Left>
             <Height>1.2cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>2</ZIndex>
@@ -1060,14 +1066,115 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!MontosAprobados.Value, "dsTipoCredito")</Value>
+                    <Style>
+                      <FontSize>6.5pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>'S/'#,0.00;('S/'#,0.00)</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>6.73398cm</Top>
+            <Left>5.48471cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <rd:FormatSymbolCulture>quz-PE</rd:FormatSymbolCulture>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox18">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!CreditosAprobados.Value, "dsTipoCredito")</Value>
+                    <Style>
+                      <FontSize>6.5pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox18</rd:DefaultName>
+            <Top>6.73591cm</Top>
+            <Left>2.98471cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox19">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Totales :</Value>
+                    <Style>
+                      <FontSize>6.5pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox19</rd:DefaultName>
+            <Top>6.73591cm</Top>
+            <Left>0.48471cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>4.80059in</Height>
+        <Height>2.9194in</Height>
         <Style />
       </Body>
-      <Width>12.98189in</Width>
+      <Width>10.51392in</Width>
       <Page>
         <PageHeader>
-          <Height>5.2652cm</Height>
+          <Height>3.89717cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1080,7 +1187,7 @@
                     <TextRun>
                       <Value>CRÉDITO OTORGADO POR TIPO Y MES</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1091,10 +1198,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>2.34804cm</Top>
-              <Left>15.5103cm</Left>
-              <Height>0.75875cm</Height>
-              <Width>10.88729cm</Width>
+              <Top>2.08835cm</Top>
+              <Left>10.07533cm</Left>
+              <Height>0.57354cm</Height>
+              <Width>8.23736cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1114,6 +1221,7 @@
                     <TextRun>
                       <Value>Año:</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1122,10 +1230,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>3.28318cm</Top>
-              <Left>17.07134cm</Left>
+              <Top>2.66189cm</Top>
+              <Left>12.62634cm</Left>
               <Height>0.6cm</Height>
-              <Width>0.9125cm</Width>
+              <Width>0.91249cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1146,6 +1254,7 @@
                     <TextRun>
                       <Value>Producto:</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1154,10 +1263,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>4.08837cm</Top>
-              <Left>16.013cm</Left>
+              <Top>3.26189cm</Top>
+              <Left>11.96489cm</Left>
               <Height>0.6cm</Height>
-              <Width>1.97083cm</Width>
+              <Width>1.57396cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1177,15 +1286,17 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Parameters!txtReportAnio.Value</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>txtReportAnio</rd:DefaultName>
-              <Top>3.28318cm</Top>
-              <Left>18.16023cm</Left>
+              <Top>2.66189cm</Top>
+              <Left>13.53883cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>3</ZIndex>
@@ -1207,15 +1318,17 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Parameters!txtReportTipoCredito.Value</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>txtReportTipoCredito</rd:DefaultName>
-              <Top>4.05957cm</Top>
-              <Left>18.16023cm</Left>
+              <Top>3.29717cm</Top>
+              <Left>13.53883cm</Left>
               <Height>0.6cm</Height>
               <Width>3.77cm</Width>
               <ZIndex>4</ZIndex>
@@ -1229,18 +1342,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line1">
-              <Top>0.55188cm</Top>
-              <Left>0.88858cm</Left>
-              <Height>0cm</Height>
-              <Width>31.00261cm</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
             <Textbox Name="Textbox5">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1250,7 +1351,7 @@
                     <TextRun>
                       <Value>FONBIEPOL</Value>
                       <Style>
-                        <FontSize>14pt</FontSize>
+                        <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1261,7 +1362,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>FONDO DE BIENESTAR PNP</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1270,7 +1373,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>GERENCIA GENERAL-GERENCIA DE FINANZAS-CRÉDITOS Y COBRANZAS</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
@@ -1278,97 +1383,10 @@
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
               <Top>0.72827cm</Top>
-              <Left>0.88858cm</Left>
-              <Height>1.83633cm</Height>
-              <Width>12.59987cm</Width>
-              <ZIndex>6</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Line Name="Line2">
-              <Top>4.71332cm</Top>
-              <Left>0.88858cm</Left>
-              <Height>0cm</Height>
-              <Width>31.00261cm</Width>
-              <ZIndex>7</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
-        <PageFooter>
-          <Height>2.54cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox15">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>| © FONBIEPOL - Consultado por:</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox15</rd:DefaultName>
-              <Top>0.66118cm</Top>
               <Left>0.48471cm</Left>
-              <Height>0.6cm</Height>
-              <Width>4.37854cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox17">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>|</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox17</rd:DefaultName>
-              <Top>1.43757cm</Top>
-              <Left>0.48471cm</Left>
-              <Height>0.44125cm</Height>
-              <Width>0.22458cm</Width>
-              <ZIndex>1</ZIndex>
+              <Height>1.36008cm</Height>
+              <Width>9.82174cm</Width>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1388,7 +1406,7 @@
                     <TextRun>
                       <Value>Pág.:</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
+                        <FontSize>7pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1396,11 +1414,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>0.66118cm</Top>
-              <Left>29.86293cm</Left>
-              <Height>0.6cm</Height>
-              <Width>0.98258cm</Width>
-              <ZIndex>2</ZIndex>
+              <Top>1.15836cm</Top>
+              <Left>22.44333cm</Left>
+              <Height>0.44465cm</Height>
+              <Width>0.74446cm</Width>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1411,40 +1429,199 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line3">
-              <Top>0.34396cm</Top>
-              <Left>0.48471cm</Left>
-              <Height>0cm</Height>
-              <Width>31.40648cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
-            <Textbox Name="Textbox11">
+            <Textbox Name="Textbox44">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=DateTime.Now.ToShortDateString() + "" + DateTime.Now.ToLongTimeString()</Value>
+                      <Value>=Globals!PageNumber</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
+                        <FontSize>7pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox11</rd:DefaultName>
-              <Top>1.43757cm</Top>
-              <Left>0.77984cm</Left>
-              <Height>0.44125cm</Height>
-              <Width>6.53534cm</Width>
-              <ZIndex>4</ZIndex>
+              <rd:DefaultName>Textbox44</rd:DefaultName>
+              <Top>1.15835cm</Top>
+              <Left>23.22306cm</Left>
+              <Height>0.44465cm</Height>
+              <Width>0.37292cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox21">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!TotalPages</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox21</rd:DefaultName>
+              <Top>1.15835cm</Top>
+              <Left>24.1512cm</Left>
+              <Height>0.44805cm</Height>
+              <Width>1.09771cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>de</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox23</rd:DefaultName>
+              <Top>1.15835cm</Top>
+              <Left>23.59598cm</Left>
+              <Height>0.44805cm</Height>
+              <Width>0.55522cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox45">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=DateTime.Now.ToShortDateString()</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox45</rd:DefaultName>
+              <Top>1.67356cm</Top>
+              <Left>23.22306cm</Left>
+              <Height>0.41479cm</Height>
+              <Width>2.96603cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox16">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Proceso:</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox13</rd:DefaultName>
+              <Top>1.67356cm</Top>
+              <Left>22.04645cm</Left>
+              <Height>0.4229cm</Height>
+              <Width>1.14134cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>1.42875cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox15">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>| © FONBIEPOL - Consultado por:</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox15</rd:DefaultName>
+              <Top>0.34368cm</Top>
+              <Left>0.48471cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.37854cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1464,7 +1641,7 @@
                     <TextRun>
                       <Value>=Parameters!userConsulta.Value</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
+                        <FontSize>7pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1472,43 +1649,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>userConsulta</rd:DefaultName>
-              <Top>0.66118cm</Top>
+              <Top>0.34368cm</Top>
               <Left>4.96908cm</Left>
               <Height>0.6cm</Height>
               <Width>7.22231cm</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox14">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!PageNumber</Value>
-                      <Style>
-                        <FontSize>8pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.66118cm</Top>
-              <Left>31.0219cm</Left>
-              <Height>0.6cm</Height>
-              <Width>0.86929cm</Width>
-              <ZIndex>6</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>

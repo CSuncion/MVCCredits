@@ -22,7 +22,7 @@ namespace CreditsView.Reports
         CreditsReportController objReportController = new CreditsReportController();
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
         public string nombreReporte = "CreditsView.Reports.rptReportTiposCreditos.rdlc";
-        public string formaReporte = "Normal";
+        public string formaReporte = "Horizontal";
         public frmReportTiposCreditos()
         {
             InitializeComponent();

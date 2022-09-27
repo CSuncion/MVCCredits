@@ -42,6 +42,8 @@ namespace CreditsView.DataSet {
         
         private isp_ListarOperacionesRefinanciamientoAmpliacionDataTable tableisp_ListarOperacionesRefinanciamientoAmpliacion;
         
+        private ComparativoCreditoOtorgadosDataTable tableComparativoCreditoOtorgados;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -96,6 +98,9 @@ namespace CreditsView.DataSet {
                 }
                 if ((ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"] != null)) {
                     base.Tables.Add(new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable(ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"]));
+                }
+                if ((ds.Tables["ComparativoCreditoOtorgados"] != null)) {
+                    base.Tables.Add(new ComparativoCreditoOtorgadosDataTable(ds.Tables["ComparativoCreditoOtorgados"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -207,6 +212,16 @@ namespace CreditsView.DataSet {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ComparativoCreditoOtorgadosDataTable ComparativoCreditoOtorgados {
+            get {
+                return this.tableComparativoCreditoOtorgados;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -299,6 +314,9 @@ namespace CreditsView.DataSet {
                 if ((ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"] != null)) {
                     base.Tables.Add(new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable(ds.Tables["isp_ListarOperacionesRefinanciamientoAmpliacion"]));
                 }
+                if ((ds.Tables["ComparativoCreditoOtorgados"] != null)) {
+                    base.Tables.Add(new ComparativoCreditoOtorgadosDataTable(ds.Tables["ComparativoCreditoOtorgados"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -386,6 +404,12 @@ namespace CreditsView.DataSet {
                     this.tableisp_ListarOperacionesRefinanciamientoAmpliacion.InitVars();
                 }
             }
+            this.tableComparativoCreditoOtorgados = ((ComparativoCreditoOtorgadosDataTable)(base.Tables["ComparativoCreditoOtorgados"]));
+            if ((initTable == true)) {
+                if ((this.tableComparativoCreditoOtorgados != null)) {
+                    this.tableComparativoCreditoOtorgados.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +438,8 @@ namespace CreditsView.DataSet {
             base.Tables.Add(this.tableisp_CreditoMorosos);
             this.tableisp_ListarOperacionesRefinanciamientoAmpliacion = new isp_ListarOperacionesRefinanciamientoAmpliacionDataTable();
             base.Tables.Add(this.tableisp_ListarOperacionesRefinanciamientoAmpliacion);
+            this.tableComparativoCreditoOtorgados = new ComparativoCreditoOtorgadosDataTable();
+            base.Tables.Add(this.tableComparativoCreditoOtorgados);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +493,12 @@ namespace CreditsView.DataSet {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeisp_ListarOperacionesRefinanciamientoAmpliacion() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeComparativoCreditoOtorgados() {
             return false;
         }
         
@@ -551,6 +583,9 @@ namespace CreditsView.DataSet {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEventHandler(object sender, isp_ListarOperacionesRefinanciamientoAmpliacionRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ComparativoCreditoOtorgadosRowChangeEventHandler(object sender, ComparativoCreditoOtorgadosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4832,6 +4867,614 @@ namespace CreditsView.DataSet {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ComparativoCreditoOtorgadosDataTable : global::System.Data.TypedTableBase<ComparativoCreditoOtorgadosRow> {
+            
+            private global::System.Data.DataColumn columnANIOCinco;
+            
+            private global::System.Data.DataColumn columnMESCinco;
+            
+            private global::System.Data.DataColumn columnDESMESCinco;
+            
+            private global::System.Data.DataColumn columnCANTIDCinco;
+            
+            private global::System.Data.DataColumn columnMONTOCinco;
+            
+            private global::System.Data.DataColumn columnANIOCuatro;
+            
+            private global::System.Data.DataColumn columnMESCuatro;
+            
+            private global::System.Data.DataColumn columnDESMESCuatro;
+            
+            private global::System.Data.DataColumn columnCANTIDCuatro;
+            
+            private global::System.Data.DataColumn columnMONTOCuatro;
+            
+            private global::System.Data.DataColumn columnANIOTres;
+            
+            private global::System.Data.DataColumn columnMESTres;
+            
+            private global::System.Data.DataColumn columnDESMESTres;
+            
+            private global::System.Data.DataColumn columnCANTIDTres;
+            
+            private global::System.Data.DataColumn columnMONTOTres;
+            
+            private global::System.Data.DataColumn columnANIODos;
+            
+            private global::System.Data.DataColumn columnMESDos;
+            
+            private global::System.Data.DataColumn columnDESMESDos;
+            
+            private global::System.Data.DataColumn columnCANTIDDos;
+            
+            private global::System.Data.DataColumn columnMONTODos;
+            
+            private global::System.Data.DataColumn columnANIOUno;
+            
+            private global::System.Data.DataColumn columnMESUno;
+            
+            private global::System.Data.DataColumn columnDESMESUno;
+            
+            private global::System.Data.DataColumn columnCANTIDUno;
+            
+            private global::System.Data.DataColumn columnMONTOUno;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ComparativoCreditoOtorgadosDataTable() {
+                this.TableName = "ComparativoCreditoOtorgados";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ComparativoCreditoOtorgadosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ComparativoCreditoOtorgadosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ANIOCincoColumn {
+                get {
+                    return this.columnANIOCinco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MESCincoColumn {
+                get {
+                    return this.columnMESCinco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DESMESCincoColumn {
+                get {
+                    return this.columnDESMESCinco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CANTIDCincoColumn {
+                get {
+                    return this.columnCANTIDCinco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MONTOCincoColumn {
+                get {
+                    return this.columnMONTOCinco;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ANIOCuatroColumn {
+                get {
+                    return this.columnANIOCuatro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MESCuatroColumn {
+                get {
+                    return this.columnMESCuatro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DESMESCuatroColumn {
+                get {
+                    return this.columnDESMESCuatro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CANTIDCuatroColumn {
+                get {
+                    return this.columnCANTIDCuatro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MONTOCuatroColumn {
+                get {
+                    return this.columnMONTOCuatro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ANIOTresColumn {
+                get {
+                    return this.columnANIOTres;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MESTresColumn {
+                get {
+                    return this.columnMESTres;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DESMESTresColumn {
+                get {
+                    return this.columnDESMESTres;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CANTIDTresColumn {
+                get {
+                    return this.columnCANTIDTres;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MONTOTresColumn {
+                get {
+                    return this.columnMONTOTres;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ANIODosColumn {
+                get {
+                    return this.columnANIODos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MESDosColumn {
+                get {
+                    return this.columnMESDos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DESMESDosColumn {
+                get {
+                    return this.columnDESMESDos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CANTIDDosColumn {
+                get {
+                    return this.columnCANTIDDos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MONTODosColumn {
+                get {
+                    return this.columnMONTODos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ANIOUnoColumn {
+                get {
+                    return this.columnANIOUno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MESUnoColumn {
+                get {
+                    return this.columnMESUno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DESMESUnoColumn {
+                get {
+                    return this.columnDESMESUno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CANTIDUnoColumn {
+                get {
+                    return this.columnCANTIDUno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MONTOUnoColumn {
+                get {
+                    return this.columnMONTOUno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ComparativoCreditoOtorgadosRow this[int index] {
+                get {
+                    return ((ComparativoCreditoOtorgadosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ComparativoCreditoOtorgadosRowChangeEventHandler ComparativoCreditoOtorgadosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ComparativoCreditoOtorgadosRowChangeEventHandler ComparativoCreditoOtorgadosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ComparativoCreditoOtorgadosRowChangeEventHandler ComparativoCreditoOtorgadosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ComparativoCreditoOtorgadosRowChangeEventHandler ComparativoCreditoOtorgadosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddComparativoCreditoOtorgadosRow(ComparativoCreditoOtorgadosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ComparativoCreditoOtorgadosRow AddComparativoCreditoOtorgadosRow(
+                        string ANIOCinco, 
+                        string MESCinco, 
+                        string DESMESCinco, 
+                        string CANTIDCinco, 
+                        string MONTOCinco, 
+                        string ANIOCuatro, 
+                        string MESCuatro, 
+                        string DESMESCuatro, 
+                        string CANTIDCuatro, 
+                        string MONTOCuatro, 
+                        string ANIOTres, 
+                        string MESTres, 
+                        string DESMESTres, 
+                        string CANTIDTres, 
+                        string MONTOTres, 
+                        string ANIODos, 
+                        string MESDos, 
+                        string DESMESDos, 
+                        string CANTIDDos, 
+                        string MONTODos, 
+                        string ANIOUno, 
+                        string MESUno, 
+                        string DESMESUno, 
+                        string CANTIDUno, 
+                        string MONTOUno) {
+                ComparativoCreditoOtorgadosRow rowComparativoCreditoOtorgadosRow = ((ComparativoCreditoOtorgadosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ANIOCinco,
+                        MESCinco,
+                        DESMESCinco,
+                        CANTIDCinco,
+                        MONTOCinco,
+                        ANIOCuatro,
+                        MESCuatro,
+                        DESMESCuatro,
+                        CANTIDCuatro,
+                        MONTOCuatro,
+                        ANIOTres,
+                        MESTres,
+                        DESMESTres,
+                        CANTIDTres,
+                        MONTOTres,
+                        ANIODos,
+                        MESDos,
+                        DESMESDos,
+                        CANTIDDos,
+                        MONTODos,
+                        ANIOUno,
+                        MESUno,
+                        DESMESUno,
+                        CANTIDUno,
+                        MONTOUno};
+                rowComparativoCreditoOtorgadosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowComparativoCreditoOtorgadosRow);
+                return rowComparativoCreditoOtorgadosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ComparativoCreditoOtorgadosDataTable cln = ((ComparativoCreditoOtorgadosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ComparativoCreditoOtorgadosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnANIOCinco = base.Columns["ANIOCinco"];
+                this.columnMESCinco = base.Columns["MESCinco"];
+                this.columnDESMESCinco = base.Columns["DESMESCinco"];
+                this.columnCANTIDCinco = base.Columns["CANTIDCinco"];
+                this.columnMONTOCinco = base.Columns["MONTOCinco"];
+                this.columnANIOCuatro = base.Columns["ANIOCuatro"];
+                this.columnMESCuatro = base.Columns["MESCuatro"];
+                this.columnDESMESCuatro = base.Columns["DESMESCuatro"];
+                this.columnCANTIDCuatro = base.Columns["CANTIDCuatro"];
+                this.columnMONTOCuatro = base.Columns["MONTOCuatro"];
+                this.columnANIOTres = base.Columns["ANIOTres"];
+                this.columnMESTres = base.Columns["MESTres"];
+                this.columnDESMESTres = base.Columns["DESMESTres"];
+                this.columnCANTIDTres = base.Columns["CANTIDTres"];
+                this.columnMONTOTres = base.Columns["MONTOTres"];
+                this.columnANIODos = base.Columns["ANIODos"];
+                this.columnMESDos = base.Columns["MESDos"];
+                this.columnDESMESDos = base.Columns["DESMESDos"];
+                this.columnCANTIDDos = base.Columns["CANTIDDos"];
+                this.columnMONTODos = base.Columns["MONTODos"];
+                this.columnANIOUno = base.Columns["ANIOUno"];
+                this.columnMESUno = base.Columns["MESUno"];
+                this.columnDESMESUno = base.Columns["DESMESUno"];
+                this.columnCANTIDUno = base.Columns["CANTIDUno"];
+                this.columnMONTOUno = base.Columns["MONTOUno"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnANIOCinco = new global::System.Data.DataColumn("ANIOCinco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANIOCinco);
+                this.columnMESCinco = new global::System.Data.DataColumn("MESCinco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMESCinco);
+                this.columnDESMESCinco = new global::System.Data.DataColumn("DESMESCinco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESMESCinco);
+                this.columnCANTIDCinco = new global::System.Data.DataColumn("CANTIDCinco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDCinco);
+                this.columnMONTOCinco = new global::System.Data.DataColumn("MONTOCinco", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMONTOCinco);
+                this.columnANIOCuatro = new global::System.Data.DataColumn("ANIOCuatro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANIOCuatro);
+                this.columnMESCuatro = new global::System.Data.DataColumn("MESCuatro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMESCuatro);
+                this.columnDESMESCuatro = new global::System.Data.DataColumn("DESMESCuatro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESMESCuatro);
+                this.columnCANTIDCuatro = new global::System.Data.DataColumn("CANTIDCuatro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDCuatro);
+                this.columnMONTOCuatro = new global::System.Data.DataColumn("MONTOCuatro", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMONTOCuatro);
+                this.columnANIOTres = new global::System.Data.DataColumn("ANIOTres", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANIOTres);
+                this.columnMESTres = new global::System.Data.DataColumn("MESTres", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMESTres);
+                this.columnDESMESTres = new global::System.Data.DataColumn("DESMESTres", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESMESTres);
+                this.columnCANTIDTres = new global::System.Data.DataColumn("CANTIDTres", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDTres);
+                this.columnMONTOTres = new global::System.Data.DataColumn("MONTOTres", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMONTOTres);
+                this.columnANIODos = new global::System.Data.DataColumn("ANIODos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANIODos);
+                this.columnMESDos = new global::System.Data.DataColumn("MESDos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMESDos);
+                this.columnDESMESDos = new global::System.Data.DataColumn("DESMESDos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESMESDos);
+                this.columnCANTIDDos = new global::System.Data.DataColumn("CANTIDDos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDDos);
+                this.columnMONTODos = new global::System.Data.DataColumn("MONTODos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMONTODos);
+                this.columnANIOUno = new global::System.Data.DataColumn("ANIOUno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnANIOUno);
+                this.columnMESUno = new global::System.Data.DataColumn("MESUno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMESUno);
+                this.columnDESMESUno = new global::System.Data.DataColumn("DESMESUno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDESMESUno);
+                this.columnCANTIDUno = new global::System.Data.DataColumn("CANTIDUno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCANTIDUno);
+                this.columnMONTOUno = new global::System.Data.DataColumn("MONTOUno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMONTOUno);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ComparativoCreditoOtorgadosRow NewComparativoCreditoOtorgadosRow() {
+                return ((ComparativoCreditoOtorgadosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ComparativoCreditoOtorgadosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ComparativoCreditoOtorgadosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ComparativoCreditoOtorgadosRowChanged != null)) {
+                    this.ComparativoCreditoOtorgadosRowChanged(this, new ComparativoCreditoOtorgadosRowChangeEvent(((ComparativoCreditoOtorgadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ComparativoCreditoOtorgadosRowChanging != null)) {
+                    this.ComparativoCreditoOtorgadosRowChanging(this, new ComparativoCreditoOtorgadosRowChangeEvent(((ComparativoCreditoOtorgadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ComparativoCreditoOtorgadosRowDeleted != null)) {
+                    this.ComparativoCreditoOtorgadosRowDeleted(this, new ComparativoCreditoOtorgadosRowChangeEvent(((ComparativoCreditoOtorgadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ComparativoCreditoOtorgadosRowDeleting != null)) {
+                    this.ComparativoCreditoOtorgadosRowDeleting(this, new ComparativoCreditoOtorgadosRowChangeEvent(((ComparativoCreditoOtorgadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveComparativoCreditoOtorgadosRow(ComparativoCreditoOtorgadosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DsCredits ds = new DsCredits();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ComparativoCreditoOtorgadosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Tb_SolicitantesRow : global::System.Data.DataRow {
@@ -8693,6 +9336,746 @@ namespace CreditsView.DataSet {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ComparativoCreditoOtorgadosRow : global::System.Data.DataRow {
+            
+            private ComparativoCreditoOtorgadosDataTable tableComparativoCreditoOtorgados;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ComparativoCreditoOtorgadosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableComparativoCreditoOtorgados = ((ComparativoCreditoOtorgadosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ANIOCinco {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.ANIOCincoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ANIOCinco\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.ANIOCincoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MESCinco {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MESCincoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MESCinco\' de la tabla \'ComparativoCreditoOtorgados\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MESCincoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DESMESCinco {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.DESMESCincoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESMESCinco\' de la tabla \'ComparativoCreditoOtorgados\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.DESMESCincoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CANTIDCinco {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.CANTIDCincoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CANTIDCinco\' de la tabla \'ComparativoCreditoOtorgados\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.CANTIDCincoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MONTOCinco {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MONTOCincoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MONTOCinco\' de la tabla \'ComparativoCreditoOtorgados\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MONTOCincoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ANIOCuatro {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.ANIOCuatroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ANIOCuatro\' de la tabla \'ComparativoCreditoOtorgados\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.ANIOCuatroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MESCuatro {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MESCuatroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MESCuatro\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MESCuatroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DESMESCuatro {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.DESMESCuatroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESMESCuatro\' de la tabla \'ComparativoCreditoOtorgados\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.DESMESCuatroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CANTIDCuatro {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.CANTIDCuatroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CANTIDCuatro\' de la tabla \'ComparativoCreditoOtorgados\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.CANTIDCuatroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MONTOCuatro {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MONTOCuatroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MONTOCuatro\' de la tabla \'ComparativoCreditoOtorgados\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MONTOCuatroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ANIOTres {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.ANIOTresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ANIOTres\' de la tabla \'ComparativoCreditoOtorgados\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.ANIOTresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MESTres {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MESTresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MESTres\' de la tabla \'ComparativoCreditoOtorgados\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MESTresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DESMESTres {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.DESMESTresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESMESTres\' de la tabla \'ComparativoCreditoOtorgados\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.DESMESTresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CANTIDTres {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.CANTIDTresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CANTIDTres\' de la tabla \'ComparativoCreditoOtorgados\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.CANTIDTresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MONTOTres {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MONTOTresColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MONTOTres\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MONTOTresColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ANIODos {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.ANIODosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ANIODos\' de la tabla \'ComparativoCreditoOtorgados\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.ANIODosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MESDos {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MESDosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MESDos\' de la tabla \'ComparativoCreditoOtorgados\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MESDosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DESMESDos {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.DESMESDosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESMESDos\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.DESMESDosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CANTIDDos {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.CANTIDDosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CANTIDDos\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.CANTIDDosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MONTODos {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MONTODosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MONTODos\' de la tabla \'ComparativoCreditoOtorgados\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MONTODosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ANIOUno {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.ANIOUnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ANIOUno\' de la tabla \'ComparativoCreditoOtorgados\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.ANIOUnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MESUno {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MESUnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MESUno\' de la tabla \'ComparativoCreditoOtorgados\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MESUnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string DESMESUno {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.DESMESUnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DESMESUno\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.DESMESUnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CANTIDUno {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.CANTIDUnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CANTIDUno\' de la tabla \'ComparativoCreditoOtorgados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.CANTIDUnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MONTOUno {
+                get {
+                    try {
+                        return ((string)(this[this.tableComparativoCreditoOtorgados.MONTOUnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MONTOUno\' de la tabla \'ComparativoCreditoOtorgados\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableComparativoCreditoOtorgados.MONTOUnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsANIOCincoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.ANIOCincoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetANIOCincoNull() {
+                this[this.tableComparativoCreditoOtorgados.ANIOCincoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMESCincoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MESCincoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMESCincoNull() {
+                this[this.tableComparativoCreditoOtorgados.MESCincoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDESMESCincoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.DESMESCincoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDESMESCincoNull() {
+                this[this.tableComparativoCreditoOtorgados.DESMESCincoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCANTIDCincoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.CANTIDCincoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCANTIDCincoNull() {
+                this[this.tableComparativoCreditoOtorgados.CANTIDCincoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMONTOCincoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MONTOCincoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMONTOCincoNull() {
+                this[this.tableComparativoCreditoOtorgados.MONTOCincoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsANIOCuatroNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.ANIOCuatroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetANIOCuatroNull() {
+                this[this.tableComparativoCreditoOtorgados.ANIOCuatroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMESCuatroNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MESCuatroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMESCuatroNull() {
+                this[this.tableComparativoCreditoOtorgados.MESCuatroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDESMESCuatroNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.DESMESCuatroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDESMESCuatroNull() {
+                this[this.tableComparativoCreditoOtorgados.DESMESCuatroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCANTIDCuatroNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.CANTIDCuatroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCANTIDCuatroNull() {
+                this[this.tableComparativoCreditoOtorgados.CANTIDCuatroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMONTOCuatroNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MONTOCuatroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMONTOCuatroNull() {
+                this[this.tableComparativoCreditoOtorgados.MONTOCuatroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsANIOTresNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.ANIOTresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetANIOTresNull() {
+                this[this.tableComparativoCreditoOtorgados.ANIOTresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMESTresNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MESTresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMESTresNull() {
+                this[this.tableComparativoCreditoOtorgados.MESTresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDESMESTresNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.DESMESTresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDESMESTresNull() {
+                this[this.tableComparativoCreditoOtorgados.DESMESTresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCANTIDTresNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.CANTIDTresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCANTIDTresNull() {
+                this[this.tableComparativoCreditoOtorgados.CANTIDTresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMONTOTresNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MONTOTresColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMONTOTresNull() {
+                this[this.tableComparativoCreditoOtorgados.MONTOTresColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsANIODosNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.ANIODosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetANIODosNull() {
+                this[this.tableComparativoCreditoOtorgados.ANIODosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMESDosNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MESDosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMESDosNull() {
+                this[this.tableComparativoCreditoOtorgados.MESDosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDESMESDosNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.DESMESDosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDESMESDosNull() {
+                this[this.tableComparativoCreditoOtorgados.DESMESDosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCANTIDDosNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.CANTIDDosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCANTIDDosNull() {
+                this[this.tableComparativoCreditoOtorgados.CANTIDDosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMONTODosNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MONTODosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMONTODosNull() {
+                this[this.tableComparativoCreditoOtorgados.MONTODosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsANIOUnoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.ANIOUnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetANIOUnoNull() {
+                this[this.tableComparativoCreditoOtorgados.ANIOUnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMESUnoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MESUnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMESUnoNull() {
+                this[this.tableComparativoCreditoOtorgados.MESUnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDESMESUnoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.DESMESUnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDESMESUnoNull() {
+                this[this.tableComparativoCreditoOtorgados.DESMESUnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCANTIDUnoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.CANTIDUnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCANTIDUnoNull() {
+                this[this.tableComparativoCreditoOtorgados.CANTIDUnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMONTOUnoNull() {
+                return this.IsNull(this.tableComparativoCreditoOtorgados.MONTOUnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMONTOUnoNull() {
+                this[this.tableComparativoCreditoOtorgados.MONTOUnoColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -8984,6 +10367,40 @@ namespace CreditsView.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public isp_ListarOperacionesRefinanciamientoAmpliacionRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ComparativoCreditoOtorgadosRowChangeEvent : global::System.EventArgs {
+            
+            private ComparativoCreditoOtorgadosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ComparativoCreditoOtorgadosRowChangeEvent(ComparativoCreditoOtorgadosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ComparativoCreditoOtorgadosRow Row {
                 get {
                     return this.eventRow;
                 }

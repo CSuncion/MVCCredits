@@ -305,5 +305,47 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return creditoRefAmp;
         }
+
+        public List<dynamic> ListarComparativoCreditoOtorgados()
+        {
+            List<dynamic> comparativoCreditosOtorgados = new List<dynamic>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ComparativoCreditoOtorgados");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                comparativoCreditosOtorgados.Add(new
+                {
+                    ANIOCinco = (int)xIdr[0],
+                    MESCinco = (int)xIdr[1],
+                    DESMESCinco = (string)xIdr[2],
+                    CANTIDCinco = (int)xIdr[3],
+                    MONTOCinco = (decimal)xIdr[4],
+                    ANIOCuatro = (int)xIdr[5],
+                    MESCuatro = (int)xIdr[6],
+                    DESMESCuatro = (string)xIdr[7],
+                    CANTIDCuatro = (int)xIdr[8],
+                    MONTOCuatro = (decimal)xIdr[9],
+                    ANIOTres = (int)xIdr[10],
+                    MESTres = (int)xIdr[11],
+                    DESMESTres = (string)xIdr[12],
+                    CANTIDTres = (int)xIdr[13],
+                    MONTOTres = (decimal)xIdr[14],
+                    ANIODos = (int)xIdr[15],
+                    MESDos = (int)xIdr[16],
+                    DESMESDos = (string)xIdr[17],
+                    CANTIDDos = (int)xIdr[18],
+                    MONTODos = (decimal)xIdr[19],
+                    ANIOUno = (int)xIdr[20],
+                    MESUno = (int)xIdr[21],
+                    DESMESUno = (string)xIdr[22],
+                    CANTIDUno = (int)xIdr[23],
+                    MONTOUno = (decimal)xIdr[24]
+                });
+            }
+            xObjCn.Disconnect();
+            return comparativoCreditosOtorgados;
+        }
+
     }
 }

@@ -48,5 +48,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarOperacionesRefinanciamientoAmpliacion(oCreOpe);
         }
+        public List<dynamic> ListarComparativoCreditoOtorgados()
+        {
+            return this._iCreditsReportRepository.ListarComparativoCreditoOtorgados();
+        }
     }
 }
