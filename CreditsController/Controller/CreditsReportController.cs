@@ -52,5 +52,17 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarComparativoCreditoOtorgados();
         }
+        public decimal ListarConsultaNoAdeudo(string dni)
+        {
+            return this._iCreditsReportRepository.ListarConsultaNoAdeudo(dni);
+        }
+        public string GenerarCorrelativoConstanciaNoAdeudo(string periodo)
+        {
+            return this._iCreditsReportRepository.GenerarCorrelativoConstanciaNoAdeudo(periodo);
+        }
+        public int ValidaImpresionCorrelativoConstanciaNoAdeudo(string dni)
+        {
+            return this._iCreditsReportRepository.ValidaImpresionCorrelativoConstanciaNoAdeudo(dni);
+        }
     }
 }

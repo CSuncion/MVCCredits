@@ -64,8 +64,8 @@ namespace CreditsRepository.Repository
                 {
                 new SqlParameter("@IdOperacion", pObj.IdOperacion),
                 new SqlParameter("@Estado", pObj.Estado),
-                new SqlParameter("@UsuarioAgrega", Universal.gCodigoUsuario),
-                new SqlParameter("@UsuarioModifica", Universal.gCodigoUsuario),
+                new SqlParameter("@UsuarioAgrega", Universal.gIdAcceso),
+                new SqlParameter("@UsuarioModifica", Universal.gIdAcceso),
                 };
             xObjCn.AssignParameters(lParameter);
             xObjCn.CommandStoreProcedure("isp_CrearRefinanciadoAmpliado");

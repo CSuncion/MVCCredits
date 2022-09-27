@@ -346,6 +346,64 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return comparativoCreditosOtorgados;
         }
+        public decimal ListarConsultaNoAdeudo(string dni)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strDniSolicitante", dni),
+                };
 
+            decimal saldo = 0;
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ConsultaNoAdeudo");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                saldo = (decimal)xIdr[0];
+            }
+            xObjCn.Disconnect();
+            return saldo;
+        }
+
+        public string GenerarCorrelativoConstanciaNoAdeudo(string periodo)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strPeriodo", periodo),
+                };
+
+            string Correlativo = "";
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_GenerarCorrelativoConstanciaNoAdeudo");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                Correlativo = (string)xIdr[0];
+            }
+            xObjCn.Disconnect();
+            return Correlativo;
+        }
+
+        public int ValidaImpresionCorrelativoConstanciaNoAdeudo(string dni)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strDniSolicitante", dni),
+                };
+
+            int Result = 0;
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ValidaImpresionCorrelativoConstanciaNoAdeudo");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                Result = (int)xIdr[0];
+            }
+            xObjCn.Disconnect();
+            return Result;
+        }
     }
 }

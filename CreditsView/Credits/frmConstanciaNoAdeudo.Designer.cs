@@ -39,10 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtApeNom = new System.Windows.Forms.TextBox();
             this.txtGrado = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnImpConsNoAdeu = new System.Windows.Forms.Button();
             this.lblMensajeAdeuda = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gbImpNoAdeu = new System.Windows.Forms.GroupBox();
             this.tsPrincipal.SuspendLayout();
+            this.gbImpNoAdeu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tsPrincipal
@@ -136,25 +139,26 @@
             this.txtGrado.Size = new System.Drawing.Size(135, 20);
             this.txtGrado.TabIndex = 442;
             // 
-            // button1
+            // btnImpConsNoAdeu
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(51, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(282, 50);
-            this.button1.TabIndex = 443;
-            this.button1.Text = "IMPRIMIR CONSTANCIA NO ADEUDO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnImpConsNoAdeu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImpConsNoAdeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpConsNoAdeu.Image = ((System.Drawing.Image)(resources.GetObject("btnImpConsNoAdeu.Image")));
+            this.btnImpConsNoAdeu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImpConsNoAdeu.Location = new System.Drawing.Point(44, 46);
+            this.btnImpConsNoAdeu.Name = "btnImpConsNoAdeu";
+            this.btnImpConsNoAdeu.Size = new System.Drawing.Size(282, 50);
+            this.btnImpConsNoAdeu.TabIndex = 443;
+            this.btnImpConsNoAdeu.Text = "IMPRIMIR CONSTANCIA NO ADEUDO";
+            this.btnImpConsNoAdeu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImpConsNoAdeu.UseVisualStyleBackColor = true;
+            this.btnImpConsNoAdeu.Click += new System.EventHandler(this.btnImpConsNoAdeu_Click);
             // 
             // lblMensajeAdeuda
             // 
             this.lblMensajeAdeuda.AutoSize = true;
             this.lblMensajeAdeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeAdeuda.Location = new System.Drawing.Point(142, 161);
+            this.lblMensajeAdeuda.Location = new System.Drawing.Point(88, 26);
             this.lblMensajeAdeuda.Name = "lblMensajeAdeuda";
             this.lblMensajeAdeuda.Size = new System.Drawing.Size(86, 17);
             this.lblMensajeAdeuda.TabIndex = 444;
@@ -171,15 +175,34 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Location = new System.Drawing.Point(0, 147);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(399, 10);
+            this.panel2.TabIndex = 437;
+            // 
+            // gbImpNoAdeu
+            // 
+            this.gbImpNoAdeu.Controls.Add(this.lblMensajeAdeuda);
+            this.gbImpNoAdeu.Controls.Add(this.btnImpConsNoAdeu);
+            this.gbImpNoAdeu.Location = new System.Drawing.Point(12, 163);
+            this.gbImpNoAdeu.Name = "gbImpNoAdeu";
+            this.gbImpNoAdeu.Size = new System.Drawing.Size(375, 102);
+            this.gbImpNoAdeu.TabIndex = 446;
+            this.gbImpNoAdeu.TabStop = false;
+            this.gbImpNoAdeu.Visible = false;
+            // 
             // frmConstanciaNoAdeudo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 257);
+            this.ClientSize = new System.Drawing.Size(399, 277);
             this.ControlBox = false;
+            this.Controls.Add(this.gbImpNoAdeu);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.lblMensajeAdeuda);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtGrado);
             this.Controls.Add(this.txtApeNom);
             this.Controls.Add(this.label2);
@@ -196,6 +219,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConstanciaNoAdeudo_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
+            this.gbImpNoAdeu.ResumeLayout(false);
+            this.gbImpNoAdeu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,8 +238,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtApeNom;
         private System.Windows.Forms.TextBox txtGrado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImpConsNoAdeu;
         private System.Windows.Forms.Label lblMensajeAdeuda;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox gbImpNoAdeu;
     }
 }

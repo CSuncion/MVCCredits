@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Controller\CreditsAccessController.cs" />
     <Compile Include="Controller\CreditsApplicantController.cs" />
+    <Compile Include="Controller\CreditsCorrelativoConstanciaNoAdeudoController.cs" />
     <Compile Include="Controller\CreditsGeneralController.cs" />
     <Compile Include="Controller\CreditsOperationsController.cs" />
     <Compile Include="Controller\CreditsRefinanciadoAmpliadoController.cs" />

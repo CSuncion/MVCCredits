@@ -16,6 +16,7 @@ namespace CreditsModel.ModelDto
         public static string gCodigoPerfil = string.Empty;
         public static string gNombrePerfil = string.Empty;
         public static string gStrPermisosAlmacen = string.Empty;
+        public static int gIdAcceso = 0;
 
         //enumeraciones 
 

@@ -41,6 +41,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.btnGetInto = new System.Windows.Forms.Button();
+            this.txtIdAcceso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,6 +179,15 @@
             this.btnGetInto.UseVisualStyleBackColor = true;
             this.btnGetInto.Click += new System.EventHandler(this.btnGetInto_Click);
             // 
+            // txtIdAcceso
+            // 
+            this.txtIdAcceso.Location = new System.Drawing.Point(325, 178);
+            this.txtIdAcceso.Name = "txtIdAcceso";
+            this.txtIdAcceso.ReadOnly = true;
+            this.txtIdAcceso.Size = new System.Drawing.Size(18, 20);
+            this.txtIdAcceso.TabIndex = 213;
+            this.txtIdAcceso.Visible = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +195,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(359, 316);
             this.ControlBox = false;
+            this.Controls.Add(this.txtIdAcceso);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.ckbPwd);
@@ -225,5 +236,6 @@
         internal System.Windows.Forms.Button btnCancel;
         internal System.Windows.Forms.TextBox txtPwd;
         internal System.Windows.Forms.Button btnGetInto;
+        private System.Windows.Forms.TextBox txtIdAcceso;
     }
 }

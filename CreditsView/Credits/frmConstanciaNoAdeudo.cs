@@ -10,12 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinControles;
 
 namespace CreditsView.Credits
 {
     public partial class frmConstanciaNoAdeudo : Form
     {
         CreditsSolicitanteController oSolCtrll = new CreditsSolicitanteController();
+        CreditsReportController oRptCtrll = new CreditsReportController();
+        CreditsCorrelativoConstanciaNoAdeudoController oCorrNoAdCtrll = new CreditsCorrelativoConstanciaNoAdeudoController();
+        string eTitulo = "Constancia de no Adeudo";
         int eVaBD = 1;//0 : no , 1 : si
         public frmConstanciaNoAdeudo()
         {
@@ -34,6 +38,7 @@ namespace CreditsView.Credits
         public void ActualizarVentana()
         {
             this.ActualizarListaSolicitantesDeBaseDatos();
+            this.ActualizarListaConstanciaNoAdeudo();
         }
 
         public void ActualizarListaSolicitantesDeBaseDatos()
@@ -48,11 +53,49 @@ namespace CreditsView.Credits
             this.AsignarSolicitantes(iSolEN);
         }
 
+        public void ActualizarListaConstanciaNoAdeudo()
+        {
+            //validar si es acto ir a la bd
+            if (this.txtDocId.Text.Trim() != string.Empty && eVaBD == 0) { return; }
+
+            decimal saldo = oRptCtrll.ListarConsultaNoAdeudo(this.txtDocId.Text.Trim());
+
+            if (saldo > 0)
+                this.lblMensajeAdeuda.Text = "Tiene una deuda con FONBIEPOL de S/ " + saldo;
+            else
+            {
+                this.lblMensajeAdeuda.Text = "No adeuda al FONBIEPOL";
+                this.gbImpNoAdeu.Visible = true;
+            }
+        }
+
         public void AsignarSolicitantes(CreditsSolicitantesDto iSolEN)
         {
             this.txtApeNom.Text = iSolEN.Paterno.Trim() + " " + iSolEN.Materno.Trim() + ", " + iSolEN.Nombres.Trim();
             this.txtGrado.Text = iSolEN.DesGrado.Trim();
         }
+
+        public void GuardarCorrelativoConstanciaNoAdeudo()
+        {
+            CreditsCorrelativoConstanciaNoAdeudoDto eCCCNoAde = new CreditsCorrelativoConstanciaNoAdeudoDto();
+            eCCCNoAde.Correlativo = oRptCtrll.GenerarCorrelativoConstanciaNoAdeudo(DateTime.Now.Year.ToString());
+            eCCCNoAde.Periodo = DateTime.Now.Year.ToString();
+            eCCCNoAde.FechaCorrelativo = DateTime.Now;
+            eCCCNoAde.DniSolicitante = this.txtDocId.Text;
+            oCorrNoAdCtrll.CrearRefinanciadoAmpliado(eCCCNoAde);
+        }
+        public void AdicionarCorrelativoConstanciaNoAdeudo()
+        {
+            if (oRptCtrll.ValidaImpresionCorrelativoConstanciaNoAdeudo(this.txtDocId.Text) == 1)
+            {
+                Mensaje.OperacionDenegada("Ya ha generado una constancia de no adeudo", this.eTitulo);
+                return;
+            }
+            if (Mensaje.DeseasRealizarOperacion(this.eTitulo))
+                this.GuardarCorrelativoConstanciaNoAdeudo();
+
+        }
+
         private void tsBtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -74,5 +117,11 @@ namespace CreditsView.Credits
             this.ActualizarVentana();
             eVaBD = 1;
         }
+
+        private void btnImpConsNoAdeu_Click(object sender, EventArgs e)
+        {
+            this.AdicionarCorrelativoConstanciaNoAdeudo();
+        }
+
     }
 }

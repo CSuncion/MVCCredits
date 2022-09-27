@@ -119,6 +119,7 @@ namespace CreditsView.Login
             this.txtCodUsr.Text = iUsuEN.Dni_Acceso;
             this.txtNameUsr.Text = iUsuEN.Names_Acceso.Trim() + ' ' + iUsuEN.Paterno_Acceso.Trim() + ' ' + iUsuEN.Materno_Acceso.Trim();
             this.txtProfile.Text = iUsuEN.Cargo_Acceso;
+            this.txtIdAcceso.Text = iUsuEN.Id_Acceso.ToString();
             return iUsuEN.Additionals.EsVerdad;
         }
         public void AsignarUsuario(CreditsAccessDto pUsu)
@@ -147,6 +148,7 @@ namespace CreditsView.Login
             Universal.gCodigoUsuario = this.txtCodUsr.Text.Trim();
             Universal.gNombreUsuario = this.txtNameUsr.Text.Trim();
             Universal.gNombrePerfil = this.txtProfile.Text.Trim();
+            Universal.gIdAcceso = Convert.ToInt32(this.txtIdAcceso.Text);
         }
 
         public void GrabarPersistencia()

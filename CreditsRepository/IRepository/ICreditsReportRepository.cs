@@ -18,5 +18,8 @@ namespace CreditsRepository.IRepository
         List<dynamic> ListarCreditoMorosos(string hasta);
         List<dynamic> ListarOperacionesRefinanciamientoAmpliacion(CreditsOperationsDto oCreOpe);
         List<dynamic> ListarComparativoCreditoOtorgados();
+        decimal ListarConsultaNoAdeudo(string dni);
+        string GenerarCorrelativoConstanciaNoAdeudo(string periodo);
+        int ValidaImpresionCorrelativoConstanciaNoAdeudo(string dni);
     }
 }
