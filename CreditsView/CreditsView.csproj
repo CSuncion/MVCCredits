@@ -317,6 +317,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
     <EmbeddedResource Include="Reports\rptReportComparativoCreditoOtorgados.rdlc" />
+    <EmbeddedResource Include="Reports\rptReportCreditoCartaNoAdeudo.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoEnProceso.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoMorosos.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoOtorgados.rdlc" />

@@ -145,7 +145,7 @@
             this.btnImpConsNoAdeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImpConsNoAdeu.Image = ((System.Drawing.Image)(resources.GetObject("btnImpConsNoAdeu.Image")));
             this.btnImpConsNoAdeu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpConsNoAdeu.Location = new System.Drawing.Point(44, 46);
+            this.btnImpConsNoAdeu.Location = new System.Drawing.Point(25, 46);
             this.btnImpConsNoAdeu.Name = "btnImpConsNoAdeu";
             this.btnImpConsNoAdeu.Size = new System.Drawing.Size(282, 50);
             this.btnImpConsNoAdeu.TabIndex = 443;
@@ -158,7 +158,7 @@
             // 
             this.lblMensajeAdeuda.AutoSize = true;
             this.lblMensajeAdeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeAdeuda.Location = new System.Drawing.Point(41, 26);
+            this.lblMensajeAdeuda.Location = new System.Drawing.Point(22, 26);
             this.lblMensajeAdeuda.Name = "lblMensajeAdeuda";
             this.lblMensajeAdeuda.Size = new System.Drawing.Size(86, 17);
             this.lblMensajeAdeuda.TabIndex = 444;
