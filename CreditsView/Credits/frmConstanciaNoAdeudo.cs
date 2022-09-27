@@ -61,11 +61,16 @@ namespace CreditsView.Credits
             decimal saldo = oRptCtrll.ListarConsultaNoAdeudo(this.txtDocId.Text.Trim());
 
             if (saldo > 0)
+            {
                 this.lblMensajeAdeuda.Text = "Tiene una deuda con FONBIEPOL de S/ " + saldo;
+                this.btnImpConsNoAdeu.Visible = false;
+                this.gbImpNoAdeu.Visible = true;
+            }
             else
             {
                 this.lblMensajeAdeuda.Text = "No adeuda al FONBIEPOL";
                 this.gbImpNoAdeu.Visible = true;
+                this.btnImpConsNoAdeu.Visible = true;
             }
         }
 

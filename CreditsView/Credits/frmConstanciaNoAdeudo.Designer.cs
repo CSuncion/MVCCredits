@@ -158,7 +158,7 @@
             // 
             this.lblMensajeAdeuda.AutoSize = true;
             this.lblMensajeAdeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeAdeuda.Location = new System.Drawing.Point(88, 26);
+            this.lblMensajeAdeuda.Location = new System.Drawing.Point(41, 26);
             this.lblMensajeAdeuda.Name = "lblMensajeAdeuda";
             this.lblMensajeAdeuda.Size = new System.Drawing.Size(86, 17);
             this.lblMensajeAdeuda.TabIndex = 444;
