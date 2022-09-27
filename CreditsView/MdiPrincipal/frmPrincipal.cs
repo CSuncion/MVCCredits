@@ -158,7 +158,7 @@ namespace CreditsView.MdiPrincipal
 
         private void btnNoAdeudo_Click(object sender, EventArgs e)
         {
-
+            this.InstanciarConstanciaNoAdeudo();
         }
         private void btnComparativoCreditos_Click(object sender, EventArgs e)
         {
@@ -333,6 +333,13 @@ namespace CreditsView.MdiPrincipal
             frmReportComparativoCreditosGenerados win = new frmReportComparativoCreditosGenerados();
             this.FormatoVentanaHijoPrincipal(win, this.btnComparativoCreditos, null, 0, 0);
             win.MostrarInforme();
+        }
+
+        public void InstanciarConstanciaNoAdeudo()
+        {
+            frmConstanciaNoAdeudo  win = new frmConstanciaNoAdeudo();
+            this.FormatoVentanaHijoPrincipal(win, this.btnNoAdeudo, null, 0, 0);
+            win.NewWindow();
         }
 
         public void ShowOptionsReport()

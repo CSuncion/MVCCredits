@@ -79,6 +79,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Credits\frmConstanciaNoAdeudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits\frmConstanciaNoAdeudo.Designer.cs">
+      <DependentUpon>frmConstanciaNoAdeudo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Credits\frmEditRefinanciadoAmpliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
       <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Credits\frmConstanciaNoAdeudo.resx">
+      <DependentUpon>frmConstanciaNoAdeudo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Credits\frmEditRefinanciadoAmpliado.resx">
       <DependentUpon>frmEditRefinanciadoAmpliado.cs</DependentUpon>
     </EmbeddedResource>

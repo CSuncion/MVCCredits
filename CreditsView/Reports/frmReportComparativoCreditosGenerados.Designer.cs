@@ -76,6 +76,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReportComparativoCreditosGenerados";
             this.Text = "Cuadro Comparativo Creditos Generados";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReportComparativoCreditosGenerados_FormClosing);
             this.Load += new System.EventHandler(this.frmReportComparativoCreditosGenerados_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();

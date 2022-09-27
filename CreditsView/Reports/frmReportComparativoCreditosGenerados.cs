@@ -1,5 +1,6 @@
 ﻿using CreditsController.Controller;
 using CreditsModel.ModelDto;
+using CreditsView.MdiPrincipal;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace CreditsView.Reports
 
         private void tsBtnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         public void MostrarInforme()
         {
@@ -73,5 +74,14 @@ namespace CreditsView.Reports
             }
         }
 
+        public void Cerrar()
+        {
+            frmPrincipal wMen = (frmPrincipal)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.btnComparativoCreditos, null);
+        }
+        private void frmReportComparativoCreditosGenerados_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Cerrar();
+        }
     }
 }
