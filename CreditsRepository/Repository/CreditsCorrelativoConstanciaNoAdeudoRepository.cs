@@ -68,8 +68,8 @@ namespace CreditsRepository.Repository
                     new SqlParameter("@strCorrelativo",pObj.Correlativo),
                     new SqlParameter("@strFechaCorrelativo",pObj.FechaCorrelativo),
                     new SqlParameter("@strDniSolicitante",pObj.DniSolicitante),
-                    new SqlParameter("@strUsuarioAgrega",pObj.UsuarioAgrega),
-                    new SqlParameter("@strUsuarioModifica",pObj.UsuarioModifica)
+                    new SqlParameter("@strUsuarioAgrega",Universal.gIdAcceso),
+                    new SqlParameter("@strUsuarioModifica",Universal.gIdAcceso)
                 };
 
             xObjCn.AssignParameters(lParameter);
