@@ -154,6 +154,12 @@
     <Compile Include="Reports\frmReportComparativoCreditosGenerados.Designer.cs">
       <DependentUpon>frmReportComparativoCreditosGenerados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmReportConstanciaNoAdeudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReportConstanciaNoAdeudo.Designer.cs">
+      <DependentUpon>frmReportConstanciaNoAdeudo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmReportCreditoMorosos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportComparativoCreditosGenerados.resx">
       <DependentUpon>frmReportComparativoCreditosGenerados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReportConstanciaNoAdeudo.resx">
+      <DependentUpon>frmReportConstanciaNoAdeudo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmReportCreditoMorosos.resx">
       <DependentUpon>frmReportCreditoMorosos.cs</DependentUpon>

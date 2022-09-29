@@ -405,5 +405,36 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return Result;
         }
+        public string ListaNameAnio()
+        {
+
+            string nameAnio = string.Empty;
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListaNameAnio");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                nameAnio = (string)xIdr[0];
+            }
+            xObjCn.Disconnect();
+            return nameAnio;
+        }
+        public List<string> ListaFirmaGerenteFinanza()
+        {
+
+            List<string> firmaFinanza = new List<string>();
+            ;
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_FirmaGerenteFinanza");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                string[] firma = { (string)xIdr[0], (string)xIdr[1] };
+                firmaFinanza.AddRange(firma);
+            }
+
+            xObjCn.Disconnect();
+            return firmaFinanza;
+        }
     }
 }

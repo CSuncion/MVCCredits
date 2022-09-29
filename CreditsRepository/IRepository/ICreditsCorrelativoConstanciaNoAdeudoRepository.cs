@@ -9,6 +9,6 @@ namespace CreditsRepository.IRepository
 {
     public interface ICreditsCorrelativoConstanciaNoAdeudoRepository
     {
-        void CrearCorrelativoConstanciaNoAdeudo(CreditsCorrelativoConstanciaNoAdeudoDto pObj);
+        string CrearCorrelativoConstanciaNoAdeudo(CreditsCorrelativoConstanciaNoAdeudoDto pObj);
     }
 }

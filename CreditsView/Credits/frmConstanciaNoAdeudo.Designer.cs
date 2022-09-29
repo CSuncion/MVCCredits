@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConstanciaNoAdeudo));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
-            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -39,11 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtApeNom = new System.Windows.Forms.TextBox();
             this.txtGrado = new System.Windows.Forms.TextBox();
-            this.btnImpConsNoAdeu = new System.Windows.Forms.Button();
             this.lblMensajeAdeuda = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gbImpNoAdeu = new System.Windows.Forms.GroupBox();
+            this.btnImpConsNoAdeu = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.tsBtnSalir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.gbImpNoAdeu.SuspendLayout();
             this.SuspendLayout();
@@ -59,16 +59,6 @@
             this.tsPrincipal.Size = new System.Drawing.Size(399, 25);
             this.tsPrincipal.Stretch = true;
             this.tsPrincipal.TabIndex = 428;
-            // 
-            // tsBtnSalir
-            // 
-            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
-            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnSalir.Name = "tsBtnSalir";
-            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
-            this.tsBtnSalir.Text = "Salir";
-            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // panel1
             // 
@@ -139,21 +129,6 @@
             this.txtGrado.Size = new System.Drawing.Size(135, 20);
             this.txtGrado.TabIndex = 442;
             // 
-            // btnImpConsNoAdeu
-            // 
-            this.btnImpConsNoAdeu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnImpConsNoAdeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpConsNoAdeu.Image = ((System.Drawing.Image)(resources.GetObject("btnImpConsNoAdeu.Image")));
-            this.btnImpConsNoAdeu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpConsNoAdeu.Location = new System.Drawing.Point(25, 46);
-            this.btnImpConsNoAdeu.Name = "btnImpConsNoAdeu";
-            this.btnImpConsNoAdeu.Size = new System.Drawing.Size(282, 50);
-            this.btnImpConsNoAdeu.TabIndex = 443;
-            this.btnImpConsNoAdeu.Text = "IMPRIMIR CONSTANCIA NO ADEUDO";
-            this.btnImpConsNoAdeu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImpConsNoAdeu.UseVisualStyleBackColor = true;
-            this.btnImpConsNoAdeu.Click += new System.EventHandler(this.btnImpConsNoAdeu_Click);
-            // 
             // lblMensajeAdeuda
             // 
             this.lblMensajeAdeuda.AutoSize = true;
@@ -163,17 +138,6 @@
             this.lblMensajeAdeuda.Size = new System.Drawing.Size(86, 17);
             this.lblMensajeAdeuda.TabIndex = 444;
             this.lblMensajeAdeuda.Text = "FONBIEPOL";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(286, 69);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(22, 22);
-            this.btnBuscar.TabIndex = 445;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // panel2
             // 
@@ -193,6 +157,42 @@
             this.gbImpNoAdeu.TabIndex = 446;
             this.gbImpNoAdeu.TabStop = false;
             this.gbImpNoAdeu.Visible = false;
+            // 
+            // btnImpConsNoAdeu
+            // 
+            this.btnImpConsNoAdeu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnImpConsNoAdeu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpConsNoAdeu.Image = ((System.Drawing.Image)(resources.GetObject("btnImpConsNoAdeu.Image")));
+            this.btnImpConsNoAdeu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImpConsNoAdeu.Location = new System.Drawing.Point(25, 46);
+            this.btnImpConsNoAdeu.Name = "btnImpConsNoAdeu";
+            this.btnImpConsNoAdeu.Size = new System.Drawing.Size(282, 50);
+            this.btnImpConsNoAdeu.TabIndex = 443;
+            this.btnImpConsNoAdeu.Text = "IMPRIMIR CONSTANCIA NO ADEUDO";
+            this.btnImpConsNoAdeu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImpConsNoAdeu.UseVisualStyleBackColor = true;
+            this.btnImpConsNoAdeu.Click += new System.EventHandler(this.btnImpConsNoAdeu_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(286, 69);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(22, 22);
+            this.btnBuscar.TabIndex = 445;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // tsBtnSalir
+            // 
+            this.tsBtnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsBtnSalir.Image = global::CreditsView.Properties.Resources.door_out;
+            this.tsBtnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnSalir.Name = "tsBtnSalir";
+            this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
+            this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // frmConstanciaNoAdeudo
             // 
@@ -233,15 +233,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtDocId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApeNom;
         private System.Windows.Forms.TextBox txtGrado;
         private System.Windows.Forms.Button btnImpConsNoAdeu;
         private System.Windows.Forms.Label lblMensajeAdeuda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox gbImpNoAdeu;
+        internal System.Windows.Forms.TextBox txtDocId;
+        internal System.Windows.Forms.TextBox txtApeNom;
     }
 }

@@ -64,5 +64,13 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ValidaImpresionCorrelativoConstanciaNoAdeudo(dni);
         }
+        public string ListaNameAnio()
+        {
+            return this._iCreditsReportRepository.ListaNameAnio();
+        }
+        public List<string> ListaFirmaGerenteFinanza()
+        {
+            return this._iCreditsReportRepository.ListaFirmaGerenteFinanza();
+        }
     }
 }

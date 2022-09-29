@@ -1,6 +1,8 @@
 ﻿using CreditsController.Controller;
 using CreditsModel.ModelDto;
 using CreditsView.MdiPrincipal;
+using CreditsView.Reports;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinControles;
+using WinControles.ControlesWindows;
 
 namespace CreditsView.Credits
 {
@@ -80,25 +83,37 @@ namespace CreditsView.Credits
             this.txtGrado.Text = iSolEN.DesGrado.Trim();
         }
 
-        public void GuardarCorrelativoConstanciaNoAdeudo()
+        public string GuardarCorrelativoConstanciaNoAdeudo()
         {
             CreditsCorrelativoConstanciaNoAdeudoDto eCCCNoAde = new CreditsCorrelativoConstanciaNoAdeudoDto();
             eCCCNoAde.Correlativo = oRptCtrll.GenerarCorrelativoConstanciaNoAdeudo(DateTime.Now.Year.ToString());
             eCCCNoAde.Periodo = DateTime.Now.Year.ToString();
             eCCCNoAde.FechaCorrelativo = DateTime.Now;
             eCCCNoAde.DniSolicitante = this.txtDocId.Text;
-            oCorrNoAdCtrll.CrearRefinanciadoAmpliado(eCCCNoAde);
+            return oCorrNoAdCtrll.CrearRefinanciadoAmpliado(eCCCNoAde);
         }
         public void AdicionarCorrelativoConstanciaNoAdeudo()
         {
+            string correlativo = string.Empty;
             if (oRptCtrll.ValidaImpresionCorrelativoConstanciaNoAdeudo(this.txtDocId.Text) == 1)
             {
                 Mensaje.OperacionDenegada("Ya ha generado una constancia de no adeudo", this.eTitulo);
                 return;
             }
             if (Mensaje.DeseasRealizarOperacion(this.eTitulo))
-                this.GuardarCorrelativoConstanciaNoAdeudo();
+                correlativo = this.GuardarCorrelativoConstanciaNoAdeudo();
 
+            Mensaje.OperacionSatisfactoria("Se genero correctamente la constancia no adeudo", this.eTitulo);
+
+            this.AccionImprimirConstanciaNoAdeudo(correlativo);
+
+        }
+        public void AccionImprimirConstanciaNoAdeudo(string correlativo)
+        {
+            frmReportConstanciaNoAdeudo win = new frmReportConstanciaNoAdeudo();
+            win.wConsNoAd = this;
+            TabCtrl.InsertarVentana(this, win);
+            win.ImprimirConstanciaNoAdeudo(correlativo);
         }
 
         private void tsBtnSalir_Click(object sender, EventArgs e)

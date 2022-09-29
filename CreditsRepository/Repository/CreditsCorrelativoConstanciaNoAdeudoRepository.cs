@@ -59,8 +59,9 @@ namespace CreditsRepository.Repository
             return xLista;
         }
 
-        public void CrearCorrelativoConstanciaNoAdeudo(CreditsCorrelativoConstanciaNoAdeudoDto pObj)
+        public string CrearCorrelativoConstanciaNoAdeudo(CreditsCorrelativoConstanciaNoAdeudoDto pObj)
         {
+            string correlativo = string.Empty;
             xObjCn.Connection();
             List<SqlParameter> lParameter = new List<SqlParameter>()
                 {
@@ -74,8 +75,14 @@ namespace CreditsRepository.Repository
 
             xObjCn.AssignParameters(lParameter);
             xObjCn.CommandStoreProcedure("isp_CrearCorrelativoConstanciaNoAdeudo");
-            xObjCn.ExecuteNotResult();
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                //adicionando cada objeto a la lista
+                correlativo = (string)xIdr[0];
+            }
             xObjCn.Disconnect();
+            return correlativo;
         }
     }
 }

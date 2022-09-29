@@ -16,9 +16,9 @@ namespace CreditsController.Controller
         {
             this._iCreditsCorrelativoConstanciaNoAdeudoRepository = new CreditsCorrelativoConstanciaNoAdeudoRepository();
         }
-        public void CrearRefinanciadoAmpliado(CreditsCorrelativoConstanciaNoAdeudoDto pObj)
+        public string CrearRefinanciadoAmpliado(CreditsCorrelativoConstanciaNoAdeudoDto pObj)
         {
-            this._iCreditsCorrelativoConstanciaNoAdeudoRepository.CrearCorrelativoConstanciaNoAdeudo(pObj);
+            return this._iCreditsCorrelativoConstanciaNoAdeudoRepository.CrearCorrelativoConstanciaNoAdeudo(pObj);
         }
     }
 }
