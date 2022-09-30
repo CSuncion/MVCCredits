@@ -51,7 +51,7 @@ namespace CreditsView.Reports
                 rp[1] = new ReportParameter("nameSolicitante", this.wConsNoAd.txtApeNom.Text.Trim());
                 rp[2] = new ReportParameter("dniSolicitante", this.wConsNoAd.txtDocId.Text.Trim());
                 rp[3] = new ReportParameter("strDia", DateTime.Now.Day.ToString());
-                rp[4] = new ReportParameter("strMes", oUtilFecha.Mes()[DateTime.Now.Month]);
+                rp[4] = new ReportParameter("strMes", oUtilFecha.Mes()[DateTime.Now.Month - 1]);
                 rp[5] = new ReportParameter("strAnio", DateTime.Now.Year.ToString());
                 rp[6] = new ReportParameter("userFirma", userFirma.Trim());
                 rp[7] = new ReportParameter("userCargo", cargoAcceso.Trim());

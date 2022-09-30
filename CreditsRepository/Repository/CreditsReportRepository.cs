@@ -260,8 +260,9 @@ namespace CreditsRepository.Repository
                     CREDITO = (decimal)xIdr[15],
                     PAGOS = (decimal)xIdr[16],
                     Ret_Fecha = (DateTime)xIdr[17],
-                    Cuota = (int)xIdr[18],
-                    Pendiente = (decimal)xIdr[19],
+                    Dias_Atrasos = (int)xIdr[18],
+                    Cuota = (int)xIdr[19],
+                    Pendiente = (decimal)xIdr[20],
                 });
             }
             xObjCn.Disconnect();

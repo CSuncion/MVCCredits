@@ -3866,6 +3866,8 @@ namespace CreditsView.DataSet {
             
             private global::System.Data.DataColumn columnRet_Fecha;
             
+            private global::System.Data.DataColumn columnDias_Atrasos;
+            
             private global::System.Data.DataColumn columnCuota;
             
             private global::System.Data.DataColumn columnPendiente;
@@ -4049,6 +4051,14 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Dias_AtrasosColumn {
+                get {
+                    return this.columnDias_Atrasos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn CuotaColumn {
                 get {
                     return this.columnCuota;
@@ -4118,6 +4128,7 @@ namespace CreditsView.DataSet {
                         decimal CREDITO, 
                         decimal PAGOS, 
                         System.DateTime Ret_Fecha, 
+                        string Dias_Atrasos, 
                         int Cuota, 
                         decimal Pendiente) {
                 isp_CreditoMorososRow rowisp_CreditoMorososRow = ((isp_CreditoMorososRow)(this.NewRow()));
@@ -4140,11 +4151,19 @@ namespace CreditsView.DataSet {
                         CREDITO,
                         PAGOS,
                         Ret_Fecha,
+                        Dias_Atrasos,
                         Cuota,
                         Pendiente};
                 rowisp_CreditoMorososRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowisp_CreditoMorososRow);
                 return rowisp_CreditoMorososRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public isp_CreditoMorososRow FindById_Operacion(decimal Id_Operacion) {
+                return ((isp_CreditoMorososRow)(this.Rows.Find(new object[] {
+                            Id_Operacion})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4182,6 +4201,7 @@ namespace CreditsView.DataSet {
                 this.columnCREDITO = base.Columns["CREDITO"];
                 this.columnPAGOS = base.Columns["PAGOS"];
                 this.columnRet_Fecha = base.Columns["Ret_Fecha"];
+                this.columnDias_Atrasos = base.Columns["Dias_Atrasos"];
                 this.columnCuota = base.Columns["Cuota"];
                 this.columnPendiente = base.Columns["Pendiente"];
             }
@@ -4225,15 +4245,20 @@ namespace CreditsView.DataSet {
                 base.Columns.Add(this.columnPAGOS);
                 this.columnRet_Fecha = new global::System.Data.DataColumn("Ret_Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRet_Fecha);
+                this.columnDias_Atrasos = new global::System.Data.DataColumn("Dias_Atrasos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDias_Atrasos);
                 this.columnCuota = new global::System.Data.DataColumn("Cuota", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCuota);
                 this.columnPendiente = new global::System.Data.DataColumn("Pendiente", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPendiente);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId_Operacion}, true));
                 this.columnId_Operacion.AutoIncrement = true;
                 this.columnId_Operacion.AutoIncrementSeed = -1;
                 this.columnId_Operacion.AutoIncrementStep = -1;
                 this.columnId_Operacion.AllowDBNull = false;
                 this.columnId_Operacion.ReadOnly = true;
+                this.columnId_Operacion.Unique = true;
                 this.columnDni_Solicitante.MaxLength = 15;
                 this.columnSer.ReadOnly = true;
                 this.columnSer.MaxLength = 10;
@@ -8597,6 +8622,23 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Dias_Atrasos {
+                get {
+                    try {
+                        return ((string)(this[this.tableisp_CreditoMorosos.Dias_AtrasosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Dias_Atrasos\' de la tabla \'isp_CreditoMorosos\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableisp_CreditoMorosos.Dias_AtrasosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Cuota {
                 get {
                     try {
@@ -8829,6 +8871,18 @@ namespace CreditsView.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetRet_FechaNull() {
                 this[this.tableisp_CreditoMorosos.Ret_FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDias_AtrasosNull() {
+                return this.IsNull(this.tableisp_CreditoMorosos.Dias_AtrasosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDias_AtrasosNull() {
+                this[this.tableisp_CreditoMorosos.Dias_AtrasosColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

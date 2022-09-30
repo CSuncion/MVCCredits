@@ -59,7 +59,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
             <Top>1.82465cm</Top>
-            <Left>4.50765cm</Left>
+            <Left>4.82515cm</Left>
             <Height>0.70583cm</Height>
             <Width>7.50063cm</Width>
             <ZIndex>1</ZIndex>
@@ -353,7 +353,7 @@
             <Top>9.6034cm</Top>
             <Left>13.75453cm</Left>
             <Height>0.6cm</Height>
-            <Width>0.87312cm</Width>
+            <Width>0.73201cm</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
@@ -415,9 +415,9 @@
             </Paragraphs>
             <rd:DefaultName>strMes</rd:DefaultName>
             <Top>9.6034cm</Top>
-            <Left>14.62765cm</Left>
+            <Left>14.48654cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.14722cm</Width>
+            <Width>2.35889cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -448,9 +448,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>9.6034cm</Top>
-            <Left>16.77488cm</Left>
+            <Left>16.84543cm</Left>
             <Height>0.6cm</Height>
-            <Width>0.83784cm</Width>
+            <Width>0.76729cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border>
@@ -688,7 +688,7 @@
             </Paragraphs>
             <rd:DefaultName>strCorrelativo</rd:DefaultName>
             <Top>1.82465cm</Top>
-            <Left>11.95536cm</Left>
+            <Left>12.27286cm</Left>
             <Height>0.70583cm</Height>
             <Width>4.51083cm</Width>
             <ZIndex>21</ZIndex>
