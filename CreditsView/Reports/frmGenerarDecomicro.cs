@@ -16,7 +16,6 @@ using CreditsModel.ModelDto;
 using CreditsView.MdiPrincipal;
 using DeclaracionesUtil.Util;
 using Microsoft.Office.Interop.Excel;
-using OfficeOpenXml;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace CreditsView.Reports
