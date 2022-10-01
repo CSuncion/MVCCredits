@@ -180,6 +180,7 @@
                           <FontSize>6pt</FontSize>
                         </Style>
                         <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>

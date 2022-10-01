@@ -66,6 +66,7 @@ namespace CreditsView.Reports
                     myexcelWorksheet.Cells[fila, 8] = deco.TipDocId;
                     myexcelWorksheet.Cells[fila, 9] = deco.Dni_Solicitante;
                     myexcelWorksheet.Cells[fila, 11] = deco.Paterno;
+                    myexcelWorksheet.Cells[fila, 12] = deco.Materno;
                 }
 
                 myexcelApplication.ActiveWorkbook.SaveAs(rutaFileNew, XlFileFormat.xlWorkbookNormal);
