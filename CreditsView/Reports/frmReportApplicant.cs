@@ -21,8 +21,8 @@ namespace CreditsView.Reports
 
         CreditsApplicantController objApplicantController = new CreditsApplicantController();
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
-        public string nombreReporte = "CreditsView.Reports.rptReportApplicant.rdlc";
-        public string formaReporte = "Normal";
+        public string nombreReporte = "CreditsView.Reports.rptCantidadDeSolicitantes.rdlc";
+        public string formaReporte = "Horizontal";
         public frmReportApplicant()
         {
             InitializeComponent();
@@ -55,7 +55,7 @@ namespace CreditsView.Reports
             try
             {
                 ReportDataSource rds = new ReportDataSource();
-                rds.Name = "DataSet1";
+                rds.Name = "dsSolicitantes";
                 rds.Value = dt;
 
                 ReportParameter[] rp = new ReportParameter[1];

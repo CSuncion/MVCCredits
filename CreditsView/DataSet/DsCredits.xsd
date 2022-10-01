@@ -430,7 +430,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Grados" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Grados" msprop:Generator_ColumnPropNameInTable="GradosColumn" msprop:Generator_ColumnVarNameInTable="columnGrados" msprop:Generator_UserColumnName="Grados" minOccurs="0">
+              <xs:element name="Grados" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Grados" msprop:Generator_ColumnPropNameInTable="GradosColumn" msprop:Generator_ColumnPropNameInRow="Grados" msprop:Generator_ColumnVarNameInTable="columnGrados" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -928,7 +928,7 @@
               <xs:element name="CREDITO" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="CREDITOColumn" msprop:Generator_ColumnPropNameInRow="CREDITO" msprop:Generator_UserColumnName="CREDITO" msprop:Generator_ColumnVarNameInTable="columnCREDITO" type="xs:decimal" minOccurs="0" />
               <xs:element name="PAGOS" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="PAGOSColumn" msprop:Generator_ColumnPropNameInRow="PAGOS" msprop:Generator_UserColumnName="PAGOS" msprop:Generator_ColumnVarNameInTable="columnPAGOS" type="xs:decimal" minOccurs="0" />
               <xs:element name="Ret_Fecha" msprop:Generator_ColumnPropNameInTable="Ret_FechaColumn" msprop:Generator_ColumnPropNameInRow="Ret_Fecha" msprop:Generator_UserColumnName="Ret_Fecha" msprop:Generator_ColumnVarNameInTable="columnRet_Fecha" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Dias_Atrasos" msprop:Generator_UserColumnName="Dias_Atrasos" msprop:Generator_ColumnPropNameInTable="Dias_AtrasosColumn" msprop:Generator_ColumnPropNameInRow="Dias_Atrasos" msprop:Generator_ColumnVarNameInTable="columnDias_Atrasos" type="xs:string" minOccurs="0" />
+              <xs:element name="Dias_Atrasos" msprop:Generator_ColumnPropNameInTable="Dias_AtrasosColumn" msprop:Generator_ColumnPropNameInRow="Dias_Atrasos" msprop:Generator_UserColumnName="Dias_Atrasos" msprop:Generator_ColumnVarNameInTable="columnDias_Atrasos" type="xs:string" minOccurs="0" />
               <xs:element name="Cuota" msprop:Generator_ColumnPropNameInTable="CuotaColumn" msprop:Generator_ColumnPropNameInRow="Cuota" msprop:Generator_UserColumnName="Cuota" msprop:Generator_ColumnVarNameInTable="columnCuota" type="xs:int" minOccurs="0" />
               <xs:element name="Pendiente" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="PendienteColumn" msprop:Generator_ColumnPropNameInRow="Pendiente" msprop:Generator_UserColumnName="Pendiente" msprop:Generator_ColumnVarNameInTable="columnPendiente" type="xs:decimal" minOccurs="0" />
             </xs:sequence>

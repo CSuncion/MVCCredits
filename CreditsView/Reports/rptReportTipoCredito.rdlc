@@ -143,6 +143,8 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>1</Interval>
+                    <LabelInterval>1</LabelInterval>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -411,7 +413,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>dsTipoCredito</DataSetName>
-            <Top>0.17639cm</Top>
+            <Top>0.14111cm</Top>
             <Left>0.48471cm</Left>
             <Height>5cm</Height>
             <Width>12.85219cm</Width>
@@ -521,6 +523,8 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <Interval>1</Interval>
+                    <LabelInterval>1</LabelInterval>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>

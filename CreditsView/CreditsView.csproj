@@ -348,7 +348,7 @@
     <EmbeddedResource Include="Reports\frmTiposCreditos.resx">
       <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptReportApplicant.rdlc" />
+    <EmbeddedResource Include="Reports\rptCantidadDeSolicitantes.rdlc" />
     <EmbeddedResource Include="Reports\rptReportComparativoCreditoOtorgados.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoCartaNoAdeudo.rdlc" />
     <EmbeddedResource Include="Reports\rptReportCreditoEnProceso.rdlc" />

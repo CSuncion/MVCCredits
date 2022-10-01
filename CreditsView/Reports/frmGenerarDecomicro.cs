@@ -54,8 +54,8 @@ namespace CreditsView.Reports
             Application myexcelApplication = new Application();
             if (myexcelApplication != null)
             {
-                Workbook myexcelWorkbook = myexcelApplication.Workbooks.Add();
-                Worksheet myexcelWorksheet = (Worksheet)myexcelWorkbook.Sheets.Add();
+                Workbook myexcelWorkbook = myexcelApplication.Workbooks.Add(rutaFileNew);
+                Worksheet myexcelWorksheet = (Worksheet)myexcelWorkbook.Sheets[1];
 
                 List<CreditsDecomicroDto> listDecomicro = new List<CreditsDecomicroDto>();
                 listDecomicro = oRptCtrl.ListarDecomicro();

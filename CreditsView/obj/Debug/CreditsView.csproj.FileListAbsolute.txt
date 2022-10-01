@@ -9,6 +9,10 @@ D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\b
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsController.dll
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsModel.dll
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsUtil.dll
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.dll
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.Interfaces.dll
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.System.Drawing.dll
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -42,6 +46,8 @@ D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\b
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsModel.pdb
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsModel.dll.config
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsUtil.pdb
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.xml
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsRepository.pdb
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EnvDTE.xml
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\CreditsConnection.pdb
@@ -95,6 +101,7 @@ D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\b
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.csproj.AssemblyReference.cache
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.csproj.SuggestedBindingRedirects.cache
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.exe.config
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.csproj.ResolveComReference.cache
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Credits.frmConstanciaNoAdeudo.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Credits.frmEditRefinanciadoAmpliado.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Credits.frmRefinanciadoAmpliado.resources
@@ -127,10 +134,3 @@ D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\o
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.csproj.CopyComplete
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.exe
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.pdb
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.csproj.ResolveComReference.cache
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.dll
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.Interfaces.dll
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.System.Drawing.dll
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\EPPlus.xml
-D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
