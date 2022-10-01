@@ -49,14 +49,11 @@ namespace CreditsView.Reports
 
         public void ActualizarVentana()
         {
-            DataTable dt = new DataTable();
-            dt = utilConvertDataTable.ToDataTable(objApplicantController.ListarSolicitantes());
-
             try
             {
                 ReportDataSource rds = new ReportDataSource();
                 rds.Name = "dsSolicitantes";
-                rds.Value = dt;
+                rds.Value = objApplicantController.ListarSolicitantes();
 
                 ReportParameter[] rp = new ReportParameter[1];
                 rp[0] = new ReportParameter("userConsulta", Universal.gNombreUsuario);

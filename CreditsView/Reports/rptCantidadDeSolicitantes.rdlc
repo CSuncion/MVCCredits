@@ -17,101 +17,9 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Id_Solicitante">
-          <DataField>Id_Solicitante</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Dni_Solic">
-          <DataField>Dni_Solic</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Codofin_Solic">
-          <DataField>Codofin_Solic</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Carnet_Solic">
-          <DataField>Carnet_Solic</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Nombres">
-          <DataField>Nombres</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Sexo">
-          <DataField>Sexo</DataField>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Situac">
-          <DataField>Situac</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Und_dscto">
-          <DataField>Und_dscto</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Grado">
-          <DataField>Grado</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="GradoDesc">
-          <DataField>GradoDesc</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Fnace">
-          <DataField>Fnace</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Domicilio">
-          <DataField>Domicilio</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Dpto">
-          <DataField>Dpto</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Prov">
-          <DataField>Prov</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Dist">
-          <DataField>Dist</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Fijo">
-          <DataField>Fijo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Movil">
-          <DataField>Movil</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Mail">
-          <DataField>Mail</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NroBen">
-          <DataField>NroBen</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IdBca">
-          <DataField>IdBca</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NumCta">
-          <DataField>NumCta</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CCI">
-          <DataField>CCI</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Paterno">
-          <DataField>Paterno</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Materno">
-          <DataField>Materno</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Grados">
           <DataField>Grados</DataField>
@@ -121,10 +29,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DsCredits</rd:DataSetName>
         <rd:SchemaPath>D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\DataSet\DsCredits.xsd</rd:SchemaPath>
-        <rd:TableName>Tb_Solicitantes</rd:TableName>
+        <rd:TableName>isp_ListarSolicitantes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Tb_SolicitantesTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>isp_ListarSolicitantesTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -169,15 +77,15 @@
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Dni_Solic">
+                <ChartSeries Name="Cantidad">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!Dni_Solic.Value)</Y>
+                        <Y>=Sum(Fields!Cantidad.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
-                          <FontSize>6pt</FontSize>
+                          <FontSize>6.5pt</FontSize>
                         </Style>
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
@@ -500,9 +408,9 @@
             </ChartNoDataMessage>
             <DataSetName>dsSolicitantes</DataSetName>
             <Top>0.14111cm</Top>
-            <Left>1.54953cm</Left>
+            <Left>0.68791cm</Left>
             <Height>6.11125cm</Height>
-            <Width>22.59415cm</Width>
+            <Width>23.45577cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -552,7 +460,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=COUNT(Fields!Dni_Solic.Value, "dsSolicitantes")</Value>
+                    <Value>=SUM(Fields!Cantidad.Value, "dsSolicitantes")</Value>
                     <Style>
                       <FontSize>6.5pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -579,7 +487,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.11571in</Height>
+        <Height>2.87613in</Height>
         <Style />
       </Body>
       <Width>9.88492in</Width>
@@ -596,7 +504,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CANTIDAD DE SOCIOS</Value>
+                      <Value>CANTIDAD DE SOLICITANTES</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -664,7 +572,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
               <Top>0.61736cm</Top>
-              <Left>1.54953cm</Left>
+              <Left>0.68791cm</Left>
               <Height>1.413cm</Height>
               <Width>9.90112cm</Width>
               <ZIndex>1</ZIndex>

@@ -184,14 +184,12 @@ namespace CreditsView.MdiPrincipal
                 if (listMenu[i] == 1)
                 {
                     pnlFinanzas.Visible = true;
-                    pnlBtnFinanzas.Visible = true;
                     btnFinanzas.Visible = true;
                 }
 
                 if (listMenu[i] == 2)
                 {
                     pnlInformatica.Visible = true;
-                    pnlBtnInformatica.Visible = true;
                     btnInformatica.Visible = true;
                 }
             }

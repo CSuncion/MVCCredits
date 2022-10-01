@@ -9,6 +9,6 @@ namespace CreditsRepository.IRepository
 {
     public interface ICreditsApplicantRepository
     {
-        List<CreditsApplicantDto> ListarSolicitantes();
+        List<dynamic> ListarSolicitantes();
     }
 }

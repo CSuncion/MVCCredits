@@ -79,11 +79,22 @@ namespace CreditsRepository.Repository
             return xLista;
         }
 
-        public List<CreditsApplicantDto> ListarSolicitantes()
+        public List<dynamic> ListarSolicitantes()
         {
-            List<SqlParameter> lParameter = null;
-
-            return this.ListarObjetos("isp_ListarSolicitantes", lParameter);
+            List<dynamic> solicitantes = new List<dynamic>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarSolicitantes");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                solicitantes.Add(new
+                {
+                    Cantidad = (int)xIdr[0],
+                    Grados = (string)xIdr[1]
+                });
+            }
+            xObjCn.Disconnect();
+            return solicitantes;
         }
     }
 }
