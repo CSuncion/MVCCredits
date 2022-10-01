@@ -43,6 +43,7 @@ namespace CreditsRepository.Repository
             xObjEnc.IdBca = iDr[CreditsApplicantDto._IdBca].ToString();
             xObjEnc.NumCta = iDr[CreditsApplicantDto._NumCta].ToString();
             xObjEnc.CCI = iDr[CreditsApplicantDto._CCI].ToString();
+            xObjEnc.Grados = iDr[CreditsApplicantDto._Grados].ToString();
             return xObjEnc;
         }
         private CreditsApplicantDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)

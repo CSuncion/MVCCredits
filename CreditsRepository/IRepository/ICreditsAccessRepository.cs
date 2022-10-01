@@ -10,5 +10,6 @@ namespace CreditsRepository.IRepository
     public interface ICreditsAccessRepository
     {
         CreditsAccessDto BuscarUsuarioXCodigo(CreditsAccessDto pObj);
+        List<int> ListarSubPrivilegiosAcceso(int idAcceso);
     }
 }

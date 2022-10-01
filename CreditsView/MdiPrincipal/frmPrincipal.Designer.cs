@@ -31,24 +31,24 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlBtnCredits = new System.Windows.Forms.Panel();
+            this.pnlBtnInformatica = new System.Windows.Forms.Panel();
             this.btnComparativoCreditos = new System.Windows.Forms.Button();
             this.btnReportApplicant = new System.Windows.Forms.Button();
             this.btnCreditType = new System.Windows.Forms.Button();
             this.btnTipoCreditoAnual = new System.Windows.Forms.Button();
-            this.pnlCredits = new System.Windows.Forms.Panel();
-            this.btnCredits = new System.Windows.Forms.Button();
-            this.pnlReports = new System.Windows.Forms.Panel();
-            this.pnlBtnReports = new System.Windows.Forms.Panel();
+            this.pnlInformatica = new System.Windows.Forms.Panel();
+            this.btnInformatica = new System.Windows.Forms.Button();
+            this.pnlFinanzas = new System.Windows.Forms.Panel();
+            this.pnlBtnFinanzas = new System.Windows.Forms.Panel();
             this.btnRefiAmp = new System.Windows.Forms.Button();
             this.btnReportMorosos = new System.Windows.Forms.Button();
             this.btnNoAdeudo = new System.Windows.Forms.Button();
             this.btnEnProceso = new System.Windows.Forms.Button();
             this.btnGenDes = new System.Windows.Forms.Button();
-            this.btnDecomicSheet = new System.Windows.Forms.Button();
+            this.btnDecomicro = new System.Windows.Forms.Button();
             this.btnPositiveBalance = new System.Windows.Forms.Button();
             this.btnCreditsGranted = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
+            this.btnFinanzas = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.ssStatusBar = new System.Windows.Forms.StatusStrip();
             this.tssStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
@@ -61,8 +61,8 @@
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
-            this.pnlBtnCredits.SuspendLayout();
-            this.pnlBtnReports.SuspendLayout();
+            this.pnlBtnInformatica.SuspendLayout();
+            this.pnlBtnFinanzas.SuspendLayout();
             this.ssStatusBar.SuspendLayout();
             this.pnlBarTit.SuspendLayout();
             this.SuspendLayout();
@@ -71,23 +71,23 @@
             // 
             resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.BackColor = System.Drawing.Color.CadetBlue;
-            this.pnlMenu.Controls.Add(this.pnlBtnCredits);
-            this.pnlMenu.Controls.Add(this.pnlCredits);
-            this.pnlMenu.Controls.Add(this.btnCredits);
-            this.pnlMenu.Controls.Add(this.pnlReports);
-            this.pnlMenu.Controls.Add(this.pnlBtnReports);
-            this.pnlMenu.Controls.Add(this.btnReports);
+            this.pnlMenu.Controls.Add(this.pnlBtnInformatica);
+            this.pnlMenu.Controls.Add(this.pnlInformatica);
+            this.pnlMenu.Controls.Add(this.btnInformatica);
+            this.pnlMenu.Controls.Add(this.pnlFinanzas);
+            this.pnlMenu.Controls.Add(this.pnlBtnFinanzas);
+            this.pnlMenu.Controls.Add(this.btnFinanzas);
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Name = "pnlMenu";
             // 
-            // pnlBtnCredits
+            // pnlBtnInformatica
             // 
-            this.pnlBtnCredits.Controls.Add(this.btnComparativoCreditos);
-            this.pnlBtnCredits.Controls.Add(this.btnReportApplicant);
-            this.pnlBtnCredits.Controls.Add(this.btnCreditType);
-            this.pnlBtnCredits.Controls.Add(this.btnTipoCreditoAnual);
-            resources.ApplyResources(this.pnlBtnCredits, "pnlBtnCredits");
-            this.pnlBtnCredits.Name = "pnlBtnCredits";
+            this.pnlBtnInformatica.Controls.Add(this.btnComparativoCreditos);
+            this.pnlBtnInformatica.Controls.Add(this.btnReportApplicant);
+            this.pnlBtnInformatica.Controls.Add(this.btnCreditType);
+            this.pnlBtnInformatica.Controls.Add(this.btnTipoCreditoAnual);
+            resources.ApplyResources(this.pnlBtnInformatica, "pnlBtnInformatica");
+            this.pnlBtnInformatica.Name = "pnlBtnInformatica";
             // 
             // btnComparativoCreditos
             // 
@@ -137,41 +137,41 @@
             this.btnTipoCreditoAnual.UseVisualStyleBackColor = false;
             this.btnTipoCreditoAnual.Click += new System.EventHandler(this.btnTipoCreditoAnual_Click);
             // 
-            // pnlCredits
+            // pnlInformatica
             // 
-            this.pnlCredits.BackColor = System.Drawing.Color.Goldenrod;
-            resources.ApplyResources(this.pnlCredits, "pnlCredits");
-            this.pnlCredits.Name = "pnlCredits";
+            this.pnlInformatica.BackColor = System.Drawing.Color.Goldenrod;
+            resources.ApplyResources(this.pnlInformatica, "pnlInformatica");
+            this.pnlInformatica.Name = "pnlInformatica";
             // 
-            // btnCredits
+            // btnInformatica
             // 
-            this.btnCredits.FlatAppearance.BorderSize = 0;
-            this.btnCredits.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnCredits.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnCredits, "btnCredits");
-            this.btnCredits.ForeColor = System.Drawing.Color.White;
-            this.btnCredits.Name = "btnCredits";
-            this.btnCredits.UseVisualStyleBackColor = true;
-            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
+            this.btnInformatica.FlatAppearance.BorderSize = 0;
+            this.btnInformatica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnInformatica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnInformatica, "btnInformatica");
+            this.btnInformatica.ForeColor = System.Drawing.Color.White;
+            this.btnInformatica.Name = "btnInformatica";
+            this.btnInformatica.UseVisualStyleBackColor = true;
+            this.btnInformatica.Click += new System.EventHandler(this.btnCredits_Click);
             // 
-            // pnlReports
+            // pnlFinanzas
             // 
-            this.pnlReports.BackColor = System.Drawing.Color.Goldenrod;
-            resources.ApplyResources(this.pnlReports, "pnlReports");
-            this.pnlReports.Name = "pnlReports";
+            this.pnlFinanzas.BackColor = System.Drawing.Color.Goldenrod;
+            resources.ApplyResources(this.pnlFinanzas, "pnlFinanzas");
+            this.pnlFinanzas.Name = "pnlFinanzas";
             // 
-            // pnlBtnReports
+            // pnlBtnFinanzas
             // 
-            this.pnlBtnReports.Controls.Add(this.btnRefiAmp);
-            this.pnlBtnReports.Controls.Add(this.btnReportMorosos);
-            this.pnlBtnReports.Controls.Add(this.btnNoAdeudo);
-            this.pnlBtnReports.Controls.Add(this.btnEnProceso);
-            this.pnlBtnReports.Controls.Add(this.btnGenDes);
-            this.pnlBtnReports.Controls.Add(this.btnDecomicSheet);
-            this.pnlBtnReports.Controls.Add(this.btnPositiveBalance);
-            this.pnlBtnReports.Controls.Add(this.btnCreditsGranted);
-            resources.ApplyResources(this.pnlBtnReports, "pnlBtnReports");
-            this.pnlBtnReports.Name = "pnlBtnReports";
+            this.pnlBtnFinanzas.Controls.Add(this.btnRefiAmp);
+            this.pnlBtnFinanzas.Controls.Add(this.btnReportMorosos);
+            this.pnlBtnFinanzas.Controls.Add(this.btnNoAdeudo);
+            this.pnlBtnFinanzas.Controls.Add(this.btnEnProceso);
+            this.pnlBtnFinanzas.Controls.Add(this.btnGenDes);
+            this.pnlBtnFinanzas.Controls.Add(this.btnDecomicro);
+            this.pnlBtnFinanzas.Controls.Add(this.btnPositiveBalance);
+            this.pnlBtnFinanzas.Controls.Add(this.btnCreditsGranted);
+            resources.ApplyResources(this.pnlBtnFinanzas, "pnlBtnFinanzas");
+            this.pnlBtnFinanzas.Name = "pnlBtnFinanzas";
             // 
             // btnRefiAmp
             // 
@@ -233,16 +233,17 @@
             this.btnGenDes.UseVisualStyleBackColor = false;
             this.btnGenDes.Click += new System.EventHandler(this.btnGenDes_Click);
             // 
-            // btnDecomicSheet
+            // btnDecomicro
             // 
-            this.btnDecomicSheet.BackColor = System.Drawing.Color.LightBlue;
-            this.btnDecomicSheet.FlatAppearance.BorderSize = 0;
-            this.btnDecomicSheet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnDecomicSheet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnDecomicSheet, "btnDecomicSheet");
-            this.btnDecomicSheet.ForeColor = System.Drawing.Color.White;
-            this.btnDecomicSheet.Name = "btnDecomicSheet";
-            this.btnDecomicSheet.UseVisualStyleBackColor = false;
+            this.btnDecomicro.BackColor = System.Drawing.Color.LightBlue;
+            this.btnDecomicro.FlatAppearance.BorderSize = 0;
+            this.btnDecomicro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnDecomicro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnDecomicro, "btnDecomicro");
+            this.btnDecomicro.ForeColor = System.Drawing.Color.White;
+            this.btnDecomicro.Name = "btnDecomicro";
+            this.btnDecomicro.UseVisualStyleBackColor = false;
+            this.btnDecomicro.Click += new System.EventHandler(this.btnDecomicro_Click);
             // 
             // btnPositiveBalance
             // 
@@ -268,16 +269,16 @@
             this.btnCreditsGranted.UseVisualStyleBackColor = false;
             this.btnCreditsGranted.Click += new System.EventHandler(this.btnCreditsGranted_Click);
             // 
-            // btnReports
+            // btnFinanzas
             // 
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnReports, "btnReports");
-            this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Name = "btnReports";
-            this.btnReports.UseVisualStyleBackColor = true;
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            this.btnFinanzas.FlatAppearance.BorderSize = 0;
+            this.btnFinanzas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
+            this.btnFinanzas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            resources.ApplyResources(this.btnFinanzas, "btnFinanzas");
+            this.btnFinanzas.ForeColor = System.Drawing.Color.White;
+            this.btnFinanzas.Name = "btnFinanzas";
+            this.btnFinanzas.UseVisualStyleBackColor = true;
+            this.btnFinanzas.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // pnlLogo
             // 
@@ -388,8 +389,8 @@
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.Resize += new System.EventHandler(this.frmPrincipal_Resize);
             this.pnlMenu.ResumeLayout(false);
-            this.pnlBtnCredits.ResumeLayout(false);
-            this.pnlBtnReports.ResumeLayout(false);
+            this.pnlBtnInformatica.ResumeLayout(false);
+            this.pnlBtnFinanzas.ResumeLayout(false);
             this.ssStatusBar.ResumeLayout(false);
             this.ssStatusBar.PerformLayout();
             this.pnlBarTit.ResumeLayout(false);
@@ -411,18 +412,18 @@
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Timer tmOcultarMenu;
         private System.Windows.Forms.Timer tmMostrarMenu;
-        internal System.Windows.Forms.Button btnReports;
-        internal System.Windows.Forms.Panel pnlCredits;
-        internal System.Windows.Forms.Button btnCredits;
-        internal System.Windows.Forms.Panel pnlReports;
-        private System.Windows.Forms.Panel pnlBtnReports;
+        internal System.Windows.Forms.Button btnFinanzas;
+        internal System.Windows.Forms.Panel pnlInformatica;
+        internal System.Windows.Forms.Button btnInformatica;
+        internal System.Windows.Forms.Panel pnlFinanzas;
+        private System.Windows.Forms.Panel pnlBtnFinanzas;
         internal System.Windows.Forms.Button btnTipoCreditoAnual;
-        internal System.Windows.Forms.Button btnDecomicSheet;
+        internal System.Windows.Forms.Button btnDecomicro;
         internal System.Windows.Forms.Button btnPositiveBalance;
         internal System.Windows.Forms.Button btnCreditType;
         internal System.Windows.Forms.Button btnCreditsGranted;
         internal System.Windows.Forms.Button btnReportApplicant;
-        private System.Windows.Forms.Panel pnlBtnCredits;
+        private System.Windows.Forms.Panel pnlBtnInformatica;
         internal System.Windows.Forms.Button btnRefiAmp;
         internal System.Windows.Forms.Button btnGenDes;
         internal System.Windows.Forms.Button btnEnProceso;

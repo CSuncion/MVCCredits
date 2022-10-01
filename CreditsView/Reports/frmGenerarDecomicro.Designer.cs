@@ -57,6 +57,7 @@
             this.tsBtnSalir.Name = "tsBtnSalir";
             this.tsBtnSalir.Size = new System.Drawing.Size(49, 22);
             this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // btnGenDeco
             // 
@@ -101,6 +102,7 @@
             this.Name = "frmGenerarDecomicro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Decomicro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGenerarDecomicro_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);

@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using CreditsController.Controller;
+using CreditsModel.ModelDto;
+using CreditsView.MdiPrincipal;
+using DeclaracionesUtil.Util;
 using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace CreditsView.Reports
@@ -17,68 +25,68 @@ namespace CreditsView.Reports
     {
         Application objApp;
         _Workbook objBook;
+        CreditsReportController oRptCtrl = new CreditsReportController();
         public frmGenerarDecomicro()
         {
             InitializeComponent();
         }
+        public void NewWindow()
+        {
+            this.Show();
+        }
 
+        public void Cerrar()
+        {
+            frmPrincipal wMen = (frmPrincipal)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.btnDecomicro, null);
+        }
         public void GenerarDecomicro()
         {
-            Workbooks objBooks;
-            Sheets objSheets;
-            _Worksheet objSheet;
-            Range range;
+            var currentDirectory = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName, "Plantilla\\Plantilla_Decomicro.xlsx");
+            var file = new FileInfo(currentDirectory);
 
-            try
+            string nameFile = "Decomicro_" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".xls";
+            UtilDirectorio.CrearCarpeta(ConfigurationManager.AppSettings["RutaDecomicro"].ToString());
+            string rutaFileNew = ConfigurationManager.AppSettings["RutaDecomicro"].ToString() + @"\" + nameFile;
+            UtilDirectorio.ExisteArchivo(rutaFileNew);
+            File.Copy(currentDirectory, rutaFileNew);
+
+            Application myexcelApplication = new Application();
+            if (myexcelApplication != null)
             {
-                // Instantiate Excel and start a new workbook.
-                objApp = new Application();
-                objBooks = objApp.Workbooks;
-                objBook = objBooks.Add(Missing.Value);
-                objSheets = objBook.Worksheets;
-                objSheet = (_Worksheet)objSheets.get_Item(1);
+                Workbook myexcelWorkbook = myexcelApplication.Workbooks.Add();
+                Worksheet myexcelWorksheet = (Worksheet)myexcelWorkbook.Sheets.Add();
 
-                //Get the range where the starting cell has the address
-                //m_sStartingCell and its dimensions are m_iNumRows x m_iNumCols.
-                range = objSheet.get_Range("A1", Missing.Value);
-                range = range.get_Resize(5, 5);
-
-                //Create an array.
-                string[,] saRet = new string[5, 5];
-
-                //Fill the array.
-                for (long iRow = 0; iRow < 5; iRow++)
+                List<CreditsDecomicroDto> listDecomicro = new List<CreditsDecomicroDto>();
+                listDecomicro = oRptCtrl.ListarDecomicro();
+                int fila = 9;
+                foreach (CreditsDecomicroDto deco in listDecomicro)
                 {
-                    for (long iCol = 0; iCol < 5; iCol++)
-                    {
-                        //Put the row and column address in the cell.
-                        saRet[iRow, iCol] = iRow.ToString() + "|" + iCol.ToString();
-                    }
+                    fila++;
+                    myexcelWorksheet.Cells[fila, 8] = deco.TipDocId;
+                    myexcelWorksheet.Cells[fila, 9] = deco.Dni_Solicitante;
+                    myexcelWorksheet.Cells[fila, 11] = deco.Paterno;
                 }
 
-                //Set the range value to the array.
-                range.set_Value(Missing.Value, saRet);
+                myexcelApplication.ActiveWorkbook.SaveAs(rutaFileNew, XlFileFormat.xlWorkbookNormal);
 
-
-                //Return control of Excel to the user.
-                objApp.Visible = true;
-                objApp.UserControl = true;
-            }
-            catch (Exception theException)
-            {
-                String errorMessage;
-                errorMessage = "Error: ";
-                errorMessage = String.Concat(errorMessage, theException.Message);
-                errorMessage = String.Concat(errorMessage, " Line: ");
-                errorMessage = String.Concat(errorMessage, theException.Source);
-
-                MessageBox.Show(errorMessage, "Error");
+                myexcelWorkbook.Close();
+                myexcelApplication.Quit();
             }
         }
         private void btnGenDeco_Click(object sender, EventArgs e)
         {
-
+            this.GenerarDecomicro();
         }
 
+        private void tsBtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmGenerarDecomicro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Cerrar();
+        }
     }
 }

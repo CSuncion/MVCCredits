@@ -23,5 +23,6 @@ namespace CreditsRepository.IRepository
         int ValidaImpresionCorrelativoConstanciaNoAdeudo(string dni);
         string ListaNameAnio();
         List<string> ListaFirmaGerenteFinanza();
+        List<CreditsDecomicroDto> ListarDecomicro();
     }
 }

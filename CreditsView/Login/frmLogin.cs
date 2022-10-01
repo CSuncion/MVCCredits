@@ -72,8 +72,18 @@ namespace CreditsView.Login
         public void NewWindow()
         {
             this.InitWindow();
-            //this.MostrarPersistencia();
+            this.MostrarPersistencia();
             this.ShowDialog();
+        }
+
+        public void MostrarPersistencia()
+        {
+            this.txtNameUsr.Text = Properties.Settings.Default.GuardarNombreUsuario;
+            this.txtCodUsr.Text = Properties.Settings.Default.GuardarCodigoUsuario;
+            this.txtProfile.Text = Properties.Settings.Default.GuardarNombrePerfil;
+            this.txtPwd.Text = Properties.Settings.Default.GuardarClaveUsuario;
+            this.ckbUsr.Checked = Conversion.CadenaABoolean(Properties.Settings.Default.GuardarCheckUsuario, false);
+            this.ckbPwd.Checked = Conversion.CadenaABoolean(Properties.Settings.Default.GuardarCheckClave, false);
         }
         public void AccessSystem()
         {

@@ -83,7 +83,7 @@ namespace CreditsRepository.Repository
             xObjEnc.DesSubEstado = iDr[CreditsOperationsDto.xDesSubEstado].ToString();
             return xObjEnc;
         }
-              private CreditsOperationsDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
+        private CreditsOperationsDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
         {
             xObjCn.Connection();
             xObjCn.AssignParameters(lParameter);

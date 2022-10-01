@@ -72,5 +72,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListaFirmaGerenteFinanza();
         }
+        public List<CreditsDecomicroDto> ListarDecomicro()
+        {
+            return this._iCreditsReportRepository.ListarDecomicro();
+        }
     }
 }

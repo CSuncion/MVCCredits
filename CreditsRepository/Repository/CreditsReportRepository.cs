@@ -16,6 +16,56 @@ namespace CreditsRepository.Repository
         private CreditsCn xObjCn = new CreditsCn();
         private dynamic xObj;
         private List<dynamic> xLista = new List<dynamic>();
+        private List<CreditsDecomicroDto> xListaDeco = new List<CreditsDecomicroDto>();
+        private CreditsDecomicroDto Objeto(IDataReader iDr)
+        {
+            CreditsDecomicroDto xObjEnc = new CreditsDecomicroDto();
+            xObjEnc.Id_Operacion = (decimal)iDr[CreditsDecomicroDto.xId_Operacion];
+            xObjEnc.Numero = iDr[CreditsDecomicroDto.xNumero].ToString();
+            xObjEnc.TipDocId = (int)iDr[CreditsDecomicroDto.xTipDocId];
+            xObjEnc.Dni_Solicitante = iDr[CreditsDecomicroDto.xDni_Solicitante].ToString();
+            xObjEnc.Paterno = iDr[CreditsDecomicroDto.xPaterno].ToString();
+            xObjEnc.Materno = iDr[CreditsDecomicroDto.xMaterno].ToString();
+            xObjEnc.Nombres = iDr[CreditsDecomicroDto.xNombres].ToString();
+            xObjEnc.Tipo_Persona = (int)iDr[CreditsDecomicroDto.xTipo_Persona];
+            xObjEnc.Mod_Cred = (int)iDr[CreditsDecomicroDto.xMod_Cred];
+            xObjEnc.Movil = iDr[CreditsDecomicroDto.xMovil].ToString();
+            xObjEnc.Domicilio = iDr[CreditsDecomicroDto.xDomicilio].ToString();
+            xObjEnc.Departamento = iDr[CreditsDecomicroDto.xDepartamento].ToString();
+            xObjEnc.Provincia = iDr[CreditsDecomicroDto.xProvincia].ToString();
+            xObjEnc.Distrito = iDr[CreditsDecomicroDto.xDistrito].ToString();
+            xObjEnc.Vencimiento = iDr[CreditsDecomicroDto.xVencimiento].ToString();
+            return xObjEnc;
+        }
+        private CreditsDecomicroDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
+        {
+            xObjCn.Connection();
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure(pScript);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                //adicionando cada objeto a la lista
+                this.xObj = this.Objeto(xIdr);
+            }
+            xObjCn.Disconnect();
+            return xObj;
+        }
+        private List<CreditsDecomicroDto> ListarObjetos(string pScript, List<SqlParameter> lParameter)
+        {
+            xObjCn.Connection();
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure(pScript);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                //adicionando cada objeto a la lista
+                this.xLista.Add(this.Objeto(xIdr));
+            }
+            xObjCn.Disconnect();
+            return xListaDeco;
+        }
+
         public List<dynamic> ListarCreditosOtorgados(int anio)
         {
             List<SqlParameter> lParameter = new List<SqlParameter>()
@@ -436,6 +486,25 @@ namespace CreditsRepository.Repository
 
             xObjCn.Disconnect();
             return firmaFinanza;
+        }
+        public List<CreditsDecomicroDto> ListarDecomicro()
+        {
+            try
+            {
+                xObjCn.Connection();
+                xObjCn.CommandStoreProcedure("isp_ListarDecomicro");
+                IDataReader xIdr = xObjCn.GetIdr();
+                while (xIdr.Read())
+                {
+                    this.xListaDeco.Add(this.Objeto(xIdr));
+                }
+                xObjCn.Disconnect();
+            }
+            catch (Exception)
+            {
+                xObjCn.Disconnect();
+            }
+            return this.xListaDeco;
         }
     }
 }

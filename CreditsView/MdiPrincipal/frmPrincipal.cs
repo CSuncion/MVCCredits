@@ -9,11 +9,14 @@ using System.Windows.Forms;
 using WinControles.ControlesWindows;
 using System.Runtime.InteropServices;
 using CreditsView.Credits;
+using CreditsController.Controller;
+using CreditsModel.ModelDto;
 
 namespace CreditsView.MdiPrincipal
 {
     public partial class frmPrincipal : Form
     {
+        CreditsAccessController oCredAccCtrl = new CreditsAccessController();
         public frmPrincipal()
         {
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace CreditsView.MdiPrincipal
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             this.NewWindowAccess();
+            this.AccesoPorPerfiles();
         }
         private void btnReports_Click(object sender, EventArgs e)
         {
@@ -164,10 +168,34 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarCreditoComparativo();
         }
+        private void btnDecomicro_Click(object sender, EventArgs e)
+        {
+            this.InstanciarDecomicro();
+        }
         #endregion
 
         #region Methods
+        public void AccesoPorPerfiles()
+        {
+            List<int> listMenu = new List<int>();
+            listMenu = oCredAccCtrl.ListarSubPrivilegiosAcceso(Universal.gIdAcceso);
+            for (int i = 0; i < listMenu.Count; i++)
+            {
+                if (listMenu[i] == 1)
+                {
+                    pnlFinanzas.Visible = true;
+                    pnlBtnFinanzas.Visible = true;
+                    btnFinanzas.Visible = true;
+                }
 
+                if (listMenu[i] == 2)
+                {
+                    pnlInformatica.Visible = true;
+                    pnlBtnInformatica.Visible = true;
+                    btnInformatica.Visible = true;
+                }
+            }
+        }
         private void LoadTheme()
         {
             var themeColor = WinTheme.GetAccentColor();
@@ -265,7 +293,7 @@ namespace CreditsView.MdiPrincipal
         public void InstanciarReports()
         {
             frmReports win = new frmReports();
-            this.FormatoVentanaHijoPrincipal(win, this.btnReports, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.btnFinanzas, null, 0, 0);
             win.NewWindow();
         }
         public void InstanciarReportApplicant()
@@ -337,40 +365,47 @@ namespace CreditsView.MdiPrincipal
 
         public void InstanciarConstanciaNoAdeudo()
         {
-            frmConstanciaNoAdeudo  win = new frmConstanciaNoAdeudo();
+            frmConstanciaNoAdeudo win = new frmConstanciaNoAdeudo();
             this.FormatoVentanaHijoPrincipal(win, this.btnNoAdeudo, null, 0, 0);
+            win.NewWindow();
+        }
+
+        public void InstanciarDecomicro()
+        {
+            frmGenerarDecomicro win = new frmGenerarDecomicro();
+            this.FormatoVentanaHijoPrincipal(win, this.btnDecomicro, null, 0, 0);
             win.NewWindow();
         }
 
         public void ShowOptionsReport()
         {
-            if (this.pnlBtnReports.Visible)
+            if (this.pnlBtnFinanzas.Visible)
             {
-                this.pnlBtnReports.Visible = false;
-                this.btnCredits.Location = new Point(3, 170);
-                this.pnlCredits.Location = new Point(3, 170);
-                this.pnlBtnCredits.Location = new Point(0, 208);
+                this.pnlBtnFinanzas.Visible = false;
+                this.btnInformatica.Location = new Point(3, 170);
+                this.pnlInformatica.Location = new Point(3, 170);
+                this.pnlBtnInformatica.Location = new Point(0, 208);
             }
             else
             {
-                this.pnlBtnReports.Visible = true;
-                this.btnCredits.Location = new Point(3, 478);
-                this.pnlCredits.Location = new Point(3, 478);
-                this.pnlBtnCredits.Location = new Point(0, 517);
+                this.pnlBtnFinanzas.Visible = true;
+                this.btnInformatica.Location = new Point(3, 478);
+                this.pnlInformatica.Location = new Point(3, 478);
+                this.pnlBtnInformatica.Location = new Point(0, 517);
             }
         }
 
-        public void ShowOptionsCredits()
+       public void ShowOptionsCredits()
         {
-            if (this.pnlBtnCredits.Visible)
+            if (this.pnlBtnInformatica.Visible)
             {
-                this.pnlBtnCredits.Visible = false;
+                this.pnlBtnInformatica.Visible = false;
                 //this.btnCredits.Location = new Point(3, 170);
                 //this.pnlCredits.Location = new Point(3, 170);
             }
             else
             {
-                this.pnlBtnCredits.Visible = true;
+                this.pnlBtnInformatica.Visible = true;
                 //this.btnCredits.Location = new Point(3, 400);
                 //this.pnlCredits.Location = new Point(3, 400);
             }

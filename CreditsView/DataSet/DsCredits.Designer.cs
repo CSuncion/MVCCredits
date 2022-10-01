@@ -642,6 +642,8 @@ namespace CreditsView.DataSet {
             
             private global::System.Data.DataColumn columnMaterno;
             
+            private global::System.Data.DataColumn columnGrados;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Tb_SolicitantesDataTable() {
@@ -869,6 +871,14 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GradosColumn {
+                get {
+                    return this.columnGrados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -927,7 +937,8 @@ namespace CreditsView.DataSet {
                         string NumCta, 
                         string CCI, 
                         string Paterno, 
-                        string Materno) {
+                        string Materno, 
+                        string Grados) {
                 Tb_SolicitantesRow rowTb_SolicitantesRow = ((Tb_SolicitantesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -953,10 +964,18 @@ namespace CreditsView.DataSet {
                         NumCta,
                         CCI,
                         Paterno,
-                        Materno};
+                        Materno,
+                        Grados};
                 rowTb_SolicitantesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTb_SolicitantesRow);
                 return rowTb_SolicitantesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Tb_SolicitantesRow FindById_Solicitante(decimal Id_Solicitante) {
+                return ((Tb_SolicitantesRow)(this.Rows.Find(new object[] {
+                            Id_Solicitante})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1000,6 +1019,7 @@ namespace CreditsView.DataSet {
                 this.columnCCI = base.Columns["CCI"];
                 this.columnPaterno = base.Columns["Paterno"];
                 this.columnMaterno = base.Columns["Materno"];
+                this.columnGrados = base.Columns["Grados"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1053,11 +1073,16 @@ namespace CreditsView.DataSet {
                 base.Columns.Add(this.columnPaterno);
                 this.columnMaterno = new global::System.Data.DataColumn("Materno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaterno);
+                this.columnGrados = new global::System.Data.DataColumn("Grados", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrados);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId_Solicitante}, true));
                 this.columnId_Solicitante.AutoIncrement = true;
                 this.columnId_Solicitante.AutoIncrementSeed = -1;
                 this.columnId_Solicitante.AutoIncrementStep = -1;
                 this.columnId_Solicitante.AllowDBNull = false;
                 this.columnId_Solicitante.ReadOnly = true;
+                this.columnId_Solicitante.Unique = true;
                 this.columnDni_Solic.MaxLength = 15;
                 this.columnCodofin_Solic.MaxLength = 15;
                 this.columnCarnet_Solic.MaxLength = 15;
@@ -1073,6 +1098,8 @@ namespace CreditsView.DataSet {
                 this.columnCCI.MaxLength = 30;
                 this.columnPaterno.MaxLength = 30;
                 this.columnMaterno.MaxLength = 30;
+                this.columnGrados.ReadOnly = true;
+                this.columnGrados.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5894,6 +5921,22 @@ namespace CreditsView.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Grados {
+                get {
+                    try {
+                        return ((string)(this[this.tableTb_Solicitantes.GradosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Grados\' de la tabla \'Tb_Solicitantes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTb_Solicitantes.GradosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsDni_SolicNull() {
                 return this.IsNull(this.tableTb_Solicitantes.Dni_SolicColumn);
             }
@@ -6166,6 +6209,18 @@ namespace CreditsView.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMaternoNull() {
                 this[this.tableTb_Solicitantes.MaternoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGradosNull() {
+                return this.IsNull(this.tableTb_Solicitantes.GradosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGradosNull() {
+                this[this.tableTb_Solicitantes.GradosColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10618,6 +10673,7 @@ namespace CreditsView.DataSet.DsCreditsTableAdapters {
             tableMapping.ColumnMappings.Add("CCI", "CCI");
             tableMapping.ColumnMappings.Add("Paterno", "Paterno");
             tableMapping.ColumnMappings.Add("Materno", "Materno");
+            tableMapping.ColumnMappings.Add("Grados", "Grados");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

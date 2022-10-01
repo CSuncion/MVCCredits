@@ -85,5 +85,9 @@ namespace CreditsController.Controller
             CreditsAccessDto iUsuEN = new CreditsAccessDto();
             return iUsuEN;
         }
+        public List<int> ListarSubPrivilegiosAcceso(int idAcceso)
+        {
+            return this._iCreditAccessRepository.ListarSubPrivilegiosAcceso(idAcceso);
+        }
     }
 }

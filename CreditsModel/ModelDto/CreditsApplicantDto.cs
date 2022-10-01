@@ -34,6 +34,7 @@ namespace CreditsModel.ModelDto
         public const string _IdBca = "IdBca";
         public const string _NumCta = "NumCta";
         public const string _CCI = "CCI";
+        public const string _Grados = "Grados";
 
         public int Id_Solicitante { get; set; }
         public string Dni_Solic { get; set; }
@@ -59,6 +60,7 @@ namespace CreditsModel.ModelDto
         public string IdBca { get; set; }
         public string NumCta { get; set; }
         public string CCI { get; set; }
+        public string Grados { get; set; }
 
         public Additional Additionals
         {

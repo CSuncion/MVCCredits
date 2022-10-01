@@ -54,6 +54,7 @@
     <Compile Include="ModelDto\CreditsApplicantDto.cs" />
     <Compile Include="ModelDto\CreditsCentroCostosDto.cs" />
     <Compile Include="ModelDto\CreditsCorrelativoConstanciaNoAdeudoDto.cs" />
+    <Compile Include="ModelDto\CreditsDecomicroDto.cs" />
     <Compile Include="ModelDto\CreditsDto.cs" />
     <Compile Include="ModelDto\CreditsAccessDto.cs" />
     <Compile Include="ModelDto\CreditsMesesDto.cs" />

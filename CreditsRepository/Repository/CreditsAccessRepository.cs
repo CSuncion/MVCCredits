@@ -44,15 +44,6 @@ namespace CreditsRepository.Repository
             xObjEnc.Cargo_Acceso = iDr[CreditsAccessDto.CargAcc].ToString();
             return xObjEnc;
         }
-        public CreditsAccessDto BuscarUsuarioXCodigo(CreditsAccessDto pObj)
-        {
-            List<SqlParameter> lParameter = new List<SqlParameter>()
-                {
-                new SqlParameter("@strDniAccess", pObj.Dni_Acceso)
-                };
-
-            return this.BuscarObjeto("isp_BuscarUsuarioXCodigo", lParameter);
-        }
         private CreditsAccessDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
         {
             xObjCn.Connection();
@@ -67,5 +58,34 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return xObj;
         }
+        public CreditsAccessDto BuscarUsuarioXCodigo(CreditsAccessDto pObj)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strDniAccess", pObj.Dni_Acceso)
+                };
+
+            return this.BuscarObjeto("isp_BuscarUsuarioXCodigo", lParameter);
+        }
+        public List<int> ListarSubPrivilegiosAcceso(int idAcceso)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strIdAcceso", idAcceso)
+                };
+
+            List<int> menu = new List<int>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarSubPrivilegiosAcceso");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                menu.Add((int)xIdr[0]);
+            }
+            xObjCn.Disconnect();
+            return menu;
+        }
+
     }
 }
