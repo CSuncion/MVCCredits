@@ -15,21 +15,20 @@ using CreditsView.MdiPrincipal;
 
 namespace CreditsView.Reports
 {
-    public partial class frmTipoCredito : Form
+    public partial class frmCantidadSolicitantes : Form
     {
         UtilFechas objUtilFechas = new UtilFechas();
         CreditsGeneralController objGeneralController = new CreditsGeneralController();
-        public frmTipoCredito()
+        public frmCantidadSolicitantes()
         {
             InitializeComponent();
         }
         public void NewWindow()
         {
             this.txtAnio.Focus();
-            this.CargarCentroCosto();
             this.Show();
         }
-        private void frmTipoCredito_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmCantidadSolicitantes_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Cerrar();
         }
@@ -47,7 +46,7 @@ namespace CreditsView.Reports
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnTipoCreditoAnual, null);
+            wMen.CerrarVentanaHijo(this, wMen.btnReportApplicant, null);
         }
         public void AccionGenerarGrafica()
         {
@@ -61,35 +60,16 @@ namespace CreditsView.Reports
                 return;
             }
 
-            if(this.txtAnio.Text.Length < 4)
+            if (this.txtAnio.Text.Length < 4)
             {
                 Mensaje.OperacionDenegada("Debe ser un año valido", this.Text);
                 return;
             }
 
-            frmReportTipoCredito win = new frmReportTipoCredito();
-            win.wTipCred = this;
+            frmReportApplicant win = new frmReportApplicant();
+            win.wCanSol = this;
             TabCtrl.InsertarVentana(this, win);
-            win.MostrarGrafico();
-
-        }
-        public void CargarCentroCosto()
-        {
-            Cmb.Cargar(this.cmbCentroCosto, this.objGeneralController.ListarCentroCostos("60"), "Id_Costos", "Name_Costo");
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+            win.NewWindow();
 
         }
     }

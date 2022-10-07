@@ -36,6 +36,7 @@ namespace CreditsView.Reports
 
         public void NewWindow()
         {
+            this.dtpFecHasta.Focus();
             this.Show();
         }
 

@@ -9,6 +9,6 @@ namespace CreditsRepository.IRepository
 {
     public interface ICreditsApplicantRepository
     {
-        List<dynamic> ListarSolicitantes();
+        List<dynamic> ListarSolicitantes(string anio);
     }
 }

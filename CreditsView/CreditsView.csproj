@@ -250,6 +250,12 @@
     <Compile Include="Reports\frmTipoCreditoGeneradosDesembolsados.Designer.cs">
       <DependentUpon>frmTipoCreditoGeneradosDesembolsados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\frmCantidadSolicitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmCantidadSolicitantes.designer.cs">
+      <DependentUpon>frmCantidadSolicitantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\frmTiposCreditos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmTipoCreditoGeneradosDesembolsados.resx">
       <DependentUpon>frmTipoCreditoGeneradosDesembolsados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmCantidadSolicitantes.resx">
+      <DependentUpon>frmCantidadSolicitantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmTiposCreditos.resx">
       <DependentUpon>frmTiposCreditos.cs</DependentUpon>

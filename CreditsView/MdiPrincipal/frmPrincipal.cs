@@ -296,7 +296,7 @@ namespace CreditsView.MdiPrincipal
         }
         public void InstanciarReportApplicant()
         {
-            frmReportApplicant win = new frmReportApplicant();
+            frmCantidadSolicitantes win = new frmCantidadSolicitantes();
             this.FormatoVentanaHijoPrincipal(win, this.btnReportApplicant, null, 0, 0);
             win.NewWindow();
         }

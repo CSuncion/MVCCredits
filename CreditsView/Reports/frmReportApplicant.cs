@@ -23,6 +23,7 @@ namespace CreditsView.Reports
         UtilConvertDataTable utilConvertDataTable = new UtilConvertDataTable();
         public string nombreReporte = "CreditsView.Reports.rptCantidadDeSolicitantes.rdlc";
         public string formaReporte = "Horizontal";
+        public frmCantidadSolicitantes wCanSol;
         public frmReportApplicant()
         {
             InitializeComponent();
@@ -53,10 +54,11 @@ namespace CreditsView.Reports
             {
                 ReportDataSource rds = new ReportDataSource();
                 rds.Name = "dsSolicitantes";
-                rds.Value = objApplicantController.ListarSolicitantes();
+                rds.Value = objApplicantController.ListarSolicitantes(this.wCanSol.txtAnio.Text);
 
-                ReportParameter[] rp = new ReportParameter[1];
+                ReportParameter[] rp = new ReportParameter[2];
                 rp[0] = new ReportParameter("userConsulta", Universal.gNombreUsuario);
+                rp[1] = new ReportParameter("strAnio", this.wCanSol.txtAnio.Text);
 
                 this.rvwReportApplicant.Reset();
                 this.rvwReportApplicant.LocalReport.ReportEmbeddedResource = nombreReporte;

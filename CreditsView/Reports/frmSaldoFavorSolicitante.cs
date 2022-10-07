@@ -42,6 +42,7 @@ namespace CreditsView.Reports
 
         public void NewWindow()
         {
+            this.dtpFecDesde.Focus();
             this.Show();
         }
 

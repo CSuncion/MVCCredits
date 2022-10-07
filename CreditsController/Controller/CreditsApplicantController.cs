@@ -16,9 +16,9 @@ namespace CreditsController.Controller
         {
             this._iCreditsApplicantRepository = new CreditsApplicantRepository();
         }
-        public List<dynamic> ListarSolicitantes()
+        public List<dynamic> ListarSolicitantes(string anio)
         {
-            return this._iCreditsApplicantRepository.ListarSolicitantes();
+            return this._iCreditsApplicantRepository.ListarSolicitantes(anio);
         }
     }
 }

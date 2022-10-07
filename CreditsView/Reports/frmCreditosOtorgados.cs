@@ -25,6 +25,7 @@ namespace CreditsView.Reports
         }
         public void NewWindow()
         {
+            this.txtAnio.Focus();
             this.Show();
         }
         private void frmCreditosOtorgados_FormClosing(object sender, FormClosingEventArgs e)

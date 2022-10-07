@@ -79,11 +79,16 @@ namespace CreditsRepository.Repository
             return xLista;
         }
 
-        public List<dynamic> ListarSolicitantes()
+        public List<dynamic> ListarSolicitantes(string anio)
         {
             List<dynamic> solicitantes = new List<dynamic>();
             xObjCn.Connection();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strAnio", anio),
+                };
             xObjCn.CommandStoreProcedure("isp_ListarSolicitantes");
+            xObjCn.AssignParameters(lParameter);
             IDataReader xIdr = xObjCn.GetIdr();
             while (xIdr.Read())
             {
