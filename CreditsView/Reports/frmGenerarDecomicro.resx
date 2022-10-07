@@ -124,7 +124,7 @@
   <data name="btnGenDeco.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAk1JREFUWEfd10uoTVEcx/HjVSjJIym5uSWUiWSilNcA92YkAxkYGYhbyICZR/Ia
+        wQAADsEBuJFr7QAAAk1JREFUWEfd10uoTVEcx/HjVSjJIym5uSWUiWSilNcA92YkAxkYGYhbyICZR/Ia
         KCIGBoii3GTAxB1QTJQBopTcEaXIOymP7/e2/7W6bWefve3jlF99Ometddv33177rLVXo2ImYAn6cA4P
         8QGzUHumYzX24Aqe4wd+4iX6cRS/sBCVMwKzsR4HcROv4IW/4zEuYAeWYxIiU1G5gL24C2+hF/mM+ziN
         zViEsWiWKGAd5rVoMobirbyEDXBgJMomCijjK+ZjqLHKL3+RKKAXXS16i42otYAyz8Ab/H8FDOAaDsBc
@@ -137,4 +137,7 @@
         Gr8Bxn8WeFiXwY4AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="bwProgress.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>124, 17</value>
+  </metadata>
 </root>

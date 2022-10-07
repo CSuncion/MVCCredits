@@ -34,6 +34,9 @@
             this.btnGenDeco = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblProgress = new System.Windows.Forms.Label();
+            this.bwProgress = new System.ComponentModel.BackgroundWorker();
+            this.pbExportExcel = new System.Windows.Forms.ProgressBar();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(-3, 41);
+            this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 10);
             this.panel1.TabIndex = 433;
@@ -89,11 +92,37 @@
             this.label3.TabIndex = 432;
             this.label3.Text = "DECOMICRO";
             // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(129, 152);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(16, 13);
+            this.lblProgress.TabIndex = 435;
+            this.lblProgress.Text = "...";
+            // 
+            // bwProgress
+            // 
+            this.bwProgress.WorkerReportsProgress = true;
+            this.bwProgress.WorkerSupportsCancellation = true;
+            this.bwProgress.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwProgress_DoWork);
+            this.bwProgress.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bwProgress_ProgressChanged);
+            this.bwProgress.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwProgress_RunWorkerCompleted);
+            // 
+            // pbExportExcel
+            // 
+            this.pbExportExcel.Location = new System.Drawing.Point(12, 126);
+            this.pbExportExcel.Name = "pbExportExcel";
+            this.pbExportExcel.Size = new System.Drawing.Size(276, 23);
+            this.pbExportExcel.TabIndex = 434;
+            // 
             // frmGenerarDecomicro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 132);
+            this.ClientSize = new System.Drawing.Size(300, 177);
+            this.Controls.Add(this.lblProgress);
+            this.Controls.Add(this.pbExportExcel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGenDeco);
@@ -117,5 +146,8 @@
         private System.Windows.Forms.Button btnGenDeco;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblProgress;
+        private System.ComponentModel.BackgroundWorker bwProgress;
+        private System.Windows.Forms.ProgressBar pbExportExcel;
     }
 }
