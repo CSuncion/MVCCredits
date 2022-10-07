@@ -24,6 +24,12 @@ namespace CreditsModel.ModelDto
         public const string xProvincia = "Provincia";
         public const string xDistrito = "Distrito";
         public const string xVencimiento = "Vencimiento";
+        public const string xEstado = "Estado";
+        public const string xCredito = "Credito";
+        public const string xPagos = "Pagos";
+        public const string xPendiente = "Pendiente";
+        public const string xDias_Atrasos = "Dias_Atrasos";
+        public const string xRet_Fecha = "Ret_Fecha";
 
         public decimal Id_Operacion { get; set; }
         public string Numero { get; set; }
@@ -40,5 +46,11 @@ namespace CreditsModel.ModelDto
         public string Provincia { get; set; }
         public string Distrito { get; set; }
         public string Vencimiento { get; set; }
+        public string Estado { get; set; }
+        public decimal Credito { get; set; }
+        public decimal Pagos { get; set; }
+        public decimal Pendiente { get; set; }
+        public int Dias_Atrasos { get; set; }
+        public DateTime Ret_Fecha { get; set; }
     }
 }

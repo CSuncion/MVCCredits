@@ -16,7 +16,7 @@ using CreditsModel.ModelDto;
 using CreditsView.MdiPrincipal;
 using DeclaracionesUtil.Util;
 using Microsoft.Office.Interop.Excel;
- using Application = Microsoft.Office.Interop.Excel.Application;
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace CreditsView.Reports
 {
@@ -41,7 +41,7 @@ namespace CreditsView.Reports
         }
         public void GenerarDecomicro()
         {
-            var currentDirectory = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName, "Plantilla\\Plantilla_Decomicro.xlsx");
+            var currentDirectory = Path.Combine(ConfigurationManager.AppSettings["RutaPlantilla"].ToString(), "Plantilla\\Plantilla_Decomicro.xlsx");
             var file = new FileInfo(currentDirectory);
 
             string nameFile = "Decomicro_" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".xls";
@@ -62,10 +62,21 @@ namespace CreditsView.Reports
                 foreach (CreditsDecomicroDto deco in listDecomicro)
                 {
                     fila++;
-                    myexcelWorksheet.Cells[fila, 8] = deco.TipDocId;
-                    myexcelWorksheet.Cells[fila, 9] = deco.Dni_Solicitante;
-                    myexcelWorksheet.Cells[fila, 11] = deco.Paterno;
-                    myexcelWorksheet.Cells[fila, 12] = deco.Materno;
+                    myexcelWorksheet.Cells[fila, "H"] = deco.TipDocId;
+                    myexcelWorksheet.Cells[fila, "I"] = deco.Dni_Solicitante;
+                    myexcelWorksheet.Cells[fila, "K"] = deco.Paterno;
+                    myexcelWorksheet.Cells[fila, "L"] = deco.Materno;
+                    myexcelWorksheet.Cells[fila, "M"] = deco.Nombres;
+                    myexcelWorksheet.Cells[fila, "N"] = deco.Tipo_Persona;
+                    myexcelWorksheet.Cells[fila, "P"] = deco.Pendiente;
+                    myexcelWorksheet.Cells[fila, "AH"] = deco.Estado;
+                    myexcelWorksheet.Cells[fila, "AI"] = deco.Dias_Atrasos;
+                    myexcelWorksheet.Cells[fila, "AJ"] = deco.Domicilio;
+                    myexcelWorksheet.Cells[fila, "AK"] = deco.Distrito;
+                    myexcelWorksheet.Cells[fila, "AL"] = deco.Provincia;
+                    myexcelWorksheet.Cells[fila, "AM"] = deco.Departamento;
+                    myexcelWorksheet.Cells[fila, "AN"] = deco.Movil;
+                    myexcelWorksheet.Cells[fila, "AO"] = deco.Vencimiento;
                 }
 
                 myexcelApplication.ActiveWorkbook.SaveAs(rutaFileNew, XlFileFormat.xlWorkbookNormal);

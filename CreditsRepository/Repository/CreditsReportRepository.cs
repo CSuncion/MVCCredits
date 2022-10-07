@@ -35,6 +35,12 @@ namespace CreditsRepository.Repository
             xObjEnc.Provincia = iDr[CreditsDecomicroDto.xProvincia].ToString();
             xObjEnc.Distrito = iDr[CreditsDecomicroDto.xDistrito].ToString();
             xObjEnc.Vencimiento = iDr[CreditsDecomicroDto.xVencimiento].ToString();
+            xObjEnc.Estado = iDr[CreditsDecomicroDto.xEstado].ToString();
+            xObjEnc.Credito = (decimal)iDr[CreditsDecomicroDto.xCredito];
+            xObjEnc.Pagos = (decimal)iDr[CreditsDecomicroDto.xPagos];
+            xObjEnc.Pendiente = (decimal)iDr[CreditsDecomicroDto.xPendiente];
+            xObjEnc.Dias_Atrasos = (int)iDr[CreditsDecomicroDto.xDias_Atrasos];
+            xObjEnc.Ret_Fecha = (DateTime)iDr[CreditsDecomicroDto.xRet_Fecha];
             return xObjEnc;
         }
         private CreditsDecomicroDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
