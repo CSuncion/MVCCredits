@@ -56,6 +56,9 @@ namespace CreditsView.Reports
                 this.rvReportCreditoEnProceso.LocalReport.EnableExternalImages = true;
                 this.rvReportCreditoEnProceso.LocalReport.DataSources.Clear();
                 this.rvReportCreditoEnProceso.LocalReport.DataSources.Add(rds);
+                this.rvReportCreditoEnProceso.SetDisplayMode(DisplayMode.PrintLayout);
+                this.rvReportCreditoEnProceso.ZoomMode = ZoomMode.Percent;
+                this.rvReportCreditoEnProceso.ZoomPercent = 100;
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);

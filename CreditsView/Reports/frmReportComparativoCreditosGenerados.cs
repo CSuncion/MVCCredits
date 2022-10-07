@@ -55,6 +55,9 @@ namespace CreditsView.Reports
                 this.rvComparativoCreditosGenerados.LocalReport.EnableExternalImages = true;
                 this.rvComparativoCreditosGenerados.LocalReport.DataSources.Clear();
                 this.rvComparativoCreditosGenerados.LocalReport.DataSources.Add(rds);
+                this.rvComparativoCreditosGenerados.SetDisplayMode(DisplayMode.PrintLayout);
+                this.rvComparativoCreditosGenerados.ZoomMode = ZoomMode.Percent;
+                this.rvComparativoCreditosGenerados.ZoomPercent = 100;
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);

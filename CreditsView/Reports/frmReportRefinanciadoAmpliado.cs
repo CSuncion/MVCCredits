@@ -63,6 +63,9 @@ namespace CreditsView.Reports
                 this.rvRefinanciadoAmpliado.LocalReport.EnableExternalImages = true;
                 this.rvRefinanciadoAmpliado.LocalReport.DataSources.Clear();
                 this.rvRefinanciadoAmpliado.LocalReport.DataSources.Add(rds);
+                this.rvRefinanciadoAmpliado.SetDisplayMode(DisplayMode.PrintLayout);
+                this.rvRefinanciadoAmpliado.ZoomMode = ZoomMode.Percent;
+                this.rvRefinanciadoAmpliado.ZoomPercent = 100;
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);

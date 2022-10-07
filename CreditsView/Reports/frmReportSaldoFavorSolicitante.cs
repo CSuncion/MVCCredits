@@ -55,6 +55,9 @@ namespace CreditsView.Reports
                 this.rvReportSaldoFavorSolicitante.LocalReport.EnableExternalImages = true;
                 this.rvReportSaldoFavorSolicitante.LocalReport.DataSources.Clear();
                 this.rvReportSaldoFavorSolicitante.LocalReport.DataSources.Add(rds);
+                this.rvReportSaldoFavorSolicitante.SetDisplayMode(DisplayMode.PrintLayout);
+                this.rvReportSaldoFavorSolicitante.ZoomMode = ZoomMode.Percent;
+                this.rvReportSaldoFavorSolicitante.ZoomPercent = 100;
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);

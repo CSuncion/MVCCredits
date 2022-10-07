@@ -65,6 +65,9 @@ namespace CreditsView.Reports
                 this.rvConstanciaNoAdeudo.LocalReport.EnableExternalImages = true;
                 this.rvConstanciaNoAdeudo.LocalReport.DataSources.Clear();
                 this.rvConstanciaNoAdeudo.LocalReport.DataSources.Add(rds);
+                this.rvConstanciaNoAdeudo.SetDisplayMode(DisplayMode.PrintLayout);
+                this.rvConstanciaNoAdeudo.ZoomMode = ZoomMode.Percent;
+                this.rvConstanciaNoAdeudo.ZoomPercent = 100;
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);

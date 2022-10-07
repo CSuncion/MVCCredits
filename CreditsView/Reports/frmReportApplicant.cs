@@ -66,6 +66,9 @@ namespace CreditsView.Reports
                 this.rvwReportApplicant.LocalReport.SetParameters(rp);
                 this.rvwReportApplicant.LocalReport.DataSources.Clear();
                 this.rvwReportApplicant.LocalReport.DataSources.Add(rds);
+                this.rvwReportApplicant.SetDisplayMode(DisplayMode.PrintLayout);
+                this.rvwReportApplicant.ZoomMode = ZoomMode.Percent;
+                this.rvwReportApplicant.ZoomPercent = 100;
 
                 PageSettings newPageSettings = new PageSettings();
                 newPageSettings.Margins = new Margins(0, 0, 0, 0);
