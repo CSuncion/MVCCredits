@@ -50,11 +50,11 @@ namespace CreditsView.Reports
         }
         public void generarExcelDecomicro()
         {
+            UtilDirectorio.CrearCarpeta(ConfigurationManager.AppSettings["RutaDecomicro"].ToString());
             var currentDirectory = Path.Combine(ConfigurationManager.AppSettings["RutaPlantilla"].ToString(), "Plantilla\\Plantilla_Decomicro.xlsx");
             var file = new FileInfo(currentDirectory);
-
             string nameFile = "Decomicro_" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".xls";
-            UtilDirectorio.CrearCarpeta(ConfigurationManager.AppSettings["RutaDecomicro"].ToString());
+ 
             string rutaFileNew = ConfigurationManager.AppSettings["RutaDecomicro"].ToString() + @"\" + nameFile;
             UtilDirectorio.ExisteArchivo(rutaFileNew);
             File.Copy(currentDirectory, rutaFileNew);
