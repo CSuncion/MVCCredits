@@ -91,6 +91,12 @@
     <Compile Include="Credits\frmConstanciaNoAdeudo.Designer.cs">
       <DependentUpon>frmConstanciaNoAdeudo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Credits\frmCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits\frmCreditos.Designer.cs">
+      <DependentUpon>frmCreditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Credits\frmEditRefinanciadoAmpliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="Credits\frmRefinanciadoAmpliado.Designer.cs">
       <DependentUpon>frmRefinanciadoAmpliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Credits\frnEditCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits\frnEditCredito.Designer.cs">
+      <DependentUpon>frnEditCredito.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DsCredits.cs">
       <DependentUpon>DsCredits.xsd</DependentUpon>
@@ -265,6 +277,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Credits\frmConstanciaNoAdeudo.resx">
       <DependentUpon>frmConstanciaNoAdeudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credits\frmCreditos.resx">
+      <DependentUpon>frmCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Credits\frmEditRefinanciadoAmpliado.resx">
       <DependentUpon>frmEditRefinanciadoAmpliado.cs</DependentUpon>
