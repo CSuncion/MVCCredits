@@ -274,6 +274,12 @@
     <Compile Include="Reports\frmTiposCreditos.designer.cs">
       <DependentUpon>frmTiposCreditos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Respaldos\frmRespaldoBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Respaldos\frmRespaldoBackup.Designer.cs">
+      <DependentUpon>frmRespaldoBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Credits\frmConstanciaNoAdeudo.resx">
       <DependentUpon>frmConstanciaNoAdeudo.cs</DependentUpon>
@@ -468,5 +474,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

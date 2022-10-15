@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreditos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sst1 = new System.Windows.Forms.StatusStrip();
             this.tssEstado = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsSecundario = new System.Windows.Forms.ToolStrip();
@@ -43,11 +46,12 @@
             this.tsbImprimir = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbAdicionar = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizar = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.DgvCreditos = new System.Windows.Forms.DataGridView();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsbCobrar = new System.Windows.Forms.ToolStripButton();
             this.sst1.SuspendLayout();
             this.tsSecundario.SuspendLayout();
             this.tsPrincipal.SuspendLayout();
@@ -174,6 +178,7 @@
             this.tsbEditar,
             this.tsbEliminar,
             this.tsbVisualizar,
+            this.tsbCobrar,
             this.tsbSalir});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
@@ -191,6 +196,15 @@
             this.tsbAdicionar.Size = new System.Drawing.Size(63, 43);
             this.tsbAdicionar.Text = "Adicionar";
             this.tsbAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbEditar
+            // 
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(43, 43);
+            this.tsbEditar.Text = "Editar";
+            this.tsbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // tsbEliminar
             // 
@@ -223,22 +237,46 @@
             // 
             this.DgvCreditos.BackgroundColor = System.Drawing.Color.White;
             this.DgvCreditos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCreditos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvCreditos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvCreditos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvCreditos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvCreditos.GridColor = System.Drawing.Color.Silver;
             this.DgvCreditos.Location = new System.Drawing.Point(0, 71);
             this.DgvCreditos.Name = "DgvCreditos";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCreditos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvCreditos.Size = new System.Drawing.Size(954, 357);
             this.DgvCreditos.TabIndex = 113;
             // 
-            // tsbEditar
+            // tsbCobrar
             // 
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(43, 43);
-            this.tsbEditar.Text = "Editar";
-            this.tsbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbCobrar.Image = ((System.Drawing.Image)(resources.GetObject("tsbCobrar.Image")));
+            this.tsbCobrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCobrar.Name = "tsbCobrar";
+            this.tsbCobrar.Size = new System.Drawing.Size(46, 43);
+            this.tsbCobrar.Text = "Cobrar";
+            this.tsbCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // frmCreditos
             // 
@@ -285,5 +323,6 @@
         private System.Windows.Forms.ToolStripButton tsbSalir;
         private System.Windows.Forms.DataGridView DgvCreditos;
         private System.Windows.Forms.ToolStripButton tsbEditar;
+        private System.Windows.Forms.ToolStripButton tsbCobrar;
     }
 }
