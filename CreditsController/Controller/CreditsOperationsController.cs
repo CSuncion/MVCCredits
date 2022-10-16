@@ -91,5 +91,10 @@ namespace CreditsController.Controller
             return iDeclaracionesRegistroVentaRepository.ListarRefinanciadoAmpliadoPorDni(pObj);
         }
 
+        public static List<decimal> ValidarEstadoDeCuenta(CreditsOperationsDto pObj)
+        {
+            ICreditsOperationsRepository iDeclaracionesRegistroVentaRepository = new CreditsOperationsRepository();
+            return iDeclaracionesRegistroVentaRepository.ValidarEstadoDeCuenta(pObj);
+        }
     }
 }

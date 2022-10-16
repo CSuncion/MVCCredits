@@ -1,6 +1,7 @@
 ﻿using CreditsConnection.Connection;
 using CreditsModel.ModelDto;
 using CreditsRepository.IRepository;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -129,6 +130,27 @@ namespace CreditsRepository.Repository
                 };
 
             return this.ListarObjetos("isp_ListarRefinanciadoAmpliadoPorDni", lParameter);
+        }
+        public List<decimal> ValidarEstadoDeCuenta(CreditsOperationsDto pObj)
+        {
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strIdOperacion", pObj.Id_Operacion)
+                };
+
+            List<decimal> estadoCuenta = new List<decimal>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ValidarEstadoDeCuenta");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                decimal[] estado = { (decimal)xIdr[0], (decimal)xIdr[1], (decimal)xIdr[2] };
+                estadoCuenta.AddRange(estado);
+            };
+
+            xObjCn.Disconnect();
+            return estadoCuenta;
         }
     }
 }

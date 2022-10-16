@@ -93,6 +93,7 @@
             // 
             // tssStatusBar
             // 
+            this.tssStatusBar.BackColor = System.Drawing.Color.Transparent;
             this.tssStatusBar.Name = "tssStatusBar";
             resources.ApplyResources(this.tssStatusBar, "tssStatusBar");
             // 
@@ -335,6 +336,7 @@
             this.Controls.Add(this.pnlBarTit);
             this.Controls.Add(this.ssStatusBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

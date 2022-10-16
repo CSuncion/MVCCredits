@@ -498,6 +498,9 @@
   <data name="tsmFinanzas.Text" xml:space="preserve">
     <value>Finanzas</value>
   </data>
+  <data name="tsmFinanzas.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="tsmCreditos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -786,6 +789,9 @@
   <data name="tsmInformatica.Text" xml:space="preserve">
     <value>Informática</value>
   </data>
+  <data name="tsmInformatica.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="tsmSolicitantes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -920,50 +926,6 @@
   <data name="tsAccDir.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="tsbCreditos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFVSURBVFhH7ZYxTsQwEEUtIdEi0XEG7rKUcA1OQEdBAXsL
-        bsAZqLkEFQhoKBAL/0UeNLLHEUvWyxb50lMce+w/sSdR0qxZgRbiUXx1Bg+8Km3D3MCrkg32VtNnZxLY
-        FpWioJ5UioJ6UikK6sm/aTcTOBKX4kG8Z2jTx9iY9sWNeMpcZ2g/i6UgxlQlcCZehQ2UvAliWsIgmuch
-        xmR9g1j4U/jgCGJaSfCk0RwPO2GyvmFreTofGHEnVoLY6DhYPJrnCRPgfH1QxIVA54J75pT68xFQZD6o
-        xMz3xK2gjzmlKDAMeMq1ipBKp8H1Snzke4jMLXaqbK2fBE65yVeSaJnDRhOwI7gXB3RIx/kamYM/gnJs
-        HYYfEl+EPomWOfgijMZ/A+YnonoNSeJQtMxbr+EklR+iF9f2jH2IJouFxz5IjHUzN7G1nC9FRqUDbfo2
-        vu2zZqWU0jfiuZNwuzGS3QAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="tsbCreditos.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbCreditos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 31</value>
-  </data>
-  <data name="tsbCreditos.Text" xml:space="preserve">
-    <value>Créditos</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 34</value>
-  </data>
-  <data name="tsbSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhH7ZfPSgJBAIctqF4gu0Qoeung2Yigbl21W3YW
-        7EHUm3frFNQ79AJFdCgoyGNQpM/R95uhBXFZx5gZEfaDD2ZWl/12df8V5nCEH/iFn56d4A1mMsBbrHi2
-        jE38wUyusGeH3lGIjkQmCujboXfygNUIGGLXDr3jFHCMdTv0jlNASFID1vAQd80sLKkBLXzGAzMLy0yA
-        Nv6CukTGYCrgHLXxhpnFIQloow679nwbq6gPF1HrlHATXdF6JuAbdb5voS46T/iwoI94j/voShJwgW94
-        iUXUrfI/7uEGupIECP32I+zguhZEYCpA/EXoSMSImAkQ+iO+4omZhSU1QHtewx0zC0tqQEycAs7w1A69
-        4xSQP5TmAXmAApZ6Fujl9A71ZZ/q7qlrzBgz0SP5OwZ6PS9c/wLPVH2aHMCMnAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="tsbSalir.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbSalir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 31</value>
-  </data>
-  <data name="tsbSalir.Text" xml:space="preserve">
-    <value>Salir</value>
-  </data>
   <data name="tsAccDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 64</value>
   </data>
@@ -987,6 +949,53 @@
   </data>
   <data name="&gt;&gt;tsAccDir.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="tsbCreditos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFVSURBVFhH7ZYxTsQwEEUtIdEi0XEG7rKUcA1OQEdBAXsL
+        bsAZqLkEFQhoKBAL/0UeNLLHEUvWyxb50lMce+w/sSdR0qxZgRbiUXx1Bg+8Km3D3MCrkg32VtNnZxLY
+        FpWioJ5UioJ6UikK6sm/aTcTOBKX4kG8Z2jTx9iY9sWNeMpcZ2g/i6UgxlQlcCZehQ2UvAliWsIgmuch
+        xmR9g1j4U/jgCGJaSfCk0RwPO2GyvmFreTofGHEnVoLY6DhYPJrnCRPgfH1QxIVA54J75pT68xFQZD6o
+        xMz3xK2gjzmlKDAMeMq1ipBKp8H1Snzke4jMLXaqbK2fBE65yVeSaJnDRhOwI7gXB3RIx/kamYM/gnJs
+        HYYfEl+EPomWOfgijMZ/A+YnonoNSeJQtMxbr+EklR+iF9f2jH2IJouFxz5IjHUzN7G1nC9FRqUDbfo2
+        vu2zZqWU0jfiuZNwuzGS3QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbCreditos.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbCreditos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 31</value>
+  </data>
+  <data name="tsbCreditos.Text" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="tsbCreditos.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 34</value>
+  </data>
+  <data name="tsbSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE3SURBVFhH7ZfPSgJBAIctqF4gu0Qoeung2Yigbl21W3YW
+        7EHUm3frFNQ79AJFdCgoyGNQpM/R95uhBXFZx5gZEfaDD2ZWl/12df8V5nCEH/iFn56d4A1mMsBbrHi2
+        jE38wUyusGeH3lGIjkQmCujboXfygNUIGGLXDr3jFHCMdTv0jlNASFID1vAQd80sLKkBLXzGAzMLy0yA
+        Nv6CukTGYCrgHLXxhpnFIQloow679nwbq6gPF1HrlHATXdF6JuAbdb5voS46T/iwoI94j/voShJwgW94
+        iUXUrfI/7uEGupIECP32I+zguhZEYCpA/EXoSMSImAkQ+iO+4omZhSU1QHtewx0zC0tqQEycAs7w1A69
+        4xSQP5TmAXmAApZ6Fujl9A71ZZ/q7qlrzBgz0SP5OwZ6PS9c/wLPVH2aHMCMnAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsbSalir.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsbSalir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 31</value>
+  </data>
+  <data name="tsbSalir.Text" xml:space="preserve">
+    <value>Salir</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

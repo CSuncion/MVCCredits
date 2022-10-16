@@ -187,14 +187,13 @@ namespace CreditsView.MdiPrincipal
             {
                 if (listMenu[i] == 1)
                 {
-                    //pnlFinanzas.Visible = true;
-                    //btnFinanzas.Visible = true;
+                    this.tsmFinanzas.Visible = true;
+                    this.tsbCreditos.Visible = true;
                 }
 
                 if (listMenu[i] == 2)
                 {
-                    //pnlInformatica.Visible = true;
-                    //btnInformatica.Visible = true;
+                    this.tsmInformatica.Visible = true;
                 }
             }
         }

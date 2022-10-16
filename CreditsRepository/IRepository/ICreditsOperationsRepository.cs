@@ -11,5 +11,6 @@ namespace CreditsRepository.IRepository
     {
         List<CreditsOperationsDto> TablaOperacDni(CreditsOperationsDto pObj);
         List<CreditsOperationsDto> ListarRefinanciadoAmpliadoPorDni(CreditsOperationsDto pObj);
+        List<decimal> ValidarEstadoDeCuenta(CreditsOperationsDto pObj);
     }
 }
