@@ -186,7 +186,7 @@ namespace CreditsView.Credits
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnRefiAmp, null);
+            wMen.CerrarVentanaHijo(this, wMen.tsmRefAmp, null);
         }
 
         public void OrdenarPorColumna(int pColumna)

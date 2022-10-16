@@ -36,7 +36,7 @@ namespace CreditsView.Credits
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnNoAdeudo, null);
+            wMen.CerrarVentanaHijo(this, wMen.tsmCartaNoAdeudo, null);
         }
         public void ActualizarVentana()
         {

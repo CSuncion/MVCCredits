@@ -42,7 +42,7 @@ namespace CreditsView.Reports
         {
             //obtener al wMenu
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnFinanzas, null);
+            wMen.CerrarVentanaHijo(this, null, null);
         }
 
         public void ActualizarVentana()

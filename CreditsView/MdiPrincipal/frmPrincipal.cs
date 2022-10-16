@@ -108,69 +108,73 @@ namespace CreditsView.MdiPrincipal
                 this.MaximizedWindow();
 
         }
-        private void btnReportApplicant_Click(object sender, EventArgs e)
-        {
-            this.InstanciarReportApplicant();
-        }
         private void frmPrincipal_Resize(object sender, EventArgs e)
         {
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
-        private void btnCreditsGranted_Click(object sender, EventArgs e)
+
+        // Tsm
+        private void tsmCreditos_Click(object sender, EventArgs e)
+        {
+            this.InstanciarCreditos();
+        }
+        private void tsmCreditoOtorgados_Click(object sender, EventArgs e)
         {
             this.InstanciarReportGranted();
         }
-        private void btnCreditType_Click(object sender, EventArgs e)
-        {
-            this.InstanciarReportTypesCredits();
-        }
-        private void btnTipoCreditoAnual_Click(object sender, EventArgs e)
-        {
-            this.InstanciarReportTypeCredit();
-        }
-
-
-        private void btnCredits_Click(object sender, EventArgs e)
-        {
-            this.ShowOptionsCredits();
-        }
-
-        private void btnRefiAmp_Click(object sender, EventArgs e)
-        {
-            this.InstanciarRefinanciadoAmpliado();
-        }
-
-        private void btnPositiveBalance_Click(object sender, EventArgs e)
+        private void tsmSaldoFavor_Click(object sender, EventArgs e)
         {
             this.InstanciarSaldoFavor();
         }
-        private void btnGenDes_Click(object sender, EventArgs e)
+        private void tsmPlanillaDecomicro_Click(object sender, EventArgs e)
+        {
+            this.InstanciarDecomicro();
+        }
+        private void tsmGeneradoDesembolsado_Click(object sender, EventArgs e)
         {
             this.InstanciarGeneradoDesembolsado();
         }
-
-        private void btnEnProceso_Click(object sender, EventArgs e)
+        private void tsmEnProceso_Click(object sender, EventArgs e)
         {
             this.InstanciarCreditoEnProceso();
         }
-
-        private void btnReportMorosos_Click(object sender, EventArgs e)
-        {
-            this.InstanciarCreditoMorosos();
-        }
-
-        private void btnNoAdeudo_Click(object sender, EventArgs e)
+        private void tsmCartaNoAdeudo_Click(object sender, EventArgs e)
         {
             this.InstanciarConstanciaNoAdeudo();
         }
-        private void btnComparativoCreditos_Click(object sender, EventArgs e)
+
+        private void tsmMorosos_Click(object sender, EventArgs e)
+        {
+            this.InstanciarCreditoMorosos();
+        }
+        private void tsmRefAmp_Click(object sender, EventArgs e)
+        {
+            this.InstanciarRefinanciadoAmpliado();
+        }
+        private void tsmSolicitantes_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportApplicant();
+        }
+        private void tsmTipoCredito_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportTypesCredits();
+        }
+        private void tsmCreditoPorAño_Click(object sender, EventArgs e)
+        {
+            this.InstanciarReportTypeCredit();
+        }
+        private void tsmComCredOtorgado_Click(object sender, EventArgs e)
         {
             this.InstanciarCreditoComparativo();
         }
-        private void btnDecomicro_Click(object sender, EventArgs e)
+        private void tsmRespaldoBackup_Click(object sender, EventArgs e)
         {
-            this.InstanciarDecomicro();
+
+        }
+        private void tsbCreditos_Click(object sender, EventArgs e)
+        {
+            this.InstanciarCreditos();
         }
         #endregion
 
@@ -183,14 +187,14 @@ namespace CreditsView.MdiPrincipal
             {
                 if (listMenu[i] == 1)
                 {
-                    pnlFinanzas.Visible = true;
-                    btnFinanzas.Visible = true;
+                    //pnlFinanzas.Visible = true;
+                    //btnFinanzas.Visible = true;
                 }
 
                 if (listMenu[i] == 2)
                 {
-                    pnlInformatica.Visible = true;
-                    btnInformatica.Visible = true;
+                    //pnlInformatica.Visible = true;
+                    //btnInformatica.Visible = true;
                 }
             }
         }
@@ -279,139 +283,138 @@ namespace CreditsView.MdiPrincipal
                 this.tbcContainer.TabPages.RemoveAt(0);
             }
         }
-        public void FormatoVentanaHijoPrincipal(Form pWin, Button pBtn, ToolStripButton pAccDir, int PAncVen, int pAltVen)
+        public void FormatoVentanaHijoPrincipal(Form pWin, ToolStripMenuItem pItem, ToolStripButton pAccDir, int PAncVen, int pAltVen)
         {
-            pBtn.Enabled = false;
+            pItem.Enabled = false;
             if (pAccDir != null) { pAccDir.Enabled = false; }
             this.tbcContainer.Visible = true;
             //this.BackColor = System.Drawing.SystemColors.Control;
             this.BackColor = Color.White;
             TabCtrl.InsertarVentanaConTabPage(this.tbcContainer, pWin, PAncVen, pAltVen);
         }
-        public void InstanciarReports()
-        {
-            frmReports win = new frmReports();
-            this.FormatoVentanaHijoPrincipal(win, this.btnFinanzas, null, 0, 0);
-            win.NewWindow();
-        }
         public void InstanciarReportApplicant()
         {
             frmCantidadSolicitantes win = new frmCantidadSolicitantes();
-            this.FormatoVentanaHijoPrincipal(win, this.btnReportApplicant, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmSolicitantes, null, 0, 0);
             win.NewWindow();
         }
         public void InstanciarReportGranted()
         {
             frmCreditosOtorgados win = new frmCreditosOtorgados();
-            this.FormatoVentanaHijoPrincipal(win, this.btnCreditsGranted, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmCreditoOtorgados, null, 0, 0);
             win.NewWindow();
         }
         public void InstanciarReportTypesCredits()
         {
             frmTiposCreditos win = new frmTiposCreditos();
-            this.FormatoVentanaHijoPrincipal(win, this.btnCreditType, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmTipoCredito, null, 0, 0);
             win.NewWindow();
         }
         public void InstanciarReportTypeCredit()
         {
             frmTipoCredito win = new frmTipoCredito();
-            this.FormatoVentanaHijoPrincipal(win, this.btnTipoCreditoAnual, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmCreditoPorAnio, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarRefinanciadoAmpliado()
         {
             frmRefinanciadoAmpliado win = new frmRefinanciadoAmpliado();
-            this.FormatoVentanaHijoPrincipal(win, this.btnRefiAmp, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmRefAmp, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarSaldoFavor()
         {
             frmSaldoFavorSolicitante win = new frmSaldoFavorSolicitante();
-            this.FormatoVentanaHijoPrincipal(win, this.btnPositiveBalance, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmSaldoFavor, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarGeneradoDesembolsado()
         {
             frmTipoCreditoGeneradosDesembolsados win = new frmTipoCreditoGeneradosDesembolsados();
-            this.FormatoVentanaHijoPrincipal(win, this.btnGenDes, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmGeneradoDesembolsado, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarCreditoEnProceso()
         {
             frmCreditoEnProceso win = new frmCreditoEnProceso();
-            this.FormatoVentanaHijoPrincipal(win, this.btnEnProceso, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmEnProceso, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarCreditoMorosos()
         {
             frmCreditoMorosos win = new frmCreditoMorosos();
-            this.FormatoVentanaHijoPrincipal(win, this.btnReportMorosos, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmMorosos, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarCreditoComparativo()
         {
             frmReportComparativoCreditosGenerados win = new frmReportComparativoCreditosGenerados();
-            this.FormatoVentanaHijoPrincipal(win, this.btnComparativoCreditos, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmComCredOtorgado, null, 0, 0);
             win.MostrarInforme();
         }
 
         public void InstanciarConstanciaNoAdeudo()
         {
             frmConstanciaNoAdeudo win = new frmConstanciaNoAdeudo();
-            this.FormatoVentanaHijoPrincipal(win, this.btnNoAdeudo, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmCartaNoAdeudo, null, 0, 0);
             win.NewWindow();
         }
 
         public void InstanciarDecomicro()
         {
             frmGenerarDecomicro win = new frmGenerarDecomicro();
-            this.FormatoVentanaHijoPrincipal(win, this.btnDecomicro, null, 0, 0);
+            this.FormatoVentanaHijoPrincipal(win, this.tsmPlanillaDecomicro, null, 0, 0);
+            win.NewWindow();
+        }
+        public void InstanciarCreditos()
+        {
+            frmCreditos win = new frmCreditos();
+            this.FormatoVentanaHijoPrincipal(win, this.tsmCreditos, tsbCreditos, 0, 0);
             win.NewWindow();
         }
 
         public void ShowOptionsReport()
         {
-            if (this.pnlBtnFinanzas.Visible)
-            {
-                this.pnlBtnFinanzas.Visible = false;
-                this.btnInformatica.Location = new Point(3, 170);
-                this.pnlInformatica.Location = new Point(3, 170);
-                this.pnlBtnInformatica.Location = new Point(0, 208);
-            }
-            else
-            {
-                this.pnlBtnFinanzas.Visible = true;
-                this.btnInformatica.Location = new Point(3, 478);
-                this.pnlInformatica.Location = new Point(3, 478);
-                this.pnlBtnInformatica.Location = new Point(0, 517);
-            }
+            //if (this.pnlBtnFinanzas.Visible)
+            //{
+            //    this.pnlBtnFinanzas.Visible = false;
+            //    this.btnInformatica.Location = new Point(3, 170);
+            //    this.pnlInformatica.Location = new Point(3, 170);
+            //    this.pnlBtnInformatica.Location = new Point(0, 208);
+            //}
+            //else
+            //{
+            //    this.pnlBtnFinanzas.Visible = true;
+            //    this.btnInformatica.Location = new Point(3, 508);
+            //    this.pnlInformatica.Location = new Point(3, 508);
+            //    this.pnlBtnInformatica.Location = new Point(0, 547);
+            //}
+        }
+        public void ShowOptionsCredits()
+        {
+            //if (this.pnlBtnInformatica.Visible)
+            //{
+            //    this.pnlBtnInformatica.Visible = false;
+            //this.btnCredits.Location = new Point(3, 170);
+            //this.pnlCredits.Location = new Point(3, 170);
+            //}
+            //else
+            //{
+            //    this.pnlBtnInformatica.Visible = true;
+            //this.btnCredits.Location = new Point(3, 400);
+            //this.pnlCredits.Location = new Point(3, 400);
+            //}
         }
 
-       public void ShowOptionsCredits()
+        public void CerrarVentanaHijo(Form pWin, ToolStripMenuItem pItem, ToolStripButton pAccDir)
         {
-            if (this.pnlBtnInformatica.Visible)
-            {
-                this.pnlBtnInformatica.Visible = false;
-                //this.btnCredits.Location = new Point(3, 170);
-                //this.pnlCredits.Location = new Point(3, 170);
-            }
-            else
-            {
-                this.pnlBtnInformatica.Visible = true;
-                //this.btnCredits.Location = new Point(3, 400);
-                //this.pnlCredits.Location = new Point(3, 400);
-            }
-        }
-
-        public void CerrarVentanaHijo(Form pWin, Button pBtn, ToolStripButton pAccDir)
-        {
-            pBtn.Enabled = true;
+            pItem.Enabled = true;
             if (pAccDir != null) { pAccDir.Enabled = true; }
             TabCtrl.EliminarTabPageAlCerrarVentana(this.tbcContainer, pWin);
             if (this.tbcContainer.TabPages.Count == 0)

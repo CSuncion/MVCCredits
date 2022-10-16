@@ -37,7 +37,7 @@ namespace CreditsView.Reports
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnPositiveBalance, null);
+            wMen.CerrarVentanaHijo(this, wMen.tsmSaldoFavor, null);
         }
 
         public void NewWindow()

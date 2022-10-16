@@ -41,7 +41,7 @@ namespace CreditsView.Reports
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnDecomicro, null);
+            wMen.CerrarVentanaHijo(this, wMen.tsmPlanillaDecomicro, null);
         }
         public void GenerarDecomicro()
         {

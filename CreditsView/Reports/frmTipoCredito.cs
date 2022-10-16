@@ -47,7 +47,7 @@ namespace CreditsView.Reports
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnTipoCreditoAnual, null);
+            wMen.CerrarVentanaHijo(this, wMen.tsmCreditoPorAnio, null);
         }
         public void AccionGenerarGrafica()
         {

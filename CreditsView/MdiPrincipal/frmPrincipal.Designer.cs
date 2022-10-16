@@ -31,24 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlBtnInformatica = new System.Windows.Forms.Panel();
-            this.btnComparativoCreditos = new System.Windows.Forms.Button();
-            this.btnReportApplicant = new System.Windows.Forms.Button();
-            this.btnCreditType = new System.Windows.Forms.Button();
-            this.btnTipoCreditoAnual = new System.Windows.Forms.Button();
-            this.pnlInformatica = new System.Windows.Forms.Panel();
-            this.btnInformatica = new System.Windows.Forms.Button();
-            this.pnlFinanzas = new System.Windows.Forms.Panel();
-            this.pnlBtnFinanzas = new System.Windows.Forms.Panel();
-            this.btnRefiAmp = new System.Windows.Forms.Button();
-            this.btnReportMorosos = new System.Windows.Forms.Button();
-            this.btnNoAdeudo = new System.Windows.Forms.Button();
-            this.btnEnProceso = new System.Windows.Forms.Button();
-            this.btnGenDes = new System.Windows.Forms.Button();
-            this.btnDecomicro = new System.Windows.Forms.Button();
-            this.btnPositiveBalance = new System.Windows.Forms.Button();
-            this.btnCreditsGranted = new System.Windows.Forms.Button();
-            this.btnFinanzas = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.ssStatusBar = new System.Windows.Forms.StatusStrip();
             this.tssStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
@@ -60,225 +42,41 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tsmFinanzas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCreditos = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCreditoOtorgados = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSaldoFavor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPlanillaDecomicro = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGeneradoDesembolsado = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEnProceso = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCartaNoAdeudo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMorosos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmRefAmp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmInformatica = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSolicitantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmTipoCredito = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCreditoPorAnio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmComCredOtorgado = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmRespaldoBackup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsAccDir = new System.Windows.Forms.ToolStrip();
+            this.tsbCreditos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.pnlMenu.SuspendLayout();
-            this.pnlBtnInformatica.SuspendLayout();
-            this.pnlBtnFinanzas.SuspendLayout();
             this.ssStatusBar.SuspendLayout();
             this.pnlBarTit.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.tsAccDir.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
             // 
             resources.ApplyResources(this.pnlMenu, "pnlMenu");
             this.pnlMenu.BackColor = System.Drawing.Color.CadetBlue;
-            this.pnlMenu.Controls.Add(this.pnlBtnInformatica);
-            this.pnlMenu.Controls.Add(this.pnlInformatica);
-            this.pnlMenu.Controls.Add(this.btnInformatica);
-            this.pnlMenu.Controls.Add(this.pnlFinanzas);
-            this.pnlMenu.Controls.Add(this.pnlBtnFinanzas);
-            this.pnlMenu.Controls.Add(this.btnFinanzas);
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Name = "pnlMenu";
-            // 
-            // pnlBtnInformatica
-            // 
-            this.pnlBtnInformatica.Controls.Add(this.btnComparativoCreditos);
-            this.pnlBtnInformatica.Controls.Add(this.btnReportApplicant);
-            this.pnlBtnInformatica.Controls.Add(this.btnCreditType);
-            this.pnlBtnInformatica.Controls.Add(this.btnTipoCreditoAnual);
-            resources.ApplyResources(this.pnlBtnInformatica, "pnlBtnInformatica");
-            this.pnlBtnInformatica.Name = "pnlBtnInformatica";
-            // 
-            // btnComparativoCreditos
-            // 
-            this.btnComparativoCreditos.BackColor = System.Drawing.Color.LightBlue;
-            this.btnComparativoCreditos.FlatAppearance.BorderSize = 0;
-            this.btnComparativoCreditos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnComparativoCreditos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnComparativoCreditos, "btnComparativoCreditos");
-            this.btnComparativoCreditos.ForeColor = System.Drawing.Color.White;
-            this.btnComparativoCreditos.Name = "btnComparativoCreditos";
-            this.btnComparativoCreditos.UseVisualStyleBackColor = false;
-            this.btnComparativoCreditos.Click += new System.EventHandler(this.btnComparativoCreditos_Click);
-            // 
-            // btnReportApplicant
-            // 
-            this.btnReportApplicant.BackColor = System.Drawing.Color.LightBlue;
-            this.btnReportApplicant.FlatAppearance.BorderSize = 0;
-            this.btnReportApplicant.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnReportApplicant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnReportApplicant, "btnReportApplicant");
-            this.btnReportApplicant.ForeColor = System.Drawing.Color.White;
-            this.btnReportApplicant.Name = "btnReportApplicant";
-            this.btnReportApplicant.UseVisualStyleBackColor = false;
-            this.btnReportApplicant.Click += new System.EventHandler(this.btnReportApplicant_Click);
-            // 
-            // btnCreditType
-            // 
-            this.btnCreditType.BackColor = System.Drawing.Color.LightBlue;
-            this.btnCreditType.FlatAppearance.BorderSize = 0;
-            this.btnCreditType.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnCreditType.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnCreditType, "btnCreditType");
-            this.btnCreditType.ForeColor = System.Drawing.Color.White;
-            this.btnCreditType.Name = "btnCreditType";
-            this.btnCreditType.UseVisualStyleBackColor = false;
-            this.btnCreditType.Click += new System.EventHandler(this.btnCreditType_Click);
-            // 
-            // btnTipoCreditoAnual
-            // 
-            this.btnTipoCreditoAnual.BackColor = System.Drawing.Color.LightBlue;
-            this.btnTipoCreditoAnual.FlatAppearance.BorderSize = 0;
-            this.btnTipoCreditoAnual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnTipoCreditoAnual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnTipoCreditoAnual, "btnTipoCreditoAnual");
-            this.btnTipoCreditoAnual.ForeColor = System.Drawing.Color.White;
-            this.btnTipoCreditoAnual.Name = "btnTipoCreditoAnual";
-            this.btnTipoCreditoAnual.UseVisualStyleBackColor = false;
-            this.btnTipoCreditoAnual.Click += new System.EventHandler(this.btnTipoCreditoAnual_Click);
-            // 
-            // pnlInformatica
-            // 
-            this.pnlInformatica.BackColor = System.Drawing.Color.Goldenrod;
-            resources.ApplyResources(this.pnlInformatica, "pnlInformatica");
-            this.pnlInformatica.Name = "pnlInformatica";
-            // 
-            // btnInformatica
-            // 
-            this.btnInformatica.FlatAppearance.BorderSize = 0;
-            this.btnInformatica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnInformatica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnInformatica, "btnInformatica");
-            this.btnInformatica.ForeColor = System.Drawing.Color.White;
-            this.btnInformatica.Name = "btnInformatica";
-            this.btnInformatica.UseVisualStyleBackColor = true;
-            this.btnInformatica.Click += new System.EventHandler(this.btnCredits_Click);
-            // 
-            // pnlFinanzas
-            // 
-            this.pnlFinanzas.BackColor = System.Drawing.Color.Goldenrod;
-            resources.ApplyResources(this.pnlFinanzas, "pnlFinanzas");
-            this.pnlFinanzas.Name = "pnlFinanzas";
-            // 
-            // pnlBtnFinanzas
-            // 
-            this.pnlBtnFinanzas.Controls.Add(this.btnRefiAmp);
-            this.pnlBtnFinanzas.Controls.Add(this.btnReportMorosos);
-            this.pnlBtnFinanzas.Controls.Add(this.btnNoAdeudo);
-            this.pnlBtnFinanzas.Controls.Add(this.btnEnProceso);
-            this.pnlBtnFinanzas.Controls.Add(this.btnGenDes);
-            this.pnlBtnFinanzas.Controls.Add(this.btnDecomicro);
-            this.pnlBtnFinanzas.Controls.Add(this.btnPositiveBalance);
-            this.pnlBtnFinanzas.Controls.Add(this.btnCreditsGranted);
-            resources.ApplyResources(this.pnlBtnFinanzas, "pnlBtnFinanzas");
-            this.pnlBtnFinanzas.Name = "pnlBtnFinanzas";
-            // 
-            // btnRefiAmp
-            // 
-            this.btnRefiAmp.BackColor = System.Drawing.Color.LightBlue;
-            this.btnRefiAmp.FlatAppearance.BorderSize = 0;
-            this.btnRefiAmp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnRefiAmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnRefiAmp, "btnRefiAmp");
-            this.btnRefiAmp.ForeColor = System.Drawing.Color.White;
-            this.btnRefiAmp.Name = "btnRefiAmp";
-            this.btnRefiAmp.UseVisualStyleBackColor = false;
-            this.btnRefiAmp.Click += new System.EventHandler(this.btnRefiAmp_Click);
-            // 
-            // btnReportMorosos
-            // 
-            this.btnReportMorosos.BackColor = System.Drawing.Color.LightBlue;
-            this.btnReportMorosos.FlatAppearance.BorderSize = 0;
-            this.btnReportMorosos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnReportMorosos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnReportMorosos, "btnReportMorosos");
-            this.btnReportMorosos.ForeColor = System.Drawing.Color.White;
-            this.btnReportMorosos.Name = "btnReportMorosos";
-            this.btnReportMorosos.UseVisualStyleBackColor = false;
-            this.btnReportMorosos.Click += new System.EventHandler(this.btnReportMorosos_Click);
-            // 
-            // btnNoAdeudo
-            // 
-            this.btnNoAdeudo.BackColor = System.Drawing.Color.LightBlue;
-            this.btnNoAdeudo.FlatAppearance.BorderSize = 0;
-            this.btnNoAdeudo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnNoAdeudo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnNoAdeudo, "btnNoAdeudo");
-            this.btnNoAdeudo.ForeColor = System.Drawing.Color.White;
-            this.btnNoAdeudo.Name = "btnNoAdeudo";
-            this.btnNoAdeudo.UseVisualStyleBackColor = false;
-            this.btnNoAdeudo.Click += new System.EventHandler(this.btnNoAdeudo_Click);
-            // 
-            // btnEnProceso
-            // 
-            this.btnEnProceso.BackColor = System.Drawing.Color.LightBlue;
-            this.btnEnProceso.FlatAppearance.BorderSize = 0;
-            this.btnEnProceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnEnProceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnEnProceso, "btnEnProceso");
-            this.btnEnProceso.ForeColor = System.Drawing.Color.White;
-            this.btnEnProceso.Name = "btnEnProceso";
-            this.btnEnProceso.UseVisualStyleBackColor = false;
-            this.btnEnProceso.Click += new System.EventHandler(this.btnEnProceso_Click);
-            // 
-            // btnGenDes
-            // 
-            this.btnGenDes.BackColor = System.Drawing.Color.LightBlue;
-            this.btnGenDes.FlatAppearance.BorderSize = 0;
-            this.btnGenDes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnGenDes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnGenDes, "btnGenDes");
-            this.btnGenDes.ForeColor = System.Drawing.Color.White;
-            this.btnGenDes.Name = "btnGenDes";
-            this.btnGenDes.UseVisualStyleBackColor = false;
-            this.btnGenDes.Click += new System.EventHandler(this.btnGenDes_Click);
-            // 
-            // btnDecomicro
-            // 
-            this.btnDecomicro.BackColor = System.Drawing.Color.LightBlue;
-            this.btnDecomicro.FlatAppearance.BorderSize = 0;
-            this.btnDecomicro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnDecomicro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnDecomicro, "btnDecomicro");
-            this.btnDecomicro.ForeColor = System.Drawing.Color.White;
-            this.btnDecomicro.Name = "btnDecomicro";
-            this.btnDecomicro.UseVisualStyleBackColor = false;
-            this.btnDecomicro.Click += new System.EventHandler(this.btnDecomicro_Click);
-            // 
-            // btnPositiveBalance
-            // 
-            this.btnPositiveBalance.BackColor = System.Drawing.Color.LightBlue;
-            this.btnPositiveBalance.FlatAppearance.BorderSize = 0;
-            this.btnPositiveBalance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnPositiveBalance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnPositiveBalance, "btnPositiveBalance");
-            this.btnPositiveBalance.ForeColor = System.Drawing.Color.White;
-            this.btnPositiveBalance.Name = "btnPositiveBalance";
-            this.btnPositiveBalance.UseVisualStyleBackColor = false;
-            this.btnPositiveBalance.Click += new System.EventHandler(this.btnPositiveBalance_Click);
-            // 
-            // btnCreditsGranted
-            // 
-            this.btnCreditsGranted.BackColor = System.Drawing.Color.LightBlue;
-            this.btnCreditsGranted.FlatAppearance.BorderSize = 0;
-            this.btnCreditsGranted.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnCreditsGranted.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnCreditsGranted, "btnCreditsGranted");
-            this.btnCreditsGranted.ForeColor = System.Drawing.Color.White;
-            this.btnCreditsGranted.Name = "btnCreditsGranted";
-            this.btnCreditsGranted.UseVisualStyleBackColor = false;
-            this.btnCreditsGranted.Click += new System.EventHandler(this.btnCreditsGranted_Click);
-            // 
-            // btnFinanzas
-            // 
-            this.btnFinanzas.FlatAppearance.BorderSize = 0;
-            this.btnFinanzas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(110)))), ((int)(((byte)(21)))));
-            this.btnFinanzas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            resources.ApplyResources(this.btnFinanzas, "btnFinanzas");
-            this.btnFinanzas.ForeColor = System.Drawing.Color.White;
-            this.btnFinanzas.Name = "btnFinanzas";
-            this.btnFinanzas.UseVisualStyleBackColor = true;
-            this.btnFinanzas.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // pnlLogo
             // 
@@ -374,26 +172,183 @@
             this.tmMostrarMenu.Interval = 15;
             this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmFinanzas,
+            this.tsmInformatica});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // tsmFinanzas
+            // 
+            this.tsmFinanzas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCreditos,
+            this.reportesToolStripMenuItem});
+            resources.ApplyResources(this.tsmFinanzas, "tsmFinanzas");
+            this.tsmFinanzas.Name = "tsmFinanzas";
+            // 
+            // tsmCreditos
+            // 
+            resources.ApplyResources(this.tsmCreditos, "tsmCreditos");
+            this.tsmCreditos.Name = "tsmCreditos";
+            this.tsmCreditos.Click += new System.EventHandler(this.tsmCreditos_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCreditoOtorgados,
+            this.tsmSaldoFavor,
+            this.tsmPlanillaDecomicro,
+            this.tsmGeneradoDesembolsado,
+            this.tsmEnProceso,
+            this.tsmCartaNoAdeudo,
+            this.tsmMorosos,
+            this.tsmRefAmp});
+            resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            // 
+            // tsmCreditoOtorgados
+            // 
+            resources.ApplyResources(this.tsmCreditoOtorgados, "tsmCreditoOtorgados");
+            this.tsmCreditoOtorgados.Name = "tsmCreditoOtorgados";
+            this.tsmCreditoOtorgados.Click += new System.EventHandler(this.tsmCreditoOtorgados_Click);
+            // 
+            // tsmSaldoFavor
+            // 
+            resources.ApplyResources(this.tsmSaldoFavor, "tsmSaldoFavor");
+            this.tsmSaldoFavor.Name = "tsmSaldoFavor";
+            this.tsmSaldoFavor.Click += new System.EventHandler(this.tsmSaldoFavor_Click);
+            // 
+            // tsmPlanillaDecomicro
+            // 
+            resources.ApplyResources(this.tsmPlanillaDecomicro, "tsmPlanillaDecomicro");
+            this.tsmPlanillaDecomicro.Name = "tsmPlanillaDecomicro";
+            this.tsmPlanillaDecomicro.Click += new System.EventHandler(this.tsmPlanillaDecomicro_Click);
+            // 
+            // tsmGeneradoDesembolsado
+            // 
+            resources.ApplyResources(this.tsmGeneradoDesembolsado, "tsmGeneradoDesembolsado");
+            this.tsmGeneradoDesembolsado.Name = "tsmGeneradoDesembolsado";
+            this.tsmGeneradoDesembolsado.Click += new System.EventHandler(this.tsmGeneradoDesembolsado_Click);
+            // 
+            // tsmEnProceso
+            // 
+            resources.ApplyResources(this.tsmEnProceso, "tsmEnProceso");
+            this.tsmEnProceso.Name = "tsmEnProceso";
+            this.tsmEnProceso.Click += new System.EventHandler(this.tsmEnProceso_Click);
+            // 
+            // tsmCartaNoAdeudo
+            // 
+            resources.ApplyResources(this.tsmCartaNoAdeudo, "tsmCartaNoAdeudo");
+            this.tsmCartaNoAdeudo.Name = "tsmCartaNoAdeudo";
+            this.tsmCartaNoAdeudo.Click += new System.EventHandler(this.tsmCartaNoAdeudo_Click);
+            // 
+            // tsmMorosos
+            // 
+            resources.ApplyResources(this.tsmMorosos, "tsmMorosos");
+            this.tsmMorosos.Name = "tsmMorosos";
+            this.tsmMorosos.Click += new System.EventHandler(this.tsmMorosos_Click);
+            // 
+            // tsmRefAmp
+            // 
+            resources.ApplyResources(this.tsmRefAmp, "tsmRefAmp");
+            this.tsmRefAmp.Name = "tsmRefAmp";
+            this.tsmRefAmp.Click += new System.EventHandler(this.tsmRefAmp_Click);
+            // 
+            // tsmInformatica
+            // 
+            this.tsmInformatica.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmSolicitantes,
+            this.tsmTipoCredito,
+            this.tsmCreditoPorAnio,
+            this.tsmComCredOtorgado,
+            this.tsmRespaldoBackup});
+            resources.ApplyResources(this.tsmInformatica, "tsmInformatica");
+            this.tsmInformatica.Name = "tsmInformatica";
+            // 
+            // tsmSolicitantes
+            // 
+            resources.ApplyResources(this.tsmSolicitantes, "tsmSolicitantes");
+            this.tsmSolicitantes.Name = "tsmSolicitantes";
+            this.tsmSolicitantes.Click += new System.EventHandler(this.tsmSolicitantes_Click);
+            // 
+            // tsmTipoCredito
+            // 
+            resources.ApplyResources(this.tsmTipoCredito, "tsmTipoCredito");
+            this.tsmTipoCredito.Name = "tsmTipoCredito";
+            this.tsmTipoCredito.Click += new System.EventHandler(this.tsmTipoCredito_Click);
+            // 
+            // tsmCreditoPorAnio
+            // 
+            resources.ApplyResources(this.tsmCreditoPorAnio, "tsmCreditoPorAnio");
+            this.tsmCreditoPorAnio.Name = "tsmCreditoPorAnio";
+            this.tsmCreditoPorAnio.Click += new System.EventHandler(this.tsmCreditoPorAño_Click);
+            // 
+            // tsmComCredOtorgado
+            // 
+            resources.ApplyResources(this.tsmComCredOtorgado, "tsmComCredOtorgado");
+            this.tsmComCredOtorgado.Name = "tsmComCredOtorgado";
+            this.tsmComCredOtorgado.Click += new System.EventHandler(this.tsmComCredOtorgado_Click);
+            // 
+            // tsmRespaldoBackup
+            // 
+            resources.ApplyResources(this.tsmRespaldoBackup, "tsmRespaldoBackup");
+            this.tsmRespaldoBackup.Name = "tsmRespaldoBackup";
+            this.tsmRespaldoBackup.Click += new System.EventHandler(this.tsmRespaldoBackup_Click);
+            // 
+            // tsAccDir
+            // 
+            resources.ApplyResources(this.tsAccDir, "tsAccDir");
+            this.tsAccDir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tsAccDir.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsAccDir.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCreditos,
+            this.toolStripSeparator4,
+            this.tsbSalir});
+            this.tsAccDir.Name = "tsAccDir";
+            // 
+            // tsbCreditos
+            // 
+            resources.ApplyResources(this.tsbCreditos, "tsbCreditos");
+            this.tsbCreditos.Name = "tsbCreditos";
+            this.tsbCreditos.Click += new System.EventHandler(this.tsbCreditos_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
+            // tsbSalir
+            // 
+            resources.ApplyResources(this.tsbSalir, "tsbSalir");
+            this.tsbSalir.Name = "tsbSalir";
+            // 
             // frmPrincipal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tbcContainer);
+            this.Controls.Add(this.tsAccDir);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlBarTit);
             this.Controls.Add(this.ssStatusBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.Resize += new System.EventHandler(this.frmPrincipal_Resize);
             this.pnlMenu.ResumeLayout(false);
-            this.pnlBtnInformatica.ResumeLayout(false);
-            this.pnlBtnFinanzas.ResumeLayout(false);
             this.ssStatusBar.ResumeLayout(false);
             this.ssStatusBar.PerformLayout();
             this.pnlBarTit.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tsAccDir.ResumeLayout(false);
+            this.tsAccDir.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,23 +367,27 @@
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Timer tmOcultarMenu;
         private System.Windows.Forms.Timer tmMostrarMenu;
-        internal System.Windows.Forms.Button btnFinanzas;
-        internal System.Windows.Forms.Panel pnlInformatica;
-        internal System.Windows.Forms.Button btnInformatica;
-        internal System.Windows.Forms.Panel pnlFinanzas;
-        private System.Windows.Forms.Panel pnlBtnFinanzas;
-        internal System.Windows.Forms.Button btnTipoCreditoAnual;
-        internal System.Windows.Forms.Button btnDecomicro;
-        internal System.Windows.Forms.Button btnPositiveBalance;
-        internal System.Windows.Forms.Button btnCreditType;
-        internal System.Windows.Forms.Button btnCreditsGranted;
-        internal System.Windows.Forms.Button btnReportApplicant;
-        private System.Windows.Forms.Panel pnlBtnInformatica;
-        internal System.Windows.Forms.Button btnRefiAmp;
-        internal System.Windows.Forms.Button btnGenDes;
-        internal System.Windows.Forms.Button btnEnProceso;
-        internal System.Windows.Forms.Button btnNoAdeudo;
-        internal System.Windows.Forms.Button btnReportMorosos;
-        internal System.Windows.Forms.Button btnComparativoCreditos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tsmFinanzas;
+        private System.Windows.Forms.ToolStripMenuItem tsmInformatica;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem tsmCreditos;
+        internal System.Windows.Forms.ToolStripMenuItem tsmCreditoOtorgados;
+        internal System.Windows.Forms.ToolStripMenuItem tsmSaldoFavor;
+        internal System.Windows.Forms.ToolStripMenuItem tsmPlanillaDecomicro;
+        internal System.Windows.Forms.ToolStripMenuItem tsmGeneradoDesembolsado;
+        internal System.Windows.Forms.ToolStripMenuItem tsmEnProceso;
+        internal System.Windows.Forms.ToolStripMenuItem tsmCartaNoAdeudo;
+        internal System.Windows.Forms.ToolStripMenuItem tsmMorosos;
+        internal System.Windows.Forms.ToolStripMenuItem tsmRefAmp;
+        internal System.Windows.Forms.ToolStripMenuItem tsmSolicitantes;
+        internal System.Windows.Forms.ToolStripMenuItem tsmTipoCredito;
+        internal System.Windows.Forms.ToolStripMenuItem tsmCreditoPorAnio;
+        internal System.Windows.Forms.ToolStripMenuItem tsmComCredOtorgado;
+        internal System.Windows.Forms.ToolStripMenuItem tsmRespaldoBackup;
+        private System.Windows.Forms.ToolStrip tsAccDir;
+        internal System.Windows.Forms.ToolStripButton tsbCreditos;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton tsbSalir;
     }
 }

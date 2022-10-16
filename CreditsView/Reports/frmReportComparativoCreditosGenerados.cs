@@ -80,7 +80,7 @@ namespace CreditsView.Reports
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.btnComparativoCreditos, null);
+            wMen.CerrarVentanaHijo(this, wMen.tsmComCredOtorgado, null);
         }
         private void frmReportComparativoCreditosGenerados_FormClosing(object sender, FormClosingEventArgs e)
         {
