@@ -324,6 +324,7 @@
             // 
             resources.ApplyResources(this.tsbSalir, "tsbSalir");
             this.tsbSalir.Name = "tsbSalir";
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // frmPrincipal
             // 

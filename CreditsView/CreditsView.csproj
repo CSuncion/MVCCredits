@@ -389,6 +389,9 @@
     <EmbeddedResource Include="Reports\rptReportTipoCredito.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTipoCreditoGeneradoDesembolsado.rdlc" />
     <EmbeddedResource Include="Reports\rptReportTiposCreditos.rdlc" />
+    <EmbeddedResource Include="Respaldos\frmRespaldoBackup.resx">
+      <DependentUpon>frmRespaldoBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet\DsCredits.xsc">
       <DependentUpon>DsCredits.xsd</DependentUpon>
     </None>

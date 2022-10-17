@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using CreditsView.Credits;
 using CreditsController.Controller;
 using CreditsModel.ModelDto;
+using CreditsView.Respaldos;
 
 namespace CreditsView.MdiPrincipal
 {
@@ -170,7 +171,7 @@ namespace CreditsView.MdiPrincipal
         }
         private void tsmRespaldoBackup_Click(object sender, EventArgs e)
         {
-
+            this.InstanciarRespaldoBackup();
         }
         private void tsbCreditos_Click(object sender, EventArgs e)
         {
@@ -377,6 +378,12 @@ namespace CreditsView.MdiPrincipal
             this.FormatoVentanaHijoPrincipal(win, this.tsmCreditos, tsbCreditos, 0, 0);
             win.NewWindow();
         }
+        public void InstanciarRespaldoBackup()
+        {
+            frmRespaldoBackup win = new frmRespaldoBackup();
+            this.FormatoVentanaHijoPrincipal(win, this.tsmRespaldoBackup, null, 0, 0);
+            win.abrirVentana();
+        }
 
         public void ShowOptionsReport()
         {
@@ -395,6 +402,12 @@ namespace CreditsView.MdiPrincipal
             //    this.pnlBtnInformatica.Location = new Point(0, 547);
             //}
         }
+
+        private void tsbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public void ShowOptionsCredits()
         {
             //if (this.pnlBtnInformatica.Visible)

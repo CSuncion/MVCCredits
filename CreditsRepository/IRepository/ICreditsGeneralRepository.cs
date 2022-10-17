@@ -11,5 +11,6 @@ namespace CreditsRepository.IRepository
     {
         List<CreditsMesesDto> ListarMeses();
         List<CreditsCentroCostosDto> ListarCentroCostos(string codCosto);
+        void CrearBackupDbFbPol();
     }
 }

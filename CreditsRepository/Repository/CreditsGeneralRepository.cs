@@ -58,5 +58,12 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return centrocosto;
         }
+        public void CrearBackupDbFbPol()
+        {
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_CrearBackupDbFbPol");
+            xObjCn.ExecuteNotResult();
+            xObjCn.Disconnect();
+        }
     }
 }

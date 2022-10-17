@@ -24,5 +24,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsGeneralRepository.ListarCentroCostos(codCosto);
         }
+        public void CrearBackupDbFbPol()
+        {
+            this._iCreditsGeneralRepository.CrearBackupDbFbPol();
+        }
     }
 }
