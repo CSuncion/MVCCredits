@@ -48,9 +48,11 @@
             this.btnCobrar = new System.Windows.Forms.Button();
             this.btnAmpliar = new System.Windows.Forms.Button();
             this.btnRefinanciar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tsPrincipal.SuspendLayout();
             this.gbImpNoAdeu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCreditos)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -121,7 +123,7 @@
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(756, 10);
+            this.panel1.Size = new System.Drawing.Size(768, 10);
             this.panel1.TabIndex = 448;
             // 
             // label3
@@ -142,7 +144,7 @@
             this.tsPrincipal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
-            this.tsPrincipal.Size = new System.Drawing.Size(758, 25);
+            this.tsPrincipal.Size = new System.Drawing.Size(768, 25);
             this.tsPrincipal.Stretch = true;
             this.tsPrincipal.TabIndex = 446;
             // 
@@ -191,7 +193,7 @@
             this.panel2.BackColor = System.Drawing.Color.Gray;
             this.panel2.Location = new System.Drawing.Point(0, 132);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 10);
+            this.panel2.Size = new System.Drawing.Size(768, 10);
             this.panel2.TabIndex = 456;
             // 
             // btnNuevoCredito
@@ -200,7 +202,7 @@
             this.btnNuevoCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCredito.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoCredito.Image")));
             this.btnNuevoCredito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoCredito.Location = new System.Drawing.Point(650, 181);
+            this.btnNuevoCredito.Location = new System.Drawing.Point(6, 19);
             this.btnNuevoCredito.Name = "btnNuevoCredito";
             this.btnNuevoCredito.Size = new System.Drawing.Size(94, 38);
             this.btnNuevoCredito.TabIndex = 458;
@@ -217,7 +219,7 @@
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCobrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCobrar.Image")));
             this.btnCobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCobrar.Location = new System.Drawing.Point(650, 225);
+            this.btnCobrar.Location = new System.Drawing.Point(6, 63);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(94, 38);
             this.btnCobrar.TabIndex = 459;
@@ -233,7 +235,7 @@
             this.btnAmpliar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAmpliar.Image = ((System.Drawing.Image)(resources.GetObject("btnAmpliar.Image")));
             this.btnAmpliar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAmpliar.Location = new System.Drawing.Point(650, 269);
+            this.btnAmpliar.Location = new System.Drawing.Point(6, 107);
             this.btnAmpliar.Name = "btnAmpliar";
             this.btnAmpliar.Size = new System.Drawing.Size(94, 38);
             this.btnAmpliar.TabIndex = 460;
@@ -249,7 +251,7 @@
             this.btnRefinanciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefinanciar.Image = ((System.Drawing.Image)(resources.GetObject("btnRefinanciar.Image")));
             this.btnRefinanciar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefinanciar.Location = new System.Drawing.Point(650, 313);
+            this.btnRefinanciar.Location = new System.Drawing.Point(6, 151);
             this.btnRefinanciar.Name = "btnRefinanciar";
             this.btnRefinanciar.Size = new System.Drawing.Size(94, 38);
             this.btnRefinanciar.TabIndex = 461;
@@ -258,15 +260,23 @@
             this.btnRefinanciar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefinanciar.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnRefinanciar);
+            this.groupBox1.Controls.Add(this.btnNuevoCredito);
+            this.groupBox1.Controls.Add(this.btnAmpliar);
+            this.groupBox1.Controls.Add(this.btnCobrar);
+            this.groupBox1.Location = new System.Drawing.Point(650, 165);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(106, 201);
+            this.groupBox1.TabIndex = 462;
+            this.groupBox1.TabStop = false;
+            // 
             // frmCreditos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 378);
-            this.Controls.Add(this.btnRefinanciar);
-            this.Controls.Add(this.btnAmpliar);
-            this.Controls.Add(this.btnCobrar);
-            this.Controls.Add(this.btnNuevoCredito);
+            this.ClientSize = new System.Drawing.Size(768, 378);
             this.Controls.Add(this.lblMensajeAdeuda);
             this.Controls.Add(this.gbImpNoAdeu);
             this.Controls.Add(this.panel2);
@@ -280,6 +290,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tsPrincipal);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCreditos";
             this.Text = "Créditos";
@@ -288,6 +299,7 @@
             this.tsPrincipal.PerformLayout();
             this.gbImpNoAdeu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCreditos)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +326,6 @@
         private System.Windows.Forms.Button btnAmpliar;
         private System.Windows.Forms.Button btnRefinanciar;
         private System.Windows.Forms.Button btnNuevoCredito;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

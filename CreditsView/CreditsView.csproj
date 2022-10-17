@@ -85,6 +85,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Credits\frmCobrarCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credits\frmCobrarCredito.Designer.cs">
+      <DependentUpon>frmCobrarCredito.cs</DependentUpon>
+    </Compile>
     <Compile Include="Credits\frmConstanciaNoAdeudo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +115,11 @@
     <Compile Include="Credits\frmRefinanciadoAmpliado.Designer.cs">
       <DependentUpon>frmRefinanciadoAmpliado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Credits\frnEditCredito.cs">
+    <Compile Include="Credits\frmEditCredito.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Credits\frnEditCredito.Designer.cs">
-      <DependentUpon>frnEditCredito.cs</DependentUpon>
+    <Compile Include="Credits\frmEditCredito.Designer.cs">
+      <DependentUpon>frmEditCredito.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DsCredits.cs">
       <DependentUpon>DsCredits.xsd</DependentUpon>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Credits\frmRefinanciadoAmpliado.resx">
       <DependentUpon>frmRefinanciadoAmpliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credits\frmEditCredito.resx">
+      <DependentUpon>frmEditCredito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listas\frmListaMorososSolicitante.resx">
       <DependentUpon>frmListaMorososSolicitante.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CreditsView.Credits
 {
-    public partial class frnEditCredito : Form
+    public partial class frmCobrarCredito : Form
     {
-        public frnEditCredito()
+        public frmCobrarCredito()
         {
             InitializeComponent();
         }

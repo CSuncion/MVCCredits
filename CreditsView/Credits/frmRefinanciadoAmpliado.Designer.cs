@@ -251,7 +251,7 @@
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRefinanciadoAmpliado";
-            this.Text = "Refinanciado o Ampliado";
+            this.Text = "Otros Créditos (Refin. - Ampl.)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRefinanciadoAmpliado_FormClosing);
             this.sst1.ResumeLayout(false);
             this.sst1.PerformLayout();

@@ -18,7 +18,8 @@ namespace CreditsController.Controller
         }
         public CreditsSolicitantesDto ListarSolicitantesPorDni(CreditsSolicitantesDto pObj)
         {
-            return this._iCreditsSolicitanteRepository.ListarSolicitantesPorDni(pObj);
+            ICreditsSolicitantesRepository iDeclaracionesSolicitanteRepository = new CreditsSolicitantesRepository();
+            return iDeclaracionesSolicitanteRepository.ListarSolicitantesPorDni(pObj);
         }
     }
 }

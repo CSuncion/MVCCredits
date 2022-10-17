@@ -22,7 +22,7 @@ namespace CreditsView.Credits
         CreditsOperationsController oOpeCtrll = new CreditsOperationsController();
         public List<CreditsOperationsDto> listOpeEN = new List<CreditsOperationsDto>();
         public CreditsOperationsController oOpe = new CreditsOperationsController();
-        string eTitulo = "Creditos";
+        public string eTitulo = "Creditos";
         int eVaBD = 1;//0 : no , 1 : si
         string eNombreColumnaDgvRefAmp = CreditsOperationsDto.DniSolic;
         public frmCreditos()
@@ -35,6 +35,7 @@ namespace CreditsView.Credits
         }
         public void ActualizarVentana()
         {
+            this.DeshabilitarBotones();
             this.ActualizarListaSolicitantesDeBaseDatos();
             this.ActualizarListaOperacionesDeBaseDatos();
             this.ActualizarDgvCreditos();
@@ -48,7 +49,8 @@ namespace CreditsView.Credits
             CreditsSolicitantesDto iSolEN = new CreditsSolicitantesDto();
             iSolEN.Dni_Solic = this.txtDocId.Text.Trim();
             iSolEN = oSolCtrll.ListarSolicitantesPorDni(iSolEN);
-            this.AsignarSolicitantes(iSolEN);
+            this.btnNuevoCredito.Enabled = iSolEN.Id_Solicitante > 0 ? true : false;
+            this.AsignarSolicitantes(iSolEN);            
         }
         public void ActualizarListaOperacionesDeBaseDatos()
         {
@@ -153,6 +155,18 @@ namespace CreditsView.Credits
             this.btnAmpliar.Enabled = false;
             this.btnRefinanciar.Enabled = false;
         }
+        public void AccionAdicionar()
+        {
+            //DeclaracionesRegistroCompraDto iRegComDto = this.EsActoAdicionarRegistroCompra();
+            //if (iRegComDto.Adicionales.EsVerdad == false) { return; }
+
+            frmEditCredito win = new frmEditCredito();
+            win.wCre = this;
+            win.eOperacion = Universal.Opera.Adicionar;
+            this.eFranjaDgvCred = Dgv.Franja.PorValor;
+            TabCtrl.InsertarVentana(this, win);
+            win.VentanaAdicionar();
+        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.ActualizarVentana();
@@ -182,7 +196,7 @@ namespace CreditsView.Credits
 
         private void btnNuevoCredito_Click(object sender, EventArgs e)
         {
-
+            this.AccionAdicionar();
         }
     }
 }
