@@ -28,5 +28,21 @@ namespace CreditsController.Controller
         {
             this._iCreditsGeneralRepository.CrearBackupDbFbPol();
         }
+        public List<CreditsUnDsctoDto> ListarPlanillaPago()
+        {
+            return this._iCreditsGeneralRepository.ListarPlanillaPago();
+        }
+        public List<CreditsMonedaDto> ListarMoneda()
+        {
+            return this._iCreditsGeneralRepository.ListarMoneda();
+        }
+        public List<CreditsEntidadBancariaDto> ListaEntidadBancaria()
+        {
+            return this._iCreditsGeneralRepository.ListaEntidadBancaria();
+        }
+        public List<CreditsProveedorDto> ListaProveedor()
+        {
+            return this._iCreditsGeneralRepository.ListaProveedor();
+        }
     }
 }

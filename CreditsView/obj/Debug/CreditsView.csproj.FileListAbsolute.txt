@@ -134,3 +134,4 @@ D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\o
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Credits.frmCreditos.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Credits.frmEditCredito.resources
 D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.Respaldos.frmRespaldoBackup.resources
+D:\Perú Ticcs\Victor Noriega\Creditos\Sistema Creditos\MVCCredits\CreditsView\obj\Debug\CreditsView.AcercaDe.frmAcercaDe.resources

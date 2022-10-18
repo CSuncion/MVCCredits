@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.ssStatusBar = new System.Windows.Forms.StatusStrip();
             this.tssStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.tbcContainer = new System.Windows.Forms.TabControl();
             this.pnlBarTit = new System.Windows.Forms.Panel();
-            this.btnRestaurar = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tsAccDir = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbCreditos = new System.Windows.Forms.ToolStripButton();
+            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.tsmFinanzas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCreditos = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,10 +60,11 @@
             this.tsmCreditoPorAnio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmComCredOtorgado = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRespaldoBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsAccDir = new System.Windows.Forms.ToolStrip();
-            this.tsbCreditos = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.ssStatusBar.SuspendLayout();
             this.pnlBarTit.SuspendLayout();
@@ -77,12 +78,6 @@
             this.pnlMenu.BackColor = System.Drawing.Color.CadetBlue;
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Name = "pnlMenu";
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.BackgroundImage = global::CreditsView.Properties.Resources.logo_1;
-            resources.ApplyResources(this.pnlLogo, "pnlLogo");
-            this.pnlLogo.Name = "pnlLogo";
             // 
             // ssStatusBar
             // 
@@ -115,54 +110,6 @@
             this.pnlBarTit.DoubleClick += new System.EventHandler(this.pnlBarTit_DoubleClick);
             this.pnlBarTit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarTit_MouseMove);
             // 
-            // btnRestaurar
-            // 
-            resources.ApplyResources(this.btnRestaurar, "btnRestaurar");
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.FlatAppearance.BorderSize = 0;
-            this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnRestaurar.Image = global::CreditsView.Properties.Resources.Icono_Restaurar;
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
-            // 
-            // btnMinimizar
-            // 
-            resources.ApplyResources(this.btnMinimizar, "btnMinimizar");
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMinimizar.Image = global::CreditsView.Properties.Resources.Icono_Minimizar;
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnMaximizar
-            // 
-            resources.ApplyResources(this.btnMaximizar, "btnMaximizar");
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMaximizar.Image = global::CreditsView.Properties.Resources.Icono_Maximizar;
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnCerrar
-            // 
-            resources.ApplyResources(this.btnCerrar, "btnCerrar");
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrar.Image = global::CreditsView.Properties.Resources.ICON_CERRARF;
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // tmOcultarMenu
             // 
             this.tmOcultarMenu.Interval = 15;
@@ -177,9 +124,44 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmFinanzas,
-            this.tsmInformatica});
+            this.tsmInformatica,
+            this.tsmAcercaDe});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            // 
+            // tsAccDir
+            // 
+            resources.ApplyResources(this.tsAccDir, "tsAccDir");
+            this.tsAccDir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tsAccDir.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsAccDir.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCreditos,
+            this.toolStripSeparator4,
+            this.tsbSalir});
+            this.tsAccDir.Name = "tsAccDir";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
+            // tsmAcercaDe
+            // 
+            resources.ApplyResources(this.tsmAcercaDe, "tsmAcercaDe");
+            this.tsmAcercaDe.Name = "tsmAcercaDe";
+            this.tsmAcercaDe.Click += new System.EventHandler(this.tsmAcercaDe_Click);
+            // 
+            // tsbCreditos
+            // 
+            resources.ApplyResources(this.tsbCreditos, "tsbCreditos");
+            this.tsbCreditos.Name = "tsbCreditos";
+            this.tsbCreditos.Click += new System.EventHandler(this.tsbCreditos_Click);
+            // 
+            // tsbSalir
+            // 
+            resources.ApplyResources(this.tsbSalir, "tsbSalir");
+            this.tsbSalir.Name = "tsbSalir";
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // tsmFinanzas
             // 
@@ -298,33 +280,59 @@
             this.tsmRespaldoBackup.Name = "tsmRespaldoBackup";
             this.tsmRespaldoBackup.Click += new System.EventHandler(this.tsmRespaldoBackup_Click);
             // 
-            // tsAccDir
+            // pnlLogo
             // 
-            resources.ApplyResources(this.tsAccDir, "tsAccDir");
-            this.tsAccDir.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tsAccDir.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.tsAccDir.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbCreditos,
-            this.toolStripSeparator4,
-            this.tsbSalir});
-            this.tsAccDir.Name = "tsAccDir";
+            this.pnlLogo.BackgroundImage = global::CreditsView.Properties.Resources.logo_1;
+            resources.ApplyResources(this.pnlLogo, "pnlLogo");
+            this.pnlLogo.Name = "pnlLogo";
             // 
-            // tsbCreditos
+            // btnRestaurar
             // 
-            resources.ApplyResources(this.tsbCreditos, "tsbCreditos");
-            this.tsbCreditos.Name = "tsbCreditos";
-            this.tsbCreditos.Click += new System.EventHandler(this.tsbCreditos_Click);
+            resources.ApplyResources(this.btnRestaurar, "btnRestaurar");
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.FlatAppearance.BorderSize = 0;
+            this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRestaurar.Image = global::CreditsView.Properties.Resources.Icono_Restaurar;
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
-            // toolStripSeparator4
+            // btnMinimizar
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            resources.ApplyResources(this.btnMinimizar, "btnMinimizar");
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMinimizar.Image = global::CreditsView.Properties.Resources.Icono_Minimizar;
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // tsbSalir
+            // btnMaximizar
             // 
-            resources.ApplyResources(this.tsbSalir, "tsbSalir");
-            this.tsbSalir.Name = "tsbSalir";
-            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
+            resources.ApplyResources(this.btnMaximizar, "btnMaximizar");
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMaximizar.Image = global::CreditsView.Properties.Resources.Icono_Maximizar;
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrar
+            // 
+            resources.ApplyResources(this.btnCerrar, "btnCerrar");
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrar.Image = global::CreditsView.Properties.Resources.ICON_CERRARF;
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // frmPrincipal
             // 
@@ -392,5 +400,6 @@
         internal System.Windows.Forms.ToolStripButton tsbCreditos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbSalir;
+        internal System.Windows.Forms.ToolStripMenuItem tsmAcercaDe;
     }
 }

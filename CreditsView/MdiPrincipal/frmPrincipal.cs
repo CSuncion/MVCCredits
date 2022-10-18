@@ -12,6 +12,7 @@ using CreditsView.Credits;
 using CreditsController.Controller;
 using CreditsModel.ModelDto;
 using CreditsView.Respaldos;
+using CreditsView.AcercaDe;
 
 namespace CreditsView.MdiPrincipal
 {
@@ -176,6 +177,10 @@ namespace CreditsView.MdiPrincipal
         private void tsbCreditos_Click(object sender, EventArgs e)
         {
             this.InstanciarCreditos();
+        }
+        private void tsmAcercaDe_Click(object sender, EventArgs e)
+        {
+            this.InstanciarAcercaDe();
         }
         #endregion
 
@@ -384,7 +389,12 @@ namespace CreditsView.MdiPrincipal
             this.FormatoVentanaHijoPrincipal(win, this.tsmRespaldoBackup, null, 0, 0);
             win.abrirVentana();
         }
-
+        public void InstanciarAcercaDe()
+        {
+            frmAcercaDe win = new frmAcercaDe();
+            this.FormatoVentanaHijoPrincipal(win, this.tsmAcercaDe, null, 0, 0);
+            win.NewWindow();
+        }
         public void ShowOptionsReport()
         {
             //if (this.pnlBtnFinanzas.Visible)

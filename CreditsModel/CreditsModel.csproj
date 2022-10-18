@@ -57,10 +57,14 @@
     <Compile Include="ModelDto\CreditsDecomicroDto.cs" />
     <Compile Include="ModelDto\CreditsDto.cs" />
     <Compile Include="ModelDto\CreditsAccessDto.cs" />
+    <Compile Include="ModelDto\CreditsEntidadBancariaDto.cs" />
     <Compile Include="ModelDto\CreditsMesesDto.cs" />
+    <Compile Include="ModelDto\CreditsMonedaDto.cs" />
     <Compile Include="ModelDto\CreditsOperationsDto.cs" />
+    <Compile Include="ModelDto\CreditsProveedorDto.cs" />
     <Compile Include="ModelDto\CreditsRefinanciadoAmpliadoDto.cs" />
     <Compile Include="ModelDto\CreditsSolicitantesDto.cs" />
+    <Compile Include="ModelDto\CreditsUnDsctoDto.cs" />
     <Compile Include="ModelDto\Universal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
