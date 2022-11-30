@@ -50,7 +50,7 @@ namespace CreditsView.Credits
             iSolEN.Dni_Solic = this.txtDocId.Text.Trim();
             iSolEN = oSolCtrll.ListarSolicitantesPorDni(iSolEN);
             this.btnNuevoCredito.Enabled = iSolEN.Id_Solicitante > 0 ? true : false;
-            this.AsignarSolicitantes(iSolEN);            
+            this.AsignarSolicitantes(iSolEN);
         }
         public void ActualizarListaOperacionesDeBaseDatos()
         {
@@ -122,7 +122,7 @@ namespace CreditsView.Credits
         public void ValidarEstadoCuenta(int pFilaChequeada, int pColumnaChequeada)
         {
             //solo debe actuar cuando la columna sea "0" y la fila diferente de "-1"
-            if (pColumnaChequeada == 0 && pFilaChequeada != -1)
+            if (pColumnaChequeada != -1 && pFilaChequeada != -1)
             {
                 CreditsOperationsDto iCredEN = new CreditsOperationsDto();
                 iCredEN.Id_Operacion = Convert.ToInt32(Dgv.ObtenerValorCelda(this.dgvCreditos, CreditsOperationsDto.IdOper));
@@ -136,14 +136,13 @@ namespace CreditsView.Credits
             this.btnNuevoCredito.Enabled = true;
             if (montos.Count > 0)
             {
+                this.btnCobrar.Enabled = true;
                 if (montos[2] == 0)
                 {
-                    this.btnCobrar.Enabled = true;
                     this.btnAmpliar.Enabled = true;
                 }
                 if (montos[2] > 0)
                 {
-                    this.btnCobrar.Enabled = true;
                     this.btnRefinanciar.Enabled = true;
                 }
             }
@@ -164,6 +163,7 @@ namespace CreditsView.Credits
             win.wCre = this;
             win.eOperacion = Universal.Opera.Adicionar;
             this.eFranjaDgvCred = Dgv.Franja.PorValor;
+            win.tipoOperacion = "Financiamiento";
             TabCtrl.InsertarVentana(this, win);
             win.VentanaAdicionar();
         }

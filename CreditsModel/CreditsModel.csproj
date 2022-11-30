@@ -63,6 +63,7 @@
     <Compile Include="ModelDto\CreditsOperationsDto.cs" />
     <Compile Include="ModelDto\CreditsProveedorDto.cs" />
     <Compile Include="ModelDto\CreditsRefinanciadoAmpliadoDto.cs" />
+    <Compile Include="ModelDto\CreditsSaldosFormatoDto.cs" />
     <Compile Include="ModelDto\CreditsSolicitantesDto.cs" />
     <Compile Include="ModelDto\CreditsUnDsctoDto.cs" />
     <Compile Include="ModelDto\Universal.cs" />

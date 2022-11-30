@@ -40,7 +40,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsAccDir = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbCreditos = new System.Windows.Forms.ToolStripButton();
             this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.tsmFinanzas = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,12 +53,14 @@
             this.tsmCartaNoAdeudo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmMorosos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRefAmp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSalFor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmInformatica = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSolicitantes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTipoCredito = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCreditoPorAnio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmComCredOtorgado = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRespaldoBackup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
@@ -145,12 +146,6 @@
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
-            // tsmAcercaDe
-            // 
-            resources.ApplyResources(this.tsmAcercaDe, "tsmAcercaDe");
-            this.tsmAcercaDe.Name = "tsmAcercaDe";
-            this.tsmAcercaDe.Click += new System.EventHandler(this.tsmAcercaDe_Click);
-            // 
             // tsbCreditos
             // 
             resources.ApplyResources(this.tsbCreditos, "tsbCreditos");
@@ -187,7 +182,8 @@
             this.tsmEnProceso,
             this.tsmCartaNoAdeudo,
             this.tsmMorosos,
-            this.tsmRefAmp});
+            this.tsmRefAmp,
+            this.tsmSalFor});
             resources.ApplyResources(this.reportesToolStripMenuItem, "reportesToolStripMenuItem");
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             // 
@@ -239,6 +235,12 @@
             this.tsmRefAmp.Name = "tsmRefAmp";
             this.tsmRefAmp.Click += new System.EventHandler(this.tsmRefAmp_Click);
             // 
+            // tsmSalFor
+            // 
+            resources.ApplyResources(this.tsmSalFor, "tsmSalFor");
+            this.tsmSalFor.Name = "tsmSalFor";
+            this.tsmSalFor.Click += new System.EventHandler(this.tsmSalFor_Click);
+            // 
             // tsmInformatica
             // 
             this.tsmInformatica.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -279,6 +281,12 @@
             resources.ApplyResources(this.tsmRespaldoBackup, "tsmRespaldoBackup");
             this.tsmRespaldoBackup.Name = "tsmRespaldoBackup";
             this.tsmRespaldoBackup.Click += new System.EventHandler(this.tsmRespaldoBackup_Click);
+            // 
+            // tsmAcercaDe
+            // 
+            resources.ApplyResources(this.tsmAcercaDe, "tsmAcercaDe");
+            this.tsmAcercaDe.Name = "tsmAcercaDe";
+            this.tsmAcercaDe.Click += new System.EventHandler(this.tsmAcercaDe_Click);
             // 
             // pnlLogo
             // 
@@ -401,5 +409,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbSalir;
         internal System.Windows.Forms.ToolStripMenuItem tsmAcercaDe;
+        internal System.Windows.Forms.ToolStripMenuItem tsmSalFor;
     }
 }

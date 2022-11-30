@@ -76,5 +76,65 @@ namespace CreditsController.Controller
         {
             return this._iCreditsReportRepository.ListarDecomicro();
         }
+        public static List<CreditsSaldosFormatoDto> ListaSaldosFormato(string mes, string anio, string producto)
+        {
+            ICreditsReportRepository iDeclaracionesReportRepository = new CreditsReportRepository();
+            return iDeclaracionesReportRepository.ListaSaldosFormato(mes, anio, producto);
+        }
+        public List<CreditsSaldosFormatoDto> ListarDatosParaGrillaPrincipal(string pValorBusqueda, string pCampoBusqueda, List<CreditsSaldosFormatoDto> pListaOperations)
+        {
+            //lista resultado
+            List<CreditsSaldosFormatoDto> iLisRes = new List<CreditsSaldosFormatoDto>();
+
+            //si el valor filtro esta vacio entonces devuelve toda la lista del parametro
+            if (pValorBusqueda == string.Empty) { return pListaOperations; }
+
+            //filtar la lista
+            iLisRes = CreditsReportController.FiltrarOperationsXTextoEnCualquierPosicion(pListaOperations, pCampoBusqueda, pValorBusqueda);
+
+            //retornar
+            return iLisRes;
+        }
+        public static List<CreditsSaldosFormatoDto> FiltrarOperationsXTextoEnCualquierPosicion(List<CreditsSaldosFormatoDto> pLista, string pCampoBusqueda, string pValorBusqueda)
+        {
+            //lista resultado
+            List<CreditsSaldosFormatoDto> iLisRes = new List<CreditsSaldosFormatoDto>();
+
+            //valor busqueda en mayuscula
+            string iValor = pValorBusqueda.ToUpper();
+
+            //recorrer cada objeto
+            foreach (CreditsSaldosFormatoDto xOperations in pLista)
+            {
+                string iTexto = CreditsReportController.ObtenerValorDeCampo(xOperations, pCampoBusqueda).ToUpper();
+                if (iTexto.IndexOf(iValor) != -1)
+                {
+                    iLisRes.Add(xOperations);
+                }
+            }
+
+            //devolver
+            return iLisRes;
+        }
+        public static string ObtenerValorDeCampo(CreditsSaldosFormatoDto pObj, string pNombreCampo)
+        {
+            //valor resultado
+            string iValor = string.Empty;
+
+            //segun nombre campo
+            switch (pNombreCampo)
+            {
+                case CreditsSaldosFormatoDto.xConcatenado: return pObj.Concatenado.ToString();
+                case CreditsSaldosFormatoDto.xCod: return pObj.Cod;
+                case CreditsSaldosFormatoDto.xProducto: return pObj.Producto;
+                case CreditsSaldosFormatoDto.xSolicitante: return pObj.Solicitante.ToString();
+                case CreditsSaldosFormatoDto.xDNI: return pObj.DNI.ToString();
+                case CreditsSaldosFormatoDto.xSer: return pObj.Ser.ToString();
+                case CreditsSaldosFormatoDto.xNumero: return pObj.Numero.ToString();
+            }
+
+            //retorna
+            return iValor;
+        }
     }
 }

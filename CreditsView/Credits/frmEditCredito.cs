@@ -22,6 +22,7 @@ namespace CreditsView.Credits
         Masivo eMas = new Masivo();
         CreditsGeneralController objGeneralController = new CreditsGeneralController();
         CreditsSolicitanteController oSolCtrll = new CreditsSolicitanteController();
+        public string tipoOperacion;
         public frmEditCredito()
         {
             InitializeComponent();
@@ -56,6 +57,7 @@ namespace CreditsView.Credits
             Cmb.Cargar(this.cmbMoneda, this.objGeneralController.ListarMoneda(), "Id_Moneda", "Des_Moneda");
             Cmb.Cargar(this.cmbEntBca, this.objGeneralController.ListaEntidadBancaria(), "Id_Bca", "De_Bca");
             Cmb.Cargar(this.cmbProveedor, this.objGeneralController.ListaProveedor(), "Id_Proveedor", "names");
+            Cmb.Cargar(this.cmbCentroCosto, this.objGeneralController.ListarCentroCostos("60"), "Id_Costos", "Name_Costo");
         }
         public void LlenarDatosSolicitante()
         {
@@ -66,6 +68,7 @@ namespace CreditsView.Credits
         }
         public void AsignarSolicitantes(CreditsSolicitantesDto iSolEN)
         {
+            this.txtTipoOperacion.Text = this.tipoOperacion;
             this.txtDocId.Text = iSolEN.Dni_Solic;
             this.txtApeNom.Text = iSolEN.Paterno.Trim() + " " + iSolEN.Materno.Trim() + ", " + iSolEN.Nombres.Trim();
             this.txtGrado.Text = iSolEN.DesGrado.Trim();
@@ -73,6 +76,16 @@ namespace CreditsView.Credits
             Cmb.SeleccionarValorItem(this.cmbEntBca, iSolEN.IdBca);
             this.txtNumCta.Text = iSolEN.NumCta.ToString();
             this.txtCCI.Text = iSolEN.CCI.ToString();
+            this.txtPeriodo.Text = DateTime.Now.Year.ToString();
+        }
+        private void tsBtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmEditCredito_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.wCre.Enabled = true;
         }
     }
 }

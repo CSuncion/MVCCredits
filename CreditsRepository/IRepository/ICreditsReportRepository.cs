@@ -24,5 +24,6 @@ namespace CreditsRepository.IRepository
         string ListaNameAnio();
         List<string> ListaFirmaGerenteFinanza();
         List<CreditsDecomicroDto> ListarDecomicro();
+        List<CreditsSaldosFormatoDto> ListaSaldosFormato(string mes, string anio, string producto);
     }
 }

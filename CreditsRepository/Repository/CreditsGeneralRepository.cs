@@ -53,6 +53,7 @@ namespace CreditsRepository.Repository
                     Name_Costo = (string)xIdr[3],
                     CtaCont = (string)xIdr[4],
                     PlanCta = (string)xIdr[5],
+                    CodCosto_CodigoCosto = (string)xIdr[6],
                 });
             }
             xObjCn.Disconnect();

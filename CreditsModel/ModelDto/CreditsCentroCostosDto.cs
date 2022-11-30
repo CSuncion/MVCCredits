@@ -14,5 +14,6 @@ namespace CreditsModel.ModelDto
         public string Name_Costo { get; set; }
         public string CtaCont { get; set; }
         public string PlanCta { get; set; }
+        public string CodCosto_CodigoCosto { get; set; }
     }
 }

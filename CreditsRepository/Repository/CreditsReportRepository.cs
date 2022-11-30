@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,7 @@ namespace CreditsRepository.Repository
         private dynamic xObj;
         private List<dynamic> xLista = new List<dynamic>();
         private List<CreditsDecomicroDto> xListaDeco = new List<CreditsDecomicroDto>();
+        private List<CreditsSaldosFormatoDto> xListaSalFor = new List<CreditsSaldosFormatoDto>();
         private CreditsDecomicroDto Objeto(IDataReader iDr)
         {
             CreditsDecomicroDto xObjEnc = new CreditsDecomicroDto();
@@ -41,6 +43,37 @@ namespace CreditsRepository.Repository
             xObjEnc.Pendiente = (decimal)iDr[CreditsDecomicroDto.xPendiente];
             xObjEnc.Dias_Atrasos = (int)iDr[CreditsDecomicroDto.xDias_Atrasos];
             xObjEnc.Ret_Fecha = (DateTime)iDr[CreditsDecomicroDto.xRet_Fecha];
+            return xObjEnc;
+        }
+        private CreditsSaldosFormatoDto ObjetoSaldoFormato(IDataReader iDr)
+        {
+            CreditsSaldosFormatoDto xObjEnc = new CreditsSaldosFormatoDto();
+            xObjEnc.Id_Operacion = (decimal)iDr[CreditsSaldosFormatoDto.xId_Operacion];
+            xObjEnc.Concatenado = iDr[CreditsSaldosFormatoDto.xConcatenado].ToString();
+            xObjEnc.Cod = iDr[CreditsSaldosFormatoDto.xCod].ToString();
+            xObjEnc.Producto = iDr[CreditsSaldosFormatoDto.xProducto].ToString();
+            xObjEnc.Solicitante = iDr[CreditsSaldosFormatoDto.xSolicitante].ToString();
+            xObjEnc.DNI = iDr[CreditsSaldosFormatoDto.xDNI].ToString();
+            xObjEnc.Ser = iDr[CreditsSaldosFormatoDto.xSer].ToString();
+            xObjEnc.Numero = iDr[CreditsSaldosFormatoDto.xNumero].ToString();
+            xObjEnc.Aprobado = (decimal)iDr[CreditsSaldosFormatoDto.xAprobado];
+            xObjEnc.Inicia = (decimal)iDr[CreditsSaldosFormatoDto.xInicia];
+            xObjEnc.Amortiza = (decimal)iDr[CreditsSaldosFormatoDto.xAmortiza];
+            xObjEnc.Dec__ = (decimal)iDr[CreditsSaldosFormatoDto.xDec__];
+            xObjEnc.Jan_ = (decimal)iDr[CreditsSaldosFormatoDto.xJan_];
+            xObjEnc.Feb_ = (decimal)iDr[CreditsSaldosFormatoDto.xFeb_];
+            xObjEnc.Mar_ = (decimal)iDr[CreditsSaldosFormatoDto.xMar_];
+            xObjEnc.Apr_ = (decimal)iDr[CreditsSaldosFormatoDto.xApr_];
+            xObjEnc.May_ = (decimal)iDr[CreditsSaldosFormatoDto.xMay_];
+            xObjEnc.Jun_ = (decimal)iDr[CreditsSaldosFormatoDto.xJun_];
+            xObjEnc.Jul_ = (decimal)iDr[CreditsSaldosFormatoDto.xJul_];
+            xObjEnc.Aug_ = (decimal)iDr[CreditsSaldosFormatoDto.xAug_];
+            xObjEnc.Sep_ = (decimal)iDr[CreditsSaldosFormatoDto.xSep_];
+            xObjEnc.Oct_ = (decimal)iDr[CreditsSaldosFormatoDto.xOct_];
+            xObjEnc.Nov_ = (decimal)iDr[CreditsSaldosFormatoDto.xNov_];
+            xObjEnc.Dec_ = (decimal)iDr[CreditsSaldosFormatoDto.xDec_];
+            xObjEnc.NvoSaldo = (decimal)iDr[CreditsSaldosFormatoDto.xNvoSaldo];
+            xObjEnc.X = (int)iDr[CreditsSaldosFormatoDto.xX];
             return xObjEnc;
         }
         private CreditsDecomicroDto BuscarObjeto(string pScript, List<SqlParameter> lParameter)
@@ -511,6 +544,32 @@ namespace CreditsRepository.Repository
                 xObjCn.Disconnect();
             }
             return this.xListaDeco;
+        }
+        public List<CreditsSaldosFormatoDto> ListaSaldosFormato(string mes, string anio, string producto)
+        {
+            try
+            {
+                xObjCn.Connection();
+                List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strMes", mes),
+                new SqlParameter("@strAnio", anio),
+                new SqlParameter("@strProducto", producto),
+                };
+                xObjCn.CommandStoreProcedure("isp_SaldosFormato");
+                xObjCn.AssignParameters(lParameter);
+                IDataReader xIdr = xObjCn.GetIdr();
+                while (xIdr.Read())
+                {
+                    this.xListaSalFor.Add(this.ObjetoSaldoFormato(xIdr));
+                }
+                xObjCn.Disconnect();
+            }
+            catch (Exception)
+            {
+                xObjCn.Disconnect();
+            }
+            return this.xListaSalFor;
         }
     }
 }

@@ -182,6 +182,15 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarAcercaDe();
         }
+        private void tsbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsmSalFor_Click(object sender, EventArgs e)
+        {
+            this.InstanciarSaldosFormato();
+        }
         #endregion
 
         #region Methods
@@ -395,6 +404,12 @@ namespace CreditsView.MdiPrincipal
             this.FormatoVentanaHijoPrincipal(win, this.tsmAcercaDe, null, 0, 0);
             win.NewWindow();
         }
+        public void InstanciarSaldosFormato()
+        {
+            frmSaldosFormato win = new frmSaldosFormato();
+            this.FormatoVentanaHijoPrincipal(win, this.tsmSalFor, null, 0, 0);
+            win.NewWindow();
+        }
         public void ShowOptionsReport()
         {
             //if (this.pnlBtnFinanzas.Visible)
@@ -411,11 +426,6 @@ namespace CreditsView.MdiPrincipal
             //    this.pnlInformatica.Location = new Point(3, 508);
             //    this.pnlBtnInformatica.Location = new Point(0, 547);
             //}
-        }
-
-        private void tsbSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         public void ShowOptionsCredits()

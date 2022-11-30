@@ -80,11 +80,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 50);
+            this.label3.Location = new System.Drawing.Point(97, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 13);
+            this.label3.Size = new System.Drawing.Size(154, 13);
             this.label3.TabIndex = 429;
-            this.label3.Text = "CRÉDITO GENERADOS Y DESEMBOLSADOS";
+            this.label3.Text = "CRÉDITO DESEMBOLSADOS";
             // 
             // tsPrincipal
             // 
@@ -146,7 +146,7 @@
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTipoCreditoGeneradosDesembolsados";
-            this.Text = "Crédito Generados Desembolsados";
+            this.Text = "Crédito Desembolsados";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTipoCreditoGeneradosDesembolsados_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();

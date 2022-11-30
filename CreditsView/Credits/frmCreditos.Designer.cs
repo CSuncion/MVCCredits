@@ -223,7 +223,7 @@
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(94, 38);
             this.btnCobrar.TabIndex = 459;
-            this.btnCobrar.Text = "Cobrar";
+            this.btnCobrar.Text = "Est. Cuenta";
             this.btnCobrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCobrar.UseVisualStyleBackColor = true;

@@ -54,7 +54,7 @@ namespace CreditsView.Reports
             var currentDirectory = Path.Combine(ConfigurationManager.AppSettings["RutaPlantilla"].ToString(), "Plantilla\\Plantilla_Decomicro.xlsx");
             var file = new FileInfo(currentDirectory);
             string nameFile = "Decomicro_" + DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString("00") + DateTime.Now.Year.ToString() + ".xls";
- 
+
             string rutaFileNew = ConfigurationManager.AppSettings["RutaDecomicro"].ToString() + @"\" + nameFile;
             UtilDirectorio.ExisteArchivo(rutaFileNew);
             File.Copy(currentDirectory, rutaFileNew);
@@ -68,6 +68,7 @@ namespace CreditsView.Reports
                 {
                     contadorCredito += 1;
                     fila++;
+                    myexcelWorksheet.Cells[fila, "C"] = DateTime.Now.Year.ToString() + "" + DateTime.Now.Month.ToString("00") + "" + DateTime.Now.Day.ToString("00");
                     myexcelWorksheet.Cells[fila, "H"] = deco.TipDocId;
                     myexcelWorksheet.Cells[fila, "I"] = deco.Dni_Solicitante;
                     myexcelWorksheet.Cells[fila, "K"] = deco.Paterno;
@@ -135,7 +136,9 @@ namespace CreditsView.Reports
             {
                 this.btnGenDeco.Enabled = true;
                 Mensaje.OperacionSatisfactoria("Proceso completado", "Decomicro");
+                pbExportExcel.Value = 0;
                 closePending = false;
+                this.Close();
             }
         }
     }
