@@ -49,7 +49,7 @@
             this.tsPrincipal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
-            this.tsPrincipal.Size = new System.Drawing.Size(387, 25);
+            this.tsPrincipal.Size = new System.Drawing.Size(448, 25);
             this.tsPrincipal.Stretch = true;
             this.tsPrincipal.TabIndex = 2;
             this.tsPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsPrincipal_ItemClicked);
@@ -79,7 +79,7 @@
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(0, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 10);
+            this.panel1.Size = new System.Drawing.Size(448, 10);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -114,14 +114,14 @@
             this.cmbCentroCosto.FormattingEnabled = true;
             this.cmbCentroCosto.Location = new System.Drawing.Point(205, 67);
             this.cmbCentroCosto.Name = "cmbCentroCosto";
-            this.cmbCentroCosto.Size = new System.Drawing.Size(170, 21);
+            this.cmbCentroCosto.Size = new System.Drawing.Size(231, 21);
             this.cmbCentroCosto.TabIndex = 11;
             // 
             // btnGenerarGrafica
             // 
             this.btnGenerarGrafica.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarGrafica.Image")));
             this.btnGenerarGrafica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarGrafica.Location = new System.Drawing.Point(250, 94);
+            this.btnGenerarGrafica.Location = new System.Drawing.Point(311, 94);
             this.btnGenerarGrafica.Name = "btnGenerarGrafica";
             this.btnGenerarGrafica.Size = new System.Drawing.Size(125, 33);
             this.btnGenerarGrafica.TabIndex = 3;
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 131);
+            this.ClientSize = new System.Drawing.Size(448, 131);
             this.Controls.Add(this.cmbCentroCosto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);

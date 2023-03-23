@@ -31,17 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlLogo = new System.Windows.Forms.Panel();
             this.ssStatusBar = new System.Windows.Forms.StatusStrip();
             this.tssStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.tbcContainer = new System.Windows.Forms.TabControl();
             this.pnlBarTit = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tsAccDir = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbCreditos = new System.Windows.Forms.ToolStripButton();
-            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.tsmFinanzas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCreditos = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,44 @@
             this.tsmMorosos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRefAmp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalFor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPlanillaDescuentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarEnvio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarEnvioGeneraFileMes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarEnvioActualizaFileMes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarEnvioGeneraReporteExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarEnvioGeneraArchivoTxt = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarEnvioVerificarArchivoTxt = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarRetorno = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarRetornoConciliación = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarRetornoReporteDescuento = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarRetornoReporteNoDescontados = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehum = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesRetorno = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesRetornoConciliacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesRetornoReporteDescuentos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesRetornoReporteDescontados = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesRetornoActulizacionPago = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesEnvio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesEnvioGeneraFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesEnvioActualizaFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesEnvioGeneraReporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesEnvioGeneraArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumHaberesEnvioVerificaArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustible = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleRetorno = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleRetornoConciliacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleRetornoReporteDescuento = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleRetornoReporteDescontado = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleRetornoActualizacionPago = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleEnvio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleEnvioGeneraFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleEnvioActualizaFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleEnvioGeneraReporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleEnvioGeneraArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDirrehumCombustibleEnvioVerificaArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmInformatica = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSolicitantes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTipoCredito = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,11 +100,10 @@
             this.tsmComCredOtorgado = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRespaldoBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.btnRestaurar = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.tsAccDir = new System.Windows.Forms.ToolStrip();
+            this.tsbCreditos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
             this.pnlMenu.SuspendLayout();
             this.ssStatusBar.SuspendLayout();
             this.pnlBarTit.SuspendLayout();
@@ -79,6 +117,11 @@
             this.pnlMenu.BackColor = System.Drawing.Color.CadetBlue;
             this.pnlMenu.Controls.Add(this.pnlLogo);
             this.pnlMenu.Name = "pnlMenu";
+            // 
+            // pnlLogo
+            // 
+            resources.ApplyResources(this.pnlLogo, "pnlLogo");
+            this.pnlLogo.Name = "pnlLogo";
             // 
             // ssStatusBar
             // 
@@ -111,6 +154,54 @@
             this.pnlBarTit.DoubleClick += new System.EventHandler(this.pnlBarTit_DoubleClick);
             this.pnlBarTit.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBarTit_MouseMove);
             // 
+            // btnRestaurar
+            // 
+            resources.ApplyResources(this.btnRestaurar, "btnRestaurar");
+            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestaurar.FlatAppearance.BorderSize = 0;
+            this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRestaurar.Image = global::CreditsView.Properties.Resources.Icono_Restaurar;
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.UseVisualStyleBackColor = true;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            // 
+            // btnMinimizar
+            // 
+            resources.ApplyResources(this.btnMinimizar, "btnMinimizar");
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMinimizar.Image = global::CreditsView.Properties.Resources.Icono_Minimizar;
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnMaximizar
+            // 
+            resources.ApplyResources(this.btnMaximizar, "btnMaximizar");
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnMaximizar.Image = global::CreditsView.Properties.Resources.Icono_Maximizar;
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
+            // btnCerrar
+            // 
+            resources.ApplyResources(this.btnCerrar, "btnCerrar");
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrar.Image = global::CreditsView.Properties.Resources.ICON_CERRARF;
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // tmOcultarMenu
             // 
             this.tmOcultarMenu.Interval = 15;
@@ -125,38 +216,11 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmFinanzas,
+            this.tsmPlanillaDescuentos,
             this.tsmInformatica,
             this.tsmAcercaDe});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            // 
-            // tsAccDir
-            // 
-            resources.ApplyResources(this.tsAccDir, "tsAccDir");
-            this.tsAccDir.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tsAccDir.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.tsAccDir.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbCreditos,
-            this.toolStripSeparator4,
-            this.tsbSalir});
-            this.tsAccDir.Name = "tsAccDir";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
-            // tsbCreditos
-            // 
-            resources.ApplyResources(this.tsbCreditos, "tsbCreditos");
-            this.tsbCreditos.Name = "tsbCreditos";
-            this.tsbCreditos.Click += new System.EventHandler(this.tsbCreditos_Click);
-            // 
-            // tsbSalir
-            // 
-            resources.ApplyResources(this.tsbSalir, "tsbSalir");
-            this.tsbSalir.Name = "tsbSalir";
-            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // tsmFinanzas
             // 
@@ -241,6 +305,246 @@
             this.tsmSalFor.Name = "tsmSalFor";
             this.tsmSalFor.Click += new System.EventHandler(this.tsmSalFor_Click);
             // 
+            // tsmPlanillaDescuentos
+            // 
+            this.tsmPlanillaDescuentos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCajaMilitar,
+            this.tsmDirrehum});
+            resources.ApplyResources(this.tsmPlanillaDescuentos, "tsmPlanillaDescuentos");
+            this.tsmPlanillaDescuentos.Name = "tsmPlanillaDescuentos";
+            // 
+            // tsmCajaMilitar
+            // 
+            this.tsmCajaMilitar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCajaMilitarEnvio,
+            this.tsmCajaMilitarRetorno});
+            resources.ApplyResources(this.tsmCajaMilitar, "tsmCajaMilitar");
+            this.tsmCajaMilitar.Name = "tsmCajaMilitar";
+            // 
+            // tsmCajaMilitarEnvio
+            // 
+            this.tsmCajaMilitarEnvio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCajaMilitarEnvioGeneraFileMes,
+            this.tsmCajaMilitarEnvioActualizaFileMes,
+            this.tsmCajaMilitarEnvioGeneraReporteExcel,
+            this.tsmCajaMilitarEnvioGeneraArchivoTxt,
+            this.tsmCajaMilitarEnvioVerificarArchivoTxt});
+            resources.ApplyResources(this.tsmCajaMilitarEnvio, "tsmCajaMilitarEnvio");
+            this.tsmCajaMilitarEnvio.Name = "tsmCajaMilitarEnvio";
+            // 
+            // tsmCajaMilitarEnvioGeneraFileMes
+            // 
+            this.tsmCajaMilitarEnvioGeneraFileMes.Name = "tsmCajaMilitarEnvioGeneraFileMes";
+            resources.ApplyResources(this.tsmCajaMilitarEnvioGeneraFileMes, "tsmCajaMilitarEnvioGeneraFileMes");
+            this.tsmCajaMilitarEnvioGeneraFileMes.Click += new System.EventHandler(this.tsmCajaMilitarEnvioGeneraFileMes_Click);
+            // 
+            // tsmCajaMilitarEnvioActualizaFileMes
+            // 
+            this.tsmCajaMilitarEnvioActualizaFileMes.Name = "tsmCajaMilitarEnvioActualizaFileMes";
+            resources.ApplyResources(this.tsmCajaMilitarEnvioActualizaFileMes, "tsmCajaMilitarEnvioActualizaFileMes");
+            // 
+            // tsmCajaMilitarEnvioGeneraReporteExcel
+            // 
+            this.tsmCajaMilitarEnvioGeneraReporteExcel.Name = "tsmCajaMilitarEnvioGeneraReporteExcel";
+            resources.ApplyResources(this.tsmCajaMilitarEnvioGeneraReporteExcel, "tsmCajaMilitarEnvioGeneraReporteExcel");
+            // 
+            // tsmCajaMilitarEnvioGeneraArchivoTxt
+            // 
+            this.tsmCajaMilitarEnvioGeneraArchivoTxt.Name = "tsmCajaMilitarEnvioGeneraArchivoTxt";
+            resources.ApplyResources(this.tsmCajaMilitarEnvioGeneraArchivoTxt, "tsmCajaMilitarEnvioGeneraArchivoTxt");
+            // 
+            // tsmCajaMilitarEnvioVerificarArchivoTxt
+            // 
+            this.tsmCajaMilitarEnvioVerificarArchivoTxt.Name = "tsmCajaMilitarEnvioVerificarArchivoTxt";
+            resources.ApplyResources(this.tsmCajaMilitarEnvioVerificarArchivoTxt, "tsmCajaMilitarEnvioVerificarArchivoTxt");
+            // 
+            // tsmCajaMilitarRetorno
+            // 
+            this.tsmCajaMilitarRetorno.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCajaMilitarRetornoConciliación,
+            this.tsmCajaMilitarRetornoReporteDescuento,
+            this.tsmCajaMilitarRetornoReporteNoDescontados,
+            this.tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito});
+            resources.ApplyResources(this.tsmCajaMilitarRetorno, "tsmCajaMilitarRetorno");
+            this.tsmCajaMilitarRetorno.Name = "tsmCajaMilitarRetorno";
+            // 
+            // tsmCajaMilitarRetornoConciliación
+            // 
+            this.tsmCajaMilitarRetornoConciliación.Name = "tsmCajaMilitarRetornoConciliación";
+            resources.ApplyResources(this.tsmCajaMilitarRetornoConciliación, "tsmCajaMilitarRetornoConciliación");
+            // 
+            // tsmCajaMilitarRetornoReporteDescuento
+            // 
+            this.tsmCajaMilitarRetornoReporteDescuento.Name = "tsmCajaMilitarRetornoReporteDescuento";
+            resources.ApplyResources(this.tsmCajaMilitarRetornoReporteDescuento, "tsmCajaMilitarRetornoReporteDescuento");
+            // 
+            // tsmCajaMilitarRetornoReporteNoDescontados
+            // 
+            this.tsmCajaMilitarRetornoReporteNoDescontados.Name = "tsmCajaMilitarRetornoReporteNoDescontados";
+            resources.ApplyResources(this.tsmCajaMilitarRetornoReporteNoDescontados, "tsmCajaMilitarRetornoReporteNoDescontados");
+            // 
+            // tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito
+            // 
+            this.tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito.Name = "tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito";
+            resources.ApplyResources(this.tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito, "tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito");
+            // 
+            // tsmDirrehum
+            // 
+            this.tsmDirrehum.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumHaberes,
+            this.tsmDirrehumCombustible});
+            resources.ApplyResources(this.tsmDirrehum, "tsmDirrehum");
+            this.tsmDirrehum.Name = "tsmDirrehum";
+            // 
+            // tsmDirrehumHaberes
+            // 
+            this.tsmDirrehumHaberes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumHaberesRetorno,
+            this.tsmDirrehumHaberesEnvio});
+            resources.ApplyResources(this.tsmDirrehumHaberes, "tsmDirrehumHaberes");
+            this.tsmDirrehumHaberes.Name = "tsmDirrehumHaberes";
+            // 
+            // tsmDirrehumHaberesRetorno
+            // 
+            this.tsmDirrehumHaberesRetorno.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumHaberesRetornoConciliacion,
+            this.tsmDirrehumHaberesRetornoReporteDescuentos,
+            this.tsmDirrehumHaberesRetornoReporteDescontados,
+            this.tsmDirrehumHaberesRetornoActulizacionPago});
+            resources.ApplyResources(this.tsmDirrehumHaberesRetorno, "tsmDirrehumHaberesRetorno");
+            this.tsmDirrehumHaberesRetorno.Name = "tsmDirrehumHaberesRetorno";
+            // 
+            // tsmDirrehumHaberesRetornoConciliacion
+            // 
+            this.tsmDirrehumHaberesRetornoConciliacion.Name = "tsmDirrehumHaberesRetornoConciliacion";
+            resources.ApplyResources(this.tsmDirrehumHaberesRetornoConciliacion, "tsmDirrehumHaberesRetornoConciliacion");
+            // 
+            // tsmDirrehumHaberesRetornoReporteDescuentos
+            // 
+            this.tsmDirrehumHaberesRetornoReporteDescuentos.Name = "tsmDirrehumHaberesRetornoReporteDescuentos";
+            resources.ApplyResources(this.tsmDirrehumHaberesRetornoReporteDescuentos, "tsmDirrehumHaberesRetornoReporteDescuentos");
+            // 
+            // tsmDirrehumHaberesRetornoReporteDescontados
+            // 
+            this.tsmDirrehumHaberesRetornoReporteDescontados.Name = "tsmDirrehumHaberesRetornoReporteDescontados";
+            resources.ApplyResources(this.tsmDirrehumHaberesRetornoReporteDescontados, "tsmDirrehumHaberesRetornoReporteDescontados");
+            // 
+            // tsmDirrehumHaberesRetornoActulizacionPago
+            // 
+            this.tsmDirrehumHaberesRetornoActulizacionPago.Name = "tsmDirrehumHaberesRetornoActulizacionPago";
+            resources.ApplyResources(this.tsmDirrehumHaberesRetornoActulizacionPago, "tsmDirrehumHaberesRetornoActulizacionPago");
+            // 
+            // tsmDirrehumHaberesEnvio
+            // 
+            this.tsmDirrehumHaberesEnvio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumHaberesEnvioGeneraFile,
+            this.tsmDirrehumHaberesEnvioActualizaFile,
+            this.tsmDirrehumHaberesEnvioGeneraReporte,
+            this.tsmDirrehumHaberesEnvioGeneraArchivo,
+            this.tsmDirrehumHaberesEnvioVerificaArchivo});
+            resources.ApplyResources(this.tsmDirrehumHaberesEnvio, "tsmDirrehumHaberesEnvio");
+            this.tsmDirrehumHaberesEnvio.Name = "tsmDirrehumHaberesEnvio";
+            // 
+            // tsmDirrehumHaberesEnvioGeneraFile
+            // 
+            this.tsmDirrehumHaberesEnvioGeneraFile.Name = "tsmDirrehumHaberesEnvioGeneraFile";
+            resources.ApplyResources(this.tsmDirrehumHaberesEnvioGeneraFile, "tsmDirrehumHaberesEnvioGeneraFile");
+            this.tsmDirrehumHaberesEnvioGeneraFile.Click += new System.EventHandler(this.tsmDirrehumHaberesEnvioGeneraFile_Click);
+            // 
+            // tsmDirrehumHaberesEnvioActualizaFile
+            // 
+            this.tsmDirrehumHaberesEnvioActualizaFile.Name = "tsmDirrehumHaberesEnvioActualizaFile";
+            resources.ApplyResources(this.tsmDirrehumHaberesEnvioActualizaFile, "tsmDirrehumHaberesEnvioActualizaFile");
+            // 
+            // tsmDirrehumHaberesEnvioGeneraReporte
+            // 
+            this.tsmDirrehumHaberesEnvioGeneraReporte.Name = "tsmDirrehumHaberesEnvioGeneraReporte";
+            resources.ApplyResources(this.tsmDirrehumHaberesEnvioGeneraReporte, "tsmDirrehumHaberesEnvioGeneraReporte");
+            // 
+            // tsmDirrehumHaberesEnvioGeneraArchivo
+            // 
+            this.tsmDirrehumHaberesEnvioGeneraArchivo.Name = "tsmDirrehumHaberesEnvioGeneraArchivo";
+            resources.ApplyResources(this.tsmDirrehumHaberesEnvioGeneraArchivo, "tsmDirrehumHaberesEnvioGeneraArchivo");
+            // 
+            // tsmDirrehumHaberesEnvioVerificaArchivo
+            // 
+            this.tsmDirrehumHaberesEnvioVerificaArchivo.Name = "tsmDirrehumHaberesEnvioVerificaArchivo";
+            resources.ApplyResources(this.tsmDirrehumHaberesEnvioVerificaArchivo, "tsmDirrehumHaberesEnvioVerificaArchivo");
+            // 
+            // tsmDirrehumCombustible
+            // 
+            this.tsmDirrehumCombustible.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumCombustibleRetorno,
+            this.tsmDirrehumCombustibleEnvio});
+            resources.ApplyResources(this.tsmDirrehumCombustible, "tsmDirrehumCombustible");
+            this.tsmDirrehumCombustible.Name = "tsmDirrehumCombustible";
+            // 
+            // tsmDirrehumCombustibleRetorno
+            // 
+            this.tsmDirrehumCombustibleRetorno.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumCombustibleRetornoConciliacion,
+            this.tsmDirrehumCombustibleRetornoReporteDescuento,
+            this.tsmDirrehumCombustibleRetornoReporteDescontado,
+            this.tsmDirrehumCombustibleRetornoActualizacionPago});
+            resources.ApplyResources(this.tsmDirrehumCombustibleRetorno, "tsmDirrehumCombustibleRetorno");
+            this.tsmDirrehumCombustibleRetorno.Name = "tsmDirrehumCombustibleRetorno";
+            // 
+            // tsmDirrehumCombustibleRetornoConciliacion
+            // 
+            this.tsmDirrehumCombustibleRetornoConciliacion.Name = "tsmDirrehumCombustibleRetornoConciliacion";
+            resources.ApplyResources(this.tsmDirrehumCombustibleRetornoConciliacion, "tsmDirrehumCombustibleRetornoConciliacion");
+            // 
+            // tsmDirrehumCombustibleRetornoReporteDescuento
+            // 
+            this.tsmDirrehumCombustibleRetornoReporteDescuento.Name = "tsmDirrehumCombustibleRetornoReporteDescuento";
+            resources.ApplyResources(this.tsmDirrehumCombustibleRetornoReporteDescuento, "tsmDirrehumCombustibleRetornoReporteDescuento");
+            // 
+            // tsmDirrehumCombustibleRetornoReporteDescontado
+            // 
+            this.tsmDirrehumCombustibleRetornoReporteDescontado.Name = "tsmDirrehumCombustibleRetornoReporteDescontado";
+            resources.ApplyResources(this.tsmDirrehumCombustibleRetornoReporteDescontado, "tsmDirrehumCombustibleRetornoReporteDescontado");
+            // 
+            // tsmDirrehumCombustibleRetornoActualizacionPago
+            // 
+            this.tsmDirrehumCombustibleRetornoActualizacionPago.Name = "tsmDirrehumCombustibleRetornoActualizacionPago";
+            resources.ApplyResources(this.tsmDirrehumCombustibleRetornoActualizacionPago, "tsmDirrehumCombustibleRetornoActualizacionPago");
+            // 
+            // tsmDirrehumCombustibleEnvio
+            // 
+            this.tsmDirrehumCombustibleEnvio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDirrehumCombustibleEnvioGeneraFile,
+            this.tsmDirrehumCombustibleEnvioActualizaFile,
+            this.tsmDirrehumCombustibleEnvioGeneraReporte,
+            this.tsmDirrehumCombustibleEnvioGeneraArchivo,
+            this.tsmDirrehumCombustibleEnvioVerificaArchivo});
+            resources.ApplyResources(this.tsmDirrehumCombustibleEnvio, "tsmDirrehumCombustibleEnvio");
+            this.tsmDirrehumCombustibleEnvio.Name = "tsmDirrehumCombustibleEnvio";
+            // 
+            // tsmDirrehumCombustibleEnvioGeneraFile
+            // 
+            this.tsmDirrehumCombustibleEnvioGeneraFile.Name = "tsmDirrehumCombustibleEnvioGeneraFile";
+            resources.ApplyResources(this.tsmDirrehumCombustibleEnvioGeneraFile, "tsmDirrehumCombustibleEnvioGeneraFile");
+            // 
+            // tsmDirrehumCombustibleEnvioActualizaFile
+            // 
+            this.tsmDirrehumCombustibleEnvioActualizaFile.Name = "tsmDirrehumCombustibleEnvioActualizaFile";
+            resources.ApplyResources(this.tsmDirrehumCombustibleEnvioActualizaFile, "tsmDirrehumCombustibleEnvioActualizaFile");
+            // 
+            // tsmDirrehumCombustibleEnvioGeneraReporte
+            // 
+            this.tsmDirrehumCombustibleEnvioGeneraReporte.Name = "tsmDirrehumCombustibleEnvioGeneraReporte";
+            resources.ApplyResources(this.tsmDirrehumCombustibleEnvioGeneraReporte, "tsmDirrehumCombustibleEnvioGeneraReporte");
+            // 
+            // tsmDirrehumCombustibleEnvioGeneraArchivo
+            // 
+            this.tsmDirrehumCombustibleEnvioGeneraArchivo.Name = "tsmDirrehumCombustibleEnvioGeneraArchivo";
+            resources.ApplyResources(this.tsmDirrehumCombustibleEnvioGeneraArchivo, "tsmDirrehumCombustibleEnvioGeneraArchivo");
+            // 
+            // tsmDirrehumCombustibleEnvioVerificaArchivo
+            // 
+            this.tsmDirrehumCombustibleEnvioVerificaArchivo.Name = "tsmDirrehumCombustibleEnvioVerificaArchivo";
+            resources.ApplyResources(this.tsmDirrehumCombustibleEnvioVerificaArchivo, "tsmDirrehumCombustibleEnvioVerificaArchivo");
+            // 
             // tsmInformatica
             // 
             this.tsmInformatica.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -288,59 +592,33 @@
             this.tsmAcercaDe.Name = "tsmAcercaDe";
             this.tsmAcercaDe.Click += new System.EventHandler(this.tsmAcercaDe_Click);
             // 
-            // pnlLogo
+            // tsAccDir
             // 
-            this.pnlLogo.BackgroundImage = global::CreditsView.Properties.Resources.logo_1;
-            resources.ApplyResources(this.pnlLogo, "pnlLogo");
-            this.pnlLogo.Name = "pnlLogo";
+            resources.ApplyResources(this.tsAccDir, "tsAccDir");
+            this.tsAccDir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tsAccDir.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsAccDir.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCreditos,
+            this.toolStripSeparator4,
+            this.tsbSalir});
+            this.tsAccDir.Name = "tsAccDir";
             // 
-            // btnRestaurar
+            // tsbCreditos
             // 
-            resources.ApplyResources(this.btnRestaurar, "btnRestaurar");
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.FlatAppearance.BorderSize = 0;
-            this.btnRestaurar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnRestaurar.Image = global::CreditsView.Properties.Resources.Icono_Restaurar;
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            resources.ApplyResources(this.tsbCreditos, "tsbCreditos");
+            this.tsbCreditos.Name = "tsbCreditos";
+            this.tsbCreditos.Click += new System.EventHandler(this.tsbCreditos_Click);
             // 
-            // btnMinimizar
+            // toolStripSeparator4
             // 
-            resources.ApplyResources(this.btnMinimizar, "btnMinimizar");
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMinimizar.Image = global::CreditsView.Properties.Resources.Icono_Minimizar;
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
-            // btnMaximizar
+            // tsbSalir
             // 
-            resources.ApplyResources(this.btnMaximizar, "btnMaximizar");
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnMaximizar.Image = global::CreditsView.Properties.Resources.Icono_Maximizar;
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
-            // btnCerrar
-            // 
-            resources.ApplyResources(this.btnCerrar, "btnCerrar");
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrar.Image = global::CreditsView.Properties.Resources.ICON_CERRARF;
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            resources.ApplyResources(this.tsbSalir, "tsbSalir");
+            this.tsbSalir.Name = "tsbSalir";
+            this.tsbSalir.Click += new System.EventHandler(this.tsbSalir_Click);
             // 
             // frmPrincipal
             // 
@@ -410,5 +688,43 @@
         private System.Windows.Forms.ToolStripButton tsbSalir;
         internal System.Windows.Forms.ToolStripMenuItem tsmAcercaDe;
         internal System.Windows.Forms.ToolStripMenuItem tsmSalFor;
+        private System.Windows.Forms.ToolStripMenuItem tsmPlanillaDescuentos;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitar;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvio;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarRetorno;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehum;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraFileMes;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioActualizaFileMes;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraReporteExcel;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraArchivoTxt;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioVerificarArchivoTxt;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarRetornoConciliación;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarRetornoReporteDescuento;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarRetornoReporteNoDescontados;
+        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarRetornoActualizaciónPagoCuotaCredito;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberes;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesRetorno;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesRetornoConciliacion;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesRetornoReporteDescuentos;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesRetornoReporteDescontados;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesRetornoActulizacionPago;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvio;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvioActualizaFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvioGeneraReporte;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvioGeneraArchivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvioVerificaArchivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustible;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetorno;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetornoConciliacion;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetornoReporteDescuento;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetornoReporteDescontado;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetornoActualizacionPago;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvio;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioActualizaFile;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraReporte;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraArchivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioVerificaArchivo;
+        internal System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvioGeneraFile;
     }
 }

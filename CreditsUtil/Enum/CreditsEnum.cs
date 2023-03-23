@@ -12,5 +12,10 @@ namespace CreditsUtil.Enum
         {
             DbFbpol = 0
         }
+        public enum UndDscto
+        {
+            DirrehumHaberes = 1,
+            CajaPensionesCPMP = 2
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CreditsController.Controller;
 using CreditsModel.ModelDto;
+using CreditsView.MdiPrincipal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,9 +116,24 @@ namespace CreditsView.Reports
             //devolver
             return iLisCreOpe;
         }
+        public void Cerrar()
+        {
+            frmPrincipal wMen = (frmPrincipal)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.tsmSalFor, null);
+        }
         private void tsBtnProcesar_Click(object sender, EventArgs e)
         {
             this.ActualizarVentana();
+        }
+
+        private void tsBtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmSaldosFormato_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Cerrar();
         }
     }
 }

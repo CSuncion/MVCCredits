@@ -138,5 +138,73 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return proveedor;
         }
+
+        public List<CreditsMoraDto> ListarMora()
+        {
+            List<CreditsMoraDto> mora = new List<CreditsMoraDto>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarMora");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                mora.Add(new CreditsMoraDto()
+                {
+                    IdIntMora = (int)xIdr[0],
+                    FechaMora = (DateTime)xIdr[1],
+                    PorcentMora = (decimal)xIdr[2],
+                    FgMora = (int)xIdr[3],
+                    UserMora = (int)xIdr[4],
+                });
+            }
+            xObjCn.Disconnect();
+            return mora;
+        }
+
+        public List<CreditsComisionDto> ListarComisionPorUndDscto(string IdUniDscto)
+        {
+            List<CreditsComisionDto> comision = new List<CreditsComisionDto>();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strIdUniDscto", IdUniDscto)
+                };
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarComisionPorUndDscto");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                comision.Add(new CreditsComisionDto()
+                {
+                    id_Comision = (int)xIdr[0],
+                    IdUniDscto = (int)xIdr[1],
+                    FechaComision = (DateTime)xIdr[2],
+                    ImporteComision = (decimal)xIdr[3],
+                    TpComision = (string)xIdr[4],
+                    FgComision = (string)xIdr[5],
+                });
+            }
+            xObjCn.Disconnect();
+            return comision;
+        }
+
+        public List<CreditsIgvDto> ListarIgv()
+        {
+            List<CreditsIgvDto> igv = new List<CreditsIgvDto>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListarIgv");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                igv.Add(new CreditsIgvDto()
+                {
+                    Id_Igv = (int)xIdr[0],
+                    De_Igv = (decimal)xIdr[1],
+                    Fecha_Igv = (DateTime)xIdr[2],
+                    FgIgv = (int)xIdr[3],
+                });
+            }
+            xObjCn.Disconnect();
+            return igv;
+        }
     }
 }

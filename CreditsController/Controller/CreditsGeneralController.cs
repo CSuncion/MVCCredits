@@ -44,5 +44,18 @@ namespace CreditsController.Controller
         {
             return this._iCreditsGeneralRepository.ListaProveedor();
         }
+        public List<CreditsMoraDto> ListarMora()
+        {
+            return this._iCreditsGeneralRepository.ListarMora();
+        }
+
+        public List<CreditsComisionDto> ListarComisionPorUndDscto(string IdUniDscto)
+        {
+            return this._iCreditsGeneralRepository.ListarComisionPorUndDscto(IdUniDscto);
+        }
+        public List<CreditsIgvDto> ListarIgv()
+        {
+            return this._iCreditsGeneralRepository.ListarIgv();
+        }
     }
 }

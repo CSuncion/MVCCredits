@@ -89,7 +89,22 @@ namespace CreditsView.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
+
+
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estudiar_carrera_contabilidad_financiera_aau_1280x720
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("estudiar-carrera-contabilidad-financiera-aau-1280x720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+
+
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>

@@ -13,6 +13,7 @@ using CreditsController.Controller;
 using CreditsModel.ModelDto;
 using CreditsView.Respaldos;
 using CreditsView.AcercaDe;
+using CreditsView.PlanillaDescuentos;
 
 namespace CreditsView.MdiPrincipal
 {
@@ -191,6 +192,17 @@ namespace CreditsView.MdiPrincipal
         {
             this.InstanciarSaldosFormato();
         }
+
+        private void tsmCajaMilitarEnvioGeneraFileMes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmDirrehumHaberesEnvioGeneraFile_Click(object sender, EventArgs e)
+        {
+            this.InstanciarEnvioGenerarFileMes(1);
+        }
+
         #endregion
 
         #region Methods
@@ -409,6 +421,12 @@ namespace CreditsView.MdiPrincipal
             frmSaldosFormato win = new frmSaldosFormato();
             this.FormatoVentanaHijoPrincipal(win, this.tsmSalFor, null, 0, 0);
             win.NewWindow();
+        }
+        public void InstanciarEnvioGenerarFileMes(int uniDscto)
+        {
+            frmEnvioGeneraFileMes win = new frmEnvioGeneraFileMes();
+            this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumHaberesEnvioGeneraFile, null, 0, 0);
+            win.NewWindow(uniDscto);
         }
         public void ShowOptionsReport()
         {

@@ -16,5 +16,8 @@ namespace CreditsRepository.IRepository
         List<CreditsMonedaDto> ListarMoneda();
         List<CreditsEntidadBancariaDto> ListaEntidadBancaria();
         List<CreditsProveedorDto> ListaProveedor();
+        List<CreditsMoraDto> ListarMora();
+        List<CreditsComisionDto> ListarComisionPorUndDscto(string IdUniDscto);
+        List<CreditsIgvDto> ListarIgv();
     }
 }

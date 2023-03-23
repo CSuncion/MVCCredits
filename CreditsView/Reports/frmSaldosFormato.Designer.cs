@@ -38,6 +38,7 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.tsCmbProducto = new System.Windows.Forms.ToolStripComboBox();
             this.tsBtnProcesar = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnExportar = new System.Windows.Forms.ToolStripButton();
             this.DgvSaldosFormato = new System.Windows.Forms.DataGridView();
             this.sst1 = new System.Windows.Forms.StatusStrip();
             this.tssEstado = new System.Windows.Forms.ToolStripStatusLabel();
@@ -58,7 +59,8 @@
             this.tsTxtAnio,
             this.toolStripLabel3,
             this.tsCmbProducto,
-            this.tsBtnProcesar});
+            this.tsBtnProcesar,
+            this.tsBtnExportar});
             this.tsPrincipal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
@@ -74,6 +76,7 @@
             this.tsBtnSalir.Name = "tsBtnSalir";
             this.tsBtnSalir.Size = new System.Drawing.Size(49, 37);
             this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // toolStripLabel1
             // 
@@ -108,7 +111,7 @@
             // 
             this.tsCmbProducto.DropDownWidth = 150;
             this.tsCmbProducto.Name = "tsCmbProducto";
-            this.tsCmbProducto.Size = new System.Drawing.Size(150, 40);
+            this.tsCmbProducto.Size = new System.Drawing.Size(180, 40);
             // 
             // tsBtnProcesar
             // 
@@ -119,6 +122,16 @@
             this.tsBtnProcesar.Text = "Procesar";
             this.tsBtnProcesar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsBtnProcesar.Click += new System.EventHandler(this.tsBtnProcesar_Click);
+            // 
+            // tsBtnExportar
+            // 
+            this.tsBtnExportar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsBtnExportar.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnExportar.Image")));
+            this.tsBtnExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnExportar.Name = "tsBtnExportar";
+            this.tsBtnExportar.Size = new System.Drawing.Size(55, 37);
+            this.tsBtnExportar.Text = "Exportar";
+            this.tsBtnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // DgvSaldosFormato
             // 
@@ -161,6 +174,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSaldosFormato";
             this.Text = "Saldos Formato";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSaldosFormato_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSaldosFormato)).EndInit();
@@ -185,5 +199,6 @@
         private System.Windows.Forms.ToolStripButton tsBtnProcesar;
         internal System.Windows.Forms.StatusStrip sst1;
         private System.Windows.Forms.ToolStripStatusLabel tssEstado;
+        private System.Windows.Forms.ToolStripButton tsBtnExportar;
     }
 }
