@@ -20,5 +20,10 @@ namespace CreditsController.Controller
         {
             this._iCreditsPagosRepository.ActualizaMesAnioImpago(pObj);
         }
+
+        public List<CreditsPagosDto> RastreaDeudasImpagas(CreditsPagosDto creditsPagosDto)
+        {
+            return this._iCreditsPagosRepository.RastreaDeudasImpagas(creditsPagosDto);
+        }
     }
 }

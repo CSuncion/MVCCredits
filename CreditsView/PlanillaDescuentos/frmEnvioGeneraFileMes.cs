@@ -18,9 +18,9 @@ namespace CreditsView.PlanillaDescuentos
 {
     public partial class frmEnvioGeneraFileMes : Form
     {
-        CreditsGeneralController objGeneralController = new CreditsGeneralController();
-        CreditsProcesoEnvioController objProcesoEnvioController = new CreditsProcesoEnvioController();
-        CreditsPagosController objPagosController = new CreditsPagosController();
+        CreditsGeneralController oGeneralController = new CreditsGeneralController();
+        CreditsProcesoEnvioController oProcesoEnvioController = new CreditsProcesoEnvioController();
+        CreditsPagosController oPagosController = new CreditsPagosController();
         public int _uniDscto = 0;
         public frmEnvioGeneraFileMes()
         {
@@ -51,17 +51,17 @@ namespace CreditsView.PlanillaDescuentos
 
         public void CargarMeses()
         {
-            Cmb.Cargar(this.cmbMes, this.objGeneralController.ListarMeses(), "Id_Mes", "Des_Mes");
+            Cmb.Cargar(this.cmbMes, this.oGeneralController.ListarMeses(), "Id_Mes", "Des_Mes");
         }
 
         public void CargarMora()
         {
-            this.txtIntMora.Text = this.objGeneralController.ListarMora().FirstOrDefault().PorcentMora.ToString();
+            this.txtIntMora.Text = this.oGeneralController.ListarMora().FirstOrDefault().PorcentMora.ToString();
         }
 
         public void CargarIgv()
         {
-            this.txtIgv.Text = this.objGeneralController.ListarIgv().FirstOrDefault().De_Igv.ToString();
+            this.txtIgv.Text = this.oGeneralController.ListarIgv().FirstOrDefault().De_Igv.ToString();
         }
 
         public void CargarTope()
@@ -125,7 +125,6 @@ namespace CreditsView.PlanillaDescuentos
         {
             CreditsProcesoEnvioDto creditsProcesoEnvioDto = new CreditsProcesoEnvioDto();
             CreditsPagosDto creditsPagosDto = new CreditsPagosDto();
-            creditsPagosDto.CreditsOperationsDto = new CreditsOperationsDto();
             this.AsignarProcesoEnvioDto(creditsProcesoEnvioDto);
             this.AsignarLimpiarImpagos(creditsPagosDto);
             switch (this._uniDscto)
@@ -133,8 +132,8 @@ namespace CreditsView.PlanillaDescuentos
                 case (int)CreditsEnum.UndDscto.DirrehumHaberes:
                     if (Mensaje.DeseasRealizarOperacion("Confirmar. Proceso Envio de Cobranza DIRECFIN Planillas", "Envio DIRECFIN Planillas"))
                     {
-                        this.objProcesoEnvioController.InsertarProcesoEnvio(creditsProcesoEnvioDto);
-                        this.objPagosController.ActualizaMesAnioImpago(creditsPagosDto);
+                        this.oProcesoEnvioController.InsertarProcesoEnvio(creditsProcesoEnvioDto);
+                        this.oPagosController.ActualizaMesAnioImpago(creditsPagosDto);
                         if (this.cbReprogramarMora.Checked)
                             this.ReprogramarImpagos();
                     }
@@ -142,8 +141,10 @@ namespace CreditsView.PlanillaDescuentos
                 case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
                     if (Mensaje.DeseasRealizarOperacion("Confirmar. Proceso Envio de Cobranza Caja de Pensiones CPMP", "Envio Caja de Pensiones CPMP"))
                     {
-                        this.objProcesoEnvioController.InsertarProcesoEnvio(creditsProcesoEnvioDto);
-                        this.objPagosController.ActualizaMesAnioImpago(creditsPagosDto);
+                        this.oProcesoEnvioController.InsertarProcesoEnvio(creditsProcesoEnvioDto);
+                        this.oPagosController.ActualizaMesAnioImpago(creditsPagosDto);
+                        if (this.cbReprogramarMora.Checked)
+                            this.ReprogramarImpagos();
                     }
                     break;
             }
@@ -159,14 +160,31 @@ namespace CreditsView.PlanillaDescuentos
 
         public void AsignarLimpiarImpagos(CreditsPagosDto creditsPagosDto)
         {
+            creditsPagosDto.CreditsOperationsDto = new CreditsOperationsDto();
             creditsPagosDto.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
             creditsPagosDto.Anio = Convert.ToInt32(this.txtAnio.Text);
             creditsPagosDto.CreditsOperationsDto.UnidDscto = this._uniDscto;
         }
+        public void AsignarPagosReprogramarImpagos(CreditsPagosDto eRastreaDeudasImpagas)
+        {
+            eRastreaDeudasImpagas.CreditsOperationsDto = new CreditsOperationsDto();
+            eRastreaDeudasImpagas.Interes = !this.cbAplicarInteres.Checked ? 0 : Convert.ToDecimal(this.txtIntMora.Text);
+            eRastreaDeudasImpagas.Igv = Convert.ToDecimal(this.txtIgv.Text);
+            eRastreaDeudasImpagas.Periodo = this.txtAnio.Text.PadLeft(4, '0') + Cmb.ObtenerValor(this.cmbMes).PadLeft(2, '0');
+            eRastreaDeudasImpagas.CreditsOperationsDto.UnidDscto = this._uniDscto;
+        }
 
         public void ReprogramarImpagos()
         {
-            decimal interes = !cbAplicarInteres.Checked ? 0 : Convert.ToDecimal(this.txtIntMora.Text);
+            CreditsPagosDto eRastreaDeudasImpagas = new CreditsPagosDto();
+            this.AsignarPagosReprogramarImpagos(eRastreaDeudasImpagas);
+            List<CreditsPagosDto> lRastreaDeudasImpagas = this.oPagosController.RastreaDeudasImpagas(eRastreaDeudasImpagas);
+            if (lRastreaDeudasImpagas.Count < 1)
+                return;
+            foreach (CreditsPagosDto pagos in lRastreaDeudasImpagas)
+            {
+
+            }
         }
 
         private void cmbMes_SelectionChangeCommitted(object sender, EventArgs e)

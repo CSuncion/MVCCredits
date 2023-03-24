@@ -10,5 +10,7 @@ namespace CreditsRepository.IRepository
     public interface ICreditsPagosRepository
     {
         void ActualizaMesAnioImpago(CreditsPagosDto pObj);
+        List<CreditsPagosDto> RastreaDeudasImpagas(CreditsPagosDto creditsPagosDto);
+
     }
 }

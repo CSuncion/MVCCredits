@@ -40,6 +40,9 @@ namespace CreditsModel.ModelDto
         public decimal Ant_Igv { get; set; }
         public decimal Ant_Comision1 { get; set; }
         public decimal Ant_Comision2 { get; set; }
+        public decimal MasIgv { get; set; }
+        public decimal Queda { get; set; }
+        public string Periodo { get; set; }
         public decimal Id_ProcesoPagos { get; set; }
         public CreditsOperationsDto CreditsOperationsDto { get; set; }
     }
