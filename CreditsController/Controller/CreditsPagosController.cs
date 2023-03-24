@@ -25,5 +25,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsPagosRepository.RastreaDeudasImpagas(creditsPagosDto);
         }
+        public void ProcesoReprogramaPagosMesAnioImpago(CreditsPagosDto pObj)
+        {
+            this._iCreditsPagosRepository.ProcesoReprogramaPagosMesAnioImpago(pObj);
+        }
     }
 }

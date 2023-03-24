@@ -11,6 +11,7 @@ namespace CreditsRepository.IRepository
     {
         void ActualizaMesAnioImpago(CreditsPagosDto pObj);
         List<CreditsPagosDto> RastreaDeudasImpagas(CreditsPagosDto creditsPagosDto);
+        void ProcesoReprogramaPagosMesAnioImpago(CreditsPagosDto pObj);
 
     }
 }

@@ -63,5 +63,27 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return rastredeudasimpagas;
         }
+
+        public void ProcesoReprogramaPagosMesAnioImpago(CreditsPagosDto pObj)
+        {
+            xObjCn.Connection();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strMes", pObj.Mes),
+                new SqlParameter("@strAnio", pObj.Anio),
+                new SqlParameter("@strIdOperacion", pObj.IdOperacion),
+                new SqlParameter("@strAmortizacion", pObj.Ant_Amortizacion),
+                new SqlParameter("@strInteres", pObj.Ant_Interes),
+                new SqlParameter("@strSeguro", pObj.Ant_Seguro),
+                new SqlParameter("@strGastos", pObj.Ant_Gastos),
+                new SqlParameter("@strIgv", pObj.Ant_Igv),
+                new SqlParameter("@strComision1", pObj.Interes),
+                new SqlParameter("@strComision2", pObj.MasIgv),
+                   };
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure("isp_ProcesoReprogramaPagosMesAnioImpago");
+            xObjCn.ExecuteNotResult();
+            xObjCn.Disconnect();
+        }
     }
 }

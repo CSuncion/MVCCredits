@@ -173,7 +173,6 @@ namespace CreditsView.PlanillaDescuentos
             eRastreaDeudasImpagas.Periodo = this.txtAnio.Text.PadLeft(4, '0') + Cmb.ObtenerValor(this.cmbMes).PadLeft(2, '0');
             eRastreaDeudasImpagas.CreditsOperationsDto.UnidDscto = this._uniDscto;
         }
-
         public void ReprogramarImpagos()
         {
             CreditsPagosDto eRastreaDeudasImpagas = new CreditsPagosDto();
@@ -183,7 +182,7 @@ namespace CreditsView.PlanillaDescuentos
                 return;
             foreach (CreditsPagosDto pagos in lRastreaDeudasImpagas)
             {
-
+                this.oPagosController.ProcesoReprogramaPagosMesAnioImpago(pagos);
             }
         }
 
