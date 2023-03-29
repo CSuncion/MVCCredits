@@ -27,6 +27,8 @@ namespace CreditsView.PlanillaDescuentos
         CreditsProcesoEnvioController oProcesoEnvioController = new CreditsProcesoEnvioController();
         CreditsPagosController oPagosController = new CreditsPagosController();
         List<CreditsPagosDto> eListPagos = new List<CreditsPagosDto>();
+        CreditsEnvioDirrehumController oEnvioDirrehumController = new CreditsEnvioDirrehumController();
+        CreditsEnvioCajaController oEnvioCajaController = new CreditsEnvioCajaController();
         string eNombreColumnaDgvEnvio = CreditsPagosDto.xDni;
         public int _uniDscto = 0;
         Dgv.Franja eFranjaDgvCred = Dgv.Franja.PorIndice;
@@ -267,7 +269,7 @@ namespace CreditsView.PlanillaDescuentos
             return iLisCrePag;
         }
 
-        public void GeneraTxt()
+        public void ValidaExisteDirrehumCaja()
         {
             if (this.eListPagos.Count < 1) return;
 
@@ -275,9 +277,24 @@ namespace CreditsView.PlanillaDescuentos
             UtilDirectorio.ExisteArchivo(this.txtUbicacion.Text + @"\\" + this.txtNombreArchivo.Text);
             if (this._uniDscto == 1)
             {
-
+                CreditsEnvioDirrehumDto eEnvioDirrehum = new CreditsEnvioDirrehumDto();
+                eEnvioDirrehum.Anio = Convert.ToInt32(this.txtAnio.Text);
+                eEnvioDirrehum.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
+                this.oEnvioDirrehumController.EliminaEnvioDirrehum(eEnvioDirrehum);
             }
-            else if(this._uniDscto == 2)
+            else if (this._uniDscto == 2)
+            {
+                CreditsEnvioCajaDto eEnvioCaja = new CreditsEnvioCajaDto();
+                eEnvioCaja.Anio = Convert.ToInt32(this.txtAnio.Text);
+                eEnvioCaja.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
+                this.oEnvioCajaController.EliminaEnvioCaja(eEnvioCaja);
+            }
+            this.GeneraTxt();
+        }
+
+        public void GeneraTxt()
+        {
+            foreach (CreditsPagosDto pagos in this.eListPagos)
             {
 
             }

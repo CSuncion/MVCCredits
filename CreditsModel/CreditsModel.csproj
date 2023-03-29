@@ -59,6 +59,8 @@
     <Compile Include="ModelDto\CreditsDto.cs" />
     <Compile Include="ModelDto\CreditsAccessDto.cs" />
     <Compile Include="ModelDto\CreditsEntidadBancariaDto.cs" />
+    <Compile Include="ModelDto\CreditsEnvioCajaDto.cs" />
+    <Compile Include="ModelDto\CreditsEnvioDirrehumDto.cs" />
     <Compile Include="ModelDto\CreditsIgvDto.cs" />
     <Compile Include="ModelDto\CreditsMesesDto.cs" />
     <Compile Include="ModelDto\CreditsMonedaDto.cs" />
