@@ -294,9 +294,23 @@ namespace CreditsView.PlanillaDescuentos
 
         public void GeneraTxt()
         {
+            int fila = 0;
+            string strCodofin = string.Empty;
+            decimal envio = 0;
             foreach (CreditsPagosDto pagos in this.eListPagos)
             {
-
+                switch (this._uniDscto)
+                {
+                    case (int)CreditsEnum.UndDscto.DirrehumHaberes:
+                        if (fila == 0)
+                        {
+                            strCodofin = pagos.CodoFin != null && pagos.CodoFin != string.Empty ? pagos.CodoFin : "0";
+                            envio = pagos.Envio != null & pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                            break;
+                        }
+                        break;
+                }
+                fila++;
             }
         }
 
