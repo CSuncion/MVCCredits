@@ -85,5 +85,41 @@ namespace CreditsRepository.Repository
             xObjCn.ExecuteNotResult();
             xObjCn.Disconnect();
         }
+
+        public List<CreditsPagosDto> EnvioMesAnioIdOperacion(CreditsPagosDto creditsPagosDto)
+        {
+            List<CreditsPagosDto> envioMesAnio = new List<CreditsPagosDto>();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strMes", creditsPagosDto.Mes),
+                new SqlParameter("@strAnio", creditsPagosDto.Anio),
+                new SqlParameter("@strUnidDscto", creditsPagosDto.CreditsOperationsDto.UnidDscto),
+                new SqlParameter("@strTope", creditsPagosDto.selTope),
+                };
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_PonerCuotaPlanillaEnvio");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                envioMesAnio.Add(new CreditsPagosDto()
+                {
+                    Tipo = (int)xIdr[0],
+                    IdOperacion = (int)xIdr[1],
+                    Fecha = (DateTime)xIdr[2],
+                    CodoFin = (string)xIdr[3],
+                    Dni = (string)xIdr[4],
+                    Dni_Ser_Numero = (string)xIdr[5],
+                    Grado = (string)xIdr[6],
+                    Nombre = (string)xIdr[7],
+                    Resultado = (decimal)xIdr[8],
+                    Tope = (decimal)xIdr[9],
+                    Envio = (decimal)xIdr[10],
+                    Inicia = (decimal)xIdr[11],
+                });
+            }
+            xObjCn.Disconnect();
+            return envioMesAnio;
+        }
     }
 }

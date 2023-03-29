@@ -64,6 +64,9 @@
             this.bwProgress = new System.ComponentModel.BackgroundWorker();
             this.lblProgress = new System.Windows.Forms.Label();
             this.pbExportExcel = new System.Windows.Forms.ProgressBar();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.tsPrincipal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirrehumEnvio)).BeginInit();
@@ -92,6 +95,7 @@
             this.tsBtnSalir.Name = "tsBtnSalir";
             this.tsBtnSalir.Size = new System.Drawing.Size(49, 39);
             this.tsBtnSalir.Text = "Salir";
+            this.tsBtnSalir.Click += new System.EventHandler(this.tsBtnSalir_Click);
             // 
             // tsBtnProcesar
             // 
@@ -149,7 +153,7 @@
             // 
             // cmbMes
             // 
-            this.cmbMes.FormattingEnabled = true;
+            this.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMes.Location = new System.Drawing.Point(116, 80);
             this.cmbMes.Name = "cmbMes";
             this.cmbMes.Size = new System.Drawing.Size(121, 21);
@@ -313,7 +317,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDirrehumEnvio);
-            this.groupBox1.Location = new System.Drawing.Point(12, 179);
+            this.groupBox1.Location = new System.Drawing.Point(15, 197);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 279);
             this.groupBox1.TabIndex = 477;
@@ -367,7 +371,7 @@
             // lblProgress
             // 
             this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(12, 490);
+            this.lblProgress.Location = new System.Drawing.Point(12, 508);
             this.lblProgress.Name = "lblProgress";
             this.lblProgress.Size = new System.Drawing.Size(16, 13);
             this.lblProgress.TabIndex = 482;
@@ -375,16 +379,45 @@
             // 
             // pbExportExcel
             // 
-            this.pbExportExcel.Location = new System.Drawing.Point(15, 464);
+            this.pbExportExcel.Location = new System.Drawing.Point(15, 482);
             this.pbExportExcel.Name = "pbExportExcel";
             this.pbExportExcel.Size = new System.Drawing.Size(276, 23);
             this.pbExportExcel.TabIndex = 481;
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(685, 179);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(73, 20);
+            this.txtDni.TabIndex = 483;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(764, 177);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(24, 22);
+            this.btnBuscar.TabIndex = 484;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(650, 182);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 485;
+            this.label9.Text = "DNI:";
             // 
             // frmEnvioGeneraFileMes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 512);
+            this.ClientSize = new System.Drawing.Size(800, 530);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtDni);
             this.Controls.Add(this.lblProgress);
             this.Controls.Add(this.pbExportExcel);
             this.Controls.Add(this.btnActualizarIGV);
@@ -417,6 +450,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEnvioGeneraFileMes";
             this.Text = "Genera File del Mes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEnvioGeneraFileMes_FormClosing);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -463,5 +497,8 @@
         private System.ComponentModel.BackgroundWorker bwProgress;
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.ProgressBar pbExportExcel;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label9;
     }
 }

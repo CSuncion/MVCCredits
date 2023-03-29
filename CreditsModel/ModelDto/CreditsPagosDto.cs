@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,19 @@ namespace CreditsModel.ModelDto
 {
     public class CreditsPagosDto
     {
+        public const string xDni = "Dni";
+        public const string xTipo = "Tipo";
+        public const string xIdOperacion = "Id_Operacion";
+        public const string xFecha = "Fecha";
+        public const string xCODOFIN = "CODOFIN";
+        public const string xDni_Ser_Numero = "Dni_Ser_Numero";
+        public const string xGrado = "Grado";
+        public const string xNOMBRE = "NOMBRE";
+        public const string xResultado = "Resultado";
+        public const string xTope = "Tope";
+        public const string xEnvio = "Envio";
+        public const string xInicia = "Inicia";
+
         public decimal Id_Pago { get; set; }
         public decimal IdOperacion { get; set; }
         public int Mes { get; set; }
@@ -44,6 +58,18 @@ namespace CreditsModel.ModelDto
         public decimal Queda { get; set; }
         public string Periodo { get; set; }
         public decimal Id_ProcesoPagos { get; set; }
+        public int Tipo { get; set; }
+        public DateTime Fecha { get; set; }
+        public string CodoFin { get; set; }
+        public string Dni { get; set; }
+        public string Dni_Ser_Numero { get; set; }
+        public string Grado { get; set; }
+        public string Nombre { get; set; }
+        public decimal Resultado { get; set; }
+        public decimal Tope { get; set; }
+        public decimal Envio { get; set; }
+        public decimal Inicia { get; set; }
+        public int selTope { get; set; }
         public CreditsOperationsDto CreditsOperationsDto { get; set; }
     }
 }

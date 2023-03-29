@@ -29,5 +29,68 @@ namespace CreditsController.Controller
         {
             this._iCreditsPagosRepository.ProcesoReprogramaPagosMesAnioImpago(pObj);
         }
+        public static List<CreditsPagosDto> EnvioMesAnioIdOperacion(CreditsPagosDto creditsPagosDto)
+        {
+            ICreditsPagosRepository iCreditsPagosRepository = new CreditsPagosRepository();
+            return iCreditsPagosRepository.EnvioMesAnioIdOperacion(creditsPagosDto);
+        }
+
+        public List<CreditsPagosDto> ListarDatosParaGrillaPrincipal(string pValorBusqueda, string pCampoBusqueda, List<CreditsPagosDto> pListaOperations)
+        {
+            //lista resultado
+            List<CreditsPagosDto> iLisRes = new List<CreditsPagosDto>();
+
+            //si el valor filtro esta vacio entonces devuelve toda la lista del parametro
+            if (pValorBusqueda == string.Empty) { return pListaOperations; }
+
+            //filtar la lista
+            iLisRes = CreditsPagosController.FiltrarOperationsXTextoEnCualquierPosicion(pListaOperations, pCampoBusqueda, pValorBusqueda);
+
+            //retornar
+            return iLisRes;
+        }
+        public static List<CreditsPagosDto> FiltrarOperationsXTextoEnCualquierPosicion(List<CreditsPagosDto> pLista, string pCampoBusqueda, string pValorBusqueda)
+        {
+            //lista resultado
+            List<CreditsPagosDto> iLisRes = new List<CreditsPagosDto>();
+
+            //valor busqueda en mayuscula
+            string iValor = pValorBusqueda.ToUpper();
+
+            //recorrer cada objeto
+            foreach (CreditsPagosDto xOperations in pLista)
+            {
+                string iTexto = CreditsPagosController.ObtenerValorDeCampo(xOperations, pCampoBusqueda).ToUpper();
+                if (iTexto.IndexOf(iValor) != -1)
+                {
+                    iLisRes.Add(xOperations);
+                }
+            }
+
+            //devolver
+            return iLisRes;
+        }
+
+        public static string ObtenerValorDeCampo(CreditsPagosDto pObj, string pNombreCampo)
+        {
+            //valor resultado
+            string iValor = string.Empty;
+
+            //segun nombre campo
+            switch (pNombreCampo)
+            {
+                case CreditsPagosDto.xFecha: return pObj.Fecha.ToString();
+                case CreditsPagosDto.xCODOFIN: return pObj.CodoFin;
+                case CreditsPagosDto.xDni: return pObj.Dni;
+                case CreditsPagosDto.xDni_Ser_Numero: return pObj.Dni_Ser_Numero.ToString();
+                case CreditsPagosDto.xGrado: return pObj.Grado.ToString();
+                case CreditsPagosDto.xNOMBRE: return pObj.Nombre.ToString();
+                case CreditsPagosDto.xEnvio: return pObj.Envio.ToString();
+                case CreditsPagosDto.xInicia: return pObj.Inicia.ToString();
+            }
+
+            //retorna
+            return iValor;
+        }
     }
 }

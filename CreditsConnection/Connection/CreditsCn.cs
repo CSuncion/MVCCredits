@@ -24,7 +24,7 @@ namespace CreditsConnection.Connection
         public void CommandStoreProcedure(string pPa)
         {
             this.sqlCmd.Connection = this.sqlCn;
-            this.sqlCmd.CommandTimeout = 150;
+            this.sqlCmd.CommandTimeout = 2000;
             this.sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
             this.sqlCmd.CommandText = pPa;
         }
@@ -32,6 +32,7 @@ namespace CreditsConnection.Connection
         public void CommandText(string pTexto)
         {
             this.sqlCmd.Connection = this.sqlCn;
+            this.sqlCmd.CommandTimeout = 550;
             this.sqlCmd.CommandType = System.Data.CommandType.Text;
             this.sqlCmd.CommandText = pTexto;
         }

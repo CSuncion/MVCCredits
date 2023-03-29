@@ -1,16 +1,21 @@
 ﻿using CreditsController.Controller;
 using CreditsModel.ModelDto;
 using CreditsUtil.Enum;
+using CreditsUtil.Util;
+using CreditsView.MdiPrincipal;
+using DeclaracionesUtil.Util;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using WinControles;
 using WinControles.ControlesWindows;
 
@@ -21,7 +26,12 @@ namespace CreditsView.PlanillaDescuentos
         CreditsGeneralController oGeneralController = new CreditsGeneralController();
         CreditsProcesoEnvioController oProcesoEnvioController = new CreditsProcesoEnvioController();
         CreditsPagosController oPagosController = new CreditsPagosController();
+        List<CreditsPagosDto> eListPagos = new List<CreditsPagosDto>();
+        string eNombreColumnaDgvEnvio = CreditsPagosDto.xDni;
         public int _uniDscto = 0;
+        Dgv.Franja eFranjaDgvCred = Dgv.Franja.PorIndice;
+        public string eClaveDgvPago = string.Empty;
+        int eVaBD = 1;//0 : no , 1 : si
         public frmEnvioGeneraFileMes()
         {
             InitializeComponent();
@@ -31,9 +41,8 @@ namespace CreditsView.PlanillaDescuentos
             //this.Dock = DockStyle.Fill;
             this._uniDscto = uniDscto;
             this.CargarMeses();
-            //this.CargarCentroCosto();
             this.txtAnio.Text = DateTime.Now.Year.ToString();
-            Cmb.SeleccionarValorItem(this.cmbMes, "1");
+            this.cmbMes.SelectedIndex = DateTime.Now.Month - 1;
             this.NombreArchivo();
             this.CargarTope();
             this.CargarMora();
@@ -51,7 +60,7 @@ namespace CreditsView.PlanillaDescuentos
 
         public void CargarMeses()
         {
-            Cmb.Cargar(this.cmbMes, this.oGeneralController.ListarMeses(), "Id_Mes", "Des_Mes");
+            Cmb.Cargar(this.cmbMes, this.oGeneralController.ListarMeses(), CreditsMesesDto.xIdMes, CreditsMesesDto.xDesMes);
         }
 
         public void CargarMora()
@@ -91,7 +100,7 @@ namespace CreditsView.PlanillaDescuentos
             this.cbAplicarInteres.Checked = !this.cbAplicarInteres.Checked;
             this.cbAplicarInteres.Enabled = !this.cbAplicarInteres.Enabled;
             this.cmbTope.Enabled = !this.cmbTope.Enabled;
-            if (cbReprogramarMora.Checked)
+            if (this.cbReprogramarMora.Checked)
                 this.cmbTope.SelectedIndex = 1;
             else
                 this.cmbTope.SelectedIndex = 0;
@@ -136,6 +145,7 @@ namespace CreditsView.PlanillaDescuentos
                         this.oPagosController.ActualizaMesAnioImpago(creditsPagosDto);
                         if (this.cbReprogramarMora.Checked)
                             this.ReprogramarImpagos();
+                        this.LlenaGrid();
                     }
                     break;
                 case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
@@ -145,6 +155,7 @@ namespace CreditsView.PlanillaDescuentos
                         this.oPagosController.ActualizaMesAnioImpago(creditsPagosDto);
                         if (this.cbReprogramarMora.Checked)
                             this.ReprogramarImpagos();
+                        this.LlenaGrid();
                     }
                     break;
             }
@@ -170,7 +181,7 @@ namespace CreditsView.PlanillaDescuentos
             eRastreaDeudasImpagas.CreditsOperationsDto = new CreditsOperationsDto();
             eRastreaDeudasImpagas.Interes = !this.cbAplicarInteres.Checked ? 0 : Convert.ToDecimal(this.txtIntMora.Text);
             eRastreaDeudasImpagas.Igv = Convert.ToDecimal(this.txtIgv.Text);
-            eRastreaDeudasImpagas.Periodo = this.txtAnio.Text.PadLeft(4, '0') + Cmb.ObtenerValor(this.cmbMes).PadLeft(2, '0');
+            eRastreaDeudasImpagas.Periodo = this.txtAnio.Text.PadLeft(4, '0') + Cmb.ObtenerValor(this.cmbMes).PadLeft(2, '0') + "01";
             eRastreaDeudasImpagas.CreditsOperationsDto.UnidDscto = this._uniDscto;
         }
         public void ReprogramarImpagos()
@@ -186,6 +197,97 @@ namespace CreditsView.PlanillaDescuentos
             }
         }
 
+        public void LlenaGrid()
+        {
+            this.ActualizarGeneraFilesDeBaseDatos();
+            this.ActualizarDgvPagos();
+        }
+
+        public void AsignarEnvioMesAnioIdOperacion(CreditsPagosDto eEnvioMesAnioIdOperacion)
+        {
+            eEnvioMesAnioIdOperacion.CreditsOperationsDto = new CreditsOperationsDto();
+            eEnvioMesAnioIdOperacion.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes, string.Empty));
+            eEnvioMesAnioIdOperacion.Anio = Convert.ToInt32(this.txtAnio.Text);
+            eEnvioMesAnioIdOperacion.CreditsOperationsDto.UnidDscto = this._uniDscto;
+            eEnvioMesAnioIdOperacion.selTope = this.cmbTope.SelectedIndex;
+        }
+
+        public void ActualizarGeneraFilesDeBaseDatos()
+        {
+            //validar si es acto ir a la bd
+            if (this.txtDni.Text.Trim() != string.Empty && eVaBD == 0) { return; }
+            CreditsPagosDto eEnvioMesAnioIdOperacion = new CreditsPagosDto();
+            this.AsignarEnvioMesAnioIdOperacion(eEnvioMesAnioIdOperacion);
+            //ir a la bd
+            this.eListPagos = CreditsPagosController.EnvioMesAnioIdOperacion(eEnvioMesAnioIdOperacion);
+            this.lblProgress.Text = this.eListPagos.Count().ToString() + " - Registros";
+        }
+
+        public void ActualizarDgvPagos()
+        {
+            //asignar parametros
+            DataGridView iGrilla = this.dgvDirrehumEnvio;
+            List<CreditsPagosDto> iFuenteDatos = this.ObtenerDatosParaGrilla();
+            Dgv.Franja iCondicionFranja = eFranjaDgvCred;
+            string iClaveBusqueda = eClaveDgvPago;
+            string iColumnaPintura = eNombreColumnaDgvEnvio;
+            List<DataGridViewColumn> iListaColumnas = this.ListarColumnasDgvPagos();
+            //ejecutar metodo
+            Dgv.RefrescarGrilla(iGrilla, iFuenteDatos, iCondicionFranja, iClaveBusqueda, iColumnaPintura, iListaColumnas);
+        }
+        public List<CreditsPagosDto> ObtenerDatosParaGrilla()
+        {
+            //asignar parametros
+            string iValorBusqueda = string.Empty;
+            string iCampoBusqueda = eNombreColumnaDgvEnvio;
+            List<CreditsPagosDto> iListaPagos = this.eListPagos;
+
+            //ejecutar y retornar
+            return oPagosController.ListarDatosParaGrillaPrincipal(iValorBusqueda, iCampoBusqueda, iListaPagos);
+        }
+
+        public List<DataGridViewColumn> ListarColumnasDgvPagos()
+        {
+            //lista resultado
+            List<DataGridViewColumn> iLisCrePag = new List<DataGridViewColumn>();
+
+            //agregando las columnas
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xFecha, "FECHA", 70));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xCODOFIN, "CODOFIN", 90));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni, "DNI", 70));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni_Ser_Numero, "DNI_SER_NUMERO", 120));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xGrado, "GRADO", 90));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xNOMBRE, "SOLICITANTE", 150));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xResultado, "RESULTADO", 60, 2));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xEnvio, "ENVIO", 60, 2));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xInicia, "INICIA", 60, 2));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xIdOperacion, "Id_Operacion", 40, false));
+
+            //devolver
+            return iLisCrePag;
+        }
+
+        public void GeneraTxt()
+        {
+            if (this.eListPagos.Count < 1) return;
+
+            UtilDirectorio.CrearCarpeta(this.txtUbicacion.Text);
+            UtilDirectorio.ExisteArchivo(this.txtUbicacion.Text + @"\\" + this.txtNombreArchivo.Text);
+            if (this._uniDscto == 1)
+            {
+
+            }
+            else if(this._uniDscto == 2)
+            {
+
+            }
+        }
+
+        public void Cerrar()
+        {
+            frmPrincipal wMen = (frmPrincipal)this.ParentForm;
+            wMen.CerrarVentanaHijo(this, wMen.tsmDirrehumHaberesEnvioGeneraFile, null);
+        }
         private void cmbMes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.NombreArchivo();
@@ -213,6 +315,14 @@ namespace CreditsView.PlanillaDescuentos
 
         }
 
+        private void tsBtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void frmEnvioGeneraFileMes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Cerrar();
+        }
     }
 }
