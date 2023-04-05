@@ -20,5 +20,9 @@ namespace CreditsController.Controller
         {
             this._iCreditsEnvioDirrehumRepository.EliminaEnvioDirrehum(pObj);
         }
+        public void InsertarTbEnvioDirrehum(string strQuery)
+        {
+            this._iCreditsEnvioDirrehumRepository.InsertarTbEnvioDirrehum(strQuery);
+        }
     }
 }

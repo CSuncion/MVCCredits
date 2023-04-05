@@ -56,7 +56,7 @@ namespace CreditsModel.ModelDto
         public decimal Ant_Comision2 { get; set; }
         public decimal MasIgv { get; set; }
         public decimal Queda { get; set; }
-        public string Periodo { get; set; }
+        public int Periodo { get; set; }
         public decimal Id_ProcesoPagos { get; set; }
         public int Tipo { get; set; }
         public DateTime Fecha { get; set; }

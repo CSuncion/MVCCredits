@@ -26,5 +26,17 @@ namespace CreditsRepository.Repository
             xObjCn.ExecuteNotResult();
             xObjCn.Disconnect();
         }
+        public void InsertarTbEnvioDirrehum(string strQuery)
+        {
+            xObjCn.Connection();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strInsert", strQuery),
+                   };
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure("isp_InsertarTbEnvioDirrehum");
+            xObjCn.ExecuteNotResult();
+            xObjCn.Disconnect();
+        }
     }
 }

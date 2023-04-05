@@ -34,7 +34,7 @@
             this.tsBtnProcesar = new System.Windows.Forms.ToolStripButton();
             this.tsBtnExportar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTituloEnvio = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbMes = new System.Windows.Forms.ComboBox();
@@ -63,7 +63,6 @@
             this.btnActualizarIGV = new System.Windows.Forms.Button();
             this.bwProgress = new System.ComponentModel.BackgroundWorker();
             this.lblProgress = new System.Windows.Forms.Label();
-            this.pbExportExcel = new System.Windows.Forms.ProgressBar();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -124,15 +123,15 @@
             this.panel1.Size = new System.Drawing.Size(800, 10);
             this.panel1.TabIndex = 450;
             // 
-            // label3
+            // lblTituloEnvio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(324, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 17);
-            this.label3.TabIndex = 449;
-            this.label3.Text = "Envio DIRREHUM Planillas";
+            this.lblTituloEnvio.AutoSize = true;
+            this.lblTituloEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEnvio.Location = new System.Drawing.Point(324, 44);
+            this.lblTituloEnvio.Name = "lblTituloEnvio";
+            this.lblTituloEnvio.Size = new System.Drawing.Size(176, 17);
+            this.lblTituloEnvio.TabIndex = 449;
+            this.lblTituloEnvio.Text = "Envio DIRREHUM Planillas";
             // 
             // panel2
             // 
@@ -371,18 +370,11 @@
             // lblProgress
             // 
             this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(12, 508);
+            this.lblProgress.Location = new System.Drawing.Point(15, 479);
             this.lblProgress.Name = "lblProgress";
             this.lblProgress.Size = new System.Drawing.Size(16, 13);
             this.lblProgress.TabIndex = 482;
             this.lblProgress.Text = "...";
-            // 
-            // pbExportExcel
-            // 
-            this.pbExportExcel.Location = new System.Drawing.Point(15, 482);
-            this.pbExportExcel.Name = "pbExportExcel";
-            this.pbExportExcel.Size = new System.Drawing.Size(276, 23);
-            this.pbExportExcel.TabIndex = 481;
             // 
             // txtDni
             // 
@@ -414,12 +406,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 530);
+            this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.lblProgress);
-            this.Controls.Add(this.pbExportExcel);
             this.Controls.Add(this.btnActualizarIGV);
             this.Controls.Add(this.btnActualizarComision);
             this.Controls.Add(this.btnActualizarIntMora);
@@ -445,7 +436,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblTituloEnvio);
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEnvioGeneraFileMes";
@@ -465,7 +456,7 @@
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsBtnSalir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTituloEnvio;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbMes;
@@ -496,7 +487,6 @@
         private System.Windows.Forms.Button btnActualizarIGV;
         private System.ComponentModel.BackgroundWorker bwProgress;
         private System.Windows.Forms.Label lblProgress;
-        private System.Windows.Forms.ProgressBar pbExportExcel;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label9;

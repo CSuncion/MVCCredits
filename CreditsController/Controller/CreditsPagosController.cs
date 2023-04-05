@@ -85,6 +85,7 @@ namespace CreditsController.Controller
                 case CreditsPagosDto.xDni_Ser_Numero: return pObj.Dni_Ser_Numero.ToString();
                 case CreditsPagosDto.xGrado: return pObj.Grado.ToString();
                 case CreditsPagosDto.xNOMBRE: return pObj.Nombre.ToString();
+                case CreditsPagosDto.xResultado: return pObj.Resultado.ToString();
                 case CreditsPagosDto.xEnvio: return pObj.Envio.ToString();
                 case CreditsPagosDto.xInicia: return pObj.Inicia.ToString();
             }

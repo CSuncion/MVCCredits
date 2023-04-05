@@ -10,5 +10,6 @@ namespace CreditsRepository.IRepository
     public interface ICreditsEnvioDirrehumRepository
     {
         void EliminaEnvioDirrehum(CreditsEnvioDirrehumDto pObj);
+        void InsertarTbEnvioDirrehum(string strQuery);
     }
 }

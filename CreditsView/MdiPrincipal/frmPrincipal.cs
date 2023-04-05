@@ -14,6 +14,7 @@ using CreditsModel.ModelDto;
 using CreditsView.Respaldos;
 using CreditsView.AcercaDe;
 using CreditsView.PlanillaDescuentos;
+using CreditsUtil.Enum;
 
 namespace CreditsView.MdiPrincipal
 {
@@ -195,12 +196,16 @@ namespace CreditsView.MdiPrincipal
 
         private void tsmCajaMilitarEnvioGeneraFileMes_Click(object sender, EventArgs e)
         {
-
+            this.InstanciarEnvioGenerarFileMes(2);
         }
 
         private void tsmDirrehumHaberesEnvioGeneraFile_Click(object sender, EventArgs e)
         {
             this.InstanciarEnvioGenerarFileMes(1);
+        }
+        private void tsmDirrehumCombustibleEnvioGeneraFile_Click(object sender, EventArgs e)
+        {
+            this.InstanciarEnvioGenerarFileMes(3);
         }
 
         #endregion
@@ -425,7 +430,20 @@ namespace CreditsView.MdiPrincipal
         public void InstanciarEnvioGenerarFileMes(int uniDscto)
         {
             frmEnvioGeneraFileMes win = new frmEnvioGeneraFileMes();
-            this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumHaberesEnvioGeneraFile, null, 0, 0);
+            switch (uniDscto)
+            {
+                case (int)CreditsEnum.UndDscto.DirrehumHaberes:
+                    this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumHaberesEnvioGeneraFile, null, 0, 0);
+                    break;
+                case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                    this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumCombustibleEnvioGeneraFile, null, 0, 0);
+                    break;
+                case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
+                    this.FormatoVentanaHijoPrincipal(win, this.tsmCajaMilitarEnvioGeneraFileMes, null, 0, 0);
+                    break;
+            }
+
+
             win.NewWindow(uniDscto);
         }
         public void ShowOptionsReport()

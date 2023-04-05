@@ -524,6 +524,7 @@
             // 
             this.tsmDirrehumCombustibleEnvioGeneraFile.Name = "tsmDirrehumCombustibleEnvioGeneraFile";
             resources.ApplyResources(this.tsmDirrehumCombustibleEnvioGeneraFile, "tsmDirrehumCombustibleEnvioGeneraFile");
+            this.tsmDirrehumCombustibleEnvioGeneraFile.Click += new System.EventHandler(this.tsmDirrehumCombustibleEnvioGeneraFile_Click);
             // 
             // tsmDirrehumCombustibleEnvioActualizaFile
             // 
@@ -693,7 +694,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvio;
         private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarRetorno;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehum;
-        private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraFileMes;
         private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioActualizaFileMes;
         private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraReporteExcel;
         private System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraArchivoTxt;
@@ -720,11 +720,12 @@
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetornoReporteDescontado;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleRetornoActualizacionPago;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvio;
-        private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraFile;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioActualizaFile;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraReporte;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraArchivo;
         private System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioVerificaArchivo;
         internal System.Windows.Forms.ToolStripMenuItem tsmDirrehumHaberesEnvioGeneraFile;
+        internal System.Windows.Forms.ToolStripMenuItem tsmDirrehumCombustibleEnvioGeneraFile;
+        internal System.Windows.Forms.ToolStripMenuItem tsmCajaMilitarEnvioGeneraFileMes;
     }
 }

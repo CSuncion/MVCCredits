@@ -1,16 +1,19 @@
-﻿using CreditsController.Controller;
+﻿using Comun;
+using CreditsController.Controller;
 using CreditsModel.ModelDto;
 using CreditsUtil.Enum;
 using CreditsUtil.Util;
 using CreditsView.MdiPrincipal;
 using DeclaracionesUtil.Util;
 using Microsoft.Office.Interop.Excel;
+using Convertir = Microsoft.VisualBasic.Conversion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +21,8 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using WinControles;
 using WinControles.ControlesWindows;
+using Microsoft.VisualBasic;
+using static CreditsUtil.Enum.CreditsEnum;
 
 namespace CreditsView.PlanillaDescuentos
 {
@@ -42,6 +47,7 @@ namespace CreditsView.PlanillaDescuentos
         {
             //this.Dock = DockStyle.Fill;
             this._uniDscto = uniDscto;
+            this.TituloEnvio();
             this.CargarMeses();
             this.txtAnio.Text = DateTime.Now.Year.ToString();
             this.cmbMes.SelectedIndex = DateTime.Now.Month - 1;
@@ -52,11 +58,38 @@ namespace CreditsView.PlanillaDescuentos
             this.txtComision.Text = "0";
             this.Show();
         }
-
+        public void TituloEnvio()
+        {
+            switch (this._uniDscto)
+            {
+                case (int)CreditsEnum.UndDscto.DirrehumHaberes:
+                    this.lblTituloEnvio.Text = "Envio DIRREHUM Planillas";
+                    break;
+                case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
+                    this.lblTituloEnvio.Text = "Envio Caja de Pensiones CPMP";
+                    break;
+                case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                    this.lblTituloEnvio.Text = "Envio DIRREHUM Combustible";
+                    break;
+                case 8:
+                    this.lblTituloEnvio.Text = "Envio Planilla Empleados FONBIEPOL";
+                    break;
+            }
+        }
         public void NombreArchivo()
         {
+            string nombre = string.Empty;
+            switch (this._uniDscto)
+            {
+                case (int)CreditsEnum.UndDscto.DirrehumHaberes:
+                    nombre = "-H13280000";
+                    break;
+                case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                    nombre = "-G13280000";
+                    break;
+            }
             string mes = Cmb.ObtenerTexto(this.cmbMes);
-            string nombreArchivo = DateTime.Today.Year.ToString() + string.Format("00", DateTime.Today.Month) + string.Format("00", DateTime.Today.Day) + "-H13280000" + mes + txtAnio.Text + ".TXT";
+            string nombreArchivo = DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString().PadLeft(2, '0') + DateTime.Today.Day.ToString().PadLeft(2, '0') + nombre + mes + txtAnio.Text + ".TXT";
             this.txtNombreArchivo.Text = nombreArchivo;
         }
 
@@ -99,7 +132,6 @@ namespace CreditsView.PlanillaDescuentos
 
         public void cambiarCheckedReprogramar()
         {
-            this.cbAplicarInteres.Checked = !this.cbAplicarInteres.Checked;
             this.cbAplicarInteres.Enabled = !this.cbAplicarInteres.Enabled;
             this.cmbTope.Enabled = !this.cmbTope.Enabled;
             if (this.cbReprogramarMora.Checked)
@@ -148,6 +180,7 @@ namespace CreditsView.PlanillaDescuentos
                         if (this.cbReprogramarMora.Checked)
                             this.ReprogramarImpagos();
                         this.LlenaGrid();
+                        this.ValidaExisteRutaEnvio();
                     }
                     break;
                 case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
@@ -158,9 +191,23 @@ namespace CreditsView.PlanillaDescuentos
                         if (this.cbReprogramarMora.Checked)
                             this.ReprogramarImpagos();
                         this.LlenaGrid();
+                        this.ValidaExisteRutaEnvio();
                     }
                     break;
+                case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                    if (Mensaje.DeseasRealizarOperacion("Confirmar. Proceso Envio de Cobranza DIRECFIN Combustible", "Envio DIRECFIN Combustible"))
+                    {
+                        this.oProcesoEnvioController.InsertarProcesoEnvio(creditsProcesoEnvioDto);
+                        this.oPagosController.ActualizaMesAnioImpago(creditsPagosDto);
+                        if (this.cbReprogramarMora.Checked)
+                            this.ReprogramarImpagos();
+                        this.LlenaGrid();
+                        this.ValidaExisteRutaEnvio();
+                    }
+                    break;
+
             }
+            Mensaje.OperacionSatisfactoria("El Proceso ha culminado exitosamente!", "Archivo de ENVIO generado");
         }
 
         public void AsignarProcesoEnvioDto(CreditsProcesoEnvioDto creditsProcesoEnvioDto)
@@ -183,7 +230,7 @@ namespace CreditsView.PlanillaDescuentos
             eRastreaDeudasImpagas.CreditsOperationsDto = new CreditsOperationsDto();
             eRastreaDeudasImpagas.Interes = !this.cbAplicarInteres.Checked ? 0 : Convert.ToDecimal(this.txtIntMora.Text);
             eRastreaDeudasImpagas.Igv = Convert.ToDecimal(this.txtIgv.Text);
-            eRastreaDeudasImpagas.Periodo = this.txtAnio.Text.PadLeft(4, '0') + Cmb.ObtenerValor(this.cmbMes).PadLeft(2, '0') + "01";
+            eRastreaDeudasImpagas.Periodo = Convert.ToInt32(this.txtAnio.Text.PadLeft(4, '0') + Cmb.ObtenerValor(this.cmbMes).PadLeft(2, '0') + "01");
             eRastreaDeudasImpagas.CreditsOperationsDto.UnidDscto = this._uniDscto;
         }
         public void ReprogramarImpagos()
@@ -195,6 +242,8 @@ namespace CreditsView.PlanillaDescuentos
                 return;
             foreach (CreditsPagosDto pagos in lRastreaDeudasImpagas)
             {
+                pagos.Anio = Convert.ToInt32(this.txtAnio.Text);
+                pagos.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
                 this.oPagosController.ProcesoReprogramaPagosMesAnioImpago(pagos);
             }
         }
@@ -208,7 +257,7 @@ namespace CreditsView.PlanillaDescuentos
         public void AsignarEnvioMesAnioIdOperacion(CreditsPagosDto eEnvioMesAnioIdOperacion)
         {
             eEnvioMesAnioIdOperacion.CreditsOperationsDto = new CreditsOperationsDto();
-            eEnvioMesAnioIdOperacion.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes, string.Empty));
+            eEnvioMesAnioIdOperacion.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
             eEnvioMesAnioIdOperacion.Anio = Convert.ToInt32(this.txtAnio.Text);
             eEnvioMesAnioIdOperacion.CreditsOperationsDto.UnidDscto = this._uniDscto;
             eEnvioMesAnioIdOperacion.selTope = this.cmbTope.SelectedIndex;
@@ -259,8 +308,8 @@ namespace CreditsView.PlanillaDescuentos
             iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni, "DNI", 70));
             iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni_Ser_Numero, "DNI_SER_NUMERO", 120));
             iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xGrado, "GRADO", 90));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xNOMBRE, "SOLICITANTE", 150));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xResultado, "RESULTADO", 60, 2));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xNOMBRE, "SOLICITANTE", 170));
+            iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xResultado, "RESULTADO", 80, 2));
             iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xEnvio, "ENVIO", 60, 2));
             iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xInicia, "INICIA", 60, 2));
             iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xIdOperacion, "Id_Operacion", 40, false));
@@ -269,12 +318,14 @@ namespace CreditsView.PlanillaDescuentos
             return iLisCrePag;
         }
 
-        public void ValidaExisteDirrehumCaja()
+        public void ValidaExisteRutaEnvio()
         {
             if (this.eListPagos.Count < 1) return;
 
+
             UtilDirectorio.CrearCarpeta(this.txtUbicacion.Text);
             UtilDirectorio.ExisteArchivo(this.txtUbicacion.Text + @"\\" + this.txtNombreArchivo.Text);
+            string txt = this.txtUbicacion.Text + @"\\" + this.txtNombreArchivo.Text;
             if (this._uniDscto == 1)
             {
                 CreditsEnvioDirrehumDto eEnvioDirrehum = new CreditsEnvioDirrehumDto();
@@ -289,14 +340,15 @@ namespace CreditsView.PlanillaDescuentos
                 eEnvioCaja.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
                 this.oEnvioCajaController.EliminaEnvioCaja(eEnvioCaja);
             }
-            this.GeneraTxt();
+            this.GeneraTxt(txt);
         }
 
-        public void GeneraTxt()
+        public void GeneraTxt(string txt)
         {
             int fila = 0;
-            string strCodofin = string.Empty;
+            string strCodofin = string.Empty, strQuery = string.Empty;
             decimal envio = 0;
+            StreamWriter writer = new StreamWriter(txt);
             foreach (CreditsPagosDto pagos in this.eListPagos)
             {
                 switch (this._uniDscto)
@@ -305,19 +357,95 @@ namespace CreditsView.PlanillaDescuentos
                         if (fila == 0)
                         {
                             strCodofin = pagos.CodoFin != null && pagos.CodoFin != string.Empty ? pagos.CodoFin : "0";
-                            envio = pagos.Envio != null & pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                            envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
                             break;
+                        }
+                        if (pagos.CodoFin != null && pagos.CodoFin != string.Empty)
+                        {
+                            if (strCodofin == pagos.CodoFin)
+                            {
+                                envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? envio + pagos.Envio : 0;
+                                if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
+                                {
+                                    writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                                    strQuery += "INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
+                                    strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '" + strCodofin + "', '13280000', '" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + "', '" + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "' )";
+                                }
+                            }
+                            else
+                            {
+                                if (strCodofin != "0")
+                                {
+                                    writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                                    strQuery += "INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
+                                    strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '" + strCodofin + "', '13280000', '" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + "', '" + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "' )";
+                                }
+                                strCodofin = pagos.CodoFin != null && pagos.CodoFin != string.Empty ? pagos.CodoFin : "0";
+                                envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                                if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
+                                {
+                                    writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                                    strQuery += "INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
+                                    strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '" + strCodofin + "', '13280000', '" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + "', '" + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "' )";
+                                }
+                            }
+                        }
+                        break;
+                    case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                        if (fila == 0)
+                        {
+                            strCodofin = pagos.CodoFin != null && pagos.CodoFin != string.Empty ? pagos.CodoFin : "0";
+                            envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                            break;
+                        }
+                        if (pagos.CodoFin != null && pagos.CodoFin != string.Empty)
+                        {
+                            if (strCodofin == pagos.CodoFin)
+                            {
+                                envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? envio + pagos.Envio : 0;
+                                if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
+                                    writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                            }
+                            else
+                            {
+                                if (strCodofin != "0")
+                                    writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                                strCodofin = pagos.CodoFin != null && pagos.CodoFin != string.Empty ? pagos.CodoFin : "0";
+                                envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                                if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
+                                    writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                            }
                         }
                         break;
                 }
                 fila++;
             }
+
+            if (strQuery != string.Empty)
+                oEnvioDirrehumController.InsertarTbEnvioDirrehum(strQuery);
+
+            strQuery = string.Empty;
+
+            writer.Flush();
+            writer.Close();
         }
 
         public void Cerrar()
         {
             frmPrincipal wMen = (frmPrincipal)this.ParentForm;
-            wMen.CerrarVentanaHijo(this, wMen.tsmDirrehumHaberesEnvioGeneraFile, null);
+            switch (this._uniDscto)
+            {
+                case (int)CreditsEnum.UndDscto.DirrehumHaberes:
+                    wMen.CerrarVentanaHijo(this, wMen.tsmDirrehumHaberesEnvioGeneraFile, null);
+                    break;
+                case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                    wMen.CerrarVentanaHijo(this, wMen.tsmDirrehumCombustibleEnvioGeneraFile, null);
+                    break;
+                case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
+                    wMen.CerrarVentanaHijo(this, wMen.tsmCajaMilitarEnvioGeneraFileMes, null);
+                    break;
+            }
+
         }
         private void cmbMes_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -337,10 +465,14 @@ namespace CreditsView.PlanillaDescuentos
         private void tsBtnProcesar_Click(object sender, EventArgs e)
         {
             if (this.ValidarDatosParaGenerarFile())
+            {
                 Mensaje.OperacionDenegada("Faltan completar datos.", "Generar Envio");
+                return;
+            }
 
             if (this.ValidarDatosParaGenerarFileChecked())
                 Mensaje.OperacionDenegada("Debes indicar cual es el tope de cobranza!...", "Reprogramación de Moras");
+
 
             this.ProcesoEjecutarSegunUnidadDescuento();
 

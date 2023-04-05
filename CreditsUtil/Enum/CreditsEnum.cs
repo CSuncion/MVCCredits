@@ -15,7 +15,8 @@ namespace CreditsUtil.Enum
         public enum UndDscto
         {
             DirrehumHaberes = 1,
-            CajaPensionesCPMP = 2
+            CajaPensionesCPMP = 2,
+            DirrehumCombustible = 3
         }
     }
 }
