@@ -23,6 +23,8 @@ using WinControles;
 using WinControles.ControlesWindows;
 using Microsoft.VisualBasic;
 using static CreditsUtil.Enum.CreditsEnum;
+using static System.Net.Mime.MediaTypeNames;
+using System.Runtime.CompilerServices;
 
 namespace CreditsView.PlanillaDescuentos
 {
@@ -86,6 +88,9 @@ namespace CreditsView.PlanillaDescuentos
                     break;
                 case (int)CreditsEnum.UndDscto.DirrehumCombustible:
                     nombre = "-G13280000";
+                    break;
+                case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
+                    nombre = "-CAJA";
                     break;
             }
             string mes = Cmb.ObtenerTexto(this.cmbMes);
@@ -270,7 +275,10 @@ namespace CreditsView.PlanillaDescuentos
             CreditsPagosDto eEnvioMesAnioIdOperacion = new CreditsPagosDto();
             this.AsignarEnvioMesAnioIdOperacion(eEnvioMesAnioIdOperacion);
             //ir a la bd
-            this.eListPagos = CreditsPagosController.EnvioMesAnioIdOperacion(eEnvioMesAnioIdOperacion);
+            if (this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumCombustible || this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumHaberes)
+                this.eListPagos = CreditsPagosController.EnvioMesAnioIdOperacion(eEnvioMesAnioIdOperacion);
+            else
+                this.eListPagos = CreditsPagosController.EnvioMesAnioIdOperacionCaja(eEnvioMesAnioIdOperacion);
             this.lblProgress.Text = this.eListPagos.Count().ToString() + " - Registros";
         }
 
@@ -281,7 +289,7 @@ namespace CreditsView.PlanillaDescuentos
             List<CreditsPagosDto> iFuenteDatos = this.ObtenerDatosParaGrilla();
             Dgv.Franja iCondicionFranja = eFranjaDgvCred;
             string iClaveBusqueda = eClaveDgvPago;
-            string iColumnaPintura = eNombreColumnaDgvEnvio;
+            string iColumnaPintura = this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumHaberes || this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumCombustible ? eNombreColumnaDgvEnvio : CreditsPagosDto.xNRODNI;
             List<DataGridViewColumn> iListaColumnas = this.ListarColumnasDgvPagos();
             //ejecutar metodo
             Dgv.RefrescarGrilla(iGrilla, iFuenteDatos, iCondicionFranja, iClaveBusqueda, iColumnaPintura, iListaColumnas);
@@ -304,11 +312,22 @@ namespace CreditsView.PlanillaDescuentos
 
             //agregando las columnas
             iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xFecha, "FECHA", 70));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xCODOFIN, "CODOFIN", 90));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni, "DNI", 70));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni_Ser_Numero, "DNI_SER_NUMERO", 120));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xGrado, "GRADO", 90));
-            iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xNOMBRE, "SOLICITANTE", 170));
+            if (this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumCombustible || this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumHaberes)
+            {
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xCODOFIN, "CODOFIN", 90));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni, "DNI", 70));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni_Ser_Numero, "DNI_SER_NUMERO", 120));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xGrado, "GRADO", 90));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xNOMBRE, "SOLICITANTE", 170));
+            }
+            else
+            {
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xCIP, "CIP", 90));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xNRODNI, "NRODNI", 70));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xDni_Ser_Numero, "DNI_SER_NUMERO", 120));
+                iLisCrePag.Add(Dgv.NuevaColumnaTextCadena(CreditsPagosDto.xAPENOM, "SOLICITANTE", 170));
+            }
+
             iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xResultado, "RESULTADO", 80, 2));
             iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xEnvio, "ENVIO", 60, 2));
             iLisCrePag.Add(Dgv.NuevaColumnaTextNumerico(CreditsPagosDto.xInicia, "INICIA", 60, 2));
@@ -346,7 +365,7 @@ namespace CreditsView.PlanillaDescuentos
         public void GeneraTxt(string txt)
         {
             int fila = 0;
-            string strCodofin = string.Empty, strQuery = string.Empty;
+            string strCodofin = string.Empty, strQuery = string.Empty, strCip = string.Empty, nroBen = string.Empty, nroDni = string.Empty;
             decimal envio = 0;
             StreamWriter writer = new StreamWriter(txt);
             foreach (CreditsPagosDto pagos in this.eListPagos)
@@ -368,7 +387,7 @@ namespace CreditsView.PlanillaDescuentos
                                 if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
                                 {
                                     writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
-                                    strQuery += "INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
+                                    strQuery += " INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
                                     strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '" + strCodofin + "', '13280000', '" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + "', '" + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "' )";
                                 }
                             }
@@ -377,7 +396,7 @@ namespace CreditsView.PlanillaDescuentos
                                 if (strCodofin != "0")
                                 {
                                     writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
-                                    strQuery += "INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
+                                    strQuery += " INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
                                     strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '" + strCodofin + "', '13280000', '" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + "', '" + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "' )";
                                 }
                                 strCodofin = pagos.CodoFin != null && pagos.CodoFin != string.Empty ? pagos.CodoFin : "0";
@@ -385,7 +404,7 @@ namespace CreditsView.PlanillaDescuentos
                                 if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
                                 {
                                     writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
-                                    strQuery += "INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
+                                    strQuery += " INSERT INTO Tb_EnvioDirrehum ( Anio, Mes, Codofin, Cod, Importe12, Importe24 ) ";
                                     strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '" + strCodofin + "', '13280000', '" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + "', '" + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "' )";
                                 }
                             }
@@ -414,6 +433,52 @@ namespace CreditsView.PlanillaDescuentos
                                 envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
                                 if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
                                     writer.WriteLine(Convertir.Val(strCodofin).ToString().PadLeft(9, '0') + "13280000" + Convertir.Val((object)Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(12, '0') + Convertir.Val(Convertir.Str((object)((Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)) * 100.0))).ToString().PadLeft(24, '0') + "00-00-0000");
+                            }
+                        }
+                        break;
+                    case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
+                        if (fila == 0)
+                        {
+                            strCip = pagos.Cip != null && pagos.Cip != string.Empty ? pagos.Cip : "0";
+                            nroBen = pagos.NroBen != null && pagos.NroBen != string.Empty ? pagos.NroBen : "0";
+                            nroDni = pagos.NroDni != null && pagos.NroDni != string.Empty ? pagos.NroDni : "0";
+                            envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                            break;
+                        }
+                        double subEnvio;
+                        if (pagos.NroDni != null && pagos.NroDni != string.Empty)
+                        {
+                            if (nroDni == pagos.NroDni)
+                            {
+                                envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? envio + pagos.Envio : 0;
+                                if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
+                                {
+                                    subEnvio = Convert.ToDouble(Decimal.Subtract(envio, Microsoft.VisualBasic.Conversion.Int(envio)));
+                                    writer.WriteLine("01131328800" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Strings.Mid(strCip, 3, 8)), "00000000") + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(nroBen), "00") + "LE" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(nroDni), "00000000") + "  " + Convert.ToString(this.txtAnio.Text) + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Microsoft.VisualBasic.Conversion.Str(Cmb.ObtenerValor(this.cmbMes))), "00") + Strings.Format((object)(Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)), "0000##0.#0"));
+                                }
+                                strQuery += " INSERT INTO Tb_EnvioCaja ( Anio, Mes, Cod, Cip, Ben, LE, Dni, AnioMes, Importe ) ";
+                                strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '01131328800', '" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Strings.Mid(strCip, 3, 8)), "00000000") + "', '" + nroBen.PadLeft(2, '0') + "', 'LE',  '" + nroDni.PadLeft(8, '0') + "', '" + Convert.ToString(this.txtAnio.Text) + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Microsoft.VisualBasic.Conversion.Str(Cmb.ObtenerValor(this.cmbMes))), "00") + "', '" + Strings.Format((object)(Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)), "0000##0.#0") + "' )";
+                            }
+                            else
+                            {
+                                if (nroDni != "0")
+                                {
+                                    subEnvio = Convert.ToDouble(Decimal.Subtract(envio, Microsoft.VisualBasic.Conversion.Int(envio)));
+                                    writer.WriteLine("01131328800" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Strings.Mid(strCip, 3, 8)), "00000000") + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(nroBen), "00") + "LE" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(nroDni), "00000000") + "  " + Convert.ToString(this.txtAnio.Text) + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Microsoft.VisualBasic.Conversion.Str(Cmb.ObtenerValor(this.cmbMes))), "00") + Strings.Format((object)(Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)), "0000##0.#0"));
+                                    strQuery += " INSERT INTO Tb_EnvioCaja ( Anio, Mes, Cod, Cip, Ben, LE, Dni, AnioMes, Importe ) ";
+                                    strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '01131328800', '" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Strings.Mid(strCip, 3, 8)), "00000000") + "','" + nroBen.PadLeft(2, '0') + "', 'LE',  '" + nroDni.PadLeft(8, '0') + "', '" + Convert.ToString(this.txtAnio.Text) + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Microsoft.VisualBasic.Conversion.Str(Cmb.ObtenerValor(this.cmbMes))), "00") + "', '" + Strings.Format((object)(Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)), "0000##0.#0") + "' )";
+                                }
+                                strCip = pagos.Cip != null && pagos.Cip != string.Empty ? pagos.Cip : "0";
+                                nroBen = pagos.NroBen != null && pagos.NroBen != string.Empty ? pagos.NroBen : "0";
+                                nroDni = pagos.NroDni != null && pagos.NroDni != string.Empty ? pagos.NroDni : "0";
+                                envio = pagos.Envio != null && pagos.Envio.ToString() != string.Empty ? pagos.Envio : 0;
+                                if (fila == checked(this.eListPagos.Count - 1) && strCodofin != "0")
+                                {
+                                    subEnvio = Convert.ToDouble(Decimal.Subtract(envio, Microsoft.VisualBasic.Conversion.Int(envio)));
+                                    writer.WriteLine("01131328800" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Strings.Mid(strCip, 3, 8)), "00000000") + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(nroBen), "00") + "LE" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(nroDni), "00000000") + "  " + Convert.ToString(this.txtAnio.Text) + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Microsoft.VisualBasic.Conversion.Str(Cmb.ObtenerValor(this.cmbMes))), "00") + Strings.Format((object)(Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)), "0000##0.#0"));
+                                    strQuery += " INSERT INTO Tb_EnvioCaja ( Anio, Mes, Cod, Cip, Ben, LE, Dni, AnioMes, Importe ) ";
+                                    strQuery += " VALUES  ( " + this.txtAnio.Text + ", " + Cmb.ObtenerValor(this.cmbMes) + ", '01131328800', '" + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Strings.Mid(strCip, 3, 8)), "00000000") + "', '" + nroBen.PadLeft(2, '0') + "', 'LE',  '" + nroDni.PadLeft(8, '0') + "', '" + Convert.ToString(this.txtAnio.Text) + Strings.Format((object)Microsoft.VisualBasic.Conversion.Val(Microsoft.VisualBasic.Conversion.Str(Cmb.ObtenerValor(this.cmbMes))), "00") + "', '" + Strings.Format((object)(Convert.ToDouble(envio) + Convert.ToDouble(this.txtComision.Text)), "0000##0.#0") + "' )";
+                                }
                             }
                         }
                         break;

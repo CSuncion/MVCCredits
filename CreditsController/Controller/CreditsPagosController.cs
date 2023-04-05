@@ -34,7 +34,11 @@ namespace CreditsController.Controller
             ICreditsPagosRepository iCreditsPagosRepository = new CreditsPagosRepository();
             return iCreditsPagosRepository.EnvioMesAnioIdOperacion(creditsPagosDto);
         }
-
+        public static List<CreditsPagosDto> EnvioMesAnioIdOperacionCaja(CreditsPagosDto creditsPagosDto)
+        {
+            ICreditsPagosRepository iCreditsPagosRepository = new CreditsPagosRepository();
+            return iCreditsPagosRepository.EnvioMesAnioIdOperacionCaja(creditsPagosDto);
+        }
         public List<CreditsPagosDto> ListarDatosParaGrillaPrincipal(string pValorBusqueda, string pCampoBusqueda, List<CreditsPagosDto> pListaOperations)
         {
             //lista resultado
@@ -81,6 +85,9 @@ namespace CreditsController.Controller
             {
                 case CreditsPagosDto.xFecha: return pObj.Fecha.ToString();
                 case CreditsPagosDto.xCODOFIN: return pObj.CodoFin;
+                case CreditsPagosDto.xCIP: return pObj.Cip;
+                case CreditsPagosDto.xNRODNI: return pObj.NroDni;
+                case CreditsPagosDto.xAPENOM: return pObj.ApeNom;
                 case CreditsPagosDto.xDni: return pObj.Dni;
                 case CreditsPagosDto.xDni_Ser_Numero: return pObj.Dni_Ser_Numero.ToString();
                 case CreditsPagosDto.xGrado: return pObj.Grado.ToString();

@@ -14,6 +14,10 @@ namespace CreditsModel.ModelDto
         public const string xIdOperacion = "Id_Operacion";
         public const string xFecha = "Fecha";
         public const string xCODOFIN = "CODOFIN";
+        public const string xCIP = "CIP";
+        public const string xNROBEN = "NROBEN";
+        public const string xNRODNI = "NRODNI";
+        public const string xAPENOM = "APENOM";
         public const string xDni_Ser_Numero = "Dni_Ser_Numero";
         public const string xGrado = "Grado";
         public const string xNOMBRE = "NOMBRE";
@@ -70,6 +74,10 @@ namespace CreditsModel.ModelDto
         public decimal Envio { get; set; }
         public decimal Inicia { get; set; }
         public int selTope { get; set; }
+        public string Cip { get; set; }
+        public string NroBen { get; set; }
+        public string NroDni { get; set; }
+        public string ApeNom { get; set; }
         public CreditsOperationsDto CreditsOperationsDto { get; set; }
     }
 }

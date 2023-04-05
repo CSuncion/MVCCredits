@@ -121,5 +121,41 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return envioMesAnio;
         }
+
+        public List<CreditsPagosDto> EnvioMesAnioIdOperacionCaja(CreditsPagosDto creditsPagosDto)
+        {
+            List<CreditsPagosDto> envioMesAnio = new List<CreditsPagosDto>();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strMes", creditsPagosDto.Mes),
+                new SqlParameter("@strAnio", creditsPagosDto.Anio),
+                new SqlParameter("@strUnidDscto", creditsPagosDto.CreditsOperationsDto.UnidDscto),
+                new SqlParameter("@strTope", creditsPagosDto.selTope),
+                };
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_PonerCuotaCajaEnvio");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                envioMesAnio.Add(new CreditsPagosDto()
+                {
+                    Tipo = (int)xIdr[0],
+                    IdOperacion = (int)xIdr[1],
+                    Fecha = (DateTime)xIdr[2],
+                    Cip = (string)xIdr[3],
+                    NroBen = (string)xIdr[4],
+                    NroDni = (string)xIdr[5],
+                    Dni_Ser_Numero = (string)xIdr[6],
+                    ApeNom = (string)xIdr[7],
+                    Resultado = (decimal)xIdr[8],
+                    Inicia = (decimal)xIdr[9],
+                    Tope = (decimal)xIdr[10],
+                    Envio = (decimal)xIdr[11],
+                });
+            }
+            xObjCn.Disconnect();
+            return envioMesAnio;
+        }
     }
 }
