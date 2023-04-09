@@ -196,18 +196,22 @@ namespace CreditsView.MdiPrincipal
 
         private void tsmCajaMilitarEnvioGeneraFileMes_Click(object sender, EventArgs e)
         {
-            this.InstanciarEnvioGenerarFileMes(2);
+            this.InstanciarEnvioGenerarFileMes((int)CreditsEnum.UndDscto.CajaPensionesCPMP);
         }
 
         private void tsmDirrehumHaberesEnvioGeneraFile_Click(object sender, EventArgs e)
         {
-            this.InstanciarEnvioGenerarFileMes(1);
+            this.InstanciarEnvioGenerarFileMes((int)CreditsEnum.UndDscto.DirrehumHaberes);
         }
         private void tsmDirrehumCombustibleEnvioGeneraFile_Click(object sender, EventArgs e)
         {
-            this.InstanciarEnvioGenerarFileMes(3);
+            this.InstanciarEnvioGenerarFileMes((int)CreditsEnum.UndDscto.DirrehumCombustible);
         }
 
+        private void tsmDirrehumHaberesRetornoConciliacion_Click(object sender, EventArgs e)
+        {
+            this.InstanciarRetornoConciliacionFileMes((int)CreditsEnum.UndDscto.DirrehumHaberes);
+        }
         #endregion
 
         #region Methods
@@ -434,6 +438,25 @@ namespace CreditsView.MdiPrincipal
             {
                 case (int)CreditsEnum.UndDscto.DirrehumHaberes:
                     this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumHaberesEnvioGeneraFile, null, 0, 0);
+                    break;
+                case (int)CreditsEnum.UndDscto.DirrehumCombustible:
+                    this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumCombustibleEnvioGeneraFile, null, 0, 0);
+                    break;
+                case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
+                    this.FormatoVentanaHijoPrincipal(win, this.tsmCajaMilitarEnvioGeneraFileMes, null, 0, 0);
+                    break;
+            }
+
+
+            win.NewWindow(uniDscto);
+        }
+        public void InstanciarRetornoConciliacionFileMes(int uniDscto)
+        {
+            frmRetornoGeneraFileMes win = new frmRetornoGeneraFileMes();
+            switch (uniDscto)
+            {
+                case (int)CreditsEnum.UndDscto.DirrehumHaberes:
+                    this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumCombustibleRetornoConciliacion, null, 0, 0);
                     break;
                 case (int)CreditsEnum.UndDscto.DirrehumCombustible:
                     this.FormatoVentanaHijoPrincipal(win, this.tsmDirrehumCombustibleEnvioGeneraFile, null, 0, 0);

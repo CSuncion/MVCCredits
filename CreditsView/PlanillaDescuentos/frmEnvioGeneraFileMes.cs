@@ -187,6 +187,8 @@ namespace CreditsView.PlanillaDescuentos
                         this.LlenaGrid();
                         this.ValidaExisteRutaEnvio();
                     }
+                    else
+                        return;
                     break;
                 case (int)CreditsEnum.UndDscto.CajaPensionesCPMP:
                     if (Mensaje.DeseasRealizarOperacion("Confirmar. Proceso Envio de Cobranza Caja de Pensiones CPMP", "Envio Caja de Pensiones CPMP"))
@@ -198,6 +200,8 @@ namespace CreditsView.PlanillaDescuentos
                         this.LlenaGrid();
                         this.ValidaExisteRutaEnvio();
                     }
+                    else
+                        return;
                     break;
                 case (int)CreditsEnum.UndDscto.DirrehumCombustible:
                     if (Mensaje.DeseasRealizarOperacion("Confirmar. Proceso Envio de Cobranza DIRECFIN Combustible", "Envio DIRECFIN Combustible"))
@@ -209,6 +213,8 @@ namespace CreditsView.PlanillaDescuentos
                         this.LlenaGrid();
                         this.ValidaExisteRutaEnvio();
                     }
+                    else
+                        return;
                     break;
 
             }
@@ -285,7 +291,7 @@ namespace CreditsView.PlanillaDescuentos
         public void ActualizarDgvPagos()
         {
             //asignar parametros
-            DataGridView iGrilla = this.dgvDirrehumEnvio;
+            DataGridView iGrilla = this.dgvEnvioFiles;
             List<CreditsPagosDto> iFuenteDatos = this.ObtenerDatosParaGrilla();
             Dgv.Franja iCondicionFranja = eFranjaDgvCred;
             string iClaveBusqueda = eClaveDgvPago;
@@ -512,6 +518,14 @@ namespace CreditsView.PlanillaDescuentos
             }
 
         }
+
+        public void SeleccionarPorDni()
+        {
+            eNombreColumnaDgvEnvio = this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumHaberes || this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumCombustible ? eNombreColumnaDgvEnvio : CreditsPagosDto.xNRODNI;
+            Dgv.SeleccionarRegistroXBuscarFiltro(this.dgvEnvioFiles, eNombreColumnaDgvEnvio, this.txtDni.Text);
+        }
+
+
         private void cmbMes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.NombreArchivo();
@@ -551,6 +565,11 @@ namespace CreditsView.PlanillaDescuentos
         private void frmEnvioGeneraFileMes_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Cerrar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.SeleccionarPorDni();
         }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="ModelDto\Additional.cs" />
     <Compile Include="ModelDto\CreditsApplicantDto.cs" />
     <Compile Include="ModelDto\CreditsCentroCostosDto.cs" />
+    <Compile Include="ModelDto\CreditsCheqOperDto.cs" />
     <Compile Include="ModelDto\CreditsComisionDto.cs" />
     <Compile Include="ModelDto\CreditsCorrelativoConstanciaNoAdeudoDto.cs" />
     <Compile Include="ModelDto\CreditsDecomicroDto.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ModelDto\CreditsEntidadBancariaDto.cs" />
     <Compile Include="ModelDto\CreditsEnvioCajaDto.cs" />
     <Compile Include="ModelDto\CreditsEnvioDirrehumDto.cs" />
+    <Compile Include="ModelDto\CreditsFinanBancaDto.cs" />
     <Compile Include="ModelDto\CreditsIgvDto.cs" />
     <Compile Include="ModelDto\CreditsMesesDto.cs" />
     <Compile Include="ModelDto\CreditsMonedaDto.cs" />

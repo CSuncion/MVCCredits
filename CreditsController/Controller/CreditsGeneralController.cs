@@ -57,5 +57,13 @@ namespace CreditsController.Controller
         {
             return this._iCreditsGeneralRepository.ListarIgv();
         }
+        public List<CreditsFinanBancaDto> ListarFinanBanca()
+        {
+            return this._iCreditsGeneralRepository.ListarFinanBanca();
+        }
+        public List<CreditsCheqOperDto> ListarCheqOper()
+        {
+            return this._iCreditsGeneralRepository.ListarCheqOper();
+        }
     }
 }

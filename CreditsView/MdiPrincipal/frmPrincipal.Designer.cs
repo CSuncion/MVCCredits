@@ -418,6 +418,7 @@
             // 
             this.tsmDirrehumHaberesRetornoConciliacion.Name = "tsmDirrehumHaberesRetornoConciliacion";
             resources.ApplyResources(this.tsmDirrehumHaberesRetornoConciliacion, "tsmDirrehumHaberesRetornoConciliacion");
+            this.tsmDirrehumHaberesRetornoConciliacion.Click += new System.EventHandler(this.tsmDirrehumHaberesRetornoConciliacion_Click);
             // 
             // tsmDirrehumHaberesRetornoReporteDescuentos
             // 

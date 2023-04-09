@@ -4,6 +4,7 @@ using CreditsRepository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -179,8 +180,8 @@ namespace CreditsRepository.Repository
                     IdUniDscto = (int)xIdr[1],
                     FechaComision = (DateTime)xIdr[2],
                     ImporteComision = (decimal)xIdr[3],
-                    TpComision = (string)xIdr[4],
-                    FgComision = (string)xIdr[5],
+                    TpComision = (int)xIdr[4],
+                    FgComision = (int)xIdr[5],
                 });
             }
             xObjCn.Disconnect();
@@ -205,6 +206,43 @@ namespace CreditsRepository.Repository
             }
             xObjCn.Disconnect();
             return igv;
+        }
+
+        public List<CreditsCheqOperDto> ListarCheqOper()
+        {
+            List<CreditsCheqOperDto> cheqope = new List<CreditsCheqOperDto>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListCheqOper");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                cheqope.Add(new CreditsCheqOperDto()
+                {
+                    Id_Cheque_Operac = (int)xIdr[0],
+                    De_CheqOperac = (string)xIdr[1],
+                });
+            }
+            xObjCn.Disconnect();
+            return cheqope;
+        }
+
+        public List<CreditsFinanBancaDto> ListarFinanBanca()
+        {
+            List<CreditsFinanBancaDto> finban = new List<CreditsFinanBancaDto>();
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_ListFinanBanca");
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                finban.Add(new CreditsFinanBancaDto()
+                {
+                    Tp_Bca = (string)xIdr[0],
+                    Id_Bca = (string)xIdr[1],
+                    De_Bca = (string)xIdr[2],
+                });
+            }
+            xObjCn.Disconnect();
+            return finban;
         }
     }
 }

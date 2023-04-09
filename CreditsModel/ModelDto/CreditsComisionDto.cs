@@ -12,8 +12,8 @@ namespace CreditsModel.ModelDto
         public int IdUniDscto { get; set; }
         public DateTime FechaComision { get; set; }
         public decimal ImporteComision { get; set; }
-        public string TpComision { get; set; }
-        public string FgComision { get; set; }
+        public int TpComision { get; set; }
+        public int FgComision { get; set; }
 
     }
 }
