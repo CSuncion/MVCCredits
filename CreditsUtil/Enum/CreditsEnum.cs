@@ -16,7 +16,8 @@ namespace CreditsUtil.Enum
         {
             DirrehumHaberes = 1,
             CajaPensionesCPMP = 2,
-            DirrehumCombustible = 3
+            DirrehumCombustible = 3,
+            Fonbiepol = 8,
         }
     }
 }

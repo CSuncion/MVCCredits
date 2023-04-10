@@ -40,6 +40,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvEnvioFiles = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTituloEnvio = new System.Windows.Forms.Label();
             this.btnActualizarComision = new System.Windows.Forms.Button();
@@ -59,21 +60,20 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cmbSituacion = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecProc = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbFinBca = new System.Windows.Forms.ComboBox();
             this.cmbCheqOpe = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCheqOpe = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtImpTotal = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtImpComision = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtImpCheque = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tsPrincipal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,6 +114,7 @@
             this.tsBtnProcesar.Size = new System.Drawing.Size(56, 39);
             this.tsBtnProcesar.Text = "Procesar";
             this.tsBtnProcesar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsBtnProcesar.Click += new System.EventHandler(this.tsBtnProcesar_Click);
             // 
             // tsBtnExportar
             // 
@@ -186,6 +187,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 16);
             this.panel2.TabIndex = 488;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(322, -1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 17);
+            this.label3.TabIndex = 511;
+            this.label3.Text = "Datos de la Operación";
             // 
             // panel1
             // 
@@ -273,6 +285,7 @@
             this.btnBrowser.Tag = "Browser";
             this.btnBrowser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBrowser.UseVisualStyleBackColor = true;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
             // txtUbicacion
             // 
@@ -358,17 +371,6 @@
             this.label5.TabIndex = 509;
             this.label5.Text = "Situación:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(322, -1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 17);
-            this.label3.TabIndex = 511;
-            this.label3.Text = "Datos de la Operación";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
@@ -386,13 +388,13 @@
             this.label8.TabIndex = 513;
             this.label8.Text = "Fecha Proceso:";
             // 
-            // dateTimePicker1
+            // dtpFecProc
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 170);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 514;
+            this.dtpFecProc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecProc.Location = new System.Drawing.Point(115, 170);
+            this.dtpFecProc.Name = "dtpFecProc";
+            this.dtpFecProc.Size = new System.Drawing.Size(121, 20);
+            this.dtpFecProc.TabIndex = 514;
             // 
             // label10
             // 
@@ -428,12 +430,12 @@
             this.label11.TabIndex = 517;
             this.label11.Text = "Cheque/Operación:";
             // 
-            // textBox1
+            // txtCheqOpe
             // 
-            this.textBox1.Location = new System.Drawing.Point(515, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 520;
+            this.txtCheqOpe.Location = new System.Drawing.Point(515, 224);
+            this.txtCheqOpe.Name = "txtCheqOpe";
+            this.txtCheqOpe.Size = new System.Drawing.Size(76, 20);
+            this.txtCheqOpe.TabIndex = 520;
             // 
             // label12
             // 
@@ -444,12 +446,13 @@
             this.label12.TabIndex = 519;
             this.label12.Text = "N° Cheque/Operación:";
             // 
-            // textBox2
+            // txtImpTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(515, 196);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(76, 20);
-            this.textBox2.TabIndex = 522;
+            this.txtImpTotal.Location = new System.Drawing.Point(515, 196);
+            this.txtImpTotal.Name = "txtImpTotal";
+            this.txtImpTotal.Size = new System.Drawing.Size(76, 20);
+            this.txtImpTotal.TabIndex = 522;
+            this.txtImpTotal.Validated += new System.EventHandler(this.txtImpTotal_Validated);
             // 
             // label14
             // 
@@ -460,12 +463,13 @@
             this.label14.TabIndex = 521;
             this.label14.Text = "Importe Total:";
             // 
-            // textBox3
+            // txtImpComision
             // 
-            this.textBox3.Location = new System.Drawing.Point(693, 196);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(76, 20);
-            this.textBox3.TabIndex = 524;
+            this.txtImpComision.Location = new System.Drawing.Point(693, 196);
+            this.txtImpComision.Name = "txtImpComision";
+            this.txtImpComision.Size = new System.Drawing.Size(76, 20);
+            this.txtImpComision.TabIndex = 524;
+            this.txtImpComision.Validated += new System.EventHandler(this.txtImpComision_Validated);
             // 
             // label15
             // 
@@ -476,12 +480,13 @@
             this.label15.TabIndex = 523;
             this.label15.Text = "Importe Comisión:";
             // 
-            // textBox4
+            // txtImpCheque
             // 
-            this.textBox4.Location = new System.Drawing.Point(693, 222);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 20);
-            this.textBox4.TabIndex = 526;
+            this.txtImpCheque.Location = new System.Drawing.Point(693, 222);
+            this.txtImpCheque.Name = "txtImpCheque";
+            this.txtImpCheque.ReadOnly = true;
+            this.txtImpCheque.Size = new System.Drawing.Size(76, 20);
+            this.txtImpCheque.TabIndex = 526;
             // 
             // label16
             // 
@@ -497,19 +502,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtImpCheque);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtImpComision);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtImpTotal);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCheqOpe);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cmbCheqOpe);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbFinBca);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecProc);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.cmbSituacion);
@@ -539,7 +544,7 @@
             this.Controls.Add(this.tsPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRetornoGeneraFileMes";
-            this.Text = " - ";
+            this.Text = "Retorno Genera File Mes";
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -588,18 +593,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecProc;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbFinBca;
         private System.Windows.Forms.ComboBox cmbCheqOpe;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCheqOpe;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtImpTotal;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtImpComision;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtImpCheque;
         private System.Windows.Forms.Label label16;
     }
 }

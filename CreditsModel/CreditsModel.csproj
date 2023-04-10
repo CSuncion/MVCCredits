@@ -70,6 +70,7 @@
     <Compile Include="ModelDto\CreditsOperationsDto.cs" />
     <Compile Include="ModelDto\CreditsPagosDto.cs" />
     <Compile Include="ModelDto\CreditsProcesoEnvioDto.cs" />
+    <Compile Include="ModelDto\CreditsProcesoPagoDto.cs" />
     <Compile Include="ModelDto\CreditsProveedorDto.cs" />
     <Compile Include="ModelDto\CreditsRefinanciadoAmpliadoDto.cs" />
     <Compile Include="ModelDto\CreditsSaldosFormatoDto.cs" />

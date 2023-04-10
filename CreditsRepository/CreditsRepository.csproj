@@ -54,6 +54,7 @@
     <Compile Include="IRepository\ICreditsGeneralRepository.cs" />
     <Compile Include="IRepository\ICreditsPagosRepository.cs" />
     <Compile Include="IRepository\ICreditsProcesoEnvioRepository.cs" />
+    <Compile Include="IRepository\ICreditsProcesoPagoRepository.cs" />
     <Compile Include="IRepository\ICreditsRefinanciadoAmpliadoRepository.cs" />
     <Compile Include="IRepository\ICreditsReportRepository.cs" />
     <Compile Include="IRepository\ICreditsSolicitantesRepository.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Repository\CreditsGeneralRepository.cs" />
     <Compile Include="Repository\CreditsPagosRepository.cs" />
     <Compile Include="Repository\CreditsProcesoEnvioRepository.cs" />
+    <Compile Include="Repository\CreditsProcesoPagoRepository.cs" />
     <Compile Include="Repository\CreditsRefinanciadoAmpliadoRepository.cs" />
     <Compile Include="Repository\CreditsReportRepository.cs" />
     <Compile Include="Repository\CreditsSolicitantesRepository.cs" />

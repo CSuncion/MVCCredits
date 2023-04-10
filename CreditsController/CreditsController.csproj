@@ -53,6 +53,7 @@
     <Compile Include="Controller\CreditsOperationsController.cs" />
     <Compile Include="Controller\CreditsPagosController.cs" />
     <Compile Include="Controller\CreditsProcesoEnvioController.cs" />
+    <Compile Include="Controller\CreditsProcesoPagoController.cs" />
     <Compile Include="Controller\CreditsRefinanciadoAmpliadoController.cs" />
     <Compile Include="Controller\CreditsReportController.cs" />
     <Compile Include="Controller\CreditsSolicitanteController.cs" />

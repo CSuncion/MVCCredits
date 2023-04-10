@@ -210,9 +210,11 @@ namespace CreditsRepository.Repository
 
         public List<CreditsCheqOperDto> ListarCheqOper()
         {
+            List<SqlParameter> lParameter = new List<SqlParameter>();
             List<CreditsCheqOperDto> cheqope = new List<CreditsCheqOperDto>();
             xObjCn.Connection();
-            xObjCn.CommandStoreProcedure("isp_ListCheqOper");
+            xObjCn.CommandStoreProcedure("isp_ListCheqOper"); 
+            xObjCn.AssignParameters(lParameter);
             IDataReader xIdr = xObjCn.GetIdr();
             while (xIdr.Read())
             {
@@ -228,9 +230,11 @@ namespace CreditsRepository.Repository
 
         public List<CreditsFinanBancaDto> ListarFinanBanca()
         {
+            List<SqlParameter> lParameter = new List<SqlParameter>();
             List<CreditsFinanBancaDto> finban = new List<CreditsFinanBancaDto>();
             xObjCn.Connection();
             xObjCn.CommandStoreProcedure("isp_ListFinanBanca");
+            xObjCn.AssignParameters(lParameter);
             IDataReader xIdr = xObjCn.GetIdr();
             while (xIdr.Read())
             {
