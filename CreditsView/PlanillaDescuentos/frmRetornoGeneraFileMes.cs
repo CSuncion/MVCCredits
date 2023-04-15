@@ -2,6 +2,8 @@
 using CreditsModel.ModelDto;
 using CreditsUtil.Enum;
 using Microsoft.Reporting.WinForms;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +23,9 @@ namespace CreditsView.PlanillaDescuentos
     {
         CreditsGeneralController oGeneralController = new CreditsGeneralController();
         CreditsProcesoPagoController oProcesoPagoController = new CreditsProcesoPagoController();
+        CreditsRetornoDirrehumController oRetornoDirrehumController = new CreditsRetornoDirrehumController();
         public int _uniDscto = 0;
+        public int idProcesoPago = 0;
         private OpenFileDialog fileDialog;
         public frmRetornoGeneraFileMes()
         {
@@ -179,7 +183,7 @@ namespace CreditsView.PlanillaDescuentos
                 return true;
 
             this.AsignarProcesoPago(creditsProcesoPago);
-            this.oProcesoPagoController.ProcesoInsertarProcesoPago(creditsProcesoPago);
+            this.idProcesoPago = this.oProcesoPagoController.ProcesoInsertarProcesoPago(creditsProcesoPago);
 
             return proceso;
         }
@@ -208,13 +212,56 @@ namespace CreditsView.PlanillaDescuentos
         {
             if (this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumHaberes || this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumCombustible)
             {
+                List<CreditsRetornoDirrehumDto> lRetornoDirrehum = new List<CreditsRetornoDirrehumDto>();
+                //Lee el archivo que vamos a consultar
                 StreamReader streamReader = new StreamReader(this.txtUbicacion.Text + @"\" + this.txtNombreArchivo.Text);
                 while (streamReader.Peek() != -1)
                 {
-                    string linea = streamReader.ReadLine();
-
+                    // lee linea por linea del archivo
+                    string strLinea = streamReader.ReadLine();
+                    if (Versioned.IsNumeric((object)Strings.Mid(strLinea, 1, 9)))
+                    {
+                        this.AsignarRetornoDirrehum(lRetornoDirrehum, strLinea);
+                    }
                 }
+                this.oRetornoDirrehumController.BuscarProcesoRetornoDirrehum(lRetornoDirrehum);
             }
+        }
+        public void AsignarRetornoDirrehum(List<CreditsRetornoDirrehumDto> lRetornoDirrehum, string strLinea)
+        {
+            lRetornoDirrehum.Add(
+                new CreditsRetornoDirrehumDto()
+                {
+                    Codofin = Strings.Mid(strLinea.Trim(), 1, 9).PadLeft(9, '0'),
+                    Anio = this.txtAnio.Text,
+                    Mes = Cmb.ObtenerValor(this.cmbMes),
+                    Situacion = Strings.Mid(strLinea.Trim(), 18, 1),
+                    Importe = this._uniDscto == (int)CreditsEnum.UndDscto.DirrehumHaberes ?
+                            Convert.ToDecimal(Conversion.Val(Strings.Mid(strLinea.Trim(), 19, 12)) / 100) : Convert.ToDecimal(Conversion.Val(Strings.Mid(strLinea.Trim(), 52, 7)) / 100),
+                    Com = Convert.ToDecimal(Conversion.Val(Strings.Mid(strLinea, 54, 4)) / 100),
+                });
+        }
+
+        public void RecojoDineroDirrehum_FI()
+        {
+            List<CreditsRetornoDirrehumDto> lRetornoDirrehum = new List<CreditsRetornoDirrehumDto>();
+            CreditsRetornoDirrehumDto eRetornoDirrehum = new CreditsRetornoDirrehumDto();
+            this.AsignarRetornoDirrehumFI(eRetornoDirrehum, "1");
+            lRetornoDirrehum = this.oRetornoDirrehumController.SelRetDirrehumAnioMesTrabajado(eRetornoDirrehum);
+            if (lRetornoDirrehum.Count < 1)
+                return;
+
+            foreach (CreditsRetornoDirrehumDto retornoDirrehum in lRetornoDirrehum)
+            {
+
+            }
+        }
+
+        public void AsignarRetornoDirrehumFI(CreditsRetornoDirrehumDto eRetornoDirrehum, string Fico)
+        {
+            eRetornoDirrehum.Anio = this.txtAnio.Text;
+            eRetornoDirrehum.Mes = Cmb.ObtenerValor(this.cmbMes);
+            eRetornoDirrehum.Fico = Fico;
         }
 
         private void btnBrowser_Click(object sender, EventArgs e)

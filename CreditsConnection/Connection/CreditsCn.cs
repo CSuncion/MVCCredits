@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -65,7 +66,7 @@ namespace CreditsConnection.Connection
             return xDr;
         }
 
-        public string GetValue()
+        public string GetString()
         {
             string xValor;
             if (this.sqlCmd.ExecuteScalar() == null)
@@ -75,6 +76,19 @@ namespace CreditsConnection.Connection
             else
             {
                 xValor = this.sqlCmd.ExecuteScalar().ToString();
+            }
+            return xValor;
+        }
+        public int GetInt()
+        {
+            int xValor;
+            if (this.sqlCmd.ExecuteScalar() == null)
+            {
+                xValor = 0;
+            }
+            else
+            {
+                xValor = Convert.ToInt32(this.sqlCmd.ExecuteScalar());
             }
             return xValor;
         }

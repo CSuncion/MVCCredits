@@ -49,8 +49,9 @@ namespace CreditsRepository.Repository
             return selProcesoPago;
         }
 
-        public void ProcesoInsertarProcesoPago(CreditsProcesoPagoDto pObj)
+        public int ProcesoInsertarProcesoPago(CreditsProcesoPagoDto pObj)
         {
+            int idProcesoPago = 0;
             xObjCn.Connection();
             List<SqlParameter> lParameter = new List<SqlParameter>()
                 {
@@ -69,8 +70,9 @@ namespace CreditsRepository.Repository
                    };
             xObjCn.AssignParameters(lParameter);
             xObjCn.CommandStoreProcedure("isp_InsertarProcesoPago");
-            xObjCn.ExecuteNotResult();
+            idProcesoPago = xObjCn.GetInt();
             xObjCn.Disconnect();
+            return idProcesoPago;
         }
     }
 }

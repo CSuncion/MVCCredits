@@ -20,9 +20,9 @@ namespace CreditsController.Controller
         {
             return this._iCreditsProcesoPagoRepository.SelProcesoPago(creditsProcesoPagosDto);
         }
-        public void ProcesoInsertarProcesoPago(CreditsProcesoPagoDto pObj)
+        public int ProcesoInsertarProcesoPago(CreditsProcesoPagoDto pObj)
         {
-            this._iCreditsProcesoPagoRepository.ProcesoInsertarProcesoPago(pObj);
+            return this._iCreditsProcesoPagoRepository.ProcesoInsertarProcesoPago(pObj);
         }
     }
 }

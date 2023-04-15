@@ -10,6 +10,6 @@ namespace CreditsRepository.IRepository
     public interface ICreditsProcesoPagoRepository
     {
         CreditsProcesoPagoDto SelProcesoPago(CreditsProcesoPagoDto creditsProcesoPagosDto);
-        void ProcesoInsertarProcesoPago(CreditsProcesoPagoDto pObj);
+        int ProcesoInsertarProcesoPago(CreditsProcesoPagoDto pObj);
     }
 }
