@@ -157,5 +157,82 @@ namespace CreditsRepository.Repository
             xObjCn.Disconnect();
             return envioMesAnio;
         }
+
+        public List<CreditsPagosDto> TablaPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto)
+        {
+            List<CreditsPagosDto> tablaPagos = new List<CreditsPagosDto>();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strMes", creditsPagosDto.Mes),
+                new SqlParameter("@strAnio", creditsPagosDto.Anio),
+                new SqlParameter("@strUnidDscto", creditsPagosDto.CreditsOperationsDto.UnidDscto),
+                new SqlParameter("@strCodofin", creditsPagosDto.CodoFin),
+                };
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_TablaPagosMesAnioCodofin");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                tablaPagos.Add(new CreditsPagosDto()
+                {
+                    IdOperacion = (int)xIdr[0],
+                    Interes = (decimal)xIdr[1],
+                    Seguro = (decimal)xIdr[2],
+                    Igv = (decimal)xIdr[3],
+                    Cuota = (int)xIdr[4],
+                    Id_Pago = (decimal)xIdr[5],
+                    Mes = (int)xIdr[6],
+                    Anio = (int)xIdr[7],
+                    Amortizacion = (decimal)xIdr[8],
+                    Gastos = (decimal)xIdr[9],
+                    Comision1 = (decimal)xIdr[10],
+                    Comision2 = (decimal)xIdr[11],
+                    Ret_Amortizacion = (decimal)xIdr[12],
+                    Ret_Interes = (decimal)xIdr[13],
+                    Ret_Seguro = (decimal)xIdr[14],
+                    Ret_Gastos = (decimal)xIdr[15],
+                    Ret_Igv = (decimal)xIdr[16],
+                    Ret_Comision1 = (decimal)xIdr[17],
+                    Ret_Comision2 = (decimal)xIdr[18],
+                    Ant_Amortizacion = (decimal)xIdr[19],
+                    Ant_Interes = (decimal)xIdr[20],
+                    Ant_Seguro = (decimal)xIdr[21],
+                    Ant_Gastos = (decimal)xIdr[22],
+                    Ant_Igv = (decimal)xIdr[23],    
+                    Ant_Comision1 = (decimal)xIdr[24],
+                    Ant_Comision2 = (decimal)xIdr[25],
+                    Parcial = (decimal)xIdr[26]
+                });
+            }
+            xObjCn.Disconnect();
+            return tablaPagos;
+        }
+
+        public CreditsPagosDto TotalPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto)
+        {
+            CreditsPagosDto tablaPagos = new CreditsPagosDto();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strMes", creditsPagosDto.Mes),
+                new SqlParameter("@strAnio", creditsPagosDto.Anio),
+                new SqlParameter("@strUnidDscto", creditsPagosDto.CreditsOperationsDto.UnidDscto),
+                new SqlParameter("@strCodofin", creditsPagosDto.CodoFin),
+                };
+            xObjCn.Connection();
+            xObjCn.CommandStoreProcedure("isp_TotalPagosMesAnioCodofin");
+            xObjCn.AssignParameters(lParameter);
+            IDataReader xIdr = xObjCn.GetIdr();
+            while (xIdr.Read())
+            {
+                tablaPagos = new CreditsPagosDto()
+                {
+                    Total = (decimal)xIdr[0],
+                };
+            }
+            xObjCn.Disconnect();
+            return tablaPagos;
+        }
+
     }
 }

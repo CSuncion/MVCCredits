@@ -24,6 +24,7 @@ namespace CreditsView.PlanillaDescuentos
         CreditsGeneralController oGeneralController = new CreditsGeneralController();
         CreditsProcesoPagoController oProcesoPagoController = new CreditsProcesoPagoController();
         CreditsRetornoDirrehumController oRetornoDirrehumController = new CreditsRetornoDirrehumController();
+        CreditsPagosController oPagosController = new CreditsPagosController();
         public int _uniDscto = 0;
         public int idProcesoPago = 0;
         private OpenFileDialog fileDialog;
@@ -253,8 +254,35 @@ namespace CreditsView.PlanillaDescuentos
 
             foreach (CreditsRetornoDirrehumDto retornoDirrehum in lRetornoDirrehum)
             {
+                CreditsPagosDto eCreditsPagos = new CreditsPagosDto();
+                this.AsignarTablaTotalPagoMesAnioCodofin(eCreditsPagos, retornoDirrehum);
+                List<CreditsPagosDto> lTablaCreditsPagos = this.oPagosController.TablaPagosMesAnioCodofin(eCreditsPagos);
+                if (lTablaCreditsPagos.Count > 0)
+                {
+                    decimal total = this.oPagosController.TotalPagosMesAnioCodofin(eCreditsPagos).Total;
+                    decimal dFi = retornoDirrehum.Fi;
+                    if (total > 0)
+                    {
+                        foreach (CreditsPagosDto pagos in lTablaCreditsPagos)
+                        {
+                            decimal sumRetorno = pagos.Ret_Amortizacion + pagos.Ret_Interes + pagos.Ret_Seguro + pagos.Ret_Gastos + pagos.Ret_Comision1 + pagos.Ret_Comision2 + pagos.Ret_Igv;
+                            if (sumRetorno == 0)
+                            {
 
+                            }
+                        }
+                    }
+                }
             }
+        }
+
+        public void AsignarTablaTotalPagoMesAnioCodofin(CreditsPagosDto eCreditsPagos, CreditsRetornoDirrehumDto retornoDirrehum)
+        {
+            eCreditsPagos.CreditsOperationsDto = new CreditsOperationsDto();
+            eCreditsPagos.Anio = Convert.ToInt32(this.txtAnio.Text);
+            eCreditsPagos.Mes = Convert.ToInt32(Cmb.ObtenerValor(this.cmbMes));
+            eCreditsPagos.CreditsOperationsDto.UnidDscto = this._uniDscto;
+            eCreditsPagos.CodoFin = retornoDirrehum.Codofin;
         }
 
         public void AsignarRetornoDirrehumFI(CreditsRetornoDirrehumDto eRetornoDirrehum, string Fico)

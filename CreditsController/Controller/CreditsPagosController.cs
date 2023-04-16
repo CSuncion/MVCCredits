@@ -100,5 +100,16 @@ namespace CreditsController.Controller
             //retorna
             return iValor;
         }
+
+        public List<CreditsPagosDto> TablaPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto)
+        {
+            ICreditsPagosRepository iCreditsPagosRepository = new CreditsPagosRepository();
+            return iCreditsPagosRepository.TablaPagosMesAnioCodofin(creditsPagosDto);
+        }
+        public CreditsPagosDto TotalPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto)
+        {
+            ICreditsPagosRepository iCreditsPagosRepository = new CreditsPagosRepository();
+            return iCreditsPagosRepository.TotalPagosMesAnioCodofin(creditsPagosDto);
+        }
     }
 }

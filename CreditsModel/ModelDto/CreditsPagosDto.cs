@@ -78,6 +78,8 @@ namespace CreditsModel.ModelDto
         public string NroBen { get; set; }
         public string NroDni { get; set; }
         public string ApeNom { get; set; }
+        public decimal Parcial { get; set; }
+        public decimal Total { get; set; } = 0;
         public CreditsOperationsDto CreditsOperationsDto { get; set; }
     }
 }

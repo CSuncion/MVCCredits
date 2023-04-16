@@ -14,5 +14,7 @@ namespace CreditsRepository.IRepository
         void ProcesoReprogramaPagosMesAnioImpago(CreditsPagosDto pObj);
         List<CreditsPagosDto> EnvioMesAnioIdOperacion(CreditsPagosDto creditsPagosDto);
         List<CreditsPagosDto> EnvioMesAnioIdOperacionCaja(CreditsPagosDto creditsPagosDto);
+        List<CreditsPagosDto> TablaPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto);
+        CreditsPagosDto TotalPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto);
     }
 }
