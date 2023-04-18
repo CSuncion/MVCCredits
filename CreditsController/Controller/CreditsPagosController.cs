@@ -111,5 +111,14 @@ namespace CreditsController.Controller
             ICreditsPagosRepository iCreditsPagosRepository = new CreditsPagosRepository();
             return iCreditsPagosRepository.TotalPagosMesAnioCodofin(creditsPagosDto);
         }
+        public int InsertTbPagos(CreditsPagosDto pObj)
+        {
+            return this._iCreditsPagosRepository.InsertTbPagos(pObj);
+        }
+        public void ActualizaTbPagos(CreditsPagosDto pObj)
+        {
+            this._iCreditsPagosRepository.ActualizaTbPagos(pObj);
+        }
+
     }
 }

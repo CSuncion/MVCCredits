@@ -168,6 +168,7 @@ namespace CreditsView.PlanillaDescuentos
                     if (Mensaje.DeseasRealizarOperacion("Confirmar. Proceso de Cobranza DIRECFIN Planillas", "Respuesta DIRECFIN Planillas"))
                     {
                         this.LlenadoRetornos();
+                        this.RecojoDineroDirrehum_FI();
                     }
                     else
                         return;
@@ -268,12 +269,62 @@ namespace CreditsView.PlanillaDescuentos
                             decimal sumRetorno = pagos.Ret_Amortizacion + pagos.Ret_Interes + pagos.Ret_Seguro + pagos.Ret_Gastos + pagos.Ret_Comision1 + pagos.Ret_Comision2 + pagos.Ret_Igv;
                             if (sumRetorno == 0)
                             {
-
+                                this.AsignarPagos(pagos, 0, total);
+                                pagos.Id_Pago = oPagosController.InsertTbPagos(pagos);
+                            }
+                            else
+                            {
+                                this.AsignarPagos(pagos, 1, total);
+                                oPagosController.ActualizaTbPagos(pagos);
                             }
                         }
                     }
                 }
             }
+        }
+
+        public void AsignarPagos(CreditsPagosDto ePagos, int proc, decimal total)
+        {
+            ePagos.Id_ProcesoPagos = this.idProcesoPago;
+            ePagos.Ret_Fecha = this.dtpFecProc.Value;
+
+            if (proc == 0)
+                ePagos.Id_Pago = 0;
+
+            if (ePagos.Amortizacion == 0 && ePagos.Ant_Amortizacion == 0)
+                ePagos.Ret_Amortizacion = 0;
+            else
+                ePagos.Ret_Amortizacion = (((ePagos.Amortizacion + ePagos.Ant_Amortizacion) * 100) / total) * 100;
+
+            if (ePagos.Interes == 0 && ePagos.Ant_Interes == 0)
+                ePagos.Ret_Interes = 0;
+            else
+                ePagos.Ret_Interes = (((ePagos.Interes + ePagos.Ant_Interes) * 100) / total) * 100;
+
+            if (ePagos.Seguro == 0 && ePagos.Ant_Seguro == 0)
+                ePagos.Ret_Seguro = 0;
+            else
+                ePagos.Ret_Seguro = (((ePagos.Seguro + ePagos.Ant_Seguro) * 100) / total) * 100;
+
+            if (ePagos.Gastos == 0 && ePagos.Ant_Gastos == 0)
+                ePagos.Ret_Gastos = 0;
+            else
+                ePagos.Ret_Gastos = (((ePagos.Gastos + ePagos.Ant_Gastos) * 100) / total) * 100;
+
+            if (ePagos.Comision1 == 0 && ePagos.Ant_Comision1 == 0)
+                ePagos.Ret_Comision1 = 0;
+            else
+                ePagos.Ret_Comision1 = (((ePagos.Comision1 + ePagos.Ant_Comision1) * 100) / total) * 100;
+
+            if (ePagos.Comision2 == 0 && ePagos.Ant_Comision2 == 0)
+                ePagos.Ret_Comision2 = 0;
+            else
+                ePagos.Ret_Comision2 = (((ePagos.Comision2 + ePagos.Ant_Comision2) * 100) / total) * 100;
+
+            if (ePagos.Igv == 0 && ePagos.Ant_Igv == 0)
+                ePagos.Ret_Igv = 0;
+            else
+                ePagos.Ret_Igv = (((ePagos.Igv + ePagos.Ant_Igv) * 100) / total) * 100;
         }
 
         public void AsignarTablaTotalPagoMesAnioCodofin(CreditsPagosDto eCreditsPagos, CreditsRetornoDirrehumDto retornoDirrehum)
@@ -290,6 +341,22 @@ namespace CreditsView.PlanillaDescuentos
             eRetornoDirrehum.Anio = this.txtAnio.Text;
             eRetornoDirrehum.Mes = Cmb.ObtenerValor(this.cmbMes);
             eRetornoDirrehum.Fico = Fico;
+        }
+
+        public void RecojoDineroDirrehum_CO()
+        {
+            List<CreditsRetornoDirrehumDto> lRetornoDirrehum = new List<CreditsRetornoDirrehumDto>();
+            CreditsRetornoDirrehumDto eRetornoDirrehum = new CreditsRetornoDirrehumDto();
+            this.AsignarRetornoDirrehumFI(eRetornoDirrehum, "2");
+            lRetornoDirrehum = this.oRetornoDirrehumController.SelRetDirrehumAnioMesTrabajado(eRetornoDirrehum);
+            if (lRetornoDirrehum.Count < 1)
+                return;
+
+            foreach (CreditsRetornoDirrehumDto retornoDirrehum in lRetornoDirrehum)
+            {
+
+            }
+
         }
 
         private void btnBrowser_Click(object sender, EventArgs e)

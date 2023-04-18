@@ -199,7 +199,7 @@ namespace CreditsRepository.Repository
                     Ant_Interes = (decimal)xIdr[20],
                     Ant_Seguro = (decimal)xIdr[21],
                     Ant_Gastos = (decimal)xIdr[22],
-                    Ant_Igv = (decimal)xIdr[23],    
+                    Ant_Igv = (decimal)xIdr[23],
                     Ant_Comision1 = (decimal)xIdr[24],
                     Ant_Comision2 = (decimal)xIdr[25],
                     Parcial = (decimal)xIdr[26]
@@ -234,5 +234,68 @@ namespace CreditsRepository.Repository
             return tablaPagos;
         }
 
+        public int InsertTbPagos(CreditsPagosDto pObj)
+        {
+            xObjCn.Connection();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strIdOperacion", pObj.IdOperacion),
+                new SqlParameter("@strMes", pObj.Mes),
+                new SqlParameter("@strAnio", pObj.Anio),
+                new SqlParameter("@strCuota", pObj.Cuota),
+                new SqlParameter("@strAmortizacion", pObj.Amortizacion),
+                new SqlParameter("@strInteres", pObj.Interes),
+                new SqlParameter("@strSeguro", pObj.Seguro),
+                new SqlParameter("@strGastos", pObj.Gastos),
+                new SqlParameter("@strIgv", pObj.Igv),
+                new SqlParameter("@strComision1", pObj.Comision1),
+                new SqlParameter("@strComision2", pObj.Comision2),
+                new SqlParameter("@strPorcentaje", pObj.Porcentaje),
+                new SqlParameter("@strRet_Fecha", pObj.Ret_Fecha),
+                new SqlParameter("@strRet_Amortiza", pObj.Ret_Amortizacion),
+                new SqlParameter("@strRet_Interes", pObj.Ret_Interes),
+                new SqlParameter("@strRet_Seguro", pObj.Ret_Seguro),
+                new SqlParameter("@strRet_Gastos", pObj.Ret_Gastos),
+                new SqlParameter("@strRet_Igv", pObj.Ret_Igv),
+                new SqlParameter("@strRet_Comision1", pObj.Ret_Comision1),
+                new SqlParameter("@strRet_Comision2", pObj.Ret_Comision2),
+                new SqlParameter("@strFg", pObj.Fg),
+                new SqlParameter("@strIdAcceso", Universal.gIdAcceso),
+                new SqlParameter("@strAnt_Amortizacion", pObj.Ant_Amortizacion),
+                new SqlParameter("@strAnt_Interes", pObj.Ant_Interes),
+                new SqlParameter("@strAnt_Seguro", pObj.Ant_Seguro),
+                new SqlParameter("@strAnt_Gastos", pObj.Ant_Gastos),
+                new SqlParameter("@strAnt_Igv", pObj.Ant_Igv),
+                new SqlParameter("@strAnt_Comision1", pObj.Ant_Comision1),
+                new SqlParameter("@strAnt_Comision2", pObj.Ant_Comision2),
+                };
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure("isp_InsertTbPagos");
+            int idPago = xObjCn.GetInt();
+            xObjCn.Disconnect();
+            return idPago;
+        }
+        public void ActualizaTbPagos(CreditsPagosDto pObj)
+        {
+            xObjCn.Connection();
+            List<SqlParameter> lParameter = new List<SqlParameter>()
+                {
+                new SqlParameter("@strIdPago", pObj.Id_Pago),
+                new SqlParameter("@strRet_Amortiza", pObj.Ret_Amortizacion),
+                new SqlParameter("@strRet_Interes", pObj.Ret_Interes),
+                new SqlParameter("@strRet_Seguro", pObj.Ret_Seguro),
+                new SqlParameter("@strRet_Gastos", pObj.Ret_Gastos),
+                new SqlParameter("@strRet_Igv", pObj.Ret_Igv),
+                new SqlParameter("@strRet_Comision1", pObj.Ret_Comision1),
+                new SqlParameter("@strRet_Comision2", pObj.Ret_Comision2),
+                new SqlParameter("@strRet_Fecha", pObj.Ret_Fecha),
+                new SqlParameter("@strIdProcesoPago", pObj.Id_ProcesoPagos),
+                new SqlParameter("@strIdAcceso", Universal.gIdAcceso),
+                };
+            xObjCn.AssignParameters(lParameter);
+            xObjCn.CommandStoreProcedure("isp_ActualizaTbPagos");
+            xObjCn.ExecuteNotResult();
+            xObjCn.Disconnect();
+        }
     }
 }

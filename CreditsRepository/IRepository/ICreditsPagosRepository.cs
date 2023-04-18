@@ -16,5 +16,7 @@ namespace CreditsRepository.IRepository
         List<CreditsPagosDto> EnvioMesAnioIdOperacionCaja(CreditsPagosDto creditsPagosDto);
         List<CreditsPagosDto> TablaPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto);
         CreditsPagosDto TotalPagosMesAnioCodofin(CreditsPagosDto creditsPagosDto);
+        int InsertTbPagos(CreditsPagosDto pObj);
+        void ActualizaTbPagos(CreditsPagosDto pObj);
     }
 }
